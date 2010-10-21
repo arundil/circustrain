@@ -8,7 +8,7 @@ public class Talent {
 		name = nam;
 		salary = salar;
 	}
-	
+	 
 	public String getName(){
 		return name;
 	}
