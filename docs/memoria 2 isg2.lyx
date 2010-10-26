@@ -419,10 +419,6 @@ Exposición de borrador y rediseño
 
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Section*
 Cuenca Gómez, Emilio
 \end_layout
@@ -1995,6 +1991,10 @@ Diagrama UML de diseño
 
 \begin_layout Chapter*
 URL de implementación
+\end_layout
+
+\begin_layout Standard
+http://code.google.com/p/circustrain/
 \end_layout
 
 \begin_layout Chapter*
