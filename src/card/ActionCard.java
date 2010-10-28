@@ -10,7 +10,7 @@ public class ActionCard extends Card {
 		idcard = idc;
 		move = mov;
 		action = act;
-		wage = wag; 
+		wage = wag;
 	}
 	
 	public Integer getIdCard(){
