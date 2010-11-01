@@ -1,7 +1,8 @@
 package player;
 
+import java.util.List;
 import java.util.Map;
-
+import card.ActionCard;
 import game.Talent;
 
 public interface SinglePlayer {
@@ -13,6 +14,7 @@ public interface SinglePlayer {
 	public boolean addMoney(Integer m);
 	public boolean addActuation(Integer a);
 	
-
+	public List<ActionCard> getActionCards();
+	public List<ActionCard> discartActionCard(Integer id);
 	
 }

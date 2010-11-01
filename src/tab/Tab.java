@@ -1,6 +1,12 @@
 package tab;
 
+/**
+ * @author  marc
+ */
 public class Tab {
+	/**
+	 * @uml.property  name="color"
+	 */
 	private String color;
 //	private City city;
 	
@@ -9,6 +15,10 @@ public class Tab {
 //		City = ???;
 	}
 	
+	/**
+	 * @return
+	 * @uml.property  name="color"
+	 */
 	public String getColor(){
 		return color;
 	}
