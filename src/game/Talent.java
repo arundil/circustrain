@@ -11,11 +11,11 @@ public class Talent {
 	/**
 	 * @uml.property  name="salary"
 	 */
-	private Integer salary;
+	private Integer wage;
 	    
-	public Talent (String nam, Integer salar){
+	public Talent (String nam, Integer wage){
 		name = nam;
-		salary = salar;
+		this.wage = wage;
 	}
 	 
 	/**
@@ -29,7 +29,7 @@ public class Talent {
 	 * @return
 	 * @uml.property  name="salary"
 	 */
-	public Integer getSalary(){
-		return salary; 
+	public Integer getWage(){
+		return wage; 
 	}
 }

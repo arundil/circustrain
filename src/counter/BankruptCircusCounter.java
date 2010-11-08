@@ -1,4 +1,4 @@
-package tab;
+package counter;
 
 import game.Talent;
 
@@ -8,13 +8,13 @@ import java.util.Set;
 /**
  * @author  marc
  */
-public class BankruptcyCircusTab extends Tab {
+public class BankruptCircusCounter extends Counter {
 	/**
 	 * @uml.property  name="talents"
 	 */
 	private Set<Talent> talents;
 	
-	public BankruptcyCircusTab(String col, Set<Talent> tals) {
+	public BankruptCircusCounter(String col, Set<Talent> tals) {
 		super(col);
 		talents = tals;
 	}

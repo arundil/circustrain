@@ -1,16 +1,16 @@
-package tab;
+package counter;
 
 /**
  * @author  marc
  */
-public class Tab {
+public class Counter {
 	/**
 	 * @uml.property  name="color"
 	 */
 	private String color;
 //	private City city;
 	
-	public Tab(String col){
+	public Counter(String col){
 		color = col;
 //		City = ???;
 	}

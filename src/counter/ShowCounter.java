@@ -1,10 +1,10 @@
-package tab;
+package counter;
 
 
 /**
  * @author  marc
  */
-public class ShowTab extends Tab {
+public class ShowCounter extends Counter {
 	/**
 	 * @uml.property  name="points"
 	 */
@@ -12,7 +12,7 @@ public class ShowTab extends Tab {
 	/**
 	 * @uml.property  name="clow"
 	 */
-	private Integer clow;
+	private Integer clown;
 	/**
 	 * @uml.property  name="horse"
 	 */
@@ -33,11 +33,11 @@ public class ShowTab extends Tab {
 	 */
 	private String color;
 	
-	public ShowTab(String col, Integer idt, Integer point, Integer cl, Integer hor, Integer acr, 
+	public ShowCounter(String col, Integer idt, Integer point, Integer cl, Integer hor, Integer acr, 
 				Integer bigfel, Integer elep, Integer bullman, Integer monsf){
 		super(col);
 		points = point;
-		clow = cl;
+		clown = cl;
 		horse = hor;
 		acrobats = acr;
 		bigfeline = bigfel;
@@ -57,8 +57,8 @@ public class ShowTab extends Tab {
 	 * @return
 	 * @uml.property  name="clow"
 	 */
-	public Integer getClow(){
-		return clow;
+	public Integer getClown(){
+		return clown;
 	}
 	/**
 	 * @return
