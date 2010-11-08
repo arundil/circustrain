@@ -1,5 +1,6 @@
 package board;
 
-public interface Board extends Graph<Track,City>{
+public interface Board{
 
+	public String toString();
 }
