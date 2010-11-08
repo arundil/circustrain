@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="802,515" id="board" metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D313020636972637573747261696E">
+  <children xsi:type="editmodel:InterfaceEditModel" name="Track" location="378,361" size="86,43" id="board/Track" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" name="City" location="301,50" size="140,225" id="board/City" runTimeClassModel="getName(),exactMovement(Ljava.lang.Integer;),maxMovement(Ljava.lang.Integer;),setName(Ljava.lang.String;),hasPerfomance(),getCanada(),setCanada(),getPerformance(),toString()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,162">
+      <children xsi:type="editmodel:MethodEditModel" name="exactMovement" id="board/City#exactMovement(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCanada" id="board/City#getCanada()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="board/City#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="board/City#getPerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="hasPerfomance" id="board/City#hasPerfomance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="maxMovement" id="board/City#maxMovement(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCanada" id="board/City#setCanada()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setName" id="board/City#setName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="board/City#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="C2" location="491,50" size="113,230" id="board/C2" runTimeClassModel="contains(LT1;),compareTo(Lboard.C2;),equals(Ljava.lang.Object;),hashCode(),setP2(LT1;),p1(),setP1(LT1;),C2(LT1;LT1;),toString(),p2()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="90,180">
+      <children xsi:type="editmodel:MethodEditModel" name="C2" id="board/C2#C2(LT1;LT1;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareTo" id="board/C2#compareTo(Lboard.C2;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="contains" id="board/C2#contains(LT1;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="equals" id="board/C2#equals(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="hashCode" id="board/C2#hashCode()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="p1" id="board/C2#p1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="p2" id="board/C2#p2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setP1" id="board/C2#setP1(LT1;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setP2" id="board/C2#setP2(LT1;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="board/C2#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" name="Graph" location="50,50" size="201,261" id="board/Graph" runTimeClassModel="getVertex(Ljava.lang.Integer;),remove(Lboard.Vertex;),getSubgraphWithoutVertex(Lboard.Vertex;),remove(Lboard.Edge;),getSubgraphWithoutEdge(Lboard.Edge;),hasEdge(Lboard.Vertex;Lboard.Vertex;),getEdgeSet(),add(Lboard.Vertex;),add(Lboard.Edge;),getEdge(Lboard.Vertex;Lboard.Vertex;),getVertexSet()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="178,198">
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="board/Graph#add(Lboard.Vertex;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="board/Graph#add(Lboard.Edge;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEdge" id="board/Graph#getEdge(Lboard.Vertex;Lboard.Vertex;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEdgeSet" id="board/Graph#getEdgeSet()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSubgraphWithoutEdge" id="board/Graph#getSubgraphWithoutEdge(Lboard.Edge;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSubgraphWithoutVertex" id="board/Graph#getSubgraphWithoutVertex(Lboard.Vertex;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVertex" id="board/Graph#getVertex(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVertexSet" id="board/Graph#getVertexSet()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="hasEdge" id="board/Graph#hasEdge(Lboard.Vertex;Lboard.Vertex;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="remove" id="board/Graph#remove(Lboard.Vertex;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="remove" id="board/Graph#remove(Lboard.Edge;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" name="Vertex" location="654,50" size="128,189" id="board/Vertex" runTimeClassModel="remove(Lboard.Vertex;),setLabel(LV;),getLabel(),getCode(),getAdjacents(),hasAdjacents(),add(Lboard.Vertex;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,126">
+      <children xsi:type="editmodel:MethodEditModel" name="add" id="board/Vertex#add(Lboard.Vertex;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAdjacents" id="board/Vertex#getAdjacents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCode" id="board/Vertex#getCode()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLabel" id="board/Vertex#getLabel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="hasAdjacents" id="board/Vertex#hasAdjacents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="remove" id="board/Vertex#remove(Lboard.Vertex;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setLabel" id="board/Vertex#setLabel(LV;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" name="Edge" location="50,361" size="132,99" id="board/Edge" runTimeClassModel="getVertices(),getLabel()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,36">
+      <children xsi:type="editmodel:MethodEditModel" name="getLabel" id="board/Edge#getLabel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVertices" id="board/Edge#getVertices()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" name="Board" location="232,361" size="96,81" id="board/Board" runTimeClassModel="toString()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="73,18">
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="board/Board#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" interactive="false" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -3,14 +3,14 @@ package player;
 import java.util.List;
 import java.util.Map;
 import card.ActionCard;
-import game.Talent;
+import game.TalentImpl;
 
 public interface SinglePlayer {
 	public Integer getMoney();
 	public Integer getActuation();
-	public Map<Talent,Integer> getTalents ();
+	public Map<TalentImpl,Integer> getTalents ();
 	
-	public boolean addTalent(Talent t);
+	public boolean addTalent(TalentImpl t);
 	public boolean addMoney(Integer m);
 	public boolean addActuation(Integer a);
 	

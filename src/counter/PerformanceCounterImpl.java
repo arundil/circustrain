@@ -4,13 +4,13 @@ package counter;
 /**
  * @author  marc
  */
-public class ShowCounter extends Counter {
+public class PerformanceCounterImpl extends CounterImpl implements PerformanceCounter{
 	/**
 	 * @uml.property  name="points"
 	 */
 	private Integer points;
 	/**
-	 * @uml.property  name="clow"
+	 * @uml.property  name="clown"
 	 */
 	private Integer clown;
 	/**
@@ -33,7 +33,7 @@ public class ShowCounter extends Counter {
 	 */
 	private String color;
 	
-	public ShowCounter(String col, Integer idt, Integer point, Integer cl, Integer hor, Integer acr, 
+	public PerformanceCounterImpl(String col, Integer idt, Integer point, Integer cl, Integer hor, Integer acr, 
 				Integer bigfel, Integer elep, Integer bullman, Integer monsf){
 		super(col);
 		points = point;

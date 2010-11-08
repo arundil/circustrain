@@ -1,29 +1,11 @@
 package counter;
 
-import game.Talent;
+import game.TalentImpl;
 
 import java.util.Set;
 
-//Circo en bancarrota para el que no sepa ingles.
-/**
- * @author  marc
- */
-public class BankruptCircusCounter extends Counter {
-	/**
-	 * @uml.property  name="talents"
-	 */
-	private Set<Talent> talents;
+public interface BankruptCircusCounter extends Counter{
 	
-	public BankruptCircusCounter(String col, Set<Talent> tals) {
-		super(col);
-		talents = tals;
-	}
-	
-	/**
-	 * @return
-	 * @uml.property  name="talents"
-	 */
-	public Set<Talent> getTalents(){
-		return talents;
-	}
+	public Set<TalentImpl> getTalents();
+
 }
