@@ -4,10 +4,12 @@ import board.City;
 
 public interface TalentCard extends Card{
 	
-	public String getName(); // trivial
-	public String getWage(); // trivial
-	public boolean isTalentRedLighting(); // Esto hay que aclararlo...
-	public boolean isInUnemployment(); // Talento desempleado (los que se dejan en las ciudades)
-	public City getCityOfUnemployment(); // Nos dirá la ciudad en la que está el talento
+	public String getName();
+	public int getSalary();
+	public boolean isInBankruptCircus(); 
+	// Talento sin empleo (los que se dejan en las ciudades)
+	
+	public City getCityOfBankruptCircus(); 
+	// Nos podría decir la ciudad en la que está el talento o hacerlo desde el "main".
 
 }

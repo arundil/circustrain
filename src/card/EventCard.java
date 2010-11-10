@@ -1,19 +1,28 @@
 package card;
 
+import java.util.List;
+
 public interface EventCard extends Card{
 	
 	public String getName(); 
-	// Puede servir también como descripción de la carta. A consultar con grupo.
+	// Puede servir como descripción de la carta directamente. A consultar con grupo.
 	
-	public boolean isSinglePlayer(); 
-	// Teniendo en cuenta que Single player significa jugador en solitario!! 
-	// Solo se usan cartas del 17 al 20.
+	public List<EventCard> createListEventSinglePlayer();
+	// Devolverá la lista de los eventos permitidos para el Single Player (17-20).
 
-	public int getNumEventCard(); 
-	// Nos devolverá el número de la carta. Importante para el modo solitario.
+	public int getNumEventCard(); // Importante para el modo solitario.
 	
-	public int currentMonth(); // Necesitamos saber el mes actual. Probablemente se implemente en 
-	// la clase que lleve la historia.
+	/*
+	 * Si decidimos modelarlo en una sola interfaz, estos métodos
+	 * serían útiles para diferenciarlas. Aún faltarían más... Esto va a ser la mueeerrrteeee...
+	 * Se prorrogará.
+	 */
+	public boolean isDependOfMonth();
+	public boolean isDependOfMoves();
+	public boolean isDependOfActionCard();
+	public boolean isDependOfMoney();
+	public boolean isDependOfPoints();
+	public boolean isCrashBag(); // se hunde la bolsa de valores, si salen 2 acaba el juego.
 	
 	
 	

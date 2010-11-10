@@ -6,7 +6,7 @@ import player.PlayerBasic;
 
 public class EventCardImpl extends CardImpl{
 	
-	// a medio empezar 
+	// a medio pensar. se dejará para lo último.
 	private int points;
 	private int moves;
 	private int month;
