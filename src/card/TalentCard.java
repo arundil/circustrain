@@ -5,7 +5,7 @@ import board.City;
 public interface TalentCard extends Card{
 	
 	public String getName();
-	public int getSalary();
+	public int getWage();
 	public boolean isInBankruptCircus(); 
 	// Talento sin empleo (los que se dejan en las ciudades)
 	
