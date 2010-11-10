@@ -1,5 +1,6 @@
 package counter;
 
+import game.Talent;
 import game.TalentImpl;
 
 import java.util.Set;
@@ -12,9 +13,9 @@ public class BankruptCircusCounterImpl extends CounterImpl implements BankruptCi
 	/**
 	 * @uml.property  name="talents"
 	 */
-	private Set<TalentImpl> talents;
+	private Set<Talent> talents;
 	
-	public BankruptCircusCounterImpl(String col, Set<TalentImpl> tals) {
+	public BankruptCircusCounterImpl(String col, Set<Talent> tals) {
 		super(col);
 		talents = tals;
 	}
@@ -23,7 +24,7 @@ public class BankruptCircusCounterImpl extends CounterImpl implements BankruptCi
 	 * @return
 	 * @uml.property  name="talents"
 	 */
-	public Set<TalentImpl> getTalents(){
+	public Set<Talent> getTalents(){
 		return talents;
 	}
 }

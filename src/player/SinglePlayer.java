@@ -3,18 +3,19 @@ package player;
 import java.util.List;
 import java.util.Map;
 import card.ActionCard;
+import game.Talent;
 import game.TalentImpl;
 
 public interface SinglePlayer {
 	public Integer getMoney();
-	public Integer getActuation();
-	public Map<TalentImpl,Integer> getTalents ();
+	public Integer getPerformance();
+	public Map<Talent,Integer> getTalents ();
 	
-	public boolean addTalent(TalentImpl t);
+	public boolean addTalent(Talent t);
 	public boolean addMoney(Integer m);
-	public boolean addActuation(Integer a);
+	public boolean addPerformance(Integer p);
 	
 	public List<ActionCard> getActionCards();
-	public List<ActionCard> discartActionCard(Integer id);
+	public List<ActionCard> discardActionCard(Integer id);
 	
 }

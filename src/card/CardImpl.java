@@ -3,7 +3,7 @@ package card;
 /**
  * @author  marc
  */
-public class CardImpl {
+public class CardImpl implements Card{
 	/**
 	 * @uml.property  name="name"
 	 */
