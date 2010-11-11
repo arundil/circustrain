@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Map;
 import card.ActionCard;
 import game.Talent;
-import game.TalentImpl;
 
-public interface SinglePlayer {
+public interface Player {
+	
 	public Integer getMoney();
 	public Integer getPerformance();
 	public Map<Talent,Integer> getTalents ();
@@ -17,5 +17,12 @@ public interface SinglePlayer {
 	
 	public List<ActionCard> getActionCards();
 	public List<ActionCard> discardActionCard(Integer id);
+	
+	public Integer getReputation();
+	public boolean addReputation();
+	public Integer getVictoryPoints();
+	
+	public boolean addVictoryPoints(Integer vp);
+	public boolean isFirstPlayer();
 	
 }

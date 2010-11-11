@@ -2,7 +2,7 @@ package card;
 
 import java.util.List;
 
-import player.PlayerBasic;
+import player.Player;
 
 public class EventCardImpl extends CardImpl{
 	
@@ -11,8 +11,7 @@ public class EventCardImpl extends CardImpl{
 	private int moves;
 	private int month;
 	private int week;
-	private List<PlayerBasic> lp;
-	
+	private List<Player> lp;
 
 	public EventCardImpl(String name, String des) {
 		super(name, des);
