@@ -7,7 +7,8 @@ import card.TypeTalentCard;
 public interface TalentBag extends TypeTalentCard{
 	
 	public Map<TypeTalentCard,Integer> createTalentBag(); 
-	// A discutir si creamos factor√≠as para muchas de las bolsas.
+	// Se inicializar· la bolsa completa, "game" se encargara de quitar los talentos
+	// necesarios para empezar.
 	
 	
 	/*
