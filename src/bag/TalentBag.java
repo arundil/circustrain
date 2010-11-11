@@ -1,21 +1,21 @@
 package bag;
 
-import java.util.List;
+import java.util.Map;
 
-import card.TalentCard;
+import card.TypeTalentCard;
 
-public interface TalentBag extends TalentCard{
+public interface TalentBag extends TypeTalentCard{
 	
-	public List<TalentCard> createTalentBag(); 
+	public Map<TypeTalentCard,Integer> createTalentBag(); 
 	// A discutir si creamos factorías para muchas de las bolsas.
 	
 	
 	/*
-	 * Todos devuelven TalentCard por si resulta útil mostrar por pantalla
+	 * Todos devuelven TypeTalentCard por si resulta útil mostrar por pantalla
 	 * cada vez que se modifica (añade, sustrae) la bolsa de talentos.
 	 */
-	public List<TalentCard> getTalentBag();
-	public TalentCard removeTalentCard(TalentCard t);
-	public TalentCard addTalentCard(TalentCard t); // si se hace al azar, sería sin param.
+	public Integer getTypeNumTalentBag();
+	public TypeTalentCard removeTypeTalentCard(TypeTalentCard t);
+	public TypeTalentCard addTypeTalentCard(TypeTalentCard t); // si se hace al azar, sería sin param.
 
 }
