@@ -13,6 +13,7 @@ public interface City {
 	
 	public Boolean hasPerfomance();
 	public Performance getPerformance();
+	public void setPerfomance(Performance perfomance);
 	
 	public Set<City> maxMovement(Integer jump);
 	public Set<City> exactMovement(Integer jump);
