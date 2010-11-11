@@ -1,5 +1,5 @@
 package card;
-
+/*
 import java.util.List;
 
 import player.Player;
@@ -19,4 +19,4 @@ public class EventCardImpl extends CardImpl{
 	}
 	
 
-}
+}*/
