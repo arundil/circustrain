@@ -10,7 +10,6 @@ public interface City {
 	public void setName(String name);
 	
 	public Boolean getCanada();
-	public void setCanada();
 	
 	public Boolean hasPerfomance();
 	public Performance getPerformance();
