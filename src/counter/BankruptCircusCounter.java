@@ -3,10 +3,10 @@ package counter;
 
 import java.util.Set;
 
-import card.TalentCard;
+import card.TypeTalentCard;
 
 public interface BankruptCircusCounter extends Counter{
 	
-	public Set<TalentCard> getTalents();
+	public Set<TypeTalentCard> getTalents();
 
 }

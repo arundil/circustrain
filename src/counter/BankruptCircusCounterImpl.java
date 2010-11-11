@@ -2,7 +2,7 @@ package counter;
 
 import java.util.Set;
 
-import card.TalentCard;
+import card.TypeTalentCard;
 
 //Circo en bancarrota para el que no sepa ingles.
 /**
@@ -12,9 +12,9 @@ public class BankruptCircusCounterImpl extends CounterImpl implements BankruptCi
 	/**
 	 * @uml.property  name="talents"
 	 */
-	private Set<TalentCard> talents;
+	private Set<TypeTalentCard> talents;
 	
-	public BankruptCircusCounterImpl(String col, Set<TalentCard> tals) {
+	public BankruptCircusCounterImpl(String col, Set<TypeTalentCard> tals) {
 		super(col);
 		talents = tals;
 	}
@@ -23,7 +23,7 @@ public class BankruptCircusCounterImpl extends CounterImpl implements BankruptCi
 	 * @return
 	 * @uml.property  name="talents"
 	 */
-	public Set<TalentCard> getTalents(){
+	public Set<TypeTalentCard> getTalents(){
 		return talents;
 	}
 }

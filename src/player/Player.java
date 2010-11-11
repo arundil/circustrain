@@ -5,18 +5,18 @@ import java.util.Map;
 
 import performance.Performance;
 import card.ActionCard;
-import card.TalentCard;
+import card.TypeTalentCard;
 
 public interface Player {
 	//Boolean Es circoFamoso, lo tengo que tener en cuenta para después.
 	
 	public Integer getMoney();
 	public Integer getPerformanceMax();
-	public Map<TalentCard,Integer> getTalents ();
+	public Map<TypeTalentCard,Integer> getTalents ();
 	public Integer getReputation();
 	public Integer getVictoryPoints();
 	
-	public boolean addTalent(List<TalentCard> t);
+	public boolean addTalent(List<TypeTalentCard> t);
 	public boolean addMoney(Integer m);
 	public boolean addPerformance(Integer p);
 	public boolean addVictoryPoints(Integer vp);
