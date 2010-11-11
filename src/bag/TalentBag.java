@@ -14,7 +14,7 @@ public interface TalentBag extends TypeTalentCard{
 	 * Todos devuelven TypeTalentCard por si resulta útil mostrar por pantalla
 	 * cada vez que se modifica (añade, sustrae) la bolsa de talentos.
 	 */
-	public Integer getTypeNumTalentBag();
+	public Integer getNumTypeTalent();
 	public TypeTalentCard removeTypeTalentCard(TypeTalentCard t);
 	public TypeTalentCard addTypeTalentCard(TypeTalentCard t); // si se hace al azar, sería sin param.
 
