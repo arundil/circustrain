@@ -1,4 +1,4 @@
-package board;
+package tipos.graph;
 
 import java.util.Set;
 

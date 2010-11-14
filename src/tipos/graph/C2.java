@@ -1,4 +1,4 @@
-package board;
+package tipos.graph;
 
 
 public class C2<T1> implements Comparable<C2<T1>> {

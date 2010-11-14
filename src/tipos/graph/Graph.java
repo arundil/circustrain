@@ -1,6 +1,5 @@
-package board;
-
-import java.util.Set;
+package tipos.graph;
+import java.util.*;
 
 public interface Graph<A,V> {
 	Set<Vertex<V>> getVertexSet();

@@ -1,5 +1,4 @@
-package board;
-
+package tipos.graph;
 
 public interface Edge<A,V> {
 	C2<Vertex<V>> getVertices();
