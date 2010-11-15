@@ -1,18 +1,16 @@
 package game;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Set;
 
 import card.ActionCard;
-import card.TypeTalentCard;
-
 import performance.Bankrupt;
 import performance.Performance;
 import performance.PerformanceDemand;
 import performance.VictoryPoints;
 import player.Player;
-//import player.PlayerImpl;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
@@ -33,14 +31,19 @@ public class GameCTImpl implements GameCT {
 	
 	public void startGame() {
 		//metodos create de los objetos inicializados en el constructor.
-		//preguntar modo de juego
-		//crear one y two dependiendo de la eleccion
+		//preguntar modo de juego usa el metodo readI(): Integer
+		//crear one y two dependiendo de la eleccion y lo que hag Marc
 		//modificar basic
 	}
 
 	
 	public void runGame() {
+		Color col = new Color(0);
+		addPerformanceBoard(col.GREEN);
+		
 		for(int week = 1;week<28;week++){
+			System.out.println(); //Mostrar el estado de las ciudades
+			
 			if(one.isFirstPlayer()){
 				turnPlayer(one);
 				turnPlayer(two);
@@ -49,13 +52,22 @@ public class GameCTImpl implements GameCT {
 				turnPlayer(one);
 			}
 			
-
 			if(week == 4 || week == 13 || week == 27){
 				finishMounth(false);
 			}
 
 			if(week == 9 ||  week == 18 || week == 23){
 				finishMounth(true);
+			}
+
+			if(week < 10){
+				addPerformanceBoard(col.GREEN);				
+			}
+			if(week < 19 && week > 10){
+				addPerformanceBoard(col.YELLOW);				
+			}
+			if(week > 20){
+				addPerformanceBoard(col.RED);				
 			}
 		}
 	}
@@ -71,17 +83,19 @@ public class GameCTImpl implements GameCT {
 	private void turnPlayer(Player p){	
 		System.out.println(p.getActionCards());
 			if(basic){
-				System.out.print("Select card for used: ");
+				System.out.println("Select card for used: ");
 				Integer card = readI();
 //				ActionCard acard = p.discardActionCard(card);   
 				//Hablar con Marc sobre el método.
 				ActionCard acard = p.getActionCards().get(card);
-				usedActionCard(p, acard);
 				
-			
+				usedActionCard(p, acard);
+							
 			}else{
 				System.out.println(p.getdiscartpile());
-			
+				System.out.println("Select action: ");
+				System.out.println("DuviDuviDuvi");
+				Integer x = readI();
 			}		
 	}
 	
@@ -107,9 +121,12 @@ public class GameCTImpl implements GameCT {
 		if(ac.getMove() != 0){
 			//Preferiblemente que sea en List para poder sacar por indice la ciudad.
 			Set<City> citys = city.maxMovement(ac.getMove());
-			System.out.print("Select city: ");
+			
+			System.out.println(citys.toString());
+			System.out.println("Select city(1--N): ");
+			
 			Integer cit = readI();
-			//p.moveCity(citys.get(cit));
+			//p.moveCity(citys.get(cit-1));
 		}
 		
 		if(ac.isAction()){
@@ -129,8 +146,13 @@ public class GameCTImpl implements GameCT {
 		}
 		
 		if(ac.isWage()){
-//			p.wage();
+//			p.wage(basic);
 		}
+		
+	}
+	
+	//TODO
+	private void addPerformanceBoard(Color c) {
 		
 	}
 }
