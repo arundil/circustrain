@@ -11,6 +11,7 @@ import performance.Performance;
 import performance.PerformanceDemand;
 import performance.VictoryPoints;
 import player.Player;
+import utiles.factoria.GameFactory;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
@@ -25,14 +26,45 @@ public class GameCTImpl implements GameCT {
 	
 	public GameCTImpl (){
 //		board = new BoardImpl();
-//		perfobag = new PerformanceBagImpl();
-//		talentbag = new TalentBagImpl();
+		one=null;
+		two=null;
+		perfobag=GameFactory.createPerformanceBag();
+		talentbag=GameFactory.createTalentBag();
+		
+		
 	}
 	
 	public void startGame() {
 		//metodos create de los objetos inicializados en el constructor.
+		
 		//preguntar modo de juego usa el metodo readI(): Integer
-		//crear one y two dependiendo de la eleccion y lo que hag Marc
+		Integer mode=1;
+		Integer players=1;
+		try {
+			System.out.print("Select game mode: ");
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			String linea = br.readLine();
+			mode = Integer.parseInt(linea);
+		} catch (Exception e) {
+		}
+		
+		//crear one y two dependiendo de la eleccion y lo que haga Marc
+		try {
+			System.out.print("Select number of players: ");
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			String linea = br.readLine();
+			players = Integer.parseInt(linea);
+		} catch (Exception e) {
+		}
+		if(players==1){
+			one=GameFactory.createPlayer();
+		}
+		if(players==2){
+			one=GameFactory.createPlayer();
+			two=GameFactory.createPlayer();
+		}
+		
+		
 		//modificar basic
 	}
 
