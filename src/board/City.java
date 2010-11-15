@@ -4,9 +4,8 @@ import java.util.Set;
 
 
 import performance.Performance;
-import tipos.graph.Vertex;
 
-public interface City extends Vertex<String>{
+public interface City {
 	
 	public String getName();
 	

@@ -1,9 +1,16 @@
 package board;
 
-import tipos.graph.GraphImpl;
+import tipos.graph.Graph;
 
-public class BoardImpl extends GraphImpl<String, City> implements Board {
+public class BoardImpl implements Board {
+	
+	private Graph<Track,City> board;
 
-
+	public BoardImpl(){
+		super();
+		
+		
+	}
+	
 
 }

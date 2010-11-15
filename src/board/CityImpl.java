@@ -3,17 +3,17 @@ package board;
 import java.util.Set;
 
 import performance.Performance;
-import tipos.graph.VertexImpl;
 
-public class CityImpl extends VertexImpl<String> implements City {
+public class CityImpl implements City {
 	
 	private Boolean isCanada;
 	private Performance performance;
+	private String name;
 
-	public CityImpl(Integer code,String name,Boolean isCanada){
-		super(code, name);
+	public CityImpl(String name,Boolean isCanada){
 		this.isCanada=isCanada;
 		this.performance=null;
+		this.name=name;
 	}
 	@Override
 	public Set<City> exactMovement(Integer jump) {
@@ -27,7 +27,7 @@ public class CityImpl extends VertexImpl<String> implements City {
 
 	@Override
 	public String getName() {
-		return super.getLabel();
+		return this.name;
 	}
 
 	@Override
@@ -55,12 +55,6 @@ public class CityImpl extends VertexImpl<String> implements City {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return getName();
 	}
-
-
-
-
-
 }
