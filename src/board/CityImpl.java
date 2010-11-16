@@ -34,7 +34,7 @@ public class CityImpl extends VertexImpl implements City {
 	}
 
 	@Override
-	public Boolean getCanada() {
+	public Boolean isCanada() {
 		return this.isCanada;
 	}
 

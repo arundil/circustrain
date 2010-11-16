@@ -8,10 +8,7 @@ public class BoardImpl extends GraphImpl implements Board {
 	public BoardImpl(){
 		super();
 	}
-	
-	public void addCity(City c){
-		super.addVertex((Vertex) c);
-	}
+
 	
 
 }

@@ -9,7 +9,7 @@ import performance.Performance;
 
 public interface City extends Vertex {
 	
-	public Boolean getCanada();
+	public Boolean isCanada();
 	
 	public Boolean hasPerfomance();
 	public Performance getPerformance();
