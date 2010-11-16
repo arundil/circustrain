@@ -14,18 +14,22 @@ import card.TypeTalentCard;
 
 public class PlayerImpl implements Player {
 	
+	private String name;
 	private Integer money,reputation,victorypoints,perfomance_max;
 	private Boolean first_player;
-	private List<ActionCard> action_cards;
+	private List<ActionCard> action_cards,discart_pile;
 	private List<Performance> perfomance_list;
 	private Map<TypeTalentCard,Integer> talents;
 	
-	public PlayerImpl (Boolean play_mode, Boolean firstp){ //basic = 0 Advanced =1
+	public PlayerImpl (String n,Boolean play_mode, Boolean firstp){ //basic = 0 Advanced =1
+		
+		name=n;
 		money = 0;
 		perfomance_max =0;
 		victorypoints = 0;
 		first_player=firstp;
 		action_cards= inicializateActionCards();
+		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createSortedMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
 		if (play_mode == false){
@@ -36,8 +40,22 @@ public class PlayerImpl implements Player {
 		}
 	}
 	
+	public PlayerImpl (String n){
+		name = n;
+		money =0;
+		action_cards = inicializateActionCards();
+		discart_pile = CollectionsFactory.createListFactory().createList();
+		talents = CollectionsFactory.createMapFactory().createMap();
+		perfomance_list = CollectionsFactory.createListFactory().createList();
+		
+	}
+	
 	//otro constructor para juego solitario.
 	
+	@Override
+	public String getName() {
+		return name;
+	}
 
 	@Override
 	public boolean addActionCard(ActionCard ac) {
@@ -68,9 +86,17 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public boolean addTalent(List<TypeTalentCard> t) {
-		//map
-		return false;
+	public void addTalent(List<TypeTalentCard> t) {
+		
+		for (TypeTalentCard e :t){
+			if (talents.containsKey(e)){
+				Integer n = talents.get(e);
+				talents.put(e, n+1);
+			}
+			else{
+				talents.put(e, 1);
+			}
+		}
 	}
 
 	@Override
@@ -88,8 +114,7 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public List<ActionCard> getActionCards() {
-		// TODO Auto-generated method stub
-		return null;
+		return action_cards;
 	}
 
 	@Override
@@ -99,38 +124,32 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public List<Performance> getPerfomancesUsed() {
-		// TODO Auto-generated method stub
-		return null;
+		return perfomance_list;
 	}
 
 	@Override
 	public Integer getPerformanceMax() {
-		// TODO Auto-generated method stub
-		return null;
+		return perfomance_max;
 	}
 
 	@Override
 	public Integer getReputation() {
-		// TODO Auto-generated method stub
-		return null;
+		return reputation;
 	}
 
 	@Override
 	public Map<TypeTalentCard, Integer> getTalents() {
-		// TODO Auto-generated method stub
-		return null;
+		return talents;
 	}
 
 	@Override
 	public Integer getVictoryPoints() {
-		// TODO Auto-generated method stub
-		return null;
+		return victorypoints;
 	}
 
 	@Override
 	public List<ActionCard> getdiscartpile() {
-		// TODO Auto-generated method stub
-		return null;
+		return discart_pile;
 	}
 
 	@Override
@@ -154,7 +173,7 @@ public class PlayerImpl implements Player {
 	public void wage() {
 		// TODO Auto-generated method stub
 		
-	}
+	} 
 	
 	
 	
@@ -188,11 +207,8 @@ public class PlayerImpl implements Player {
 		return l;
 	}
 	
-	private void CleanData_new_Month (){
+	//private void CleanData_new_Month (){
 		
-	}
-
-
-
-
+	//}
+	
 }

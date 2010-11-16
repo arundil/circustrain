@@ -17,10 +17,11 @@ public interface Player {
 	public Map<TypeTalentCard,Integer> getTalents ();
 	public Integer getReputation();
 	public Integer getVictoryPoints();
+	public String getName();
 	public City	getCity();
 	
 	
-	public boolean addTalent(List<TypeTalentCard> t);
+	public void addTalent(List<TypeTalentCard> t);
 	public boolean addMoney(Integer m);
 	public boolean addPerformance(Integer p);
 	public boolean addVictoryPoints(Integer vp);
