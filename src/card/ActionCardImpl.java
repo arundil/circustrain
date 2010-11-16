@@ -35,5 +35,9 @@ public class ActionCardImpl extends CardImpl implements ActionCard {
 	public Boolean isWage() {
 		return wage;
 	}
+	
+	public String toString (){
+		return super.toString();
+	}
 
 }

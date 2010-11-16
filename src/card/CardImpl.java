@@ -3,6 +3,8 @@ package card;
 
 public class CardImpl implements Card{
 
+
+
 	private String name;
 	private String description;
 	
@@ -19,4 +21,8 @@ public class CardImpl implements Card{
 		return description;
 	}
 
+	@Override
+	public String toString() {
+		return "CardImpl [description=" + description + ", name=" + name + "]";
+	}
 }
