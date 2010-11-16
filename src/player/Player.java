@@ -7,7 +7,6 @@ import board.City;
 
 import performance.Performance;
 import card.ActionCard;
-import card.ActionCardImpl;
 import card.TypeTalentCard;
 
 public interface Player {

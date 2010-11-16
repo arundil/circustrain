@@ -4,11 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.lang.Math;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
-
-import bag.TalentBag;
 import board.City;
-
 import performance.Performance;
 import utiles.factoria.CollectionsFactory;
 import card.ActionCard;
