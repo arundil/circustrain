@@ -2,12 +2,12 @@ package board;
 
 import java.util.Set;
 
+import Graph.Vertex;
+
 
 import performance.Performance;
 
-public interface City {
-	
-	public String getName();
+public interface City extends Vertex {
 	
 	public Boolean getCanada();
 	

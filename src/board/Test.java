@@ -1,8 +1,5 @@
 package board;
 
-import tipos.graph.Vertex;
-import tipos.graph.VertexImpl;
-
 public class Test {
 
 	/**
@@ -14,8 +11,7 @@ public class Test {
 		
 		
 		City Montreal=new CityImpl("Montreal",true);
-		Vertex<City> v1=new VertexImpl<City>(1, Montreal);
-		Tablero.add(v1);
+		Tablero.addCity(Montreal);
 		
 		System.out.print(Tablero);
 

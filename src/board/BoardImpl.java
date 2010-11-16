@@ -1,15 +1,16 @@
 package board;
 
-import tipos.graph.Graph;
+import Graph.GraphImpl;
+import Graph.Vertex;
 
-public class BoardImpl implements Board {
+public class BoardImpl extends GraphImpl implements Board {
 	
-	private Graph<Track,City> board;
-
 	public BoardImpl(){
 		super();
-		
-		
+	}
+	
+	public void addCity(City c){
+		super.addVertex(c);
 	}
 	
 
