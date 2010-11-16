@@ -1,9 +1,7 @@
 package board;
 
-import java.util.Collection;
 import java.util.Set;
 
-import Graph.Vertex;
 import Graph.VertexImpl;
 
 import performance.Performance;

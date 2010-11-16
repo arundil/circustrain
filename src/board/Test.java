@@ -1,5 +1,7 @@
 package board;
 
+import Graph.Vertex;
+
 public class Test {
 
 	/**
@@ -11,12 +13,14 @@ public class Test {
 		
 		
 		City Montreal=new CityImpl("Montreal",true);
-		Tablero.addCity(Montreal);
+		City Albany=new CityImpl("Albany",false);
+		Tablero.addVertex(Montreal);
+		Tablero.addVertex(Albany);
+		Tablero.addEdge(Montreal, Albany);
 		
-		System.out.print(Tablero);
-
 		
-
+		
+		System.out.print(Montreal.getAdjacents());
 	}
 
 }

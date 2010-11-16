@@ -2,10 +2,16 @@ package Graph;
 
 import java.util.Set;
 
+import utiles.factoria.CollectionsFactory;
+
 public class GraphImpl implements Graph {
 	
 	private Set<Vertex> vertices;
 
+	public GraphImpl(){
+		vertices=CollectionsFactory.createSetFactory().createSet();
+	}
+	
 	@Override
 	public void addEdge(Vertex v1, Vertex v2) {
 		if(!vertices.contains(v1)){

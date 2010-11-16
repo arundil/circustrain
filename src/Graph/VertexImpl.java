@@ -2,6 +2,8 @@ package Graph;
 
 import java.util.Set;
 
+import utiles.factoria.CollectionsFactory;
+
 public class VertexImpl implements Vertex {
 	
 	private String name;
@@ -9,6 +11,7 @@ public class VertexImpl implements Vertex {
 	
 	public VertexImpl(String name){
 		this.name=name;
+		adjacents=CollectionsFactory.createSetFactory().createSet();
 	}
 
 	@Override

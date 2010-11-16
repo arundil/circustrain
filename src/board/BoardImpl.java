@@ -10,7 +10,7 @@ public class BoardImpl extends GraphImpl implements Board {
 	}
 	
 	public void addCity(City c){
-		super.addVertex(c);
+		super.addVertex((Vertex) c);
 	}
 	
 
