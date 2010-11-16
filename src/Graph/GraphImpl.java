@@ -40,4 +40,9 @@ public class GraphImpl implements Graph {
 		return vertices.toString();
 	}
 
+	@Override
+	public Set<? extends Vertex> getVertexSet() {
+		return vertices;
+	}
+
 }
