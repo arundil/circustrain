@@ -34,6 +34,7 @@ public interface Player {
 	public boolean addActionCard(ActionCard ac);
 	public boolean addPerfomanceUsed(Performance p);
 	public ActionCard discardActionCard(Integer id);
+	public boolean isFirstPlayer();
 	
 	public void changeFirstPlayer();
 	

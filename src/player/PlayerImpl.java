@@ -173,7 +173,12 @@ public class PlayerImpl implements Player {
 	public void wage() {
 		// TODO Auto-generated method stub
 		
-	} 
+	}
+	
+	@Override
+	public boolean isFirstPlayer() {
+		return first_player;
+	}
 	
 	
 	
@@ -206,6 +211,7 @@ public class PlayerImpl implements Player {
 		
 		return l;
 	}
+
 	
 	//private void CleanData_new_Month (){
 		
