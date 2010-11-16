@@ -150,6 +150,12 @@ public class PlayerImpl implements Player {
 		return false;
 	}
 	
+	@Override
+	public void wage() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 	
 	//=========================================================================
@@ -185,6 +191,8 @@ public class PlayerImpl implements Player {
 	private void CleanData_new_Month (){
 		
 	}
+
+
 
 
 }

@@ -36,7 +36,7 @@ public interface Player {
 	
 	public void changeFirstPlayer();
 	
-	//public void wage();-> paga los salarios....
+	public void wage();//-> paga los salarios....
 	//
 	
 	//private Integer PVCalculate(); [pa dentro de la clase]
