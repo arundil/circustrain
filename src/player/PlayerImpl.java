@@ -2,6 +2,7 @@ package player;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.lang.Math;
 
 import board.City;
@@ -184,15 +185,17 @@ public class PlayerImpl implements Player {
 	
 	@Override
 	public Integer wage() {
-		// TODO Auto-generated method stub
-		
-		return 0;
-		
-		
+		Integer wages=0;
+		Set<TypeTalentCard> s = talents.keySet();
+		for (TypeTalentCard t : s){
+			Integer n= talents.get(t);
+			wages=wages+(t.getWage()*n);				
+			}
+		return wages;
 	}
 	
 	public boolean wage (TypeTalentCard ttc){
-		//TODO
+		//TODO a petición de javi
 		return false;
 	}
 	
@@ -235,8 +238,7 @@ public class PlayerImpl implements Player {
 	
 	private Integer calculate_VP() {
 		Integer res =0;
-		
-		
+
 		return res;
 	}
 
