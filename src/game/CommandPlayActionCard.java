@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Set;
 
+import board.City;
+
 import player.Player;
 
 import utiles.factoria.CollectionsFactory;
@@ -40,7 +42,15 @@ public class CommandPlayActionCard extends AbstractCommand{
 					boolean b=currentCity.hasPerformance();					
 					if(b){
 						if(currentCity tiene un circo){
-							CommandToHire commandhire= new CommandToHire(city,player);
+							//**¿Como se si tengo un circo o una actuacion?
+							CommandToHire commandhire= new CommandToHire(currentCity.getCounter(),player);
+							//**getCounter devolveria el tipo de counter que tiene la ciudad en la que se
+							//encuentra el jugador
+						}else{
+							if(currentCity tiene una actuacion){
+								CommandPerformance commandperformance = 
+												new CommandPerformance();
+							}
 						}
 						//**¿Como se yo qué tiene la ciudad dentro: circo en banca rota o actuacion?
 						//no tengo metodos para saberlo
