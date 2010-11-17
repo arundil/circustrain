@@ -25,7 +25,7 @@ public class GameCTImpl implements GameCT {
 	private Boolean basic;
 	
 	public GameCTImpl (){
-//		board = new BoardImpl();
+//		board = new BoardImpl();)
 		one=null;
 		two=null;
 		perfobag=GameFactory.createPerformanceBag();

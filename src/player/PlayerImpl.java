@@ -20,6 +20,7 @@ public class PlayerImpl implements Player {
 	private List<ActionCard> action_cards,discart_pile;
 	private List<Performance> perfomance_list;
 	private Map<TypeTalentCard,Integer> talents;
+	private City city;
 	
 	public PlayerImpl (String n,Boolean play_mode, Boolean firstp){ //basic = 0 Advanced =1
 		
@@ -38,6 +39,7 @@ public class PlayerImpl implements Player {
 		else {
 			reputation = 6;
 		}
+		city = null;
 	}
 	
 	public PlayerImpl (String n){
@@ -47,10 +49,9 @@ public class PlayerImpl implements Player {
 		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
-		
+		city = null;
 	}
 	
-	//otro constructor para juego solitario.
 	
 	@Override
 	public String getName() {
@@ -58,8 +59,15 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public boolean addActionCard(ActionCard ac) {
-		return false; // para rellenar las cartas de acción...
+	public boolean addActionCard(ActionCard ac) { //metodo para rescatar una carta de la pila.
+		//TODO en proyecto de decisión si se coge el ID o la carta
+		boolean res =false;
+		if(discart_pile.contains(ac)){
+			discart_pile.remove(ac);
+			action_cards.add(ac);
+			res =true;
+		}
+		return res;
 	}
 
 	@Override
@@ -107,9 +115,16 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public ActionCard discardActionCard(Integer id) {
-		// TODO Auto-generated method stub
-		
-		return null;
+		ActionCard ac =null;
+		for (ActionCard e : action_cards){
+			if (e.getIdCard().equals(id)){
+				ac= e;
+				discart_pile.add(e);
+				action_cards.remove(e);
+				break;
+			}
+		}
+		return ac;
 	}
 
 	@Override
@@ -159,20 +174,26 @@ public class PlayerImpl implements Player {
 	
 	@Override
 	public City getCity() {
-		// TODO Auto-generated method stub
-		return null;
+		return city;
 	}
 
 	@Override
-	public boolean moveCity(City c) {
-		// TODO Auto-generated method stub
-		return false;
+	public void moveCity(City c) {
+		city = c;
 	}
 	
 	@Override
-	public void wage() {
+	public Integer wage() {
 		// TODO Auto-generated method stub
 		
+		return 0;
+		
+		
+	}
+	
+	public boolean wage (TypeTalentCard ttc){
+		//TODO
+		return false;
 	}
 	
 	@Override
@@ -210,6 +231,13 @@ public class PlayerImpl implements Player {
 		l.add(ac8);
 		
 		return l;
+	}
+	
+	private Integer calculate_VP() {
+		Integer res =0;
+		
+		
+		return res;
 	}
 
 	

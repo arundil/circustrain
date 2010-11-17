@@ -26,7 +26,7 @@ public interface Player {
 	public boolean addPerformance(Integer p);
 	public boolean addVictoryPoints(Integer vp);
 	public boolean addReputation(Integer r);
-	public boolean moveCity(City c);
+	public void moveCity(City c);
 	
 	public List<Performance> getPerfomancesUsed();
 	public List<ActionCard> getActionCards(); 
@@ -38,7 +38,8 @@ public interface Player {
 	
 	public void changeFirstPlayer();
 	
-	public void wage();//-> paga los salarios....
+	public Integer wage();//-> paga los salarios....
+	public boolean wage(TypeTalentCard ttc);
 	//
 	
 	//private Integer PVCalculate(); [pa dentro de la clase]
