@@ -213,7 +213,7 @@ public class PlayerImpl implements Player {
 	
 	private List<ActionCard> inicializateActionCards(){
 		List<ActionCard> l = CollectionsFactory.createListFactory().createList();
-		
+		// (nombre,descripcion,idCarta,numeroMovimientos,esCartaAccion,esCartaSalario)
 		ActionCard ac1 = new ActionCardImpl("Travel","You can move until 3 cities", 1, 3, false, false);
 		ActionCard ac2 = new ActionCardImpl("Basic movement","You can move towards 1 city or perform/contract" , 2, 1, true, false);
 		ActionCard ac3 = new ActionCardImpl("Basic movement","You can move towards 1 city or perform/contract" , 3, 1, true, false);

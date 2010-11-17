@@ -1,5 +1,7 @@
 package game;
 
+import game.factory.GameFactory;
+
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -11,7 +13,6 @@ import performance.Performance;
 import performance.PerformanceDemand;
 import performance.VictoryPoints;
 import player.Player;
-import utiles.factoria.GameFactory;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
