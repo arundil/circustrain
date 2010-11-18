@@ -5,7 +5,7 @@ package card;
 public interface TypeTalentCard extends Card{
 	
 	public String getName();
-	public int getWage();
+	public Integer getWage();
 //	public boolean isInBankruptCircus(); 
 //	// Talento sin empleo (los que se dejan en las ciudades)
 //	
