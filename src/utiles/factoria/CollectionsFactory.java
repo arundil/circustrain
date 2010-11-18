@@ -15,10 +15,6 @@ public class CollectionsFactory {
 		return new SetFactory();
 	}
 	
-	public static GraphFactory createGraphFactory(){
-		return new GraphFactory();
-	}
-
 	public static MapFactory createMapFactory(){
 		return new MapFactory();
 	}
