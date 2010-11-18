@@ -36,9 +36,7 @@ public class CommandPlayActionCard extends AbstractCommand{
 			}else{
 				if(line.equals("PERFORMANCE")){
 					Integer performancePoints=0;
-					//getCurrentCity() deberia devolver un City que seria la ciudad actual
-					//No se el por qué no peta
-					City currentCity=player.getCurrentCity();
+					City currentCity=player.getCity();
 					boolean b=currentCity.hasPerformance();					
 					if(b){
 						if(currentCity tiene un circo){

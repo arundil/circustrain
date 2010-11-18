@@ -57,6 +57,7 @@ public class GameCTImpl implements GameCT {
 			players = Integer.parseInt(linea);
 		} catch (Exception e) {
 		}
+		board.create();
 		if(players==1){
 			one=GameFactory.createPlayer();
 		}
@@ -138,15 +139,6 @@ public class GameCTImpl implements GameCT {
 	
 	
 	
-	private Integer readI(){
-		Integer x = 0;
-		try{
-			BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-			String linea = read.readLine();
-			x = Integer.parseInt(linea);
-		}catch (Exception e) {		}
-		return x;
-	}
 	
 	//TODO Hablar para el código de las ciudades. 
 	private void usedActionCard(Player p, ActionCard ac){
@@ -159,6 +151,7 @@ public class GameCTImpl implements GameCT {
 			System.out.println("Select city(1--N): ");
 			
 			Integer cit = readI();
+			//Adaptar a la factoria
 			//p.moveCity(citys.get(cit-1));
 		}
 		
