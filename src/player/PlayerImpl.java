@@ -110,8 +110,8 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public boolean addVictoryPoints(Integer vp) {
-		// TODO Auto-generated method stub
-		return false;
+		victorypoints = victorypoints +vp;
+		return true;
 	}
 
 	@Override
