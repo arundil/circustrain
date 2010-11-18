@@ -11,7 +11,6 @@ import counter.BankruptCircusCounter;
 import card.TypeTalentCard;
 
 public class CommandToHire extends AbstractCommand{
-	//Se podria cambiar TypeTalentCard pTypeTalentCard
 	private BankruptCircusCounter circus;
 	private Player player;
 	
@@ -32,14 +31,28 @@ public class CommandToHire extends AbstractCommand{
 			if(!election.equals("NO")){
 				Integer dice=GameFactory.throwDice();
 				System.out.println("The dice has been thrown: "+dice);
-				//**Habria que pensar como hacer que segun la reputacion haya un rango de tiradas
-				//para poder contratar
-				if(!(dice<5)){
+				repMaxValue=player.getReputation().getSecondValue();
+				if((1<=dice) && (dice<=repMaxValue)){
 					newtalents.add(t);
+				}else{
+					String failure=GameFactory.takeParametersToString("You fail hiring a talent," +
+							"do you want to pay?: YES,NO");
+					if(!failure.equals("NO")){
+						try{
+							if(player.getMoney()>=10){
+								newtalents.add(t);
+								player.addMoney(-10);
+							}
+						}catch(Exception e){
+							System.out.println("You don't have money enough");
+						}
+					}						
 				}
 			}
 		}
 		player.addTalent(newtalents);
 	}
+	
 
 }
+

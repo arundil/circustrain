@@ -7,6 +7,7 @@ import java.util.Random;
 import bag.EventBag;
 import bag.PerformanceBag;
 import bag.TalentBag;
+import bag.TalentBagImpl;
 import board.Board;
 import board.BoardImpl;
 import player.Player;
@@ -18,8 +19,8 @@ public class GameFactory {
 	// podria poner el create con la ruta del archivo. Ejemplo: 
 	// Board board=GameFactory.createBoard().create("C:\tablero.txt")
 	
-	public static Player createPlayer(){
-		return new PlayerImpl(PARAMETROS);
+	public static Player createPlayer(String name,Boolean play_mode, Boolean firstp){
+		return new PlayerImpl(name,play_mode,firstp);
 	}
 	
 	public static EventBag createEventBag(){
@@ -31,11 +32,11 @@ public class GameFactory {
 	}
 	
 	public static TalentBag createTalentBag(){
-		return new TalentBag(PARAMETROS);
+		return new TalentBagImpl(PARAMETROS);
 	}
 	
 	public static Board createBoard(){
-		return new BoardImpl(PARAMETROS);
+		return new BoardImpl();
 	}
 	
 	public static String takeParametersToString(String message){

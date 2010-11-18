@@ -3,6 +3,7 @@ package player;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Map.Entry;
 import java.lang.Math;
 
 import board.City;
@@ -22,6 +23,10 @@ public class PlayerImpl implements Player {
 	private List<Performance> perfomance_list;
 	private Map<TypeTalentCard,Integer> talents;
 	private City city;
+	//private Container2<Integer,Integer> reputation1;
+	//private List<Container2<Integer,Integer>> reputationList; 
+	//********************Container2<Reputacion,TiradaMaximaAsociadaParaContratar>
+	//********************A mas reputacion,mas bajo sera el indice de la lista
 	
 	public PlayerImpl (String n,Boolean play_mode, Boolean firstp){ //basic = 0 Advanced =1
 		
@@ -36,9 +41,12 @@ public class PlayerImpl implements Player {
 		perfomance_list = CollectionsFactory.createListFactory().createList();
 		if (play_mode == false){
 			reputation = -1;
+			//reputation1=reputationList.get(2);
+
 		}
 		else {
 			reputation = 6;
+			//reputation1=reputationList.get(1);
 		}
 		city = null;
 	}
@@ -90,7 +98,11 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public boolean addReputation(Integer r) {
+		//Integer rep=reputation1.getFistValue();
+		//if(rep-r<0){ throw new IllegalArgumentException("It can't be");}
+		
 		reputation = reputation+r;
+		//reputation1= reputationList.get(rep-r);
 		return true;
 	}
 
@@ -241,7 +253,29 @@ public class PlayerImpl implements Player {
 
 		return res;
 	}
-
+	
+//	private List<Container2<Integer,Integer>> initializeReputation(){
+//		Container2<Integer,Integer> con0= new Container2<Integer,Integer>(0,6);
+//		Container2<Integer,Integer> con1= new Container2<Integer,Integer>(1,5);
+//		Container2<Integer,Integer> con2= new Container2<Integer,Integer>(2,4);
+//		Container2<Integer,Integer> con3= new Container2<Integer,Integer>(3,3);
+//		Container2<Integer,Integer> con4= new Container2<Integer,Integer>(4,2);
+//		Container2<Integer,Integer> con5= new Container2<Integer,Integer>(5,2);
+//		Container2<Integer,Integer> con6= new Container2<Integer,Integer>(6,2);
+//		Container2<Integer,Integer> con7= new Container2<Integer,Integer>(7,1);
+//		
+//		List<Container2<Integer,Integer>> reputationList=CollectionsFactory.createListFactory().createList();
+//		reputationList.add(con0);
+//		reputationList.add(con1);
+//		reputationList.add(con2);
+//		reputationList.add(con3);
+//		reputationList.add(con4);
+//		reputationList.add(con5);
+//		reputationList.add(con6);
+//		reputationList.add(con7);
+//		
+//		return reputationList;
+//	}
 	
 	//private void CleanData_new_Month (){
 		

@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.util.Set;
 
 import card.ActionCard;
-import performance.Bankrupt;
+import performance.BankruptCircus;
 import performance.Performance;
 import performance.PerformanceDemand;
 import performance.VictoryPoints;
@@ -161,8 +161,8 @@ public class GameCTImpl implements GameCT {
 				if(perfor instanceof VictoryPoints){
 					VictoryPoints vp = (VictoryPoints) perfor;
 					p.addVictoryPoints(vp.getVictoryPoints());
-				}else if(perfor instanceof Bankrupt){
-					Bankrupt bk = (Bankrupt) perfor;
+				}else if(perfor instanceof BankruptCircus){
+					BankruptCircus bk = (BankruptCircus) perfor;
 //				p.addTalent(bk.getTypeTalentCard());
 				}else {
 					PerformanceDemand pfd = (PerformanceDemand) perfor;
