@@ -4,13 +4,14 @@ import java.util.List;
 import java.util.Set;
 
 import performance.Performance;
+import utiles.factoria.Graph;
 
-import Graph.Graph;
 
-public interface Board extends Graph {
-	public Set<City> getCities();
+public interface Board {
+	public void addCity(City c);
+	public List<City> getCities();
 	public City getCityByName(String name);
 	public List<City> getCanadianCities();
 	public Integer getCitiesWithPerfomance();
-	public void addPerfomance(Performance performance);	
+	public City addPerfomanceInRandomCity(Performance performance);	
 }

@@ -19,4 +19,11 @@ public class CollectionsFactory {
 		return new MapFactory();
 	}
 	
+	public static GraphFactory createGraphFactory(){
+		return new GraphFactory();
+	}
+	
+	public static VertexFactory createVertexFactory(){
+		return new VertexFactory();
+	}
 }

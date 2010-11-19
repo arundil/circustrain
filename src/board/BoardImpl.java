@@ -4,29 +4,37 @@ import java.util.List;
 import java.util.Set;
 
 import performance.Performance;
+import tipos.CollectionsUtils;
 import tipos.Filter;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.Graph;
+import utiles.factoria.GraphImpl;
+import utiles.factoria.Vertex;
 
-import Graph.GraphImpl;
 
-public class BoardImpl extends GraphImpl implements Board {
+public class BoardImpl implements Board {
+	
+	Graph gameMap;
 	
 	public BoardImpl(){
-		super();
-		
+		gameMap=CollectionsFactory.createGraphFactory().createGraph();
 	}
 
 	//Devuelve un Set de City
 	@Override
-	public Set<City> getCities() {
-		return (Set<City>) this.getVertexSet();
+	public List<City> getCities() {
+		List<City> cityList=CollectionsFactory.createListFactory().createList();
+			for(Vertex<City> v:gameMap.getVertexList()){
+				cityList.add(v.getContents());
+			}
+		return cityList;
 	}
 
 	//Devuelva un City dado el nombre de una ciudad
 	@Override
 	public City getCityByName(String name) {
 		
-		for(City c:(Set<City>)this.getVertexSet()){
+		for(City c:(List<City>)this.getVertexList()){
 			if(c.getName().equals(name)){
 				return c;
 			}
@@ -51,15 +59,21 @@ public class BoardImpl extends GraphImpl implements Board {
 	
 	//Recoge un performance y lo añade a una ciudad que no tenga aleatoriamente
 	@Override
-	public void addPerfomance(Performance performance) {
-		// TODO Auto-generated method stub
+	public City addPerfomanceInRandomCity(Performance performance) {
+		
 		
 	}
 
 	//Devuelve el número de ciudades que tengan Performance
 	@Override
 	public Integer getCitiesWithPerfomance() {
-		// TODO Auto-generated method stub
-		return null;
+		return CollectionsUtils.count(this.getVertexList(), new hasPerfomanceFilter());
+	}
+
+	@Override
+	public void addCity(City c) {
+		Vertex<City> newVertex=CollectionsFactory.createVertexFactory().createVertex();
+		newVertex.addContents(c);
+		this.gameMap.addVertex(newVertex);
 	}
 }

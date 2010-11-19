@@ -1,15 +1,13 @@
-package Graph;
+package utiles.factoria;
 
-import java.util.Set;
-
-import utiles.factoria.CollectionsFactory;
+import java.util.List;
 
 public class GraphImpl implements Graph {
 	
-	private Set<Vertex> vertices;
+	private List<Vertex> vertices;
 
 	public GraphImpl(){
-		vertices=CollectionsFactory.createSetFactory().createSet();
+		vertices=CollectionsFactory.createListFactory().createList();
 	}
 	
 	@Override
@@ -41,7 +39,7 @@ public class GraphImpl implements Graph {
 	}
 
 	@Override
-	public Set<? extends Vertex> getVertexSet() {
+	public List<? extends Vertex> getVertexList() {
 		return vertices;
 	}
 

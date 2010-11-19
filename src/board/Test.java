@@ -1,6 +1,6 @@
 package board;
 
-import Graph.Vertex;
+import utiles.factoria.Vertex;
 
 public class Test {
 
