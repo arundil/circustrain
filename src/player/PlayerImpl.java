@@ -23,10 +23,8 @@ public class PlayerImpl implements Player {
 	private List<Performance> perfomance_list;
 	private Map<TypeTalentCard,Integer> talents;
 	private City city;
-	//private Container2<Integer,Integer> reputation1;
-	//private List<Container2<Integer,Integer>> reputationList; 
-	//********************Container2<Reputacion,TiradaMaximaAsociadaParaContratar>
-	//********************A mas reputacion,mas bajo sera el indice de la lista
+	//private List<Integer> reputationList;
+	//private Integer higherDiceScore; Tirada de dado maxima asociada a la reputacion
 	
 	public PlayerImpl (String n,Boolean play_mode, Boolean firstp){ //basic = 0 Advanced =1
 		
@@ -39,14 +37,14 @@ public class PlayerImpl implements Player {
 		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createSortedMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
+		//reputationList=initializeReputation();
 		if (play_mode == false){
-			reputation = -1;
-			//reputation1=reputationList.get(2);
-
+			reputation = 2;
+			//higherDiceScore=reputationList.get(2);
 		}
 		else {
-			reputation = 6;
-			//reputation1=reputationList.get(1);
+			reputation = 1;
+			//higherDiceScore= reputationList.get(1);
 		}
 		city = null;
 	}
@@ -66,6 +64,23 @@ public class PlayerImpl implements Player {
 	public String getName() {
 		return name;
 	}
+	
+//	public Integer getHigherDiceScore(){
+//		return higherDiceScore;
+//	}
+	
+	//Hace falta un metodo que borre cartas de la lista de cartas no descartadas
+//	public ActionCard removeActionCard(ActionCard actionCardToBeRemoved){
+//		Integer cardId=actionCardToBeRemoved.getIdCard();
+//		for(ActionCard actionCard:action_cards){
+//			if(actionCard.getIdCard().equals(cardId)){
+//				Integer index= action_cards.indexOf(actionCard);
+//				action_cards.remove(index);
+//				discart_pile.add(actionCardToBeRemoved);
+//			}
+//		}
+//		return actionCardToBeRemoved;		
+//	}
 
 	@Override
 	public boolean addActionCard(ActionCard ac) { //metodo para rescatar una carta de la pila.
@@ -98,11 +113,13 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public boolean addReputation(Integer r) {
-		//Integer rep=reputation1.getFistValue();
-		//if(rep-r<0){ throw new IllegalArgumentException("It can't be");}
-		
+//		Integer newReputation=reputation-r;
+//		if(newReputation<0 || newReputation>7){
+//			throw new IllegalArgumentException("Reputation is wrong");
+//		}
+//		reputation=newReputation;
 		reputation = reputation+r;
-		//reputation1= reputationList.get(rep-r);
+		
 		return true;
 	}
 
@@ -248,34 +265,26 @@ public class PlayerImpl implements Player {
 		return l;
 	}
 	
+	private List<Integer> initializeReputation(){
+		List<Integer> list=CollectionsFactory.createListFactory().createList();
+		list.add(6);
+		list.add(5);
+		list.add(4);
+		list.add(3);
+		list.add(2);
+		list.add(2);
+		list.add(2);
+		list.add(1);
+		
+		return list;		
+	}
+	
 	private Integer calculate_VP() {
 		Integer res =0;
 
 		return res;
 	}
 	
-//	private List<Container2<Integer,Integer>> initializeReputation(){
-//		Container2<Integer,Integer> con0= new Container2<Integer,Integer>(0,6);
-//		Container2<Integer,Integer> con1= new Container2<Integer,Integer>(1,5);
-//		Container2<Integer,Integer> con2= new Container2<Integer,Integer>(2,4);
-//		Container2<Integer,Integer> con3= new Container2<Integer,Integer>(3,3);
-//		Container2<Integer,Integer> con4= new Container2<Integer,Integer>(4,2);
-//		Container2<Integer,Integer> con5= new Container2<Integer,Integer>(5,2);
-//		Container2<Integer,Integer> con6= new Container2<Integer,Integer>(6,2);
-//		Container2<Integer,Integer> con7= new Container2<Integer,Integer>(7,1);
-//		
-//		List<Container2<Integer,Integer>> reputationList=CollectionsFactory.createListFactory().createList();
-//		reputationList.add(con0);
-//		reputationList.add(con1);
-//		reputationList.add(con2);
-//		reputationList.add(con3);
-//		reputationList.add(con4);
-//		reputationList.add(con5);
-//		reputationList.add(con6);
-//		reputationList.add(con7);
-//		
-//		return reputationList;
-//	}
 	
 	//private void CleanData_new_Month (){
 		

@@ -31,7 +31,7 @@ public class CommandToHire extends AbstractCommand{
 			if(!election.equals("NO")){
 				Integer dice=GameFactory.throwDice();
 				System.out.println("The dice has been thrown: "+dice);
-				repMaxValue=player.getReputation().getSecondValue();
+				repMaxValue=player.getHigherDiceScore();
 				if((1<=dice) && (dice<=repMaxValue)){
 					newtalents.add(t);
 				}else{
