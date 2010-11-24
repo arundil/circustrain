@@ -24,7 +24,7 @@ public class GameFactory {
 	}
 	
 	public static EventBag createEventBag(){
-		return new EventBagImpl(PARAMETROS);
+		return new EventBagImpl(/*PARAMETROS*/);
 	}
 	
 	public static PerformanceBag createPerformanceBag(){
