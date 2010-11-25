@@ -9,8 +9,10 @@ public class Test {
 		String line=null;
 		try {
 			System.out.print(message.toString());
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in.));
 			line = br.readLine();
+			if(!){
+			}
 		} catch (Exception e) {
 		}
 		return line;
@@ -19,7 +21,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		String line= takeParametersToString("ñe?");
+		String line= takeParametersToString("le?");
 		
 		System.out.println(line.toString());
 		

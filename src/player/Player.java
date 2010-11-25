@@ -40,7 +40,7 @@ public interface Player {
 	
 	public Integer wage();//-> paga los salarios....
 	public boolean wage(TypeTalentCard ttc);
-	//
+	//22 métodos
 	
 	//private Integer PVCalculate(); [pa dentro de la clase]
 	//private List<Talent> addAditionalsTalents(); [pa dentro de la clase] 

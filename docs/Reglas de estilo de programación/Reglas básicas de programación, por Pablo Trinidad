@@ -1,0 +1,7 @@
+REGLAS DICHAS POR PABLO TRINIDAD PARA LA IMPLEMENTACIÓN DE CODIGO:
+
+- Clases, mejor que sobren a que falten.
+- Interfaces vácias (sin metodos) son aceptadas, tienen su sentido.
+- Implementar una funcionalidad por cada carta. CLASE POR CADA CARTA.
+- PRUEBAS UNITARIAS POR CADA CLASE, responsabilidad del programador de la clase.
+

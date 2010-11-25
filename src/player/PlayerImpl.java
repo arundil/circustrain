@@ -23,8 +23,8 @@ public class PlayerImpl implements Player {
 	private List<Performance> perfomance_list;
 	private Map<TypeTalentCard,Integer> talents;
 	private City city;
-	//private List<Integer> reputationList;
-	//private Integer higherDiceScore; Tirada de dado maxima asociada a la reputacion
+	private List<Integer> reputationList;
+	private Integer higherDiceScore; //Tirada de dado maxima asociada a la reputacion
 	
 	public PlayerImpl (String n,Boolean play_mode, Boolean firstp){ //basic = 0 Advanced =1
 		
@@ -65,26 +65,27 @@ public class PlayerImpl implements Player {
 		return name;
 	}
 	
-//	public Integer getHigherDiceScore(){
-//		return higherDiceScore;
-//	}
+	public Integer getHigherDiceScore(){
+		return higherDiceScore;
+	}
 	
-	//Hace falta un metodo que borre cartas de la lista de cartas no descartadas
-//	public ActionCard removeActionCard(ActionCard actionCardToBeRemoved){
-//		Integer cardId=actionCardToBeRemoved.getIdCard();
-//		for(ActionCard actionCard:action_cards){
-//			if(actionCard.getIdCard().equals(cardId)){
-//				Integer index= action_cards.indexOf(actionCard);
-//				action_cards.remove(index);
-//				discart_pile.add(actionCardToBeRemoved);
-//			}
-//		}
-//		return actionCardToBeRemoved;		
-//	}
 
 	@Override
+	public ActionCard discardActionCard(Integer id) {
+		ActionCard ac =null;
+		for (ActionCard e : action_cards){
+			if (e.getIdCard().equals(id)){
+				ac= e;
+				discart_pile.add(e);
+				action_cards.remove(e);
+				break;
+			}
+		}
+		return ac;
+	}
+	
+	@Override
 	public boolean addActionCard(ActionCard ac) { //metodo para rescatar una carta de la pila.
-		//TODO en proyecto de decisión si se coge el ID o la carta
 		boolean res =false;
 		if(discart_pile.contains(ac)){
 			discart_pile.remove(ac);
@@ -113,11 +114,11 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public boolean addReputation(Integer r) {
-//		Integer newReputation=reputation-r;
-//		if(newReputation<0 || newReputation>7){
-//			throw new IllegalArgumentException("Reputation is wrong");
-//		}
-//		reputation=newReputation;
+		Integer newReputation=reputation-r;
+		if(newReputation<0 || newReputation>7){
+			throw new IllegalArgumentException("Reputation is wrong");
+		}
+		reputation=newReputation;
 		reputation = reputation+r;
 		
 		return true;
@@ -143,19 +144,7 @@ public class PlayerImpl implements Player {
 		return true;
 	}
 
-	@Override
-	public ActionCard discardActionCard(Integer id) {
-		ActionCard ac =null;
-		for (ActionCard e : action_cards){
-			if (e.getIdCard().equals(id)){
-				ac= e;
-				discart_pile.add(e);
-				action_cards.remove(e);
-				break;
-			}
-		}
-		return ac;
-	}
+
 
 	@Override
 	public List<ActionCard> getActionCards() {
@@ -248,10 +237,13 @@ public class PlayerImpl implements Player {
 		ActionCard ac3 = new ActionCardImpl("Basic movement","You can move towards 1 city or perform/contract" , 3, 1, true, false);
 		ActionCard ac4 = new ActionCardImpl("Fast movement", "You can move until 5 cities", 4, 5, false, false);
 		ActionCard ac5 = new ActionCardImpl("Wages", "You can move until 2 cities. Then, you have to pay the wages or eliminate Talents", 5, 2, false, true);
-		ActionCard ac6 = new ActionCardImpl("At Nigth", "You can move toward 2 cities and/or perform/contract", 6, 2, true, false);
+		ActionCard ac6 = new ActionCardImpl("Overnighter", "You can move toward 2 cities and/or perform/contract", 6, 2, true, false);
 		ActionCard ac7 = new ActionCardImpl("No Performance","If you are in Canada (Winnipeg, Montreal or Toronto), " +
 				"you can take one clown, one acrobat, or rise your reputation in one level" , 7, 0, false, false);
 		ActionCard ac8 = new ActionCardImpl("Hold", "You can perform/actuar", 8, 0, true, false);
+		
+		//Esto hay que hacerlo de otra forma....
+		// Ideas: Execute.
 		
 		l.add(ac1);
 		l.add(ac2);
