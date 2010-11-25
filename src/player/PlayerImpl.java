@@ -3,7 +3,6 @@ package player;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Map.Entry;
 import java.lang.Math;
 
 import board.City;
@@ -37,14 +36,14 @@ public class PlayerImpl implements Player {
 		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createSortedMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
-		//reputationList=initializeReputation();
+		reputationList=initializeReputation();
 		if (play_mode == false){
 			reputation = 2;
-			//higherDiceScore=reputationList.get(2);
+			higherDiceScore=reputationList.get(2);
 		}
 		else {
 			reputation = 1;
-			//higherDiceScore= reputationList.get(1);
+			higherDiceScore= reputationList.get(1);
 		}
 		city = null;
 	}
@@ -271,11 +270,11 @@ public class PlayerImpl implements Player {
 		return list;		
 	}
 	
-	private Integer calculate_VP() {
-		Integer res =0;
-
-		return res;
-	}
+//	private Integer calculate_VP() {
+//		Integer res =0;
+//
+//		return res;
+//	}
 	
 	
 	//private void CleanData_new_Month (){
