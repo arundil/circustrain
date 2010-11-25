@@ -5,7 +5,6 @@ import java.util.Set;
 
 
 import performance.Performance;
-import utiles.factoria.Vertex;
 
 public interface City {
 	
@@ -21,4 +20,5 @@ public interface City {
 	public String getName();
 	
 	public String toString();
+		
 }

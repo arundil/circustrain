@@ -1,7 +1,5 @@
 package board;
 
-import utiles.factoria.Vertex;
-
 public class Test {
 
 	/**
@@ -30,41 +28,39 @@ public class Test {
 		City NewHeaven=new CityImpl("NewHeaven",false);
 		City NewYork=new CityImpl("NewYork",false);
 		
-		Tablero.addVertex(Montreal);
-		Tablero.addVertex(Albany);
-		Tablero.addVertex(Boston);
-		Tablero.addVertex(Rochester);
-		Tablero.addVertex(Duluth);
-		Tablero.addVertex(StPaul);
+		Tablero.addCity(Montreal);
+		Tablero.addCity(Albany);
+		Tablero.addCity(Boston);
+		Tablero.addCity(Rochester);
+		Tablero.addCity(Duluth);
+		Tablero.addCity(StPaul);
 		
-		Tablero.addVertex(Winnipeg);
+		Tablero.addCity(Winnipeg);
 		
-		Tablero.addVertex(Toronto);
-		Tablero.addVertex(Buffalo);
-		Tablero.addVertex(Detroit);
+		Tablero.addCity(Toronto);
+		Tablero.addCity(Buffalo);
+		Tablero.addCity(Detroit);
 		
-		Tablero.addVertex(NewHeaven);
-		Tablero.addVertex(NewYork);
+		Tablero.addCity(NewHeaven);
+		Tablero.addCity(NewYork);
 		
 		
-		Tablero.addEdge(Montreal, Albany);
-		Tablero.addEdge(Montreal, Rochester);
-		Tablero.addEdge(Albany, Boston);
-		Tablero.addEdge(Toronto, Buffalo);
-		Tablero.addEdge(Toronto, Detroit);
-		Tablero.addEdge(Buffalo, Rochester);
+		Tablero.addRoad(Montreal, Albany);
+		Tablero.addRoad(Montreal, Rochester);
+		Tablero.addRoad(Albany, Boston);
+		Tablero.addRoad(Toronto, Buffalo);
+		Tablero.addRoad(Toronto, Detroit);
+		Tablero.addRoad(Buffalo, Rochester);
 		
-		Tablero.addEdge(StPaul, Winnipeg);
-		Tablero.addEdge(Duluth, Winnipeg);
-		Tablero.addEdge(Boston, NewHeaven);
-		Tablero.addEdge(NewYork, NewHeaven);
-		Tablero.addEdge(NewYork, Albany);
+		Tablero.addRoad(StPaul, Winnipeg);
+		Tablero.addRoad(Duluth, Winnipeg);
+		Tablero.addRoad(Boston, NewHeaven);
+		Tablero.addRoad(NewYork, NewHeaven);
+		Tablero.addRoad(NewYork, Albany);
 		
 		
 		System.out.println(Tablero);
-		for(Vertex c:Tablero.getVertexSet()){
-			System.out.println(((City)c).toString() + ((City)c).getAdjacents().toString());
-		}
+
 	}
 
 }

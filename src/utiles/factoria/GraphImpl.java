@@ -2,16 +2,16 @@ package utiles.factoria;
 
 import java.util.List;
 
-public class GraphImpl implements Graph {
+public class GraphImpl<T> implements Graph <T>{
 	
-	private List<Vertex> vertices;
+	private List<Vertex<T>> vertices;
 
 	public GraphImpl(){
 		vertices=CollectionsFactory.createListFactory().createList();
 	}
 	
 	@Override
-	public void addEdge(Vertex v1, Vertex v2) {
+	public void addEdge(Vertex<T> v1, Vertex<T> v2) {
 		if(!vertices.contains(v1)){
 			throw new IllegalArgumentException("El vertice v1 no está en el grafo");
 		}
@@ -24,13 +24,13 @@ public class GraphImpl implements Graph {
 	}
 
 	@Override
-	public void addVertex(Vertex v) {
+	public void addVertex(Vertex<T> v) {
 		vertices.add(v);
 
 	}
 
 	@Override
-	public Boolean hasEdge(Vertex v1, Vertex v2) {
+	public Boolean hasEdge(Vertex<T> v1, Vertex<T> v2) {
 		return v1.isAdjacent(v2);
 	}
 	
@@ -39,7 +39,7 @@ public class GraphImpl implements Graph {
 	}
 
 	@Override
-	public List<? extends Vertex> getVertexList() {
+	public List<Vertex<T>> getVertexList() {
 		return vertices;
 	}
 
