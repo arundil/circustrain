@@ -10,9 +10,11 @@ import card.ActionCard;
 public class CommandPlayDiscardActionCard extends AbstractCommand{
 	
 private Player player;
+private CircusTrainGame game;
 	
-	public CommandPlayDiscardActionCard(Player player){
+	public CommandPlayDiscardActionCard(Player player, CircusTrainGame game){
 		this.player=player;
+		this.game=game;
 	}
 	
 	public void execute(){
@@ -27,11 +29,11 @@ private Player player;
 		}
 	}
 	
-	public void refresh(){
-		if(/*ES AGOSTO O SEPTIEMBRE*/){´
-			//RESTAR PUNTOS DE VICTORIA
+	private void refresh(){
+		if((game.getMonth()).equals("AUGUST") || (game.getMonth()).equals("SEPTEMBER")){
+			player.addVictoryPoints(-4);
 		}else{
-			if(player.getReputation()==6)player.addReputation(+);
+			player.addReputation(2);
 		}
 		
 	}
