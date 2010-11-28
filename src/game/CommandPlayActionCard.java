@@ -26,8 +26,15 @@ public class CommandPlayActionCard extends AbstractCommand{
 	
 	public void execute(){
 		List<ActionCard> actionCardList=player.getActionCards();
+		Set<Integer> actionCardIdSet=CollectionsFactory.createSetFactory().createSet();
+		for(ActionCard c:actionCardList){
+			actionCardIdSet.add(c.getIdCard());
+		}
 		System.out.println(actionCardList.toString());
-		Integer cardIdToBePlayed=GameFactory.takeParametersToInteger("Select the card: NUMBER");
+		Integer cardIdToBePlayed=-1;
+		while(!actionCardIdSet.contains(cardIdToBePlayed)){
+			cardIdToBePlayed=GameFactory.takeParametersToInteger("Select the card: NUMBER");
+		}
 		for(ActionCard actionCard:actionCardList){
 			if(actionCard.getIdCard()==cardIdToBePlayed){
 				actionCard.execute();

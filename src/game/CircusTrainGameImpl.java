@@ -7,8 +7,6 @@ import java.util.List;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
-import board.BoardImpl;
-
 import player.Player;
 import utiles.factoria.CollectionsFactory;
 
@@ -23,7 +21,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	
 	public CircusTrainGameImpl(){
 		playerList=CollectionsFactory.createListFactory().createList();
-		board=new BoardImpl();
+		board=GameFactory.createBoard();
 		performanceBag= GameFactory.createPerformanceBag();
 		talentBag = GameFactory.createTalentBag();
 	}
@@ -34,7 +32,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 
 	@Override
 	public void gameOver() {
-		// TODO Auto-generated method stub
+		// TODO Reglas de fin de ronda
 		
 	}
 
@@ -52,11 +50,41 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	@Override
 	public void startGame() {
 		week=0;
-		//TODO bucle de peticion de numero de jugadores
+		System.out.println("Welcome to Circus Train!");
+		//TODO peticion de numero de jugadores
+		String askNumberOfPlayers="How many players are going to play: ";
+		Integer numberOfPlayers=GameFactory.takeParametersToInteger(askNumberOfPlayers);//Habria que poner que estuviera entre 1 y 2, por ahora
 		//TODO constructores de los jugadores segun haya
+		String selectGameMode="Select game mode: BASIC, ADVANCED";
+		String selectGameModeCondition="BASIC,ADVANCED";
+		String gameMode=GameFactory.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
+		Boolean advancedMode=gameMode.equals("ADVANCED");
+		
+		if(numberOfPlayers==1){
+			String name=GameFactory.takeParametersToString("Player name: ");
+			Player player=GameFactory.createPlayer(name,advancedMode, true);			
+		}else{		
+			for(int i=0;i<numberOfPlayers;i++){
+				Boolean firstPlayer=i==0;
+				String name=GameFactory.takeParametersToString("Player name: ");
+				Player player=GameFactory.createPlayer(name,advancedMode, firstPlayer);
+				playerList.add(player);
+			}
+		}
 		//TODO iniciacion de bolsas, tablero, y actuaciones
 		//TODO opcion de cartas de evento
+		String whitEventCards="Are you going to play using Event Cards?: YES, NO";
+		String whitEventCardsCondition="YES,NO";
+		String eventCards=GameFactory.takeParametersToStringRestricted(whitEventCards, whitEventCardsCondition);
+		Boolean playEventCards=eventCards.equals("YES");
 	}
+	
+	
+	
+	
+	
+	
+	
 	private void refreshMonth(){
 		if(week>=0 && week<=3)month="APRIL";
 		if(week>=4 && week<=8) month="MAY";

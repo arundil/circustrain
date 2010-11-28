@@ -2,6 +2,7 @@ package game.factory;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Random;
 
 import bag.EventBag;
@@ -12,6 +13,7 @@ import board.Board;
 import board.BoardImpl;
 import player.Player;
 import player.PlayerImpl;
+import tipos.Cadenas;
 
 public class GameFactory {
 	
@@ -67,4 +69,16 @@ public class GameFactory {
 		int tiradaDado = (Math.abs(random.nextInt()) % 6) + 1;
 		return new Integer(tiradaDado);
 	}
+	
+	public static String takeParametersToStringRestricted(String message,String condition){
+		List<String> conditions=Cadenas.separaElementos(condition,",");
+		String line="";
+		while((!line.equals(conditions.get(0))) || (!line.equals(conditions.get(1)))){
+			line= GameFactory.takeParametersToString(message);
+			if((line.equals(conditions.get(0))) || (line.equals(conditions.get(1)))){
+				break;
+			}
+		}
+		return line;		
+	}	
 }

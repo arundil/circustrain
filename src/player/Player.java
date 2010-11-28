@@ -19,6 +19,7 @@ public interface Player {
 	public Integer getVictoryPoints();
 	public String getName();
 	public City	getCity();
+	public Integer getHigherDiceScore();
 	
 	
 	public void addTalent(List<TypeTalentCard> t);

@@ -10,6 +10,7 @@ import counter.PerformanceCounter;
 import performance.Performance;
 import performance.PerformanceDemand;
 import player.Player;
+import talent.Talent;
 
 public class CommandPerformance extends AbstractCommand{
 	
@@ -24,12 +25,12 @@ public class CommandPerformance extends AbstractCommand{
 	public void execute(){
 		Integer performancePoints=player.getPerformanceMax();
 		Integer newPerformancePoints=0;
-		Set<TypeTalentCard> talents=player.getTalents().keySet();
-		Set<Entry<TypeTalentCard,Integer>> performanceTalents=
+		Set<Talent> talents=player.getTalents().keySet();
+		Set<Entry<Talent,Integer>> performanceTalents=
 			performance.getTalentPoints().entrySet();
 		
-		for(TypeTalentCard t:talents){
-			for(Entry<TypeTalentCard,Integer> entry:performanceTalents){
+		for(Talent t:talents){
+			for(Entry<Talent,Integer> entry:performanceTalents){
 				if(t.equals(entry.getKey())){
 					newPerformancePoints+=entry.getValue();
 				}
