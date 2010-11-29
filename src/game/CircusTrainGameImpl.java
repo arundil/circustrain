@@ -32,10 +32,14 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 
 	@Override
 	public void gameOver() {
-		// TODO Reglas de fin de ronda
+		// TODO Reglas de fin de juego
 		
 	}
-
+	
+	public void finalMonth(){
+		//TODO Reglas de fin de mes
+	}
+	
 	@Override
 	public void runGame() {
 		while(week<27){
@@ -45,6 +49,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			 */
 			week++;			
 		}			
+		gameOver();
 	}
 
 	@Override
@@ -53,7 +58,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		System.out.println("Welcome to Circus Train!");
 		//TODO peticion de numero de jugadores
 		String askNumberOfPlayers="How many players are going to play: ";
-		Integer numberOfPlayers=GameFactory.takeParametersToInteger(askNumberOfPlayers);//Habria que poner que estuviera entre 1 y 2, por ahora
+		//Habria que poner que estuviera entre 1 y 2, por ahora
+		Integer numberOfPlayers=GameFactory.takeParametersToInteger(askNumberOfPlayers);
 		//TODO constructores de los jugadores segun haya
 		String selectGameMode="Select game mode: BASIC, ADVANCED";
 		String selectGameModeCondition="BASIC,ADVANCED";
@@ -62,7 +68,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		
 		if(numberOfPlayers==1){
 			String name=GameFactory.takeParametersToString("Player name: ");
-			Player player=GameFactory.createPlayer(name,advancedMode, true);			
+			Player player=GameFactory.createPlayer(name,advancedMode, true);	
+			playerList.add(player);
 		}else{		
 			for(int i=0;i<numberOfPlayers;i++){
 				Boolean firstPlayer=i==0;
