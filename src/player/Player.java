@@ -6,15 +6,15 @@ import java.util.Map;
 import board.City;
 
 import performance.Performance;
+import talent.Talent;
 import card.ActionCard;
-import card.TypeTalentCard;
 
 public interface Player {
 	//Boolean Es circoFamoso, lo tengo que tener en cuenta para después.
 	
 	public Integer getMoney();
 	public Integer getPerformanceMax();
-	public Map<TypeTalentCard,Integer> getTalents ();
+	public Map<Talent,Integer> getTalents ();
 	public Integer getReputation();
 	public Integer getVictoryPoints();
 	public String getName();
@@ -22,7 +22,7 @@ public interface Player {
 	public Integer getHigherDiceScore();
 	
 	
-	public void addTalent(List<TypeTalentCard> t);
+	public void addTalent(List<Talent> t);
 	public boolean addMoney(Integer m);
 	public boolean addPerformance(Integer p);
 	public boolean addVictoryPoints(Integer vp);
@@ -40,7 +40,7 @@ public interface Player {
 	public void changeFirstPlayer();
 	
 	public Integer wage();//-> paga los salarios....
-	public boolean wage(TypeTalentCard ttc);
+	public boolean wage(Talent ttc);
 	//22 métodos
 	
 	//private Integer PVCalculate(); [pa dentro de la clase]

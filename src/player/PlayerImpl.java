@@ -7,10 +7,10 @@ import java.lang.Math;
 
 import board.City;
 import performance.Performance;
+import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import card.ActionCard;
 import card.ActionCardImpl;
-import card.TypeTalentCard;
 
 
 public class PlayerImpl implements Player {
@@ -20,7 +20,7 @@ public class PlayerImpl implements Player {
 	private Boolean first_player;
 	private List<ActionCard> action_cards,discart_pile;
 	private List<Performance> perfomance_list;
-	private Map<TypeTalentCard,Integer> talents;
+	private Map<Talent,Integer> talents;
 	private City city;
 	private List<Integer> reputationList;
 	private Integer higherDiceScore; //Tirada de dado maxima asociada a la reputacion
@@ -124,9 +124,9 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public void addTalent(List<TypeTalentCard> t) {
+	public void addTalent(List<Talent> t) {
 		
-		for (TypeTalentCard e :t){
+		for (Talent e :t){
 			if (talents.containsKey(e)){
 				Integer n = talents.get(e);
 				talents.put(e, n+1);
@@ -171,7 +171,7 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public Map<TypeTalentCard, Integer> getTalents() {
+	public Map<Talent, Integer> getTalents() {
 		return talents;
 	}
 
@@ -203,15 +203,15 @@ public class PlayerImpl implements Player {
 	@Override
 	public Integer wage() {
 		Integer wages=0;
-		Set<TypeTalentCard> s = talents.keySet();
-		for (TypeTalentCard t : s){
+		Set<Talent> s = talents.keySet();
+		for (Talent t : s){
 			Integer n= talents.get(t);
-			wages=wages+(t.getWage()*n);				
+			wages=wages + t.getWage()*n;				
 			}
 		return wages;
 	}
 	
-	public boolean wage (TypeTalentCard ttc){
+	public boolean wage (Talent ttc){
 		//TODO a petición de javi
 		return false;
 	}
