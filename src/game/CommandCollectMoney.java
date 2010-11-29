@@ -2,11 +2,11 @@ package game;
 
 import player.Player;
 
-public class EarnMoneyCommand extends AbstractCommand{
+public class CommandCollectMoney extends AbstractCommand{
 
 	private Player player;
 	
-	public EarnMoneyCommand(Player player){
+	public CommandCollectMoney(Player player){
 		this.player=player;
 	}
 	@Override

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import bag.EventBag;
 import bag.PerformanceBag;
@@ -14,6 +15,7 @@ import board.BoardImpl;
 import player.Player;
 import player.PlayerImpl;
 import tipos.Cadenas;
+import utiles.factoria.CollectionsFactory;
 
 public class GameFactory {
 	
@@ -73,12 +75,9 @@ public class GameFactory {
 	public static String takeParametersToStringRestricted(String message,String condition){
 		List<String> conditions=Cadenas.separaElementos(condition,",");
 		String line="";
-		while((!line.equals(conditions.get(0))) || (!line.equals(conditions.get(1)))){
+		while(!conditions.contains(line)){
 			line= GameFactory.takeParametersToString(message);
-			if((line.equals(conditions.get(0))) || (line.equals(conditions.get(1)))){
-				break;
-			}
 		}
 		return line;		
-	}	
+	}
 }
