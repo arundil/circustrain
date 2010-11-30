@@ -11,18 +11,27 @@ import utiles.factoria.Vertex;
 
 public class BoardImpl implements Board {
 	
-	Graph<City> gameMap;
+	Graph gameMap;
 	
+	//Constructor sin parametros
 	public BoardImpl(){
 		gameMap=CollectionsFactory.createGraphFactory().createGraph();
 	}
+	
+	//Constructor desde un archivo
+	public BoardImpl(String file){
+		gameMap=CollectionsFactory.createGraphFactory().createGraph();
+		open
+		
+	}
+
 
 	//Devuelve un Set de City
 	@Override
 	public List<City> getCities() {
 		List<City> cityList=CollectionsFactory.createListFactory().createList();
-			for(Vertex<City> v:gameMap.getVertexList()){
-				cityList.add(v.getContents());
+			for(Vertex v:gameMap.getVertexList()){
+				cityList.add((City)v);
 			}
 		return cityList;
 	}
@@ -69,25 +78,13 @@ public class BoardImpl implements Board {
 
 	@Override
 	public void addCity(City c) {
-		Vertex<City> newVertex=CollectionsFactory.createVertexFactory().createVertex();
-		newVertex.addContents(c);
-		this.gameMap.addVertex(newVertex);
+		Vertex v=(Vertex)c;
+		gameMap.addVertex(v);
 	}
 
 	@Override
 	public void addRoad(City c1, City c2) {
-		Vertex<City> v1=this.VertexThatHaveACity(c1);
-		Vertex<City> v2=this.VertexThatHaveACity(c2);
-		
-		this.gameMap.addEdge(v1, v2);
-	}
-	public Vertex<City> VertexThatHaveACity(City c){
-		for(Vertex<City> v:this.gameMap.getVertexList()){
-			if(v.getContents().equals(c)){
-				return v;
-			}
-		}
-		return null;
+			this.gameMap.addEdge(c1, c2);
 	}
 	public String toString(){
 		return this.getCities().toString();

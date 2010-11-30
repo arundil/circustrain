@@ -1,7 +1,7 @@
 package utiles.factoria;
 
 public class GraphFactory {
-	public <T>Graph<T> createGraph(){
-		return new GraphImpl<T>();
+	public Graph createGraph(){
+		return new GraphImpl();
 	}
 }

@@ -2,7 +2,6 @@ package board;
 
 import java.util.List;
 import performance.Performance;
-import utiles.factoria.Vertex;
 
 
 public interface Board {
@@ -13,5 +12,4 @@ public interface Board {
 	public List<City> getCanadianCities();
 	public Integer getCitiesWithPerfomance();
 	public City addPerfomanceInRandomCity(Performance performance);
-	public Vertex<City> VertexThatHaveACity(City c);
 }

@@ -4,14 +4,16 @@ import java.util.Set;
 
 
 import performance.Performance;
+import utiles.factoria.VertexImpl;
 
-public class CityImpl implements City {
+public class CityImpl extends VertexImpl implements City {
 	
 	private Boolean isCanada;
 	private Performance performance;
 	private String name;
 	
 	public CityImpl(String name,Boolean isCanada){
+		super();
 		this.name=name;
 		this.isCanada=isCanada;
 		this.performance=null;

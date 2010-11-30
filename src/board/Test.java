@@ -59,7 +59,7 @@ public class Test {
 		Tablero.addRoad(NewYork, Albany);
 		
 		
-		System.out.println(Tablero);
+		System.out.println(Winnipeg.getAdjacents());
 
 	}
 

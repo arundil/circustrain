@@ -3,25 +3,21 @@ package utiles.factoria;
 import java.util.Set;
 
 
-public class VertexImpl<T> implements Vertex<T> {
+public class VertexImpl implements Vertex {
 	
 	private static Integer id=0;
 	
-	private T contents;
 	
-	public Set<Vertex<T>> adjacents;
+	public Set<Vertex> adjacents;
 	
 	public VertexImpl(){
 		id++;
 		adjacents=CollectionsFactory.createSetFactory().createSet();
 	}
 
-	@Override
-	public Set<Vertex<T>> getAdjacents() {
+	public Set<Vertex> getAdjacents() {
 		return adjacents;
 	}
-
-
 
 	@Override
 	public Boolean hasAdjacents() {
@@ -29,24 +25,13 @@ public class VertexImpl<T> implements Vertex<T> {
 	}
 
 	@Override
-	public void setAdjacent(Vertex<T> v) {
-		this.adjacents.add(v);
-		
+	public void setAdjacent(Vertex v) {
+		adjacents.add(v);
+	
 	}
 
 	@Override
-	public Boolean isAdjacent(Vertex<T> v) {
+	public Boolean isAdjacent(Vertex v) {
 		return adjacents.contains(v);
 	}
-
-	@Override
-	public void addContents(T object) {
-		this.contents=object;
-	}
-
-	@Override
-	public T getContents() {
-		return contents;
-	}
-
 }

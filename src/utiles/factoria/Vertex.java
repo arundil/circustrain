@@ -2,16 +2,14 @@ package utiles.factoria;
 
 import java.util.Set;
 
-public interface Vertex <T>{
+public interface Vertex{
 	
 	public Boolean hasAdjacents();
-	public Set<Vertex <T>> getAdjacents();
+	public Set<Vertex> getAdjacents();
 	
-	public void setAdjacent(Vertex<T> v);
+	public void setAdjacent(Vertex v);
 	
-	public Boolean isAdjacent(Vertex<T> v);
-	
-	public void addContents(T object);
-	public T getContents();
+	public Boolean isAdjacent(Vertex v);
+
 
 }
