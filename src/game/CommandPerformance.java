@@ -26,8 +26,7 @@ public class CommandPerformance extends AbstractCommand{
 		Integer performancePoints=player.getPerformanceMax();
 		Integer newPerformancePoints=0;
 		Set<Talent> talents=player.getTalents().keySet();
-		Set<Entry<Talent,Integer>> performanceTalents=
-			performance.getTalentPoints().entrySet();
+		Set<Entry<Talent,Integer>> performanceTalents=performance.getTalentPoints().entrySet();
 		
 		for(Talent t:talents){
 			for(Entry<Talent,Integer> entry:performanceTalents){
@@ -36,18 +35,20 @@ public class CommandPerformance extends AbstractCommand{
 				}
 		}
 		newPerformancePoints+=performance.getBasicPoints();
-		List<PerformanceDemand> performancelist=player.getPerfomancesUsed();
-		for(PerformanceDemand performanc:performancelist){
-			newPerformancePoints+=performanc.getBasicPoints();
+		List<Performance> performancelist=player.getPerfomancesUsed();
+		for(Performance performanc:performancelist){
+			PerformanceDemand perfordemand=(PerformanceDemand) performanc;
+			newPerformancePoints+=perfordemand.getBasicPoints();
 		}
 		if(performancePoints<newPerformancePoints){
 			player.addMoney(10);
-			player.setPerformanceMax(newPerformancePoints);
+			player.addPerformance(newPerformancePoints);
 		}
 		refresh();
 		player.addPerfomanceUsed(performance);		
 		}
 	}
+	
 	private void refresh(){
 		if(performance.getColor().equals(Color.GREEN)){
 			player.addMoney(5);

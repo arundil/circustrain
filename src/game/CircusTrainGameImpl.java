@@ -19,6 +19,14 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	private PerformanceBag performanceBag;
 	private TalentBag talentBag;
 	private Integer numberOfPlayers;
+	private String followingAction;
+	
+//	private String followingAction,action1,action2,action3,askBasicAction,askAllActions,askActionsDiscardedNoMoney;
+//	private String askActionsNoDiscardedMoney,askBasicActionCondition,askAllActionsCondition,askActionsDiscardedNoMoneyCondition;
+//	private String askActionsNoDiscardedMoneyCondition;
+	
+	
+	
 	
 	public CircusTrainGameImpl(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -29,9 +37,16 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	
 	public String getMonth(){
 		return month;
+	}	
+	
+	public void setFollowingAction(String action){
+		followingAction=action;
 	}
-
-	@Override
+	
+	public String getFollowingAction() {
+		return followingAction;
+	}
+	
 	public void gameOver() {
 		// TODO Reglas de fin de juego		
 	}
@@ -40,52 +55,28 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		//TODO Reglas de fin de mes
 	}
 	
-	@Override
 	public void runGame() {
-		Integer playerSelector=0;
-		String action1="1 : Play one Action card from my hand";
-		String action2="2 : Play one Action card from my discard pile";		
-		String action3="3 : Collect money from the bank";
-		String askActions="What are you going to do:"+"\n"+action1+"\n"+action2+"\n";
-		String askActionsWithMoney=askActions+"\n"+action3;
-		String askActionsCondition="1,2";
-		String askActionsWithMoneyCondition="1,2,3";
-		String followingAction="";
+		Integer playerSelector=0;		
 		while(week<27){
 			String oldMonth=this.getMonth();
 			refreshMonth();
 			String newMonth=this.getMonth();
 			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
 			if(!oldMonth.equals(newMonth)){
+				//Habria que ver si se acaba un mes largo
 				finalMonth();
 			}
 			while(playerSelector<numberOfPlayers){
 				Player currentPlayer=playerList.get(playerSelector);
-				CommandPlayerState playerState=new CommandPlayerState(currentPlayer);	
-				
+				CommandPlayerState playerState=new CommandPlayerState(currentPlayer);				
 				System.out.println("Its you turn, "+currentPlayer.getName());				
-				playerState.execute();
-				//Si no es ni agosto ni septiembre se activara la opcion de coger dinero del banco
-				//TODO Restringir el obtener dinero del banco y el usar una carta de accion segun la reputacion
-				if(!this.getMonth().equals("AUGUST") || !this.getMonth().equals("SEPTEMBER")){
-					followingAction=GameFactory.takeParametersToStringRestricted(askActionsWithMoney, askActionsWithMoneyCondition);
-				}else{
-					followingAction=GameFactory.takeParametersToStringRestricted(askActions, askActionsCondition);
-				}
-				
-				if(followingAction.equals("1")){
-					CommandPlayActionCard playActionCard=new CommandPlayActionCard(currentPlayer);
-					playActionCard.execute();
-				}else{
-					if(followingAction.equals("2")){
-						CommandPlayDiscardActionCard playDiscardActionCard=new CommandPlayDiscardActionCard(currentPlayer, this);
-						playDiscardActionCard.execute();
-					}
-					if(followingAction.equals("3")){
-						CommandCollectMoney collectMoney=new CommandCollectMoney(currentPlayer);
-						collectMoney.execute();
-					}
-				}			
+				playerState.execute();				
+				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
+				CommandSelectCase selectCase=new CommandSelectCase(currentPlayer, this);
+				selectCase.execute();				
+				//Se lleva a cabo la accion que el jugador a elegido
+				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
+				executeCase.execute();				
 				playerSelector++;
 			}
 			playerSelector=0;
@@ -142,12 +133,31 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	
 	private void rotatePlayers(){
 		List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
-		for(int i=0;i<playerList.size();i++){
-			newPlayerList.add(playerList.get(i+1));	
+		for(int i=1;i<playerList.size();i++){
+			newPlayerList.add(playerList.get(i));	
 		}
 		newPlayerList.add(playerList.get(0));
 		playerList.clear();
 		playerList.addAll(newPlayerList);
 	}
+
+	
+	
+//	private void initialiceQuestionsAndConditions(){
+//		followingAction="";
+//		action1="1 : Play one Action card from my hand";
+//		action2="2 : Play one Action card from my discard pile";		
+//		action3="3 : Collect money from the bank";
+//		askBasicAction="What are you going to do:"+"\n"+action1;
+//		askAllActions=askBasicAction+"\n"+action2+"\n"+action3;
+//		askActionsDiscardedNoMoney=askBasicAction+"\n"+action2;
+//		askActionsNoDiscardedMoney=askBasicAction+"\n"+action3;
+//		askBasicActionCondition="1";
+//		askAllActionsCondition="1,2,3";
+//		askActionsDiscardedNoMoneyCondition="1,2";
+//		askActionsNoDiscardedMoneyCondition="1,3";
+//	}
+	
+	
 	
 }

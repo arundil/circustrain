@@ -7,5 +7,7 @@ public interface CircusTrainGame {
 	public void gameOver();
 	public String getMonth();
 	public void finalMonth();
+	public String getFollowingAction();
+	public void setFollowingAction(String action);
 
 }
