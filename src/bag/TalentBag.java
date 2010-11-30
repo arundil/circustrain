@@ -2,22 +2,29 @@ package bag;
 
 import java.util.Map;
 
-import card.TypeTalentCard;
+import talent.Talent;
+import talent.TalentImpl;
 
-public interface TalentBag extends TypeTalentCard{
-	
-	public Map<TypeTalentCard,Integer> createTalentBag(); 
-	// Se inicializar� la bolsa completa, "game" se encargara de quitar los talentos
+public interface TalentBag extends Talent {
+
+	public Map<Talent, Integer> createInitialTalentBag();
+
+	// Se inicializará la bolsa completa, "game" se encargara de quitar los
+	// talentos
 	// necesarios para empezar.
-	
-	
+
 	/*
 	 * Todos devuelven TypeTalentCard por si resulta útil mostrar por pantalla
 	 * cada vez que se modifica (añade, sustrae) la bolsa de talentos.
 	 */
-	public Integer getNumTypeTalentCard(TypeTalentCard t);
-	public Map<TypeTalentCard,Integer> getTalentBag();
-	public TypeTalentCard removeTypeTalentCard(TypeTalentCard t);
-	public TypeTalentCard addTypeTalentCard(TypeTalentCard t); // si se hace al azar, sería sin param.
+	public Integer getNumTalents(Talent t);
+
+	public Map<Talent, Integer> getTalentBag();
+
+	public Talent removeTalent(Talent t);
+
+	public Talent addTalent(Talent t); // si se hace al azar, sería sin param.
+
+	public Integer getNumTypeTalent(Talent t);
 
 }
