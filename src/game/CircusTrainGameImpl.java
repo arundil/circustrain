@@ -3,11 +3,15 @@ package game;
 import game.factory.GameFactory;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
 
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
 import player.Player;
+import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 
 public class CircusTrainGameImpl implements CircusTrainGame{
@@ -19,14 +23,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	private PerformanceBag performanceBag;
 	private TalentBag talentBag;
 	private Integer numberOfPlayers;
-	private String followingAction;
-	
-//	private String followingAction,action1,action2,action3,askBasicAction,askAllActions,askActionsDiscardedNoMoney;
-//	private String askActionsNoDiscardedMoney,askBasicActionCondition,askAllActionsCondition,askActionsDiscardedNoMoneyCondition;
-//	private String askActionsNoDiscardedMoneyCondition;
-	
-	
-	
+	private String followingAction;	
 	
 	public CircusTrainGameImpl(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -52,6 +49,34 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	}
 	
 	public void finalMonth(){
+		//Acciones de final de mes independientemente del mes que sea Â¿Podria ser un comando?
+		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
+		for(Player player:playerList){
+			playersTalentsList.add(player.getTalents());
+		}		
+		Set<Entry<Talent,Integer>> numberOfTalents1=playersTalentsList.get(0).entrySet();			
+		Set<Entry<Talent,Integer>> numberOfTalents2=playersTalentsList.get(1).entrySet();
+		
+		for(Entry<Talent,Integer> entry1:numberOfTalents1){
+			for(Entry<Talent,Integer> entry2:numberOfTalents2){
+				if(entry1.getKey().equals(entry2.getKey())){
+					int compare=entry1.getValue().compareTo(entry2.getValue());
+					if(compare>0)
+						playerList.get(0).addVictoryPoints(entry1.getValue());
+					if(compare<0)
+						playerList.get(1).addVictoryPoints(entry2.getValue());						
+					break;
+				}
+			}
+		}
+		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
+		if(comparatorPerformancePoints>0)
+			playerList.get(0).addVictoryPoints(4);
+		if(comparatorPerformancePoints<0)
+			playerList.get(1).addVictoryPoints(4);
+			
+		
+		
 		//TODO Reglas de fin de mes
 	}
 	
@@ -63,7 +88,6 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			String newMonth=this.getMonth();
 			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
 			if(!oldMonth.equals(newMonth)){
-				//Habria que ver si se acaba un mes largo
 				finalMonth();
 			}
 			while(playerSelector<numberOfPlayers){
@@ -80,7 +104,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 				playerSelector++;
 			}
 			playerSelector=0;
-			//Intercambiar orden de jugadores: ¿Haria falta el atributo first_player?
+			//Intercambiar orden de jugadores: ï¿½Haria falta el atributo first_player?
 			rotatePlayers();			
 			week++;			
 		}			
@@ -132,32 +156,16 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	}
 	
 	private void rotatePlayers(){
-		List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
-		for(int i=1;i<playerList.size();i++){
-			newPlayerList.add(playerList.get(i));	
+		if(numberOfPlayers!=1){
+			List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
+			for(int i=1;i<playerList.size();i++){
+				newPlayerList.add(playerList.get(i));	
+			}
+			newPlayerList.add(playerList.get(0));
+			playerList.clear();
+			playerList.addAll(newPlayerList);
 		}
-		newPlayerList.add(playerList.get(0));
-		playerList.clear();
-		playerList.addAll(newPlayerList);
 	}
 
-	
-	
-//	private void initialiceQuestionsAndConditions(){
-//		followingAction="";
-//		action1="1 : Play one Action card from my hand";
-//		action2="2 : Play one Action card from my discard pile";		
-//		action3="3 : Collect money from the bank";
-//		askBasicAction="What are you going to do:"+"\n"+action1;
-//		askAllActions=askBasicAction+"\n"+action2+"\n"+action3;
-//		askActionsDiscardedNoMoney=askBasicAction+"\n"+action2;
-//		askActionsNoDiscardedMoney=askBasicAction+"\n"+action3;
-//		askBasicActionCondition="1";
-//		askAllActionsCondition="1,2,3";
-//		askActionsDiscardedNoMoneyCondition="1,2";
-//		askActionsNoDiscardedMoneyCondition="1,3";
-//	}
-	
-	
 	
 }
