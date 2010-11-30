@@ -2,7 +2,6 @@ package performance;
 
 import java.util.Map;
 
-import card.TypeTalentCard;
 
 
 
