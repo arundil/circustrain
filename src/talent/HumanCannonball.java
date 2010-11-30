@@ -1,5 +1,5 @@
 package talent;
 
-public interface HumanCannonball {
+public interface HumanCannonball extends Talent{
 
 }

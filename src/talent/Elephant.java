@@ -1,5 +1,5 @@
 package talent;
 
-public interface Elephant {
+public interface Elephant extends Talent{
 
 }

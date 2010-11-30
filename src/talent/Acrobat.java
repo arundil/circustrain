@@ -1,5 +1,5 @@
 package talent;
 
-public interface Acrobat {
+public interface Acrobat extends Talent{
 
 }

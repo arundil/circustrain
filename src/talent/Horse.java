@@ -1,5 +1,5 @@
 package talent;
 
-public interface Horse {
+public interface Horse extends Talent{
 
 }

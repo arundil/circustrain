@@ -1,5 +1,5 @@
 package talent;
 
-public interface Clown {
+public interface Clown extends Talent{
 
 }

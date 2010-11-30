@@ -1,5 +1,5 @@
 package talent;
 
-public interface FreakShow {
+public interface FreakShow extends Talent{
 
 }

@@ -1,5 +1,5 @@
 package talent;
 
-public interface BigCat {
+public interface BigCat extends Talent{
 
 }
