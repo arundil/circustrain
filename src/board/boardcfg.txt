@@ -1,37 +1,37 @@
-C,Winnipeg,1
-C,Toronto,1
-C,Montreal,1
-C,Duluth,0
-C,Madison,0
-C,Milwaukee,0
-C,Detroit,0
-C,Buffalo,0
-C,Rochester,0
-C,Albany,0
-C,Boston,0
-C,New Heaven,0
-C,New York,0
-C,Philadelphia,0
-C,Richmond,0
-C,Pittsburg,0
-C,Columbus,0
-C,Cincinnati,0
-C,LouisVille,0
-C,Indianapolis,0
-C,St. Lois,0
-C,Peoria,0
-C,Des Moines,0
-C,Omaha,0
-C,St. Paul,0
-C,Indianapolis,0
-C,Chicago,0
-C,Cleveland,0
-R,Winipeg,Duluth
+C,Winnipeg,true
+C,Toronto,true
+C,Montreal,true
+C,Duluth,false
+C,Madison,false
+C,Milwaukee,false
+C,Detroit,false
+C,Buffalo,false
+C,Rochester,false
+C,Albany,false
+C,Boston,false
+C,New Heaven,false
+C,New York,false
+C,Philadelphia,false
+C,Richmond,false
+C,Pittsburg,false
+C,Columbus,false
+C,Cincinnati,false
+C,Louisville,false
+C,Indianapolis,false
+C,St. Louis,false
+C,Peoria,false
+C,Des Moines,false
+C,Omaha,false
+C,St. Paul,false
+C,Chicago,false
+C,Cleveland,false
+R,Winnipeg,Duluth
 R,Duluth,Madison
 R,Madison,Milwaukee
 R,Madison,Chicago
-R,Chigaco,Detroit
+R,Chicago,Detroit
 R,Detroit,Toronto
+R,Toronto,Buffalo
 R,Buffalo,Rochester
 R,Rochester,Montreal
 R,Albany,Boston
@@ -42,8 +42,8 @@ R,New York,Philadelphia
 R,Philadelphia,Pittsburg
 R,Pittsburg,Columbus
 R,Pittsburg,Richmond
-R,Columbus,Cinccinati
-R,Cinccinati,Indianapolis
+R,Columbus,Cincinnati
+R,Cincinnati,Indianapolis
 R,Indianapolis,Louisville
 R,Indianapolis,St. Louis
 R,Indianapolis,Chicago
@@ -52,6 +52,7 @@ R,Peoria,Des Moines
 R,Des Moines,Omaha
 R,Des Moines,St. Paul
 R,St. Paul,Winnipeg
-R,Chicago,Medison
+R,Chicago,Madison
 R,Columbus,Cleveland
-R,New York,Alvany
+R,New York,Albany
+R,Detroit,Cleveland

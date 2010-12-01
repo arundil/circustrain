@@ -18,6 +18,10 @@ public class CityImpl extends VertexImpl implements City {
 		this.isCanada=isCanada;
 		this.performance=null;
 	}
+	
+	public CityImpl(String name,String isCanada){
+		this(name, new Boolean(isCanada));
+	}
 
 	@Override
 	public Boolean isCanada() {

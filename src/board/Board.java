@@ -6,10 +6,12 @@ import performance.Performance;
 
 public interface Board {
 	public void addCity(City c);
-	public void addRoad(City c1,City c2);
+	public void addTrack(City c1,City c2);
 	public List<City> getCities();
 	public City getCityByName(String name);
 	public List<City> getCanadianCities();
-	public Integer getCitiesWithPerfomance();
+	public Integer countCitiesWithPerfomance();
+	public List<City> getCitiesWithPerfomance();
+	public List<City> getCitiesWithoutPerfomance();
 	public City addPerfomanceInRandomCity(Performance performance);
 }

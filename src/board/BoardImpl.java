@@ -1,17 +1,25 @@
 package board;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 import performance.Performance;
 import tipos.CollectionsUtils;
 import tipos.Filter;
+import tipos.reverseFilter;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.Graph;
+import utiles.factoria.ReadFile;
 import utiles.factoria.Vertex;
 
 
 public class BoardImpl implements Board {
 	
 	Graph gameMap;
+	
+	Filter<City> hasPerfomance=new hasPerfomanceFilter();
+	Filter<City> isCanadian=new isCanadianFilter();
 	
 	//Constructor sin parametros
 	public BoardImpl(){
@@ -20,9 +28,42 @@ public class BoardImpl implements Board {
 	
 	//Constructor desde un archivo
 	public BoardImpl(String file){
-		gameMap=CollectionsFactory.createGraphFactory().createGraph();
-		open
 		
+		this();
+		String fileLine=null;
+		
+		BufferedReader fileReader = null;
+		try {
+			fileReader = ReadFile.readTextFile(file);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+
+
+			try {
+				while ((fileLine = fileReader.readLine())!=null) {
+					   String []readedString=fileLine.split(",");
+					   if(readedString[0].equals("C")){
+						   Boolean isCanada=new Boolean(readedString[2]);
+						   String cityName=readedString[1];
+						   addCity(new CityImpl(cityName,isCanada));
+					   }
+					   
+					   if(readedString[0].equals("R")){
+						   City c1=getCityByName(readedString[1]);
+						   City c2=getCityByName(readedString[2]);
+						   addTrack(c1, c2);
+					   }
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}   
+
+
+
 	}
 
 
@@ -53,7 +94,6 @@ public class BoardImpl implements Board {
 	@Override
 	public List<City> getCanadianCities() {
 		List<City> canadianCities=CollectionsFactory.createListFactory().createList();
-		Filter<City> isCanadian=new isCanadianFilter();
 		for(City c:this.getCities()){
 			if(isCanadian.exp(c)){
 				canadianCities.add(c);
@@ -63,17 +103,22 @@ public class BoardImpl implements Board {
 	}
 
 	
-	//Recoge un performance y lo añade a una ciudad que no tenga aleatoriamente
+	//Recoge un performance y lo aï¿½ade a una ciudad que no tenga aleatoriamente
 	@Override
 	public City addPerfomanceInRandomCity(Performance performance) {
 		
 		return null;
 	}
 
-	//Devuelve el número de ciudades que tengan Performance
-	@Override
-	public Integer getCitiesWithPerfomance() {
-		return CollectionsUtils.count(this.getCities(), new hasPerfomanceFilter());
+	//Devuelve el nï¿½mero de ciudades que tengan Performance
+
+	public Integer countCitiesWithPerfomance() {
+		return CollectionsUtils.count(this.getCities(), hasPerfomance);
+	}
+	
+	public List<City> getCitiesWithoutPerfomance() {
+		
+		return CollectionsUtils.filteredList(this.getCities(),new reverseFilter<City>(hasPerfomance));
 	}
 
 	@Override
@@ -83,10 +128,21 @@ public class BoardImpl implements Board {
 	}
 
 	@Override
-	public void addRoad(City c1, City c2) {
+	public void addTrack(City c1, City c2) {
 			this.gameMap.addEdge(c1, c2);
 	}
 	public String toString(){
-		return this.getCities().toString();
+		String stringToPrint="";
+		for (City c:this.getCities()){
+			stringToPrint=stringToPrint+c.getName()+"("+c.getAdjacents().toString()+")\r\n";
+		}
+		return stringToPrint;
 	}
+
+	@Override
+	public List<City> getCitiesWithPerfomance() {
+		return CollectionsUtils.filteredList(this.getCities(), new hasPerfomanceFilter());
+	}
+	
+	
 }
