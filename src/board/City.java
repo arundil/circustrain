@@ -1,5 +1,6 @@
 package board;
 
+import java.util.List;
 import java.util.Set;
 
 
@@ -19,6 +20,7 @@ public interface City extends Vertex{
 	public Set<City> maxMovement(Integer jump);
 	public Set<City> exactMovement(Integer jump);
 	public String getName();
+	public List<City> getCitiesAdjacents();
 	
 	public String toString();
 		
