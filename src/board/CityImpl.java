@@ -1,9 +1,12 @@
 package board;
 
+import java.util.List;
 import java.util.Set;
 
 
 import performance.Performance;
+import utiles.factoria.CollectionsFactory;
+import utiles.factoria.Vertex;
 import utiles.factoria.VertexImpl;
 
 public class CityImpl extends VertexImpl implements City {
@@ -90,6 +93,16 @@ public class CityImpl extends VertexImpl implements City {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	
+	public List<City> getCitiesAdjacents(){
+		List<City> cities=CollectionsFactory.createListFactory().createList();
+		
+		for(Vertex v:getAdjacents()){
+			City c=(City)v;
+			cities.add(c);
+		}
+		return cities;
 	}
 	
 }
