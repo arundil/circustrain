@@ -10,7 +10,8 @@ public class TestBoard {
 	Board tablero;
 	@Before
 	public void setUp() throws Exception {
-		tablero=new BoardImpl("C:\\Users\\jenkin90\\Documents\\workspace\\circustrain\\src\\board\\boardcfg.txt");
+		String user = System.getProperty("user.dir");
+		tablero=new BoardImpl(user+"/src/board/boardcfg.txt");
 	}
 
 	@Test

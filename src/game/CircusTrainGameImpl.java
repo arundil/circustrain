@@ -32,6 +32,10 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		talentBag = GameFactory.createTalentBag();
 	}
 	
+	public List<Player> getPlayerList(){
+		return playerList;
+	}	
+	
 	public String getMonth(){
 		return month;
 	}	
@@ -53,7 +57,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
 		for(Player player:playerList){
 			playersTalentsList.add(player.getTalents());
-		}		
+		}
+		//TODO List<Player>
 		Set<Entry<Talent,Integer>> numberOfTalents1=playersTalentsList.get(0).entrySet();			
 		Set<Entry<Talent,Integer>> numberOfTalents2=playersTalentsList.get(1).entrySet();
 		
@@ -69,6 +74,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 				}
 			}
 		}
+//		TODO List<Player>
 		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
 		if(comparatorPerformancePoints>0)
 			playerList.get(0).addVictoryPoints(4);
