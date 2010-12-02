@@ -25,7 +25,7 @@ public class TravelImpl extends CardImpl implements ActionCard {
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 		Integer resp;
 		
-		System.out.println(player.getName()+" HAS USED --> Fast Move <-- ");
+		System.out.println(player.getName()+" has used ==> TRAVEL <== \n" );
 		System.out.println("Select the city below where you want to move:");
 
 		 adjCities = player.getCity().maxMovement(3);

@@ -18,15 +18,16 @@ public class HoldImpl extends CardImpl implements ActionCard {
 	}
 	@Override
 	public void execute() {
-		Integer resp;
+		Integer answer;
+		System.out.println(player.getName()+" has used ==> HOLD <== \n" );
 		System.out.println("What do you want to do? perform [0] or contract[1]");
-		resp = GameFactory.takeParametersToIntegerRestricted("Option:","0,1");
-		if (resp ==0){
+		answer = GameFactory.takeParametersToIntegerRestricted("Option:","0,1");
+		if (answer ==0){
 			Performance p = player.getCity().getPerformance();
 			CommandPerformance cp = new CommandPerformance(player,(PerformanceDemand) p);
 			cp.execute();
 		}
-		if (resp ==1){
+		if (answer ==1){
 			//Contratar
 		}
 

@@ -88,6 +88,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 	}
 	
 	private void fire(){
+		System.out.println(player.getName()+" has used ==> WAGES <== \n" );
 		String mess = "What talent do you want to fire? \n"; 
 		String cond="";
 		String resp ="";
