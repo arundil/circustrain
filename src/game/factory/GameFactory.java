@@ -81,6 +81,14 @@ public class GameFactory {
 		return line;		
 	}
 	
+	public static Integer takeParametersToIntegerRestricted(String message, String condition){
+		Integer number = -1;
+		List<String> conditions=Cadenas.separaElementos(condition,",");
+		while(!conditions.contains(number.toString())){
+			number= takeParametersToInteger(message);
+		}
+		return number;		
+	}
 	public static Integer takeParametersToIntegerTopValue(String message, Integer top){
 		Integer number = -1;
 		while(!(number >= 0 && number <= top)){
