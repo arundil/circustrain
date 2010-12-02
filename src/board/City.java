@@ -3,8 +3,6 @@ package board;
 import java.util.List;
 import java.util.Set;
 
-
-
 import performance.Performance;
 import utiles.factoria.Vertex;
 
@@ -17,8 +15,8 @@ public interface City extends Vertex{
 	public Performance getPerformance();
 	public void setPerfomance(Performance performance);
 	
-	public Set<City> maxMovement(Integer jump);
-	public Set<City> exactMovement(Integer jump);
+	public List<City> maxMovement(Integer jump);
+	public List<City> exactMovement(Integer jump);
 	public String getName();
 	public List<City> getCitiesAdjacents();
 	

@@ -53,16 +53,42 @@ public class CityImpl extends VertexImpl implements City {
 		return getName();
 	}
 
-	@Override
-	public Set<City> exactMovement(Integer jump) {
-		// TODO Auto-generated method stub
-		return null;
+	private Set<Vertex> exactMovementSet(Integer jump) {
+		Set<Vertex> vertices=CollectionsFactory.createSetFactory().createSet();
+		if(jump==1){
+			return getAdjacents();
+		}else{
+			for(Vertex v:getAdjacents()){
+				City c=(City)v;
+				
+				vertices.addAll(c.exactMovement(jump-1));
+			}
+		}
+		return vertices;
+	}
+	
+	public List<City> exactMovement(Integer jump){
+		Set<Vertex> vertices=exactMovementSet(jump);
+		List<City> cities=CollectionsFactory.createListFactory().createList();
+		for(Vertex v:vertices){
+			City c=(City)v;
+			cities.add(c);
+		}
+		return cities;
 	}
 
 	@Override
-	public Set<City> maxMovement(Integer jump) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<City> maxMovement(Integer jump) {
+		Set<Vertex> vertices=CollectionsFactory.createSetFactory().createSet();
+		List<City> cities=CollectionsFactory.createListFactory().createList();
+		for(int i=jump;i>0;i--){
+			vertices.addAll(exactMovement(i));
+		}
+		for(Vertex v:vertices){
+			City c=(City)v;
+			cities.add(c);
+		}
+		return cities;
 	}
 
 	@Override
