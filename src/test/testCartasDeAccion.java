@@ -13,10 +13,9 @@ public class testCartasDeAccion extends Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Board b = new BoardImpl("/src/board/boardcfg.txt");
 		Player p = new PlayerImpl("Pepe",false, true);
-		p.moveCity(b.getCityByName("Madison"));
+		p.moveCity(b.getCityByName("Indianapolis"));
 		ActionCard ac = new BasicMoveImpl(1, p);
 		ac.execute();
 		System.out.println("La ciudad actual de "+p.getName()+" es " + p.getCity());
