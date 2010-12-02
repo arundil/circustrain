@@ -6,15 +6,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Set;
-
+import actionCards.ActionCard;
 import board.City;
-
 import player.Player;
-
 import utiles.factoria.CollectionsFactory;
 
-import card.ActionCard;
-import card.TypeTalentCard;
 
 public class CommandPlayActionCard extends AbstractCommand{
 	
@@ -46,9 +42,9 @@ public class CommandPlayActionCard extends AbstractCommand{
 //		if(actionCard.isAction()){
 //			String line= GameFactory.takeParametersToString("Select an action: MOVE,PERFORMANCE");
 //			if(line.equals("MOVE")){
-//				//**¿Como se yo que es movimiento exacto o un numero con cierto limite?
+//				//**ï¿½Como se yo que es movimiento exacto o un numero con cierto limite?
 //				//no tengo metodos para saberlo
-//				//**¿Como hago para mover el tren de cada jugador? No hay ningun metedo
+//				//**ï¿½Como hago para mover el tren de cada jugador? No hay ningun metedo
 //				//para moverse en el tipo Counter ni Player tiene ningun indicador
 //			}else{
 //				if(line.equals("PERFORMANCE")){
@@ -57,7 +53,7 @@ public class CommandPlayActionCard extends AbstractCommand{
 //					boolean b=currentCity.hasPerformance();					
 //					if(b){
 //						if(currentCity tiene un circo){
-//							//**¿Como se si tengo un circo o una actuacion?
+//							//**ï¿½Como se si tengo un circo o una actuacion?
 //							CommandToHire commandhire= new CommandToHire(currentCity.getCounter(),player);
 //							//**getCounter devolveria el tipo de counter que tiene la ciudad en la que se
 //							//encuentra el jugador
@@ -67,7 +63,7 @@ public class CommandPlayActionCard extends AbstractCommand{
 //												new CommandPerformance();
 //							}
 //						}
-//						//**¿Como se yo qué tiene la ciudad dentro: circo en banca rota o actuacion?
+//						//**ï¿½Como se yo quï¿½ tiene la ciudad dentro: circo en banca rota o actuacion?
 //						//no tengo metodos para saberlo
 //					}
 //				}
