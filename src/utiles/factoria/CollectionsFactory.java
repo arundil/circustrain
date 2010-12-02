@@ -22,8 +22,4 @@ public class CollectionsFactory {
 	public static GraphFactory createGraphFactory(){
 		return new GraphFactory();
 	}
-	
-	public static VertexFactory createVertexFactory(){
-		return new VertexFactory();
-	}
 }
