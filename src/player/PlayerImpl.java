@@ -48,7 +48,7 @@ public class PlayerImpl implements Player {
 	
 	@Override
 	public String toString() {
-		return "PlayerImpl [city=" + city + ", name=" + name + "]";
+		return "Your turn "+getName()+ ". You are now in " +getCity();
 	}
 
 	public PlayerImpl (String n){
