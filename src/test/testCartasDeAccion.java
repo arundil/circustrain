@@ -20,10 +20,12 @@ public class testCartasDeAccion extends Test {
 	/**
 	 * @param args
 	 */
+
 	public static void main(String[] args) {
 		Board b = new BoardImpl("/src/board/boardcfg.txt");
 		Player p = new PlayerImpl("Pepe",false, true);
-		p.moveCity(b.getCityByName("Indianapolis"));
+		p.moveCity(b.getCityByName("Toronto"));
+		p.addMoney(100);
 		System.out.println(p);
 		System.out.println("Elegir carta de acción a usar:\n" +
 				"[0]Viaje\n" +
@@ -33,7 +35,7 @@ public class testCartasDeAccion extends Test {
 				"[5]De noche\n" +
 				"[6]Descanso\n" +
 				"[7]Quedarse");
-		Integer elec = GameFactory.takeParametersToIntegerTopValue("Opcion:", 6);
+		Integer elec = GameFactory.takeParametersToIntegerTopValue("Opcion:", 7);
 		
 		if (elec == 0){
 			ActionCard ac = new TravelImpl(p);
@@ -48,7 +50,7 @@ public class testCartasDeAccion extends Test {
 			ac.execute();
 		}
 		if (elec == 4){
-			ActionCard ac = new WagesImpl(p, false);
+			ActionCard ac = new WagesImpl(p, true);
 			ac.execute();
 		}
 		if (elec == 5){
