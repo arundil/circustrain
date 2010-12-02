@@ -2,6 +2,8 @@ package test;
 
 import actionCards.ActionCard;
 import actionCards.BasicMoveImpl;
+import actionCards.FastMoveImpl;
+import actionCards.TravelImpl;
 import board.Board;
 import board.BoardImpl;
 import player.Player;
@@ -19,7 +21,10 @@ public class testCartasDeAccion extends Test {
 		ActionCard ac = new BasicMoveImpl(1, p);
 		ac.execute();
 		System.out.println("La ciudad actual de "+p.getName()+" es " + p.getCity());
-
+		ActionCard ac1 = new FastMoveImpl(p);
+		ac1.execute();
+		ActionCard ac2 = new TravelImpl(p);
+		ac2.execute();
 	}
 
 }
