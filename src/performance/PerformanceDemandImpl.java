@@ -3,10 +3,11 @@ package performance;
 import java.awt.Color;
 import java.util.Map;
 
-public class PerformanceDemandImpl implements PerformanceDemand {
-	public PerformanceDemandImpl(Integer basicPoints,
+public class PerformanceDemandImpl extends performanceImpl implements PerformanceDemand{
+		public PerformanceDemandImpl(Color cardColor, String description,
+			String name, Integer basicPoints,
 			Map<String, Integer> talentPoints, boolean twoWeeks) {
-		super();
+		super(cardColor, description, name);
 		this.basicPoints = basicPoints;
 		this.talentPoints = talentPoints;
 		this.twoWeeks = twoWeeks;
@@ -33,22 +34,5 @@ public class PerformanceDemandImpl implements PerformanceDemand {
 		return twoWeeks;
 	}
 
-	@Override
-	public Color getColor() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getDescription() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
