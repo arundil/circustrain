@@ -1,9 +1,8 @@
 package actionCards;
 
 import game.CommandPerformance;
+import game.factory.GameFactory;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.List;
 import board.City;
 import performance.Performance;
@@ -16,8 +15,6 @@ import card.CardImpl;
 public class BasicMoveImpl extends CardImpl implements ActionCard {
 
 	private Integer id;
-	private InputStreamReader isr = new InputStreamReader(System.in);
-	private BufferedReader br = new BufferedReader (isr);
 	Player player;
 
 	public BasicMoveImpl(Integer n, Player p) {
@@ -33,51 +30,45 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 
 	@Override
 	public void execute() {
+		String buff;
 		Integer resp;
 		Integer resp1;
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
-		try
-		{
-			System.out.println(player.getName()+" HAS USED --> Basic Move <-- \n" +
-			"What do you want to do, move[0] or perform/contract[1]");
 
-			resp1=Integer.parseInt(br.readLine());
-			if (resp1 ==0){
-				System.out.println("Select the city below where you want to move:");
+		System.out.println(player.getName()+" HAS USED --> Basic Move <-- \n" +
+		"What do you want to do, move[0] or perform/contract[1]");
 
-				adjCities=player.getCity().getCitiesAdjacents();
+		buff=GameFactory.takeParametersToStringRestricted("Option:","0,1");
 
-				for (int i=0;i<adjCities.size();i++){
-					System.out.println("--> "+adjCities.get(i)+ "["+i+"]");
-				}
-				resp=Integer.parseInt(br.readLine());
+		resp1 = new Integer(buff);
+		if (resp1 ==0){
+			System.out.println("Select the city below where you want to move:");
 
-				if (resp >=0 && resp<= adjCities.size()){
-					player.moveCity(adjCities.get(resp));
+			adjCities=player.getCity().maxMovement(5);
 
-				}
-			}else if(resp1==1){ 	
-				System.out.println("What do you want to do? perform [0] or contract[1]");
-				resp = Integer.parseInt(br.readLine());
-				if (resp ==0){
-					Performance p = player.getCity().getPerformance();
-					CommandPerformance cp = new CommandPerformance(player,(PerformanceDemand) p);
-					cp.execute();
-				}
-				else if (resp ==1){
-					//Actuar
-				}else {
-					System.out.println("Incorrect option, please try again");
-					execute();
-				}
-			}else{
-				System.out.println("Incorrect option, please try again");
-				execute();
+			for (int i=0;i<adjCities.size();i++){
+				System.out.println("--> ["+i+"]"+ adjCities.get(i));
+			}
+
+			resp= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
+
+			if (resp >=0 && resp<= adjCities.size()){
+				player.moveCity(adjCities.get(resp));
+
 			}
 		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
+		if(resp1==1){ 	
+			System.out.println("What do you want to do? perform [0] or contract[1]");
+			buff = GameFactory.takeParametersToStringRestricted("Option:","0,1");
+			resp = new Integer(buff);
+			if (resp ==0){
+				Performance p = player.getCity().getPerformance();
+				CommandPerformance cp = new CommandPerformance(player,(PerformanceDemand) p);
+				cp.execute();
+			}
+			if (resp ==1){
+				//Actuar
+			}
 		}
 	}
 }
