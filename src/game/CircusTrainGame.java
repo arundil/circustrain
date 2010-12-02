@@ -1,5 +1,9 @@
 package game;
 
+import java.util.List;
+
+import player.Player;
+
 public interface CircusTrainGame {
 	
 	public void startGame();
@@ -9,5 +13,6 @@ public interface CircusTrainGame {
 	public void finalMonth();
 	public String getFollowingAction();
 	public void setFollowingAction(String action);
+	public List<Player> getPlayerList();
 
 }

@@ -81,6 +81,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		if(comparatorPerformancePoints<0)
 			playerList.get(1).addVictoryPoints(4);
 			
+		//TODO Robar talentos
+		
 		
 		
 		//TODO Reglas de fin de mes
