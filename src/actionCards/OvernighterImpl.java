@@ -1,11 +1,16 @@
 package actionCards;
 
+import player.Player;
 import card.CardImpl;
 
 public class OvernighterImpl extends CardImpl implements ActionCard {
-
-	public OvernighterImpl() {
+	private Player player;
+	private Integer id;
+	
+	public OvernighterImpl(Player p) {
 		super("OvernighterImpl", "You can move toward 2 cities and/or perform/contract");
+		player=p;
+		id = 6;
 	}
 
 	@Override
@@ -15,8 +20,7 @@ public class OvernighterImpl extends CardImpl implements ActionCard {
 
 	@Override
 	public Integer getIdCard() {
-		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
 }
