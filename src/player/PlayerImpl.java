@@ -224,6 +224,10 @@ public class PlayerImpl implements Player {
 		return first_player;
 	}
 	
+	public void discardTalent(Talent t){
+		talents.remove(t);
+	}
+	
 	
 	
 	//=========================================================================
