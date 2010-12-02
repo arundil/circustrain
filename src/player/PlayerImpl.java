@@ -46,11 +46,6 @@ public class PlayerImpl implements Player {
 		city = null;
 	}
 	
-	@Override
-	public String toString() {
-		return "Your turn "+getName()+ ". You are now in " +getCity();
-	}
-
 	public PlayerImpl (String n){
 		name = n;
 		money =0;
@@ -227,6 +222,12 @@ public class PlayerImpl implements Player {
 	public void discardTalent(Talent t){
 		talents.remove(t);
 	}
+	@Override
+	
+	public String toString() {
+		return "Your turn "+getName()+ ". You are now in " +getCity()+ ".You have $"+getMoney();
+	}
+
 	
 	
 	
