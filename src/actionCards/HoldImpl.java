@@ -19,10 +19,10 @@ public class HoldImpl extends CardImpl implements ActionCard {
 	Player player;
 	TalentBag talentbag;
 	
-	public HoldImpl(Integer id, Player player, TalentBag talentbag) {
+	public HoldImpl(Player player, TalentBag talentbag) {
 		super("HoldImpl","If you are in Canada (Winnipeg, Montreal or Toronto), " +
 				"you can take one clown, one acrobat or rise your reputation in one level" );
-		this.id = id;
+		this.id = 8;
 		this.player = player;
 		this.talentbag = talentbag;
 	}

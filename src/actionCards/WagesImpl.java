@@ -17,10 +17,10 @@ public class WagesImpl extends CardImpl implements ActionCard {
 	Player player;
 	Boolean fire;
 	
-	public WagesImpl(Integer id, Player player, Boolean fire) {
+	public WagesImpl(Player player, Boolean fire) {
 		super("Wages", "You can move until 2 cities. Then, you have to " +
 				"pay the wages or eliminate Talents");
-		this.id = id;
+		this.id = 5;
 		this.player = player;
 		this.fire = fire;
 	}
