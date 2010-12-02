@@ -3,11 +3,11 @@ package player;
 import java.util.List;
 import java.util.Map;
 
+import actionCards.ActionCard;
 import board.City;
 
 import performance.Performance;
 import talent.Talent;
-import card.ActionCard;
 
 public interface Player {
 	//Boolean Es circoFamoso, lo tengo que tener en cuenta para después.

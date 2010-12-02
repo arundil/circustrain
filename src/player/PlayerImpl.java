@@ -4,13 +4,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.lang.Math;
-
+import actionCards.ActionCard;
 import board.City;
 import performance.Performance;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
-import card.ActionCard;
-import card.ActionCardImpl;
 
 
 public class PlayerImpl implements Player {
@@ -32,7 +30,7 @@ public class PlayerImpl implements Player {
 		perfomance_max =0;
 		victorypoints = 0;
 		first_player=firstp;
-		action_cards= inicializateActionCards();
+		//action_cards= inicializateActionCards();
 		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createSortedMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
@@ -48,10 +46,15 @@ public class PlayerImpl implements Player {
 		city = null;
 	}
 	
+	@Override
+	public String toString() {
+		return "PlayerImpl [city=" + city + ", name=" + name + "]";
+	}
+
 	public PlayerImpl (String n){
 		name = n;
 		money =0;
-		action_cards = inicializateActionCards();
+		//action_cards = inicializateActionCards();
 		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
@@ -228,33 +231,33 @@ public class PlayerImpl implements Player {
 	//=========================================================================
 	
 	
-	private List<ActionCard> inicializateActionCards(){
-		List<ActionCard> l = CollectionsFactory.createListFactory().createList();
-		// (nombre,descripcion,idCarta,numeroMovimientos,esCartaAccion,esCartaSalario)
-		ActionCard ac1 = new ActionCardImpl("Travel","You can move until 3 cities", 1, 3, false, false);
-		ActionCard ac2 = new ActionCardImpl("Basic movement","You can move towards 1 city or perform/contract" , 2, 1, true, false);
-		ActionCard ac3 = new ActionCardImpl("Basic movement","You can move towards 1 city or perform/contract" , 3, 1, true, false);
-		ActionCard ac4 = new ActionCardImpl("Fast movement", "You can move until 5 cities", 4, 5, false, false);
-		ActionCard ac5 = new ActionCardImpl("Wages", "You can move until 2 cities. Then, you have to pay the wages or eliminate Talents", 5, 2, false, true);
-		ActionCard ac6 = new ActionCardImpl("Overnighter", "You can move toward 2 cities and/or perform/contract", 6, 2, true, false);
-		ActionCard ac7 = new ActionCardImpl("No Performance","If you are in Canada (Winnipeg, Montreal or Toronto), " +
-				"you can take one clown, one acrobat, or rise your reputation in one level" , 7, 0, false, false);
-		ActionCard ac8 = new ActionCardImpl("Hold", "You can perform/actuar", 8, 0, true, false);
-		
+//	private List<ActionCard> inicializateActionCards(){
+//		List<ActionCard> l = CollectionsFactory.createListFactory().createList();
+//		// (nombre,descripcion,idCarta,numeroMovimientos,esCartaAccion,esCartaSalario)
+//		ActionCard ac1 = new ActionCardImpl("Travel","You can move until 3 cities", 1, 3, false, false);
+//		ActionCard ac2 = new ActionCardImpl("Basic movement","You can move towards 1 city or perform/contract" , 2, 1, true, false);
+//		ActionCard ac3 = new ActionCardImpl("Basic movement","You can move towards 1 city or perform/contract" , 3, 1, true, false);
+//		ActionCard ac4 = new ActionCardImpl("Fast movement", "You can move until 5 cities", 4, 5, false, false);
+//		ActionCard ac5 = new ActionCardImpl("Wages", "You can move until 2 cities. Then, you have to pay the wages or eliminate Talents", 5, 2, false, true);
+//		ActionCard ac6 = new ActionCardImpl("Overnighter", "You can move toward 2 cities and/or perform/contract", 6, 2, true, false);
+//		ActionCard ac7 = new ActionCardImpl("No Performance","If you are in Canada (Winnipeg, Montreal or Toronto), " +
+//				"you can take one clown, one acrobat, or rise your reputation in one level" , 7, 0, false, false);
+//		ActionCard ac8 = new ActionCardImpl("Hold", "You can perform/actuar", 8, 0, true, false);
+//		
 		//Esto hay que hacerlo de otra forma....
 		// Ideas: Execute.
 		
-		l.add(ac1);
-		l.add(ac2);
-		l.add(ac3);
-		l.add(ac4);
-		l.add(ac5);
-		l.add(ac6);
-		l.add(ac7);
-		l.add(ac8);
-		
-		return l;
-	}
+//		l.add(ac1);
+//		l.add(ac2);
+//		l.add(ac3);
+//		l.add(ac4);
+//		l.add(ac5);
+//		l.add(ac6);
+//		l.add(ac7);
+//		l.add(ac8);
+//		
+//		return l;
+//	}
 	
 	private List<Integer> initializeReputation(){
 		List<Integer> list=CollectionsFactory.createListFactory().createList();
