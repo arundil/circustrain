@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.Map.Entry;
 
-import card.TypeTalentCard;
-import counter.PerformanceCounter;
 import performance.Performance;
 import performance.PerformanceDemand;
 import player.Player;
