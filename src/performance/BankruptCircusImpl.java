@@ -5,11 +5,11 @@ import java.util.List;
 
 import talent.Talent;
 
-public class BakruptCircusImpl extends performanceImpl implements BankruptCircus {
+public class BankruptCircusImpl extends performanceImpl implements BankruptCircus {
 	
 	
 	private List<Talent> talentCircus; //talentos asociados a la carta de bancarrota
-	public BakruptCircusImpl(Color cardColor, String description, String name,
+	public BankruptCircusImpl(Color cardColor, String description, String name,
 			List<Talent> talentCircus) {
 		super(cardColor, description, name);
 		this.talentCircus = talentCircus;
