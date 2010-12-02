@@ -4,8 +4,9 @@ import game.factory.GameFactory;
 
 import java.util.List;
 
+import actionCards.ActionCard;
+
 import player.Player;
-import card.ActionCard;
 
 public class CommandPlayDiscardActionCard extends AbstractCommand{
 	
