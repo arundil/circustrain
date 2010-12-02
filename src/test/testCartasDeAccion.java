@@ -1,9 +1,15 @@
 package test;
 
+import game.factory.GameFactory;
 import actionCards.ActionCard;
 import actionCards.BasicMoveImpl;
 import actionCards.FastMoveImpl;
+import actionCards.HoldImpl;
+import actionCards.OvernighterImpl;
+import actionCards.RestImpl;
 import actionCards.TravelImpl;
+import actionCards.WagesImpl;
+import bag.TalentBagImpl;
 import board.Board;
 import board.BoardImpl;
 import player.Player;
@@ -18,13 +24,46 @@ public class testCartasDeAccion extends Test {
 		Board b = new BoardImpl("/src/board/boardcfg.txt");
 		Player p = new PlayerImpl("Pepe",false, true);
 		p.moveCity(b.getCityByName("Indianapolis"));
-		ActionCard ac = new BasicMoveImpl(1, p);
-		ac.execute();
+		System.out.println(p);
+		System.out.println("Elegir carta de acción a usar:\n" +
+				"[0]Viaje\n" +
+				"[1][2]Movimiento Básico\n" +
+				"[3]Movimiento Rápido\n" +
+				"[4]Salarios\n" +	
+				"[5]De noche\n" +
+				"[6]Descanso\n" +
+				"[7]Quedarse");
+		Integer elec = GameFactory.takeParametersToIntegerTopValue("Opcion:", 6);
+		
+		if (elec == 0){
+			ActionCard ac = new TravelImpl(p);
+			ac.execute();
+		}
+		if (elec == 1 || elec == 2){
+			ActionCard ac = new BasicMoveImpl(elec, p);
+			ac.execute();
+		}
+		if (elec == 3){
+			ActionCard ac = new FastMoveImpl(p);
+			ac.execute();
+		}
+		if (elec == 4){
+			ActionCard ac = new WagesImpl(p, false);
+			ac.execute();
+		}
+		if (elec == 5){
+			ActionCard ac = new OvernighterImpl(p);
+			ac.execute();	
+		}
+		if (elec == 6){
+			ActionCard ac = new RestImpl(p,new TalentBagImpl());
+			ac.execute();
+		}
+		if (elec == 7){
+			ActionCard ac = new HoldImpl(p);
+			ac.execute();
+		}
 		System.out.println("La ciudad actual de "+p.getName()+" es " + p.getCity());
-		ActionCard ac1 = new FastMoveImpl(p);
-		ac1.execute();
-		ActionCard ac2 = new TravelImpl(p);
-		ac2.execute();
+		System.out.println("La ejecución ha terminado correctamente");
 	}
-
 }
