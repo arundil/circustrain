@@ -11,7 +11,6 @@ import talent.AcrobatImpl;
 import talent.Clown;
 import talent.ClownImpl;
 import talent.Talent;
-import talent.TalentImpl;
 import utiles.factoria.CollectionsFactory;
 import card.CardImpl;
 
@@ -41,8 +40,8 @@ public class HoldImpl extends CardImpl implements ActionCard {
 			Acrobat acrobat = new AcrobatImpl();
 			
 			if(respuesta == 1){
-				if(talentbag.getTalentBag().get(clown)>0){
-					listtalent.add(clown);
+				if(talentbag.getNumTalents(clown)>0){
+					listtalent.add(talentbag.removeTalent(clown));
 					player.addTalent(listtalent);
 				}else{
 					System.out.println("Clowns are not available");
@@ -50,8 +49,8 @@ public class HoldImpl extends CardImpl implements ActionCard {
 				}
 			}
 			if(respuesta == 2){
-				if(talentbag.getTalentBag().get(acrobat)>0){
-					listtalent.add(acrobat);
+				if(talentbag.getNumTypeTalent(acrobat)>0){
+					listtalent.add(talentbag.removeTalent(acrobat));
 					player.addTalent(listtalent);
 				}else{
 					System.out.println("Acrobat are not available");
@@ -60,7 +59,10 @@ public class HoldImpl extends CardImpl implements ActionCard {
 				
 			}
 			if(respuesta == 3){
-				player.addReputation(1);
+				if(!player.addReputation(1)){
+					System.out.println("Rise reputation are not available");
+					execute();
+				}
 			}
 		}
 	}
