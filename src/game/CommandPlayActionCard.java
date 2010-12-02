@@ -2,12 +2,9 @@ package game;
 
 import game.factory.GameFactory;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Set;
 import actionCards.ActionCard;
-import board.City;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
 

@@ -1,5 +1,9 @@
 package performance;
 
-public interface BankruptCircus extends Performance {
+import java.util.List;
 
+import talent.Talent;
+
+public interface BankruptCircus extends Performance {
+	public List<Talent> getTalentCircus();
 }

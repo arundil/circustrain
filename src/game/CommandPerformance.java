@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.util.List;
 import java.util.Set;
 import java.util.Map.Entry;
-
 import performance.Performance;
 import performance.PerformanceDemand;
 import player.Player;

@@ -53,39 +53,32 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	}
 	
 	public void finalMonth(){
-		//Acciones de final de mes independientemente del mes que sea ¿Podria ser un comando?
-		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
-		for(Player player:playerList){
-			playersTalentsList.add(player.getTalents());
-		}
-		//TODO List<Player>
-		Set<Entry<Talent,Integer>> numberOfTalents1=playersTalentsList.get(0).entrySet();			
-		Set<Entry<Talent,Integer>> numberOfTalents2=playersTalentsList.get(1).entrySet();
-		
-		for(Entry<Talent,Integer> entry1:numberOfTalents1){
-			for(Entry<Talent,Integer> entry2:numberOfTalents2){
-				if(entry1.getKey().equals(entry2.getKey())){
-					int compare=entry1.getValue().compareTo(entry2.getValue());
-					if(compare>0)
-						playerList.get(0).addVictoryPoints(entry1.getValue());
-					if(compare<0)
-						playerList.get(1).addVictoryPoints(entry2.getValue());						
-					break;
-				}
-			}
-		}
+	
 //		TODO List<Player>
+		
+		//Puntos de victoria segun el nº de talentos
+		compareCountAndAddVictoryPoints();
+		//Puntos de victoria segun actuacion maxima
 		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
 		if(comparatorPerformancePoints>0)
 			playerList.get(0).addVictoryPoints(4);
 		if(comparatorPerformancePoints<0)
-			playerList.get(1).addVictoryPoints(4);
-			
-		//TODO Robar talentos
-		
-		
-		
-		//TODO Reglas de fin de mes
+			playerList.get(1).addVictoryPoints(4);			
+		//Robar talentos
+		//En modo basico solo puede robar el que tenga menos puntos de victoria
+		//Habria que invalidar lo de la reputacion si esta en modo basico				
+		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
+			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
+			stealTalent.execute();
+		}
+		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
+			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
+			stealTalent.execute();
+		}		
+		//TODO si es junio o agosto cambiar las bolsas de actuacion
+		if(month.equals("JUNE")){
+			performanceBag.c
+		}
 	}
 	
 	public void runGame() {
@@ -119,7 +112,6 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		gameOver();
 	}
 
-	@Override
 	public void startGame() {
 		week=0;
 		System.out.println("Welcome to Circus Train!");
@@ -131,8 +123,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		String selectGameMode="Select game mode: BASIC, ADVANCED";
 		String selectGameModeCondition="BASIC,ADVANCED";
 		String gameMode=GameFactory.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
-		Boolean advancedMode=gameMode.equals("ADVANCED");
-		
+		Boolean advancedMode=gameMode.equals("ADVANCED");		
 		if(numberOfPlayers==1){
 			String name=GameFactory.takeParametersToString("Player name: ");
 			Player player=GameFactory.createPlayer(name,advancedMode, true);	
@@ -174,6 +165,27 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			playerList.addAll(newPlayerList);
 		}
 	}
-
+	private void compareCountAndAddVictoryPoints(){
+		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
+		for(Player player:playerList){
+			playersTalentsList.add(player.getTalents());
+		}
+		//TODO List<Player>
+		Set<Entry<Talent,Integer>> numberOfTalents1=playersTalentsList.get(0).entrySet();			
+		Set<Entry<Talent,Integer>> numberOfTalents2=playersTalentsList.get(1).entrySet();
+		
+		for(Entry<Talent,Integer> entry1:numberOfTalents1){
+			for(Entry<Talent,Integer> entry2:numberOfTalents2){
+				if(entry1.getKey().equals(entry2.getKey())){
+					int compare=entry1.getValue().compareTo(entry2.getValue());
+					if(compare>0)
+						playerList.get(0).addVictoryPoints(entry1.getValue());
+					if(compare<0)
+						playerList.get(1).addVictoryPoints(entry2.getValue());						
+					break;
+				}
+			}
+		}
+	}
 	
 }
