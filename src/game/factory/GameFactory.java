@@ -82,8 +82,8 @@ public class GameFactory {
 	}
 	
 	public static Integer takeParametersToIntegerTopValue(String message, Integer top){
-		Integer number=0;
-		while(!(number>0 && number <= top)){
+		Integer number = -1;
+		while(!(number >= 0 && number <= top)){
 			number= takeParametersToInteger(message);
 		}
 		return number;		
