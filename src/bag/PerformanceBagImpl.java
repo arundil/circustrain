@@ -15,8 +15,13 @@ public class PerformanceBagImpl implements PerformanceBag {
 	private List<Performance> yellowBag= CollectionsFactory.createListFactory().createList();;
 	@Override
 	public Performance addPerformance(Performance e) {
-		// TODO Auto-generated method stub
-		return null;
+		if(e.getColor() == Color.red){
+			redBag.add(e);}
+		else if (e.getColor() == Color.yellow){
+			yellowBag.add(e);}
+		else if (e.getColor() == Color.green){
+			greenBag.add(e);}
+		return e;
 	}
 
 	@Override
