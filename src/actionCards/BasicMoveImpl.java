@@ -30,17 +30,15 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 
 	@Override
 	public void execute() {
-		String buff;
-		Integer resp;
+		Integer answer;
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 
-		System.out.println(player.getName()+" HAS USED --> Basic Move <-- \n" +
+		System.out.println(player.getName()+" has used ==> BASIC MOVE <== \n" +
 		"What do you want to do, move[0] or perform/contract[1]");
 
-		buff=GameFactory.takeParametersToStringRestricted("Option:","0,1");
+		answer=GameFactory.takeParametersToIntegerRestricted("Option:","0,1");
 
-		resp = new Integer(buff);
-		if (resp ==0){
+		if (answer ==0){
 			System.out.println("Select the city below where you want to move:");
 
 			adjCities=player.getCity().maxMovement(1);
@@ -49,21 +47,20 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 				System.out.println("--> ["+i+"]"+ adjCities.get(i));
 			}
 
-			resp= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
+			answer= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
 			
-			player.moveCity(adjCities.get(resp));
+			player.moveCity(adjCities.get(answer));
 		}
-		if(resp==1){ 	
+		if(answer==1){ 	
 			System.out.println("What do you want to do? perform [0] or contract[1]");
-			buff = GameFactory.takeParametersToStringRestricted("Option:","0,1");
-			resp = new Integer(buff);
-			if (resp ==0){
+			answer = GameFactory.takeParametersToIntegerRestricted("Option:","0,1");
+			if (answer ==0){
 				Performance p = player.getCity().getPerformance();
 				CommandPerformance cp = new CommandPerformance(player,(PerformanceDemand) p);
 				cp.execute();
 			}
-			if (resp ==1){
-				//Actuar
+			if (answer ==1){
+				//Contratar
 			}
 		}
 	}

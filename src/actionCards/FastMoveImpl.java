@@ -21,9 +21,9 @@ public class FastMoveImpl extends CardImpl implements ActionCard {
 	@Override
 	public void execute() {
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
-		Integer resp;
+		Integer answer;
 		
-		System.out.println(player.getName()+" HAS USED --> Fast Move <-- ");
+		System.out.println(player.getName()+" has used ==> FAST MOVE <== ");
 		System.out.println("Select the city below where you want to move:");
 
 		 adjCities = player.getCity().maxMovement(5);
@@ -32,9 +32,9 @@ public class FastMoveImpl extends CardImpl implements ActionCard {
 			System.out.println("--> ["+i+"]"+ adjCities.get(i));
 		}
 
-		resp= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
+		answer= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
 		
-		player.moveCity(adjCities.get(resp));
+		player.moveCity(adjCities.get(answer));
 	}
 
 	@Override
