@@ -32,7 +32,6 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 	public void execute() {
 		String buff;
 		Integer resp;
-		Integer resp1;
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 
 		System.out.println(player.getName()+" HAS USED --> Basic Move <-- \n" +
@@ -40,24 +39,21 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 
 		buff=GameFactory.takeParametersToStringRestricted("Option:","0,1");
 
-		resp1 = new Integer(buff);
-		if (resp1 ==0){
+		resp = new Integer(buff);
+		if (resp ==0){
 			System.out.println("Select the city below where you want to move:");
 
-			adjCities=player.getCity().maxMovement(5);
+			adjCities=player.getCity().maxMovement(1);
 
 			for (int i=0;i<adjCities.size();i++){
 				System.out.println("--> ["+i+"]"+ adjCities.get(i));
 			}
 
 			resp= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
-
-			if (resp >=0 && resp<= adjCities.size()){
-				player.moveCity(adjCities.get(resp));
-
-			}
+			
+			player.moveCity(adjCities.get(resp));
 		}
-		if(resp1==1){ 	
+		if(resp==1){ 	
 			System.out.println("What do you want to do? perform [0] or contract[1]");
 			buff = GameFactory.takeParametersToStringRestricted("Option:","0,1");
 			resp = new Integer(buff);
