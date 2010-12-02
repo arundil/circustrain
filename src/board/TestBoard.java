@@ -10,8 +10,7 @@ public class TestBoard {
 	Board tablero;
 	@Before
 	public void setUp() throws Exception {
-		String user = System.getProperty("user.dir");
-		tablero=new BoardImpl(user+"/src/board/boardcfg.txt");
+		tablero=new BoardImpl("/src/board/boardcfg.txt");
 	}
 
 	@Test
