@@ -96,7 +96,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		Map<Talent, Integer> mapt = player.getTalents();
 		
 		//I have one problem, big problem. No solution problem :S
-		//Falla en el mapa de talentos kitar un talento y falta de informacion de talentos toString.
+		//falta de informacion de talentos toString.
 		//Acepto ideas, tengo una solucion fea.
 		List<Talent> listtalent = CollectionsFactory.createListFactory().createList();
 		Talent talent;

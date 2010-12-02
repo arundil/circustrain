@@ -14,8 +14,7 @@ import utiles.factoria.CollectionsFactory;
 
 public class TalentBagImpl implements TalentBag {
 
-	private Map<Talent, Integer> talents = CollectionsFactory
-			.createMapFactory().createMap();
+	private Map<Talent, Integer> talents = CollectionsFactory.createMapFactory().createMap();
 
 	Talent cw = new ClownImpl();
 	Talent ac = new AcrobatImpl();
@@ -65,18 +64,32 @@ public class TalentBagImpl implements TalentBag {
 
 		
 		talents.remove(t);
+		return aux;
 	}
 
-	@Override
 	public Talent addTalent(Talent t) {
+		if(talents.containsKey(t)){
+			talents.put(t, talents.get(t)+1);			
+		}else{
+			talents.put(t,1);
+		}
+		return t;
+	}
+
+	public Integer getNumTypeTalent(Talent t) {
+		return talents.get(t);
+	}
+
+	public Integer getWage() {
 		// TODO Auto-generated method stub
+		//???¿?¿?¿?¿?¿
 		return null;
 	}
 
 	@Override
-	public Integer getNumTypeTalent(Talent t) {
+	public void setTalent(Integer w) {
 		// TODO Auto-generated method stub
-		return null;
+		//?¿?¿?¿?¿?¿?¿?¿?¿
 	}
 
 }
