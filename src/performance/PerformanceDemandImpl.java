@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.util.Map;
 
 import talent.Talent;
+import utiles.factoria.CollectionsFactory;
 
 public class PerformanceDemandImpl extends performanceImpl implements PerformanceDemand{
 		public PerformanceDemandImpl(Color cardColor, String description,
@@ -39,7 +40,23 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 	//Añadido por jenkin90
 	@Override
 	public String toString(){
-		return "Esto es una demanda de actuación";
+		String r;
+		if(this.isTwoWeeks()){
+			r = "Esto es "+ this.getName()+"su descripcion es"+ this.getDescription()+"es de color"+ this.getColor()+"sus puntos basicos son"+this.getBasicPoints()+"y sus puntos de talento son:";
+			for(this.getTalentPoints().keySet().iterator();this.getTalentPoints().keySet().iterator().hasNext();){
+				r+= "su talento es"+this.getTalentPoints().keySet().iterator().next().toString();//falta el nombre de los talents
+				r+= "su valor es" + this.getTalentPoints().get(this.getTalentPoints().keySet().iterator().next()).toString();
+				}
+			r+="y es de dos semanas";
+		}else{
+			r = "Esto es "+ this.getName()+"su descripcion es"+ this.getDescription()+"es de color"+ this.getColor()+"sus puntos basicos son"+this.getBasicPoints()+"y sus puntos de talento son:";
+			for(this.getTalentPoints().keySet().iterator();this.getTalentPoints().keySet().iterator().hasNext();){
+				r+= "su talento es"+this.getTalentPoints().keySet().iterator().next().toString();//falta el nombre de los talents
+				r+= "su valor es" + this.getTalentPoints().get(this.getTalentPoints().keySet().iterator().next()).toString();
+				}
+			r+="y es de dos semanas";
+			}
+		return r;
 	}
 
 
