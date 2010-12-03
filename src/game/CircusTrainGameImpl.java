@@ -13,6 +13,7 @@ import bag.TalentBag;
 import board.Board;
 import performance.Performance;
 import player.Player;
+import talent.Clown;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 
@@ -55,7 +56,12 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	}
 	
 	public void gameOver() {
-		// TODO Reglas de fin de juego		
+		// TODO Reglas de fin de juego	
+		higherClownNumber();
+		higherMoneyAmount();
+		higherPerformancesNumber();
+		higherReputation();
+		noClownsNoAnimals();
 	}
 	
 	public void finalMonth(){
@@ -223,6 +229,128 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 				board.addPerfomanceInRandomCity(randomPerformance);
 				performanceBag.removePerformance(randomPerformance);
 			}
+		}
+	}
+	private void higherClownNumber(){
+		Integer playerClownNumber=0;
+		Integer maximumClownNumber=-1;
+		Integer sameClownNumberTimes=0;
+		Integer previousClownNumber=0;
+		List<Integer> clownNumber=CollectionsFactory.createListFactory().createList();
+		for(int i=0;i<playerList.size();i++){
+			Player thisPlayer=playerList.get(i);
+			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
+			if(thisPlayerTalents.containsKey(Clown.class)){
+				playerClownNumber=thisPlayer.getTalents().get(Clown.class);			
+			}else{
+				playerClownNumber=0;
+			}
+			clownNumber.add(playerClownNumber);
+			if(maximumClownNumber<playerClownNumber){
+				maximumClownNumber=playerClownNumber;
+			}
+			if(i>0){
+				Player previousPlayer=playerList.get(i-1);
+				if(previousPlayer.getTalents().containsKey(Clown.class)){
+					previousClownNumber=thisPlayer.getTalents().get(Clown.class);			
+				}else{
+					previousClownNumber=0;
+				}
+			}
+			if(maximumClownNumber==previousClownNumber){
+				sameClownNumberTimes++;
+			}
+		}
+		if(sameClownNumberTimes==0){
+			Integer playerIndex= clownNumber.indexOf(maximumClownNumber);
+			playerList.get(playerIndex).addVictoryPoints(3);
+		}
+	}
+	
+	private void noClownsNoAnimals(){
+		for(Player thisPlayer:playerList){
+			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
+			if(!thisPlayerTalents.containsKey(talent.Clown.class)){
+				thisPlayer.addVictoryPoints(-3);
+			}			
+			Boolean noAnimals=(!thisPlayerTalents.containsKey(talent.BigCat.class))&&
+			(!thisPlayerTalents.containsKey(talent.Elephant.class))&&
+			(!thisPlayerTalents.containsKey(talent.Horse.class));
+			if(noAnimals){
+				thisPlayer.addVictoryPoints(-3);
+			}			
+		}
+	}
+	
+	private void higherMoneyAmount(){
+		List<Integer> playersMoney=CollectionsFactory.createListFactory().createList();
+		Integer sameMoneyTimes=0;
+		Integer maximumMoney=-1;
+		Integer previousMoney=0;
+		for(int i=0;i<playerList.size();i++){
+			if(i>0){
+				previousMoney=playerList.get(i-1).getMoney();
+			}
+			Player thisPlayer=playerList.get(i);
+			playersMoney.add(thisPlayer.getMoney());
+			if(maximumMoney<thisPlayer.getMoney()){
+				maximumMoney=thisPlayer.getMoney();
+			}
+			if(previousMoney==thisPlayer.getMoney()){
+				sameMoneyTimes++;
+			}
+		}
+		if(sameMoneyTimes==0){
+			Integer playerIndex=playersMoney.indexOf(maximumMoney);
+			playerList.get(playerIndex).addVictoryPoints(3);
+		}
+	}
+	
+	private void higherPerformancesNumber(){
+		List<Integer> playersNumberOfPerformances=CollectionsFactory.createListFactory().createList();
+		Integer sameNumberOfPerformancesTimes=0;
+		Integer maximumNumberOfPerformances=-1;
+		Integer previousNumberOfPerformances=0;
+		for(int i=0;i<playerList.size();i++){
+			if(i>0){
+				previousNumberOfPerformances=playerList.get(i-1).getPerfomancesUsed().size();
+			}
+			Player thisPlayer=playerList.get(i);
+			playersNumberOfPerformances.add(thisPlayer.getPerfomancesUsed().size());
+			if(maximumNumberOfPerformances<thisPlayer.getPerfomancesUsed().size()){
+				maximumNumberOfPerformances=thisPlayer.getPerfomancesUsed().size();
+			}
+			if(previousNumberOfPerformances==thisPlayer.getPerfomancesUsed().size()){
+				sameNumberOfPerformancesTimes++;
+			}
+		}
+		if(sameNumberOfPerformancesTimes==0){
+			Integer playerIndex=playersNumberOfPerformances.indexOf(maximumNumberOfPerformances);
+			playerList.get(playerIndex).addVictoryPoints(3);
+		}
+	}
+	
+	private void higherReputation(){
+		List<Integer> playersReputation=CollectionsFactory.createListFactory().createList();
+		Integer sameReputationTimes=0;
+		Integer maximumReputation=-1;
+		Integer previousReputation=0;
+		for(int i=0;i<playerList.size();i++){
+			if(i>0){
+				previousReputation=playerList.get(i-1).getReputation();
+			}
+			Player thisPlayer=playerList.get(i);
+			playersReputation.add(thisPlayer.getReputation());
+			if(maximumReputation<thisPlayer.getReputation()){
+				maximumReputation=thisPlayer.getReputation();
+			}
+			if(previousReputation==thisPlayer.getReputation()){
+				sameReputationTimes++;
+			}
+		}
+		if(sameReputationTimes==0){
+			Integer playerIndex=playersReputation.indexOf(maximumReputation);
+			playerList.get(playerIndex).addVictoryPoints(3);
 		}
 	}
 	

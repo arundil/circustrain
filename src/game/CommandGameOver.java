@@ -75,6 +75,8 @@ public class CommandGameOver extends AbstractCommand{
 				Player previousPlayer=playerList.get(i-1);
 				if(previousPlayer.getTalents().containsKey(Clown.class)){
 					previousClownNumber=playerTalents.get(Clown.class);			
+				}else{
+					previousClownNumber=0;
 				}
 			}
 			if(maximumClownNumber==previousClownNumber){
@@ -94,15 +96,13 @@ public class CommandGameOver extends AbstractCommand{
 			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
 			if(!thisPlayerTalents.containsKey(talent.Clown.class)){
 				thisPlayer.addVictoryPoints(-3);
-			}
-			
+			}			
 			Boolean noAnimals=(!thisPlayerTalents.containsKey(talent.BigCat.class))&&
 			(!thisPlayerTalents.containsKey(talent.Elephant.class))&&
 			(!thisPlayerTalents.containsKey(talent.Horse.class));
 			if(noAnimals){
 				thisPlayer.addVictoryPoints(-3);
-			}
-			
+			}			
 		}
 		//TODO si tiene mas dinero: suma 3 ptos de victoria. Si hay empate no suma
 //		Integer player1Money=player1.getMoney();
@@ -139,26 +139,71 @@ public class CommandGameOver extends AbstractCommand{
 		
 		
 		//TODO si tiene mas actuaciones: suma 3 ptos de victoria. Si hay empate no suma
-		Integer player1Performances=player1.getPerfomancesUsed().size();
-		Integer player2Performances=player2.getPerfomancesUsed().size();
-		Integer comparePlayer1PerformancesWithPlayer2Performances=player1Performances.compareTo(player2Performances);
-		if(comparePlayer1PerformancesWithPlayer2Performances>0){
-			player1.addVictoryPoints(3);
+//		Integer player1Performances=player1.getPerfomancesUsed().size();
+//		Integer player2Performances=player2.getPerfomancesUsed().size();
+//		Integer comparePlayer1PerformancesWithPlayer2Performances=player1Performances.compareTo(player2Performances);
+//		if(comparePlayer1PerformancesWithPlayer2Performances>0){
+//			player1.addVictoryPoints(3);
+//		}
+//		if(comparePlayer1PerformancesWithPlayer2Performances<0){
+//			player2.addVictoryPoints(3);
+//		}
+		
+		List<Integer> playersNumberOfPerformances=CollectionsFactory.createListFactory().createList();
+		Integer sameNumberOfPerformancesTimes=0;
+		Integer maximumNumberOfPerformances=-1;
+		Integer previousNumberOfPerformances=0;
+		for(int i=0;i<playerList.size();i++){
+			if(i>0){
+				previousNumberOfPerformances=playerList.get(i-1).getPerfomancesUsed().size();
+			}
+			Player thisPlayer=playerList.get(i);
+			playersNumberOfPerformances.add(thisPlayer.getPerfomancesUsed().size());
+			if(maximumNumberOfPerformances<thisPlayer.getPerfomancesUsed().size()){
+				maximumNumberOfPerformances=thisPlayer.getPerfomancesUsed().size();
+			}
+			if(previousNumberOfPerformances==thisPlayer.getPerfomancesUsed().size()){
+				sameNumberOfPerformancesTimes++;
+			}
 		}
-		if(comparePlayer1PerformancesWithPlayer2Performances<0){
-			player2.addVictoryPoints(3);
+		if(sameNumberOfPerformancesTimes==0){
+			Integer playerIndex=playersNumberOfPerformances.indexOf(maximumNumberOfPerformances);
+			playerList.get(playerIndex).addVictoryPoints(3);
 		}
 		//TODO si tiene mas reputacion: suma 3 ptos de victoria. Si hay empate no suma
-		Integer player1Reputation=player1.getReputation();
-		Integer player2Reputation=player2.getReputation();
-		Integer comparePlayer1ReputationWithPlayer2Reputation=player1Reputation.compareTo(player2Reputation);
-		if(comparePlayer1ReputationWithPlayer2Reputation>0){
-			player1.addVictoryPoints(3);
+//		Integer player1Reputation=player1.getReputation();
+//		Integer player2Reputation=player2.getReputation();
+//		Integer comparePlayer1ReputationWithPlayer2Reputation=player1Reputation.compareTo(player2Reputation);
+//		if(comparePlayer1ReputationWithPlayer2Reputation>0){
+//			player1.addVictoryPoints(3);
+//		}
+//		if(comparePlayer1ReputationWithPlayer2Reputation<0){
+//			player2.addVictoryPoints(3);
+//		}
+		
+		List<Integer> playersReputation=CollectionsFactory.createListFactory().createList();
+		Integer sameReputationTimes=0;
+		Integer maximumReputation=-1;
+		Integer previousReputation=0;
+		for(int i=0;i<playerList.size();i++){
+			if(i>0){
+				previousReputation=playerList.get(i-1).getReputation();
+			}
+			Player thisPlayer=playerList.get(i);
+			playersReputation.add(thisPlayer.getReputation());
+			if(maximumReputation<thisPlayer.getReputation()){
+				maximumReputation=thisPlayer.getReputation();
+			}
+			if(previousReputation==thisPlayer.getReputation()){
+				sameReputationTimes++;
+			}
 		}
-		if(comparePlayer1ReputationWithPlayer2Reputation<0){
-			player2.addVictoryPoints(3);
+		if(sameReputationTimes==0){
+			Integer playerIndex=playersReputation.indexOf(maximumReputation);
+			playerList.get(playerIndex).addVictoryPoints(3);
 		}
 	}
+	
 	
 
 }
