@@ -24,7 +24,6 @@ public class TalentBagImpl implements TalentBag {
 	Talent e = new ElephantImpl();
 	Talent bc = new BigCatImpl();
 
-	@Override
 	public Map<Talent, Integer> createInitialTalentBag() {
 
 		talents.put(cw, 6);
@@ -53,21 +52,17 @@ public class TalentBagImpl implements TalentBag {
 	 * para posible tratamiento de él (mostrar mensaje por pantalla al usuario).
 	 */
 	public Talent removeTalent(Talent t) {
-		if(t == null || !talents.containsKey(t)){
-			throw new NullPointerException("El objeto pasado es nulo");
-		}
-		if(!talents.containsKey(t)){
-			throw new IllegalArgumentException("El objeto pasado es nulo");
-		}
 		
 		Talent aux = t;
-
-		
 		talents.remove(t);
 		return aux;
 	}
 
 	public Talent addTalent(Talent t) {
+
+		if(talents.containsKey(t)){
+			talents.put(t, +1);
+		}
 		if(talents.containsKey(t)){
 			talents.put(t, talents.get(t)+1);			
 		}else{
@@ -86,10 +81,11 @@ public class TalentBagImpl implements TalentBag {
 		return null;
 	}
 
-	@Override
 	public void setTalent(Integer w) {
+		return talents.get(t);
 		// TODO Auto-generated method stub
 		//?¿?¿?¿?¿?¿?¿?¿?¿
 	}
+	
 
 }

@@ -15,5 +15,11 @@ public class TalentImpl implements Talent {
 	public Integer getWage(){
 		return wage;
 	}
+	@Override
+	public String toString() {
+		return "Talento  [wage=" + wage + "]";
+	}
+	
+	
 
 }

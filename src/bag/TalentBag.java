@@ -5,7 +5,7 @@ import java.util.Map;
 import talent.Talent;
 import talent.TalentImpl;
 
-public interface TalentBag extends Talent {
+public interface TalentBag {
 
 	public Map<Talent, Integer> createInitialTalentBag();
 
