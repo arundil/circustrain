@@ -32,5 +32,7 @@ public class performanceImpl implements Performance {
 		// TODO Auto-generated method stub
 		return name;
 	}
-
+	public String toString(){
+		return "La carta "+ this.getName()+" con descripcion "+ this.getDescription()+" y color "+this.getColor().toString();
+	}
 }
