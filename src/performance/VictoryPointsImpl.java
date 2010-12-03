@@ -15,5 +15,11 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 		// TODO Auto-generated method stub
 		return victoryPoints;
 	}
+	
+	@Override
+	//Añadido por jenkin90
+	public String toString(){
+		return "Esto es una carta de Puntos de Victoria";
+	}
 
 }

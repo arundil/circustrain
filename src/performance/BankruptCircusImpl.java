@@ -17,5 +17,11 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 	public List<Talent> getTalentCircus() {
 		return talentCircus;
 	}
+	
+	@Override
+	//Añadido por jenkin90
+	public String toString(){
+		return "Esto es un circo en Bancarrota";
+	}
 
 }

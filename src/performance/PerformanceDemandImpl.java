@@ -35,6 +35,12 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 		// TODO Auto-generated method stub
 		return twoWeeks;
 	}
+	
+	//Añadido por jenkin90
+	@Override
+	public String toString(){
+		return "Esto es una demanda de actuación";
+	}
 
 
 }
