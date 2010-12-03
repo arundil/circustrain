@@ -9,9 +9,6 @@ public class Test {
 		
 		Board Tablero=new BoardImpl("/src/board/boardcfg.txt");
 
-		City c=Tablero.getCityByName("Indianapolis");
-		
-		System.out.print(c.maxMovement(2));
 	}
 
 }

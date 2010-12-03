@@ -50,7 +50,12 @@ public class CityImpl extends VertexImpl implements City {
 
 	@Override
 	public String toString() {
-		return getName();
+		String stringToPrint;
+		stringToPrint=this.getName();
+//		if(this.hasPerfomance()){
+//			stringToPrint=stringToPrint+" ("+this.getPerformance().toString()+")";
+//		}
+		return stringToPrint;
 	}
 
 	private Set<Vertex> exactMovementSet(Integer jump) {

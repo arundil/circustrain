@@ -19,6 +19,7 @@ public class BoardImpl implements Board {
 	Graph gameMap;
 	
 	Filter<City> hasPerfomance=new hasPerfomanceFilter();
+	Filter<City> hasNotPerformance=new reverseFilter<City>(hasPerfomance);
 	Filter<City> isCanadian=new isCanadianFilter();
 	
 	//Constructor sin parametros
@@ -106,8 +107,9 @@ public class BoardImpl implements Board {
 	//Recoge un performance y lo a�ade a una ciudad que no tenga aleatoriamente
 	@Override
 	public City addPerfomanceInRandomCity(Performance performance) {
-		
-		return null;
+		City city=this.getRandomCity(hasNotPerformance);
+		city.setPerfomance(performance);
+		return city;
 	}
 
 	//Devuelve el n�mero de ciudades que tengan Performance
@@ -144,5 +146,16 @@ public class BoardImpl implements Board {
 		return CollectionsUtils.filteredList(this.getCities(), new hasPerfomanceFilter());
 	}
 	
+	private City getRandomCity(){
+		List<City> cities=this.getCities();
+		Integer random=(int)(Math.random()*cities.size()); 
+		return cities.get(random);
+	}
+	
+	private City getRandomCity(Filter<City> filter){
+		List<City> cities=CollectionsUtils.filteredList(this.getCities(), filter) ;
+		Integer random=(int)(Math.random()*cities.size()); 
+		return cities.get(random);
+	}
 	
 }

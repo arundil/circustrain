@@ -19,7 +19,7 @@ public interface City extends Vertex{
 	public List<City> exactMovement(Integer jump);
 	public String getName();
 	public List<City> getCitiesAdjacents();
-	
+
 	public String toString();
 		
 }

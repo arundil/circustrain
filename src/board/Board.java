@@ -14,4 +14,5 @@ public interface Board {
 	public List<City> getCitiesWithPerfomance();
 	public List<City> getCitiesWithoutPerfomance();
 	public City addPerfomanceInRandomCity(Performance performance);
+	
 }
