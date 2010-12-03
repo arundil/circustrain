@@ -1,6 +1,7 @@
 package performance;
 
 import java.awt.Color;
+import java.util.Iterator;
 import java.util.Map;
 
 import talent.Talent;
@@ -42,19 +43,25 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 	public String toString(){
 		String r;
 		if(this.isTwoWeeks()){
-			r = "Esto es "+ this.getName()+"su descripcion es"+ this.getDescription()+"es de color"+ this.getColor()+"sus puntos basicos son"+this.getBasicPoints()+"y sus puntos de talento son:";
-			for(this.getTalentPoints().keySet().iterator();this.getTalentPoints().keySet().iterator().hasNext();){
-				r+= "su talento es"+this.getTalentPoints().keySet().iterator().next().toString();//falta el nombre de los talents
-				r+= "su valor es" + this.getTalentPoints().get(this.getTalentPoints().keySet().iterator().next()).toString();
+			r = "Esto es "+ this.getName()+" su descripcion es "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
+			Iterator<Talent> i = this.getTalentPoints().keySet().iterator();
+			Talent s;
+			while(i.hasNext()){
+				s=i.next();
+				r+= " su talento es "+s.toString();//falta el nombre de los talents
+				r+= " su valor es " + this.getTalentPoints().get(s).toString();
 				}
-			r+="y es de dos semanas";
+			r+=" y es de dos semanas ";
 		}else{
-			r = "Esto es "+ this.getName()+"su descripcion es"+ this.getDescription()+"es de color"+ this.getColor()+"sus puntos basicos son"+this.getBasicPoints()+"y sus puntos de talento son:";
-			for(this.getTalentPoints().keySet().iterator();this.getTalentPoints().keySet().iterator().hasNext();){
-				r+= "su talento es"+this.getTalentPoints().keySet().iterator().next().toString();//falta el nombre de los talents
-				r+= "su valor es" + this.getTalentPoints().get(this.getTalentPoints().keySet().iterator().next()).toString();
+			r = "Esto es "+ this.getName()+" su descripcion es "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
+			Iterator<Talent> i = this.getTalentPoints().keySet().iterator();
+			Talent s;
+			while(i.hasNext()){
+				s=i.next();
+				r+= " su talento es "+s.toString();//falta el nombre de los talents
+				r+= " su valor es " + this.getTalentPoints().get(s).toString();
 				}
-			r+="y es de dos semanas";
+			r+=" y no es de dos semanas ";
 			}
 		return r;
 	}
