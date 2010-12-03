@@ -10,10 +10,20 @@ import talent.*;
 import utiles.factoria.CollectionsFactory;
 
 public class PerformanceBagImpl implements PerformanceBag {
+	public PerformanceBagImpl() {
+		super();
+		this.createGreenBag();
+		this.createYellowBag();
+		this.createRedBag();
+		
+	}
+
 	private List<Performance> greenBag = CollectionsFactory.createListFactory().createList();;
 	private List<Performance> redBag = CollectionsFactory.createListFactory().createList();;
 	private List<Performance> yellowBag= CollectionsFactory.createListFactory().createList();;
 	@Override
+
+	
 	public Performance addPerformance(Performance e) {
 		if(e.getColor() == Color.red){
 			redBag.add(e);}

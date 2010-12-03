@@ -8,6 +8,7 @@ import java.util.Set;
 
 import bag.EventBag;
 import bag.PerformanceBag;
+import bag.PerformanceBagImpl;
 import bag.TalentBag;
 import bag.TalentBagImpl;
 import board.Board;
@@ -32,7 +33,7 @@ public class GameFactory {
 	}
 	
 	public static PerformanceBag createPerformanceBag(){
-		return new PerformanceBagImpl(PARAMETROS);
+		return new PerformanceBagImpl();
 	}
 	
 	public static TalentBag createTalentBag(){
