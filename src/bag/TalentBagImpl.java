@@ -60,9 +60,9 @@ public class TalentBagImpl implements TalentBag {
 
 	public Talent addTalent(Talent t) {
 
-		if(talents.containsKey(t)){
-			talents.put(t, +1);
-		}
+//		if(talents.containsKey(t)){
+//			talents.put(t, +1);
+//		}
 		if(talents.containsKey(t)){
 			talents.put(t, talents.get(t)+1);			
 		}else{
@@ -73,18 +73,6 @@ public class TalentBagImpl implements TalentBag {
 
 	public Integer getNumTypeTalent(Talent t) {
 		return talents.get(t);
-	}
-
-	public Integer getWage() {
-		// TODO Auto-generated method stub
-		//???¿?¿?¿?¿?¿
-		return null;
-	}
-
-	public void setTalent(Integer w) {
-		return talents.get(t);
-		// TODO Auto-generated method stub
-		//?¿?¿?¿?¿?¿?¿?¿?¿
 	}
 	
 
