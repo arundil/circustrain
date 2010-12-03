@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
+import performance.Performance;
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
@@ -48,6 +49,10 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		return followingAction;
 	}
 	
+	public Board getBoard(){
+		return board;
+	}
+	
 	public void gameOver() {
 		// TODO Reglas de fin de juego		
 	}
@@ -77,12 +82,20 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}		
 		//TODO si es junio o agosto cambiar las bolsas de actuacion
 		if(month.equals("JUNE")){
-			performanceBag.c
+			performanceBag.createYellowBag();
+		}
+		if(month.equals("AUGUST")){
+			performanceBag.createRedBag();
 		}
 	}
 	
 	public void runGame() {
-		Integer playerSelector=0;		
+		Integer playerSelector=0;
+		performanceBag.createGreenBag();
+		for(Player playerSelectsCity:playerList){
+			CommandSelectCanadianCity selectCanadianCity=new CommandSelectCanadianCity(playerSelectsCity, this);
+			selectCanadianCity.execute();
+		}
 		while(week<27){
 			String oldMonth=this.getMonth();
 			refreshMonth();
@@ -104,6 +117,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 				executeCase.execute();				
 				playerSelector++;
 			}
+			addCities();
 			playerSelector=0;
 			//Intercambiar orden de jugadores: �Haria falta el atributo first_player?
 			rotatePlayers();			
@@ -187,5 +201,29 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			}
 		}
 	}
+	private void addCities(){
+		if(month.equals("APRIL") || month.equals("MAY")){
+			while(board.getCitiesWithPerfomance().size()<8){
+				Performance randomPerformance=performanceBag./*Necesito obtener una performance aleatoria*/;
+				board.addPerfomanceInRandomCity(randomPerformance);
+				performanceBag.removePerformance(randomPerformance);
+			}
+		}
+		if(month.equals("JUNE") || month.equals("JULY")){
+			while(board.getCitiesWithPerfomance().size()<10){
+				Performance randomPerformance=performanceBag./*Necesito obtener una performance aleatoria*/;
+				board.addPerfomanceInRandomCity(randomPerformance);
+				performanceBag.removePerformance(randomPerformance);
+			}
+		}
+		if(month.equals("AUGUST") || month.equals("SEPTEMBER")){
+			while(board.getCitiesWithPerfomance().size()<12){
+				Performance randomPerformance=performanceBag./*Necesito obtener una performance aleatoria*/;
+				board.addPerfomanceInRandomCity(randomPerformance);
+				performanceBag.removePerformance(randomPerformance);
+			}
+		}
+	}
+	
 	
 }

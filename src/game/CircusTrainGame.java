@@ -2,6 +2,8 @@ package game;
 
 import java.util.List;
 
+import board.Board;
+
 import player.Player;
 
 public interface CircusTrainGame {
@@ -14,5 +16,6 @@ public interface CircusTrainGame {
 	public String getFollowingAction();
 	public void setFollowingAction(String action);
 	public List<Player> getPlayerList();
+	public Board getBoard();
 
 }
