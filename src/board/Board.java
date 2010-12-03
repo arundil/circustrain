@@ -12,7 +12,7 @@ public interface Board {
 	public List<City> getCanadianCities();
 	public Integer countCitiesWithPerfomance();
 	public List<City> getCitiesWithPerfomance();
-	public List<City> getCitiesWithoutPerfomance();
+	public List<City> getCitiesWithoutPerformance();
 	public City addPerfomanceInRandomCity(Performance performance);
 	
 }

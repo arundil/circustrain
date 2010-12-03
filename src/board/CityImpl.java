@@ -13,6 +13,7 @@ public class CityImpl extends VertexImpl implements City {
 	
 	private Boolean isCanada;
 	private Performance performance;
+	private Boolean hasPerformance;
 	private String name;
 	
 	public CityImpl(String name,Boolean isCanada){
@@ -20,6 +21,7 @@ public class CityImpl extends VertexImpl implements City {
 		this.name=name;
 		this.isCanada=isCanada;
 		this.performance=null;
+		this.hasPerformance=false;
 	}
 	
 	public CityImpl(String name,String isCanada){
@@ -38,13 +40,15 @@ public class CityImpl extends VertexImpl implements City {
 
 	@Override
 	public Boolean hasPerfomance() {
-		return this.performance.equals(null);
+		return this.hasPerformance;
+		
 	}
 
 
 	@Override
 	public void setPerfomance(Performance performance) {
 		this.performance=performance;
+		this.hasPerformance=true;
 
 	}
 
@@ -52,9 +56,9 @@ public class CityImpl extends VertexImpl implements City {
 	public String toString() {
 		String stringToPrint;
 		stringToPrint=this.getName();
-//		if(this.hasPerfomance()){
-//			stringToPrint=stringToPrint+" ("+this.getPerformance().toString()+")";
-//		}
+		if(this.hasPerfomance()){
+			stringToPrint=stringToPrint+" ("+this.getPerformance().toString()+")";
+		}
 		return stringToPrint;
 	}
 
@@ -134,6 +138,13 @@ public class CityImpl extends VertexImpl implements City {
 			cities.add(c);
 		}
 		return cities;
+	}
+
+	@Override
+	public void removePerformance() {
+		this.performance=null;
+		this.hasPerformance=false;
+		
 	}
 	
 }

@@ -18,8 +18,8 @@ public class BoardImpl implements Board {
 	
 	Graph gameMap;
 	
-	Filter<City> hasPerfomance=new hasPerfomanceFilter();
-	Filter<City> hasNotPerformance=new reverseFilter<City>(hasPerfomance);
+	Filter<City> hasPerformance=new hasPerfomanceFilter();
+	Filter<City> hasNotPerformance=new hasNotPerformanceFilter();
 	Filter<City> isCanadian=new isCanadianFilter();
 	
 	//Constructor sin parametros
@@ -115,12 +115,12 @@ public class BoardImpl implements Board {
 	//Devuelve el n�mero de ciudades que tengan Performance
 
 	public Integer countCitiesWithPerfomance() {
-		return CollectionsUtils.count(this.getCities(), hasPerfomance);
+		return CollectionsUtils.count(this.getCities(), hasPerformance);
 	}
 	
-	public List<City> getCitiesWithoutPerfomance() {
+	public List<City> getCitiesWithoutPerformance() {
 		
-		return CollectionsUtils.filteredList(this.getCities(),new reverseFilter<City>(hasPerfomance));
+		return CollectionsUtils.filteredList(this.getCities(),hasNotPerformance);
 	}
 
 	@Override
@@ -143,7 +143,7 @@ public class BoardImpl implements Board {
 
 	@Override
 	public List<City> getCitiesWithPerfomance() {
-		return CollectionsUtils.filteredList(this.getCities(), new hasPerfomanceFilter());
+		return CollectionsUtils.filteredList(this.getCities(), hasPerformance);
 	}
 	
 	private City getRandomCity(){
@@ -153,7 +153,8 @@ public class BoardImpl implements Board {
 	}
 	
 	private City getRandomCity(Filter<City> filter){
-		List<City> cities=CollectionsUtils.filteredList(this.getCities(), filter) ;
+		List<City> cities=CollectionsUtils.filteredList(this.getCitiesWithoutPerformance(), filter) ;
+		
 		Integer random=(int)(Math.random()*cities.size()); 
 		return cities.get(random);
 	}
