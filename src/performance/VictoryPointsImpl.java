@@ -17,7 +17,7 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 	}
 	
 	@Override
-	//Añadido por jenkin90
+
 	public String toString(){
 		return "esto es"+ this.getName() +"con descripcion" + this.getDescription() +"de color "+ this.getColor().toString() +"y con los siguientes puntos de victoria : "+ this.getVictoryPoints().toString();
 	}

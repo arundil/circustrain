@@ -19,7 +19,7 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 	}
 	
 	@Override
-	//Añadido por jenkin90
+
 	public String toString(){
 		return "Esta carta es de color "+ this.getColor().toString()+ " es un " + this.getName() + "y su descripcion es "+ this.getDescription();
 	}

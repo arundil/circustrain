@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.util.Map;
 
 import talent.Talent;
-import utiles.factoria.CollectionsFactory;
+
 
 public class PerformanceDemandImpl extends performanceImpl implements PerformanceDemand{
 		public PerformanceDemandImpl(Color cardColor, String description,
@@ -37,7 +37,7 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 		return twoWeeks;
 	}
 	
-	//Añadido por jenkin90
+	
 	@Override
 	public String toString(){
 		String r;
