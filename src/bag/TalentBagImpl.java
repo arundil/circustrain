@@ -1,6 +1,7 @@
 package bag;
 
 import java.util.Map;
+import java.util.Set;
 
 import talent.AcrobatImpl;
 import talent.BigCatImpl;
@@ -35,8 +36,14 @@ public class TalentBagImpl implements TalentBag {
 		talents.put(e, 5);
 	}
 
+	// Devuelve el número de talentos totales.
 	public Integer getNumTalents(Talent t) {
-		return talents.get(t);
+		Set<Talent> s= talents.keySet();
+		Integer n=0;
+		for(Talent ta: s){
+			n=n+talents.get(ta);
+		}
+		return n;
 
 	}
 
@@ -52,7 +59,15 @@ public class TalentBagImpl implements TalentBag {
 	public Talent removeTalent(Talent t) {
 		
 		Talent aux = t;
-		talents.remove(t);
+		Integer n= getNumTypeTalent(t);
+		if(n>0){
+			n--;
+			talents.put(t, n);
+
+		}
+		if(n==0){
+			System.out.println("No hay más talentos de este tipo");
+		}
 		return aux;
 	}
 
@@ -71,6 +86,7 @@ public class TalentBagImpl implements TalentBag {
 		return t;
 	}
 
+	// Devuelve el número de talentos que hay de este tipo
 	public Integer getNumTypeTalent(Talent t) {
 		return talents.get(t);
 	}
