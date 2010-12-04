@@ -28,16 +28,25 @@ public class GameFactory {
 		return new PlayerImpl(name,play_mode,firstp);
 	}
 	
-	public static EventBag createEventBag(){
-		return new EventBagImpl(/*PARAMETROS*/);
-	}
+//	public static EventBag createEventBag(){
+//		return new EventBagImpl(/*PARAMETROS*/);
+//	}
+	
+	// A LA ESPERA DE UN CONVENIO PARA ESTO.
+	
 	
 	public static PerformanceBag createPerformanceBag(){
 		return new PerformanceBagImpl();
 	}
 	
 	public static TalentBag createTalentBag(){
-		return new TalentBagImpl(PARAMETROS);
+		return new TalentBagImpl();
+		/*
+		 * NOTA DE FRANCIS:
+		 * el constructor TalentBagImpl no existía como tal, había creado un método llamado
+		 * createInitialTalentBag(). Lo he modificado de nombre para que pudiera llamarse
+		 * como está aquí.
+		 */
 	}
 	
 	public static Board createBoard(){

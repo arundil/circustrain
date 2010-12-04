@@ -24,7 +24,7 @@ public class TalentBagImpl implements TalentBag {
 	Talent e = new ElephantImpl();
 	Talent bc = new BigCatImpl();
 
-	public Map<Talent, Integer> createInitialTalentBag() {
+	public TalentBagImpl() {
 
 		talents.put(cw, 6);
 		talents.put(ac, 6);
@@ -33,8 +33,6 @@ public class TalentBagImpl implements TalentBag {
 		talents.put(hc, 5);
 		talents.put(bc, 5);
 		talents.put(e, 5);
-
-		return talents;
 	}
 
 	public Integer getNumTalents(Talent t) {
@@ -63,6 +61,8 @@ public class TalentBagImpl implements TalentBag {
 //		if(talents.containsKey(t)){
 //			talents.put(t, +1);
 //		}
+// 	solo por curiosidad de si funcionaría así.
+		
 		if(talents.containsKey(t)){
 			talents.put(t, talents.get(t)+1);			
 		}else{

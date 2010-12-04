@@ -7,16 +7,6 @@ import talent.TalentImpl;
 
 public interface TalentBag {
 
-	public Map<Talent, Integer> createInitialTalentBag();
-
-	// Se inicializará la bolsa completa, "game" se encargara de quitar los
-	// talentos
-	// necesarios para empezar.
-
-	/*
-	 * Todos devuelven TypeTalentCard por si resulta útil mostrar por pantalla
-	 * cada vez que se modifica (añade, sustrae) la bolsa de talentos.
-	 */
 	public Integer getNumTalents(Talent t);
 
 	public Map<Talent, Integer> getTalentBag();

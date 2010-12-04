@@ -1,15 +1,13 @@
 package test;
 
-import java.util.Map;
-
-import talent.Talent;
+import bag.TalentBag;
 import bag.TalentBagImpl;
 
-public class TestTalents extends Test{
-	
+public class TestTalents extends Test {
+
 	public static void main(String[] args) {
-Map<Talent, Integer> t = TalentBagImpl.createInitialTalentBag();
-		
+		TalentBag t = new TalentBagImpl();
+
 		System.out.println(t.toString());
 	}
 
