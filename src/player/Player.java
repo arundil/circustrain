@@ -42,6 +42,10 @@ public interface Player {
 	
 	public Integer wage();//-> paga los salarios....
 	public boolean wage(Talent ttc);
+	
+	public Integer getWeeksToPerformance();
+	public void setWeeksToPerformance(Integer weeks);
+	
 	//22 métodos
 	
 	//private Integer PVCalculate(); [pa dentro de la clase]

@@ -22,6 +22,7 @@ public class PlayerImpl implements Player {
 	private City city;
 	private List<Integer> reputationList;
 	private Integer higherDiceScore; //Tirada de dado maxima asociada a la reputacion
+	private Integer weeksToPerformance; //Semanas restantes para poder puntuar en una actuacion
 	
 	public PlayerImpl (String n,Boolean play_mode, Boolean firstp){ //basic = 0 Advanced =1
 		
@@ -44,6 +45,7 @@ public class PlayerImpl implements Player {
 			higherDiceScore= reputationList.get(1);
 		}
 		city = null;
+		weeksToPerformance=1;
 	}
 	
 	public PlayerImpl (String n){
@@ -54,8 +56,15 @@ public class PlayerImpl implements Player {
 		talents = CollectionsFactory.createMapFactory().createMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
 		city = null;
+		weeksToPerformance=1;
+	}
+	public Integer getWeeksToPerformance(){
+		return weeksToPerformance;
 	}
 	
+	public void setWeeksToPerformance(Integer weeks){
+		weeksToPerformance=weeks;
+	}
 	
 	@Override
 	public String getName() {

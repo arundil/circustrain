@@ -65,9 +65,6 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	}
 	
 	public void finalMonth(){
-	
-//		TODO List<Player>
-		
 		//Puntos de victoria segun el nº de talentos
 		compareCountAndAddVictoryPoints();
 		//Puntos de victoria segun actuacion maxima
