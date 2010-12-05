@@ -1,8 +1,10 @@
 package actionCards;
 
 import game.CommandPerformance;
+import game.CommandToHire;
 import game.factory.GameFactory;
 import card.CardImpl;
+import performance.BankruptCircus;
 import performance.Performance;
 import performance.PerformanceDemand;
 import player.Player;
@@ -30,9 +32,15 @@ public class HoldImpl extends CardImpl implements ActionCard {
 			System.out.println("there isnt performance");
 		}
 		if (answer ==1){
-			//Contratar
+			if(player.getCity().hasBanckuptyCircus()){
+				BankruptCircus circus = player.getCity().getBanckuptyCircus();
+				CommandToHire ch = new CommandToHire(circus, player);
+				ch.execute();
+			}
+			else{
+				System.out.print("This city has no BankruptCircus");
+			}
 		}
-
 	}
 	
 	@Override

@@ -1,11 +1,13 @@
 package actionCards;
 
 import game.CommandPerformance;
+import game.CommandToHire;
 import game.factory.GameFactory;
 
 import java.util.List;
 
 import board.City;
+import performance.BankruptCircus;
 import performance.Performance;
 import performance.PerformanceDemand;
 import player.Player;
@@ -51,7 +53,14 @@ public class OvernighterImpl extends CardImpl implements ActionCard {
 				cp.execute();
 			}
 			if (answer ==1){
-				//Contratar
+				if(player.getCity().hasBanckuptyCircus()){
+					BankruptCircus circus = player.getCity().getBanckuptyCircus();
+					CommandToHire ch = new CommandToHire(circus, player);
+					ch.execute();
+				}
+				else{
+					System.out.print("This city has no BankruptCircus");
+				}
 			}
 		}
 	}
