@@ -9,9 +9,9 @@ import talent.Talent;
 
 public class PerformanceDemandImpl extends performanceImpl implements PerformanceDemand{
 		public PerformanceDemandImpl(Color cardColor, String description,
-			String name, Integer basicPoints,
+			Integer basicPoints,
 			Map<Talent, Integer> talentPoints, boolean twoWeeks) {
-		super(cardColor, description, name);
+		super(cardColor, description);
 		this.basicPoints = basicPoints;
 		this.talentPoints = talentPoints;
 		this.twoWeeks = twoWeeks;
@@ -43,7 +43,7 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 	public String toString(){
 		String r;
 		if(this.isTwoWeeks()){
-			r = "Esto es "+ this.getName()+" su descripcion es "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
+			r = "Esto es "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
 			Iterator<Talent> i = this.getTalentPoints().keySet().iterator();
 			Talent s;
 			while(i.hasNext()){
@@ -53,7 +53,7 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 				}
 			r+=" y es de dos semanas ";
 		}else{
-			r = "Esto es "+ this.getName()+" su descripcion es "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
+			r = "Esto es  "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
 			Iterator<Talent> i = this.getTalentPoints().keySet().iterator();
 			Talent s;
 			while(i.hasNext()){
