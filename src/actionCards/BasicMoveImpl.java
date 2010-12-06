@@ -3,10 +3,7 @@ package actionCards;
 import game.CommandPerformance;
 import game.CommandToHire;
 import game.factory.GameFactory;
-
 import java.util.List;
-import java.util.prefs.BackingStoreException;
-
 import board.City;
 import performance.BankruptCircus;
 import performance.Performance;
@@ -58,24 +55,23 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 		if(answer==1){ 	
 			System.out.println("What do you want to do? perform [0] or contract[1]");
 			answer = GameFactory.takeParametersToIntegerRestricted("Option:","0,1");
+			Performance p = player.getCity().getPerformance();
 			if (answer ==0){
-				if (player.getCity().hasPerfomance()){
-					Performance p = player.getCity().getPerformance();
+				if (p instanceof PerformanceDemand){
 					CommandPerformance cp = new CommandPerformance(player,(PerformanceDemand) p);
 					cp.execute();
 				}
 				else{
-					System.out.print("This city has no performance");
+					System.out.print("This city has no performance\n");
 				}
 			}
 			if (answer ==1){
-				if(player.getCity().hasBanckuptyCircus()){
-					BankruptCircus circus = player.getCity().getBanckuptyCircus();
-					CommandToHire ch = new CommandToHire(circus, player);
+				if(p instanceof BankruptCircus){
+					CommandToHire ch = new CommandToHire((BankruptCircus)p, player);
 					ch.execute();
 				}
 				else{
-					System.out.print("This city has no BankruptCircus");
+					System.out.print("This city has no BankruptCircus\n");
 				}
 			}
 		}

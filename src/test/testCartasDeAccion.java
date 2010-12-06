@@ -1,5 +1,8 @@
 package test;
 
+import java.awt.Color;
+import java.util.Map;
+
 import game.factory.GameFactory;
 import actionCards.ActionCard;
 import actionCards.BasicMoveImpl;
@@ -12,8 +15,14 @@ import actionCards.WagesImpl;
 import bag.TalentBagImpl;
 import board.Board;
 import board.BoardImpl;
+import performance.PerformanceDemand;
+import performance.PerformanceDemandImpl;
 import player.Player;
 import player.PlayerImpl;
+import talent.Clown;
+import talent.ClownImpl;
+import talent.Talent;
+import utiles.factoria.CollectionsFactory;
 
 public class testCartasDeAccion extends Test {
 
@@ -22,10 +31,15 @@ public class testCartasDeAccion extends Test {
 	 */
 
 	public static void main(String[] args) {
-		Board b = new BoardImpl("/src/board/boardcfg.txt");
+		Board b = new BoardImpl("/data/boardcfg.txt");
+		Clown cl = new ClownImpl();
 		Player p = new PlayerImpl("Pepe",false, true);
 		p.moveCity(b.getCityByName("Toronto"));
 		p.addMoney(100);
+		Map<Talent, Integer> talentPoints= CollectionsFactory.createMapFactory().createMap();
+		talentPoints.put(cl, 3);
+		PerformanceDemand pd = new PerformanceDemandImpl(new Color(100), "Bla Bla Bla", 2, talentPoints, false);
+		p.getCity().setPerfomance(pd);
 		System.out.println(p);
 		System.out.println("Elegir carta de acción a usar:\n" +
 				"[0]Viaje\n" +
