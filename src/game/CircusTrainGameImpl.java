@@ -14,6 +14,7 @@ import board.Board;
 import performance.Performance;
 import player.Player;
 import talent.Clown;
+import talent.ClownImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 
@@ -62,11 +63,13 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		higherPerformancesNumber();
 		higherReputation();
 		noClownsNoAnimals();
+		results();
+		
 	}
 	
 	public void finalMonth(){
 		//Puntos de victoria segun el nº de talentos
-		compareCountAndAddVictoryPoints();
+		compareTalentsCountAndAddVictoryPoints();
 		//Puntos de victoria segun actuacion maxima
 		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
 		if(comparatorPerformancePoints>0)
@@ -131,6 +134,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	}
 
 	public void startGame() {
+		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
+		theClown.add(new ClownImpl());
 		week=0;
 		System.out.println("Welcome to Circus Train!");
 		//TODO peticion de numero de jugadores
@@ -145,12 +150,14 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		if(numberOfPlayers==1){
 			String name=GameFactory.takeParametersToString("Player name: ");
 			Player player=GameFactory.createPlayer(name,advancedMode, true);	
+			player.addTalent(theClown);
 			playerList.add(player);
 		}else{		
 			for(int i=0;i<numberOfPlayers;i++){
 				Boolean firstPlayer=i==0;
 				String name=GameFactory.takeParametersToString("Player name: ");
 				Player player=GameFactory.createPlayer(name,advancedMode, firstPlayer);
+				player.addTalent(theClown);
 				playerList.add(player);
 			}
 		}
@@ -183,7 +190,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			playerList.addAll(newPlayerList);
 		}
 	}
-	private void compareCountAndAddVictoryPoints(){
+	private void compareTalentsCountAndAddVictoryPoints(){
 		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
 		for(Player player:playerList){
 			playersTalentsList.add(player.getTalents());
@@ -350,6 +357,32 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			playerList.get(playerIndex).addVictoryPoints(3);
 		}
 	}
-	
-	
+	private void results(){
+		String winner="";
+		Integer maxVictoryPoints=0;
+		Integer drawGame=0;
+		Integer previousPlayerVictoryPoints=0;
+		List<Integer> playerPoints=CollectionsFactory.createListFactory().createList();
+		for(int i=0;i<playerList.size();i++){
+			Player player=playerList.get(i);
+			if(i>0){
+				previousPlayerVictoryPoints=playerList.get(i-1).getVictoryPoints();
+			}
+			playerPoints.add(player.getVictoryPoints());
+			if(maxVictoryPoints<player.getVictoryPoints()){
+				maxVictoryPoints=player.getVictoryPoints();				
+			}
+			if(player.getVictoryPoints()==previousPlayerVictoryPoints){
+				drawGame=1;
+			}
+		}
+		if(drawGame==1){
+			winner="There's no winner."+"\n"+"============= DRAW GAME =============";
+		}else{
+			Integer winnerIndex=playerPoints.indexOf(maxVictoryPoints);
+			Player winnerPlayer=playerList.get(winnerIndex);
+			winner="Here's your winner! The winner is"+"\n"+"============= "+winnerPlayer.getName()+" =============";
+		}
+		System.out.println(winner+"\n"+"\n"+"---=== Thank you for playing Train Circus! ===---");
+	}
 }
