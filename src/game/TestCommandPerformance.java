@@ -55,10 +55,10 @@ public class TestCommandPerformance {
 		twoWeeksPerformanceTalents.put(new ClownImpl(),3);
 		twoWeeksPerformanceTalents.put(new ElephantImpl(),6);
 		twoWeeksPerformanceTalents.put(new FreakShowImpl(),18);
-		greenPerformance= new PerformanceDemandImpl(Color.GREEN,"Green performance demand","Performance 1",3, greenPerformanceTalents, false);
-		yellowPerformance= new PerformanceDemandImpl(Color.YELLOW,"Yellow performance demand","Performance 2",4, yellowPerformanceTalents, false);
-		redPerformance= new PerformanceDemandImpl(Color.RED,"Red performance demand","Performance 3",3, redPerformanceTalents, false);
-		twoWeeksPerformance= new PerformanceDemandImpl(Color.RED,"Red Two Weeks performance demand","Performance 4",5, twoWeeksPerformanceTalents, true);
+		greenPerformance= new PerformanceDemandImpl(Color.GREEN,"Green performance demand",3, greenPerformanceTalents, false);
+		yellowPerformance= new PerformanceDemandImpl(Color.YELLOW,"Performance 2",4, yellowPerformanceTalents, false);
+		redPerformance= new PerformanceDemandImpl(Color.RED,"Performance 3",3, redPerformanceTalents, false);
+		twoWeeksPerformance= new PerformanceDemandImpl(Color.RED,"Performance 4",5, twoWeeksPerformanceTalents, true);
 		testCommandGreen=new CommandPerformance(player, greenPerformance);
 		testCommandYellow=new CommandPerformance(player, yellowPerformance);
 		testCommandRed=new CommandPerformance(player, redPerformance);
