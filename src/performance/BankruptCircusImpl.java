@@ -9,9 +9,9 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 	
 	
 	private List<Talent> talentCircus; //talentos asociados a la carta de bancarrota
-	public BankruptCircusImpl(Color cardColor, String description, String name,
+	public BankruptCircusImpl(Color cardColor, String description, 
 			List<Talent> talentCircus) {
-		super(cardColor, description, name);
+		super(cardColor, description);
 		this.talentCircus = talentCircus;
 	}
 	public List<Talent> getTalentCircus() {
@@ -21,7 +21,7 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 	@Override
 
 	public String toString(){
-		return "Esta carta es de color "+ this.getColor().toString()+ " es un " + this.getName() + " y su descripcion es "+ this.getDescription();
+		return "Esta carta es de color "+ this.getColor().toString()+ " es un " + this.getDescription();
 	}
 
 }

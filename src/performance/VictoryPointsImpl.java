@@ -4,9 +4,9 @@ import java.awt.Color;
 
 public class VictoryPointsImpl extends performanceImpl implements VictoryPoints {
 	private Integer victoryPoints;
-	public VictoryPointsImpl(Color cardColor, String description, String name,
+	public VictoryPointsImpl(Color cardColor, String description, 
 			Integer victoryPoints) {
-		super(cardColor, description, name);
+		super(cardColor, description);
 		this.victoryPoints = victoryPoints;
 	}
 
@@ -19,7 +19,7 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 	@Override
 
 	public String toString(){
-		return " Esto es"+ this.getName() +" con descripcion " + this.getDescription() +" de color "+ this.getColor().toString() +"y con los siguientes puntos de victoria : "+ this.getVictoryPoints().toString();
+		return " Esto es " + this.getDescription() +" de color "+ this.getColor().toString() +"y con los siguientes puntos de victoria : "+ this.getVictoryPoints().toString();
 	}
 
 }

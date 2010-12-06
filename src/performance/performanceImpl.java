@@ -4,11 +4,10 @@ import java.awt.Color;
 
 public class performanceImpl implements Performance {
 	
-	public performanceImpl(Color cardColor, String description, String name) {
+	public performanceImpl(Color cardColor, String description) {
 		super();
 		this.cardColor = cardColor;
 		this.description = description;
-		this.name = name;
 	}
 
 	private Color cardColor;
@@ -27,12 +26,8 @@ public class performanceImpl implements Performance {
 		return description;
 	}
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return name;
-	}
+
 	public String toString(){
-		return "La carta "+ this.getName()+" con descripcion "+ this.getDescription()+" y color "+this.getColor().toString();
+		return "La carta con descripcion "+ this.getDescription()+" y color "+this.getColor().toString();
 	}
 }
