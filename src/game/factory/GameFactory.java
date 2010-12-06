@@ -50,7 +50,7 @@ public class GameFactory {
 	}
 	
 	public static Board createBoard(){
-		return new BoardImpl();
+		return new BoardImpl("/data/boardcfg.txt");
 	}
 	
 	public static String takeParametersToString(String message){
