@@ -99,6 +99,10 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		//I have one problem, big problem. No solution problem :S
 		//falta de informacion de talentos toString.
 		//Acepto ideas, tengo una solucion fea.
+		
+		// Francis: Ya puedes llamar al toString de talentos. Si lo necesitas
+		// tengo implementado el toString de forma que me muestra todo lo que hay
+		// en el map (Nombre talento y salario), en la clase TestTalents puedes ver como va.
 		List<Talent> listtalent = CollectionsFactory.createListFactory().createList();
 		Talent talent;
 		for(Talent t:mapt.keySet()){

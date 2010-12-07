@@ -17,12 +17,11 @@ public class TalentImpl implements Comparable<Talent>, Talent {
 		return wage;
 	}
 
-	/* 
+	/*
 	 * Este método devolverá el nombre de la interfaz (nombre del talento) que
-	 * se vaya llamando desde las distintas interfaces
-	 * esto me servirá para hacer una simple llamada al toString de esta clase
-	 * sin necesidad
-	 * de crear uno para cada tipo de talento.
+	 * se vaya llamando desde las distintas interfaces esto me servirá para
+	 * hacer una simple llamada al toString de esta clase sin necesidad de crear
+	 * uno para cada tipo de talento.
 	 */
 	public String getName() {
 		Class<?>[] c = this.getClass().getInterfaces();
@@ -63,9 +62,7 @@ public class TalentImpl implements Comparable<Talent>, Talent {
 
 	@Override
 	public int compareTo(Talent arg0) {
-		int res;
-		res=this.wage-arg0.getWage();
-		return res;
+		return this.wage - arg0.getWage();
 	}
 
 }
