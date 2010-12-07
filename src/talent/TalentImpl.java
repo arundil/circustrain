@@ -1,6 +1,6 @@
 package talent;
 
-public class TalentImpl implements Talent {
+public class TalentImpl implements Comparable<Talent>, Talent {
 
 	private Integer wage;
 
@@ -59,6 +59,13 @@ public class TalentImpl implements Talent {
 		} else if (!wage.equals(other.wage))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(Talent arg0) {
+		int res;
+		res=this.wage-arg0.getWage();
+		return res;
 	}
 
 }
