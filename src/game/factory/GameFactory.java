@@ -15,6 +15,13 @@ import board.Board;
 import board.BoardImpl;
 import player.Player;
 import player.PlayerImpl;
+import talent.BigCatImpl;
+import talent.ClownImpl;
+import talent.ElephantImpl;
+import talent.FreakShowImpl;
+import talent.HorseImpl;
+import talent.HumanCannonballImpl;
+import talent.Talent;
 import tipos.Cadenas;
 import utiles.factoria.CollectionsFactory;
 
@@ -105,5 +112,29 @@ public class GameFactory {
 			number= takeParametersToInteger(message);
 		}
 		return number;		
+	}
+	
+	public static Talent createTalent(String talentToCreate){
+		talentToCreate=talentToCreate.toUpperCase();
+		
+		if(talentToCreate.equals("CLOWN")){
+			return new ClownImpl();
+		}
+		if(talentToCreate.equals("BIG CAT")){
+			return new BigCatImpl();
+		}
+		if(talentToCreate.equals("ELEPHANT")){
+			return new ElephantImpl();
+		}
+		if(talentToCreate.equals("FREAK SHOW")){
+			return new FreakShowImpl();
+		}
+		if(talentToCreate.equals("HORSE")){
+			return new HorseImpl();
+		}
+		if(talentToCreate.equals("HUMAN CANNON BALL")){
+			return new HumanCannonballImpl();
+		}
+		return null;
 	}
 }
