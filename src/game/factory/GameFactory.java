@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
-
-import bag.EventBag;
 import bag.PerformanceBag;
 import bag.PerformanceBagImpl;
 import bag.TalentBag;
@@ -23,7 +20,6 @@ import talent.HorseImpl;
 import talent.HumanCannonballImpl;
 import talent.Talent;
 import tipos.Cadenas;
-import utiles.factoria.CollectionsFactory;
 
 public class GameFactory {
 	
