@@ -33,6 +33,7 @@ public class CommandPerformance extends AbstractCommand{
 					if(t.equals(entry.getKey())){
 						newPerformancePoints+=entry.getValue();
 					}
+				}
 			}
 			newPerformancePoints+=performance.getBasicPoints();
 			List<Performance> performancelist=player.getPerfomancesUsed();
@@ -45,10 +46,11 @@ public class CommandPerformance extends AbstractCommand{
 				player.addPerformance(newPerformancePoints);
 			}
 			refresh();
+			System.out.println("Añadiendo performances");
 			player.addPerfomanceUsed(performance);		
-			}
+			
 		}else{
-			weeksToPerformance--;
+			player.setWeeksToPerformance(player.getWeeksToPerformance()-1);
 		}
 	}
 	

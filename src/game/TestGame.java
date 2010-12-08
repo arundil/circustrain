@@ -1,10 +1,12 @@
 package game;
 
+import game.factory.GameFactory;
+
 import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 
-import game.factory.GameFactory;
+import performance.Performance;
 import performance.PerformanceDemand;
 import performance.PerformanceDemandImpl;
 import player.Player;
@@ -17,22 +19,18 @@ import talent.HumanCannonballImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 
-import org.junit.Before;
-import org.junit.Test;
-
-public class TestCommandPerformance {
-	Player player;
-	PerformanceDemand greenPerformance;
-	PerformanceDemand yellowPerformance;
-	PerformanceDemand redPerformance;
-	PerformanceDemand twoWeeksPerformance;
-	CommandPerformance testCommandTwoWeeks;
-	CommandPerformance testCommandRed;
-	CommandPerformance testCommandYellow;
-	CommandPerformance testCommandGreen;
-	
-	@Before
-	public void setUp(){
+public class TestGame {
+	public static void main (String[] args){
+		Player player;
+		PerformanceDemand greenPerformance;
+		PerformanceDemand yellowPerformance;
+		PerformanceDemand redPerformance;
+		PerformanceDemand twoWeeksPerformance;
+		CommandPerformance testCommandTwoWeeks;
+		CommandPerformance testCommandRed;
+		CommandPerformance testCommandYellow;
+		CommandPerformance testCommandGreen;
+		
 		player = GameFactory.createPlayer("Tristan",true, true);
 		List<Talent> playerTalents=CollectionsFactory.createListFactory().createList();
 		playerTalents.add(new ClownImpl());
@@ -63,48 +61,15 @@ public class TestCommandPerformance {
 		testCommandYellow=new CommandPerformance(player, yellowPerformance);
 		testCommandRed=new CommandPerformance(player, redPerformance);
 		testCommandTwoWeeks=new CommandPerformance(player, twoWeeksPerformance);
-	}
 	
-	@Test
-	public void testGreenPerformance(){
+		System.out.println(player.getPerfomancesUsed().size());
 		testCommandGreen.execute();
-		assert player.getPerfomancesUsed().size()==1:"Falla numero de Performances usadas";
-		assert player.getPerformanceMax()==11:"Falla puntos de actuacion maxima";
-		assert player.getMoney()==15:"Falla dinero";
-		assert player.getWeeksToPerformance()==1:"Falla numero semanas para actuar";
+		System.out.println(player.getPerfomancesUsed().size());
+		for(Performance performance:player.getPerfomancesUsed()){
+			System.out.println(performance.toString());
+			
+		}
+		
+		
 	}
-	@Test
-	public void testYellowPerformance(){
-		testCommandYellow.execute();
-		assert player.getPerfomancesUsed().size()==1:"Falla numero de Performances usadas";
-		assert player.getPerformanceMax()==5:"Falla puntos de actuacion maxima";
-		assert player.getMoney()==20:"Falla dinero";
-		assert player.getWeeksToPerformance()==1:"Falla numero semanas para actuar";
-	}
-	@Test
-	public void testRedPerformance(){
-		testCommandRed.execute();
-		assert player.getPerfomancesUsed().size()==1:"Falla numero de Performances usadas";
-		assert player.getPerformanceMax()==6:"Falla puntos de actuacion maxima";
-		assert player.getMoney()==30:"Falla dinero";
-		assert player.getWeeksToPerformance()==1:"Falla numero semanas para actuar";
-	}
-	@Test
-	public void testTwoWeeksPerformanceRound1(){
-		testCommandTwoWeeks.execute();
-		assert player.getPerfomancesUsed().size()==0:"Falla numero de Performances usadas";
-		assert player.getPerformanceMax()==0:"Falla puntos de actuacion maxima";
-		assert player.getMoney()==0:"Falla dinero";
-		assert player.getWeeksToPerformance()==0:"Falla numero semanas para actuar";
-	}
-	@Test
-	public void testTwoWeeksPerformanceRound2(){
-		testCommandTwoWeeks.execute();
-		testCommandTwoWeeks.execute();
-		assert player.getPerfomancesUsed().size()==1:"Falla numero de Performances usadas";
-		assert player.getPerformanceMax()==14:"Falla puntos de actuacion maxima";
-		assert player.getMoney()==30:"Falla dinero";
-		assert player.getWeeksToPerformance()==1:"Falla numero semanas para actuar";
-	}
-	
 }
