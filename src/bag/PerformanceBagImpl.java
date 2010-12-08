@@ -1,5 +1,7 @@
 package bag;
 
+import game.factory.GameFactory;
+
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -42,45 +44,64 @@ public class PerformanceBagImpl implements PerformanceBag {
 			while ((fileLine = fileReader.readLine())!=null) {
 				   Color color=null;
 				   String []readedString=fileLine.split(",");
-				   if(readedString[1]=="g"){
+				   Performance performanceToAdd=null;
+				   if(readedString[1].equals("G")){
 						   color=Color.green;
 				   }
-				   if(readedString[1]=="y"){
+				   if(readedString[1].equals("Y")){
 					   color=Color.yellow;
 				   }
-				   if(readedString[1]=="r"){
+				   if(readedString[1].equals("R")){
 					   color=Color.red;
 				   }
+				   
 				   if(readedString[0].equals("D")){
 					   String description="Performance Demand";
+					   
 					   Integer basicPoints=new Integer(readedString[4]);
 					   Boolean twoWeeks=new Boolean(readedString[3]);
 					   Map<Talent,Integer> demandedTalents=CollectionsFactory.createMapFactory().createMap();
-					   if(!readedString[4].equals("0")){
-						   demandedTalents.put(new ClownImpl(), new Integer(readedString[4]));
-					   }
-					   if(!readedString[5].equals("0")){
-						   demandedTalents.put(new AcrobatImpl(), new Integer(readedString[5]));
-					   }
 					   if(!readedString[6].equals("0")){
-						   demandedTalents.put(new BigCatImpl(), new Integer(readedString[6]));
+						   demandedTalents.put(new ClownImpl(), new Integer(readedString[6]));
+					   }
+					   if(!readedString[4].equals("0")){
+						   demandedTalents.put(new AcrobatImpl(), new Integer(readedString[4]));
 					   }
 					   if(!readedString[7].equals("0")){
-						   demandedTalents.put(new ElephantImpl(), new Integer(readedString[7]));
+						   demandedTalents.put(new BigCatImpl(), new Integer(readedString[7]));
 					   }
 					   if(!readedString[8].equals("0")){
-						   demandedTalents.put(new FreakShowImpl(), new Integer(readedString[8]));
-					   }
-					   if(!readedString[9].equals("0")){
-						   demandedTalents.put(new HorseImpl(), new Integer(readedString[9]));
+						   demandedTalents.put(new ElephantImpl(), new Integer(readedString[8]));
 					   }
 					   if(!readedString[10].equals("0")){
-						   demandedTalents.put(new HumanCannonballImpl(), new Integer(readedString[10]));
+						   demandedTalents.put(new FreakShowImpl(), new Integer(readedString[10]));
 					   }
-					   Performance performanceToAdd=new PerformanceDemandImpl(color, description, basicPoints, demandedTalents, twoWeeks);
-					   addPerformance(performanceToAdd);					   
+					   if(!readedString[5].equals("0")){
+						   demandedTalents.put(new HorseImpl(), new Integer(readedString[5]));
+					   }
+					   if(!readedString[9].equals("0")){
+						   demandedTalents.put(new HumanCannonballImpl(), new Integer(readedString[9]));
+					   }
+					   performanceToAdd=new PerformanceDemandImpl(color, description, basicPoints, demandedTalents, twoWeeks);
 				   }
-
+				   if(readedString[0].equals("V")){
+					   String description="Victory points";
+					   Integer victoryPoints=new Integer(readedString[2]);
+					   performanceToAdd=new VictoryPointsImpl(color, description, victoryPoints);
+				   }
+				   if(readedString[0].equals("B")){
+					   String description="Bankrupt circus";
+					   List<Talent> talentList=CollectionsFactory.createListFactory().createList();
+					   for(String talentString:readedString){
+						   Talent talentToAdd=GameFactory.createTalent(talentString);
+						   if(talentToAdd!=null){
+							   talentList.add(talentToAdd);
+						   }
+					   }
+					   performanceToAdd=new BankruptCircusImpl(color, description, talentList);
+				   }
+				   
+				   addPerformance(performanceToAdd);
 			}
 
 		} catch (IOException e) {
@@ -202,6 +223,27 @@ public class PerformanceBagImpl implements PerformanceBag {
 	public Performance removePerformance(Performance p) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public String toString(){
+		String cadena="";
+		
+		cadena=cadena+"VERDE______\r\n";
+		for(Performance p:this.getGreenBag()){
+			cadena=cadena+p.toString()+"\r\n";
+		}
+		
+		cadena=cadena+"AMARILLO______\r\n";
+		for(Performance p:this.getYellowBag()){
+			cadena=cadena+p.toString()+"\r\n";
+		}
+		
+		cadena=cadena+"ROJO______\r\n";
+		for(Performance p:this.getRedBag()){
+			cadena=cadena+p.toString()+"\r\n";
+		}
+		
+		return cadena;
 	}
 
 }
