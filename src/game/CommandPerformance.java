@@ -46,7 +46,6 @@ public class CommandPerformance extends AbstractCommand{
 				player.addPerformance(newPerformancePoints);
 			}
 			refresh();
-			System.out.println("Añadiendo performances");
 			player.addPerfomanceUsed(performance);		
 			
 		}else{
