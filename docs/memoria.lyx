@@ -896,22 +896,80 @@ TOTAL
 Iteraciones
 \end_layout
 
-\begin_layout Standard
-
-\shape italic
-\size larger
-Diagrama UML de diseño
+\begin_layout Section*
+Añadidos en la iteración 4:
 \end_layout
 
+\begin_layout Itemize
+Implementación de cartas de acción.
+\end_layout
+
+\begin_layout Itemize
+Implementación de las distintas bolsas (PerformanceBag, TalentBag).
+\end_layout
+
+\begin_layout Itemize
+Implementación de las clases relativas al tablero (Board, City).
+\end_layout
+
+\begin_layout Itemize
+Implementación de los diferentes comandos necesarios.
+\end_layout
+
+\begin_layout Itemize
+Implementación de la clase que contiene la secuencia de juego (CircusTrainGame).
+\end_layout
+
+\begin_layout Itemize
+\align block
+Implementación de los distintos tipos de actuaciones (BankruptCircus,
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-\begin_inset Graphics
-	filename trenDelCircov1.1.png
-	lyxscale 95
-	scale 37
+\align block
+PerformanceDemand,VictoryPoints).
+\end_layout
 
-\end_inset
+\end_deeper
+\begin_layout Itemize
+Implementación de la clase correspondiente al jugador (PlayerImpl).
+\end_layout
 
+\begin_layout Itemize
+Implementación de los distintos talentos.
+\end_layout
 
+\begin_layout Itemize
+Documentos de asignación de responsabilidades de los métodos.
+\end_layout
+
+\begin_layout Itemize
+Memorandos técnicos.
+\end_layout
+
+\begin_layout Section*
+Asuntos pendientes:
+\end_layout
+
+\begin_layout Itemize
+Terminar pruebas unitarias.
+\end_layout
+
+\begin_layout Itemize
+Refactorizar.
+\end_layout
+
+\begin_layout Itemize
+Implementación de los modos de juego básico.
+\end_layout
+
+\begin_layout Itemize
+Documentos de asignación de responsabilidades.
+\end_layout
+
+\begin_layout Itemize
+Integración de las diferentes partes.
 \end_layout
 
 \begin_layout Chapter*
@@ -924,6 +982,14 @@ http://code.google.com/p/circustrain/
 
 \begin_layout Chapter*
 Pruebas unitarias
+\end_layout
+
+\begin_layout Itemize
+Pruebas para Board
+\end_layout
+
+\begin_layout Itemize
+Pruebas para el comando CommandPerformance
 \end_layout
 
 \begin_layout Chapter*

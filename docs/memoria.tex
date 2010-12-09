@@ -5,16 +5,12 @@
 \usepackage[latin9]{inputenc}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
-\usepackage{graphicx}
 
 \makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
-%% A simple dot to overcome graphicx limitations
-\newcommand{\lyxdot}{.}
-
 
 \makeatother
 
@@ -46,8 +42,7 @@ http://www.youtube.com/watch?v=Nyde3nEXl7s
 \item Día 13 de octubre de 2010 a las 8:30, coordinación
 \item Día 18 de octubre de 2010 a las 9:00, entrega iteración 2
 \item Día 11 de noviembre de 2010 a las 21:00, entrega iteración 3
-\item Día 25 de Noviembre de 2010 a las 23:00, entrega iteración 4
-\item Día XX de XXXXXXXX de XXXX a las XX:XX, entrega iteración 5
+\item Día 9 de diciembre de 2010 a las 23:00, entrega iteración 4
 \end{itemize}
 
 \chapter*{Seguimiento}
@@ -57,29 +52,52 @@ http://www.youtube.com/watch?v=Nyde3nEXl7s
 \textit{Miembros\textbackslash{}Puntos por Iteración} & \textit{1} & \textit{2} & \textit{3} & \textit{4} & \textit{5} & \textit{6} & \textit{7} & \textbf{\textit{TOTAL}}\tabularnewline
 \hline
 \hline 
-\textit{Bayón Benegas, Marc} & 5  & 5 & 5 &  &  &  &  & 10\tabularnewline
+\textit{Bayón Benegas, Marc} & 5  & 5 & 5 & 5 &  &  &  & 20\tabularnewline
 \hline 
-\textit{Cuenca Gómez, Emilio} & 5  & 5 & 5 &  &  &  &  & 10\tabularnewline
+\textit{Cuenca Gómez, Emilio} & 5  & 5 & 5 & 5 &  &  &  & 20\tabularnewline
 \hline 
-\textit{Daza Pastrana, Francisco José} & 5 & 5 & 5 &  &  &  &  & 10\tabularnewline
+\textit{Daza Pastrana, Francisco José} & 5 & 5 & 5 & 5 &  &  &  & 20\tabularnewline
 \hline 
-\textit{Espinaco Billalba, Francisco Javier} & 5 & 5 & 5 &  &  &  &  & 10\tabularnewline
+\textit{Espinaco Billalba, Francisco Javier} & 5 & 5 & 5 & 5 &  &  &  & 20\tabularnewline
 \hline 
-\textit{Tristancho Reyes, Álvaro} & 5 & 5 & 5 &  &  &  &  & 10\tabularnewline
+\textit{Tristancho Reyes, Álvaro} & 5 & 5 & 5 & 5 &  &  &  & 20\tabularnewline
 \hline 
-\textit{Viñas Sandiez, Antonio Jesús} & 5 & 5 & 5 &  &  &  &  & 10\tabularnewline
+\textit{Viñas Sandiez, Antonio Jesús} & 5 & 5 & 5 & 5 &  &  &  & 20\tabularnewline
 \hline 
-\textbf{\textit{TOTAL}} & 30 & 30 & 30 &  &  &  &  & 60\tabularnewline
+\textbf{\textit{TOTAL}} & 30 & 30 & 30 & 30 &  &  &  & 120\tabularnewline
 \hline
 \end{tabular}
 
 
 \chapter*{Iteraciones}
 
-\textit{\Large Diagrama UML de diseño}{\Large \par}
 
-\includegraphics[scale=0.37,bb = 0 0 200 100, draft, type=eps]{trenDelCircov1.1.png}
+\section*{Añadidos en la iteración 4:}
+\begin{itemize}
+\item Implementación de cartas de acción.
+\item Implementación de las distintas bolsas (PerformanceBag, TalentBag).
+\item Implementación de las clases relativas al tablero (Board, City).
+\item Implementación de los diferentes comandos necesarios.
+\item Implementación de la clase que contiene la secuencia de juego (CircusTrainGame).
+\item Implementación de los distintos tipos de actuaciones (BankruptCircus,
 
+
+PerformanceDemand,VictoryPoints).
+
+\item Implementación de la clase correspondiente al jugador (PlayerImpl).
+\item Implementación de los distintos talentos.
+\item Documentos de asignación de responsabilidades de los métodos.
+\item Memorandos técnicos.
+\end{itemize}
+
+\section*{Asuntos pendientes:}
+\begin{itemize}
+\item Terminar pruebas unitarias.
+\item Refactorizar.
+\item Implementación de los modos de juego básico.
+\item Documentos de asignación de responsabilidades.
+\item Integración de las diferentes partes.
+\end{itemize}
 
 \chapter*{URL de implementación}
 
@@ -87,7 +105,10 @@ http://code.google.com/p/circustrain/
 
 
 \chapter*{Pruebas unitarias}
-
+\begin{itemize}
+\item Pruebas para Board
+\item Pruebas para el comando CommandPerformance
+\end{itemize}
 
 \chapter*{Extensiones}
 
