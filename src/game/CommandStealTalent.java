@@ -30,13 +30,13 @@ public class CommandStealTalent extends AbstractCommand{
 				break;
 			}
 		}
-		Set<Entry<Talent,Integer>> playerDetailedTalents=player.getTalents().entrySet();
+		Set<Entry<Talent,Integer>> playerDetailedTalents=otherPlayer.getTalents().entrySet();
 		List<Entry<Talent,Integer>> playerDetailedTalentList=CollectionsFactory.createListFactory().createList();
 		playerDetailedTalentList.addAll(playerDetailedTalents);
 		String options="";
 		String conditions="";
+		Integer index=1;
 		for(Entry<Talent,Integer> entry:playerDetailedTalents){
-			Integer index=1;
 			options=options+index+" : "+entry.getKey().toString()+"\n";
 			conditions=conditions+index+",";
 			index++;
@@ -56,8 +56,4 @@ public class CommandStealTalent extends AbstractCommand{
 			}
 		}		
 	}
-	
-	
-	
-
 }
