@@ -7,7 +7,6 @@ import java.util.List;
 import performance.Performance;
 import tipos.CollectionsUtils;
 import tipos.Filter;
-import tipos.reverseFilter;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.Graph;
 import utiles.factoria.ReadFile;
@@ -153,7 +152,7 @@ public class BoardImpl implements Board {
 	}
 	
 	private City getRandomCity(Filter<City> filter){
-		List<City> cities=CollectionsUtils.filteredList(this.getCitiesWithoutPerformance(), filter) ;
+		List<City> cities=CollectionsUtils.filteredList(this.getCities(), filter) ;
 		
 		Integer random=(int)(Math.random()*cities.size()); 
 		return cities.get(random);

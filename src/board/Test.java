@@ -19,5 +19,4 @@ public class Test {
 		System.out.println(Tablero.getCities());
 
 	}
-
 }
