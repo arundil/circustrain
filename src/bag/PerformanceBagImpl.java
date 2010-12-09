@@ -62,27 +62,28 @@ public class PerformanceBagImpl implements PerformanceBag {
 					   Boolean twoWeeks=new Boolean(readedString[3]);
 					   Map<Talent,Integer> demandedTalents=CollectionsFactory.createMapFactory().createMap();
 					   if(!readedString[6].equals("0")){
-						   demandedTalents.put(new ClownImpl(), new Integer(readedString[6]));
+						   demandedTalents.put(GameFactory.createTalent("clown"), new Integer(readedString[6]));
 					   }
 					   if(!readedString[4].equals("0")){
-						   demandedTalents.put(new AcrobatImpl(), new Integer(readedString[4]));
+						   demandedTalents.put(GameFactory.createTalent("acrobat"), new Integer(readedString[4]));
 					   }
 					   if(!readedString[7].equals("0")){
-						   demandedTalents.put(new BigCatImpl(), new Integer(readedString[7]));
+						   demandedTalents.put(GameFactory.createTalent("big cat"), new Integer(readedString[7]));
 					   }
 					   if(!readedString[8].equals("0")){
-						   demandedTalents.put(new ElephantImpl(), new Integer(readedString[8]));
+						   demandedTalents.put(GameFactory.createTalent("elephant"), new Integer(readedString[8]));
 					   }
 					   if(!readedString[10].equals("0")){
-						   demandedTalents.put(new FreakShowImpl(), new Integer(readedString[10]));
+						   demandedTalents.put(GameFactory.createTalent("freak show"), new Integer(readedString[10]));
 					   }
 					   if(!readedString[5].equals("0")){
-						   demandedTalents.put(new HorseImpl(), new Integer(readedString[5]));
+						   demandedTalents.put(GameFactory.createTalent("horse"), new Integer(readedString[5]));
 					   }
 					   if(!readedString[9].equals("0")){
-						   demandedTalents.put(new HumanCannonballImpl(), new Integer(readedString[9]));
+						   demandedTalents.put(GameFactory.createTalent("human cannon ball"), new Integer(readedString[9]));
 					   }
 					   performanceToAdd=new PerformanceDemandImpl(color, description, basicPoints, demandedTalents, twoWeeks);
+			
 				   }
 				   if(readedString[0].equals("V")){
 					   String description="Victory points";

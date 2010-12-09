@@ -113,6 +113,9 @@ public class GameFactory {
 	public static Talent createTalent(String talentToCreate){
 		talentToCreate=talentToCreate.toUpperCase();
 		
+		if(talentToCreate.equals("ACROBAT")){
+			return new AcrobatImpl();
+		}
 		if(talentToCreate.equals("CLOWN")){
 			return new ClownImpl();
 		}
