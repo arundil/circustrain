@@ -57,7 +57,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	}
 	
 	public void gameOver() {
-		// TODO Reglas de fin de juego	
+		// TODO Si hay carta de salarios pagar el doble a cada talento
+		//wageCardNoDiscarded();
 		higherClownNumber();
 		higherMoneyAmount();
 		higherPerformancesNumber();
