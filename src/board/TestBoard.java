@@ -10,7 +10,7 @@ public class TestBoard {
 	Board tablero;
 	@Before
 	public void setUp() throws Exception {
-		tablero=new BoardImpl("/src/board/boardcfg.txt");
+		tablero=new BoardImpl("/data/boardcfg.txt");
 	}
 
 	@Test
