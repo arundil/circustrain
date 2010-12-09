@@ -8,7 +8,7 @@ import talent.Talent;
 
 
 public class PerformanceDemandImpl extends performanceImpl implements PerformanceDemand{
-		public PerformanceDemandImpl(Color cardColor, String description,
+		public PerformanceDemandImpl(String cardColor, String description,
 			Integer basicPoints,
 			Map<Talent, Integer> talentPoints, boolean twoWeeks) {
 		super(cardColor, description);

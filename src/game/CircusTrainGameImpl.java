@@ -215,21 +215,21 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	private void addCities(){
 		if(month.equals("APRIL") || month.equals("MAY")){
 			while(board.getCitiesWithPerfomance().size()<8){
-				Performance randomPerformance=performanceBag.getPerformance(Color.green);/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
+				Performance randomPerformance=performanceBag.getPerformance("green");/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
 				board.addPerfomanceInRandomCity(randomPerformance);
 				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 		if(month.equals("JUNE") || month.equals("JULY")){
 			while(board.getCitiesWithPerfomance().size()<10){
-				Performance randomPerformance=performanceBag.getPerformance(Color.green);/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
+				Performance randomPerformance=performanceBag.getPerformance("yellow");/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
 				board.addPerfomanceInRandomCity(randomPerformance);
 				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 		if(month.equals("AUGUST") || month.equals("SEPTEMBER")){
 			while(board.getCitiesWithPerfomance().size()<12){
-				Performance randomPerformance=performanceBag.getPerformance(Color.green);/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
+				Performance randomPerformance=performanceBag.getPerformance("red");/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
 				board.addPerfomanceInRandomCity(randomPerformance);
 				performanceBag.removePerformance(randomPerformance);
 			}

@@ -41,13 +41,13 @@ public class testPerformance extends Test{
 		Integer elec = GameFactory.takeParametersToIntegerTopValue("Opcion:", 2);
 		
 		if (elec == 0){
-			System.out.println(p1.getPerformance(Color.green).toString());
+			System.out.println(p1.getPerformance("green").toString());
 			}
 		if (elec == 1){
-			System.out.println(p1.getPerformance(Color.yellow).toString());
+			System.out.println(p1.getPerformance("yellow").toString());
 		}
 		if (elec == 2){
-			System.out.println(p1.getPerformance(Color.red).toString());
+			System.out.println(p1.getPerformance("red").toString());
 		}
 		
 		System.out.println("La ciudad actual de "+p.getName()+" es " + p.getCity());

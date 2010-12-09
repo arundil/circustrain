@@ -42,17 +42,17 @@ public class PerformanceBagImpl implements PerformanceBag {
 
 		try {
 			while ((fileLine = fileReader.readLine())!=null) {
-				   Color color=null;
+				   String color=null;
 				   String []readedString=fileLine.split(",");
 				   Performance performanceToAdd=null;
 				   if(readedString[1].equals("G")){
-						   color=Color.green;
+						   color="green";
 				   }
 				   if(readedString[1].equals("Y")){
-					   color=Color.yellow;
+					   color="yellow";
 				   }
 				   if(readedString[1].equals("R")){
-					   color=Color.red;
+					   color="red";
 				   }
 				   
 				   if(readedString[0].equals("D")){
@@ -116,11 +116,11 @@ public class PerformanceBagImpl implements PerformanceBag {
 
 	
 	public Performance addPerformance(Performance e) {
-		if(e.getColor() == Color.red){
+		if(e.getColor().equals("green")){
 			redBag.add(e);}
-		else if (e.getColor() == Color.yellow){
+		else if (e.getColor().equals("yellow")){
 			yellowBag.add(e);}
-		else if (e.getColor() == Color.green){
+		else if (e.getColor().equals("red")){
 			greenBag.add(e);}
 		return e;
 	}
@@ -132,12 +132,12 @@ public class PerformanceBagImpl implements PerformanceBag {
 		List<Talent> listatalentos= CollectionsFactory.createListFactory().createList();
 		listatalentos.add(new ClownImpl());
 		listatalentos.add(new AcrobatImpl());
-		Performance bancarrota = new BankruptCircusImpl(Color.green,"circo en bancarrota" , listatalentos);
+		Performance bancarrota = new BankruptCircusImpl("green","circo en bancarrota" , listatalentos);
 		Map<Talent, Integer> talents = CollectionsFactory.createMapFactory().createMap();
 		talents.put(new ClownImpl(), 10);
 		talents.put(new BigCatImpl(), 6);
-		Performance demandaActuacion = new PerformanceDemandImpl(Color.green,"actuacion",10,talents,true);
-		Performance puntosDeVictoria = new VictoryPointsImpl(Color.green,"Puntos",2);
+		Performance demandaActuacion = new PerformanceDemandImpl("green","actuacion",10,talents,true);
+		Performance puntosDeVictoria = new VictoryPointsImpl("green","Puntos",2);
 		greenBag.add(bancarrota);
 		greenBag.add(demandaActuacion);
 		greenBag.add(puntosDeVictoria);
@@ -151,12 +151,12 @@ public class PerformanceBagImpl implements PerformanceBag {
 		List<Talent> listatalentos= CollectionsFactory.createListFactory().createList();
 		listatalentos.add(new ClownImpl());
 		listatalentos.add(new AcrobatImpl());
-		Performance bancarrota = new BankruptCircusImpl(Color.red,"circo en bancarrota" , listatalentos);
+		Performance bancarrota = new BankruptCircusImpl("red","circo en bancarrota" , listatalentos);
 		Map<Talent, Integer> talents = CollectionsFactory.createMapFactory().createMap();
 		talents.put(new ClownImpl(), 10);
 		talents.put(new BigCatImpl(), 6);
-		Performance demandaActuacion = new PerformanceDemandImpl(Color.red,"actuacion",10,talents,true);
-		Performance puntosDeVictoria = new VictoryPointsImpl(Color.red,"Puntos",2);
+		Performance demandaActuacion = new PerformanceDemandImpl("red","actuacion",10,talents,true);
+		Performance puntosDeVictoria = new VictoryPointsImpl("red","Puntos",2);
 		redBag.add(bancarrota);
 		redBag.add(demandaActuacion);
 		redBag.add(puntosDeVictoria);
@@ -168,12 +168,12 @@ public class PerformanceBagImpl implements PerformanceBag {
 		List<Talent> listatalentos= CollectionsFactory.createListFactory().createList();
 		listatalentos.add(new ClownImpl());
 		listatalentos.add(new AcrobatImpl());
-		Performance bancarrota = new BankruptCircusImpl(Color.yellow,"circo en bancarrota" , listatalentos);
+		Performance bancarrota = new BankruptCircusImpl("yellow","circo en bancarrota" , listatalentos);
 		Map<Talent, Integer> talents = CollectionsFactory.createMapFactory().createMap();
 		talents.put(new ClownImpl(), 10);
 		talents.put(new BigCatImpl(), 6);
-		Performance demandaActuacion = new PerformanceDemandImpl(Color.yellow,"actuacion",10,talents,true);
-		Performance puntosDeVictoria = new VictoryPointsImpl(Color.yellow,"Puntos",2);
+		Performance demandaActuacion = new PerformanceDemandImpl("yellow","actuacion",10,talents,true);
+		Performance puntosDeVictoria = new VictoryPointsImpl("yellow","Puntos",2);
 		yellowBag.add(bancarrota);
 		yellowBag.add(demandaActuacion);
 		yellowBag.add(puntosDeVictoria);
@@ -188,19 +188,19 @@ public class PerformanceBagImpl implements PerformanceBag {
 	}
 
 	@Override
-	public Performance getPerformance(Color color) {
+	public Performance getPerformance(String color) {
 		// TODO Auto-generated method stub
 		Performance r= new performanceImpl(null,null);
-		if(color == Color.red){
+		if(color.equals("red")){
 			Collections.shuffle(redBag);
 			r = redBag.get(1);
 			redBag.remove(1);}
-		else if (color == Color.yellow){
+		else if (color.equals("yellow")){
 			Collections.shuffle(yellowBag);
 			r = yellowBag.get(1);
 			yellowBag.remove(1);}
 		
-		else if (color == Color.green){
+		else if (color.equals("red")){
 			Collections.shuffle(greenBag);
 			r = greenBag.get(1);
 			greenBag.get(1);

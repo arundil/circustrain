@@ -4,7 +4,7 @@ import java.awt.Color;
 
 public class VictoryPointsImpl extends performanceImpl implements VictoryPoints {
 	private Integer victoryPoints;
-	public VictoryPointsImpl(Color cardColor, String description, 
+	public VictoryPointsImpl(String cardColor, String description, 
 			Integer victoryPoints) {
 		super(cardColor, description);
 		this.victoryPoints = victoryPoints;

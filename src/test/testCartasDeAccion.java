@@ -38,7 +38,7 @@ public class testCartasDeAccion extends Test {
 		p.addMoney(100);
 		Map<Talent, Integer> talentPoints= CollectionsFactory.createMapFactory().createMap();
 		talentPoints.put(cl, 3);
-		PerformanceDemand pd = new PerformanceDemandImpl(new Color(100), "Bla Bla Bla", 2, talentPoints, false);
+		PerformanceDemand pd = new PerformanceDemandImpl("green", "Bla Bla Bla", 2, talentPoints, false);
 		p.getCity().setPerfomance(pd);
 		System.out.println(p);
 		System.out.println("Elegir carta de acción a usar:\n" +

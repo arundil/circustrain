@@ -9,7 +9,7 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 	
 	
 	private List<Talent> talentCircus; //talentos asociados a la carta de bancarrota
-	public BankruptCircusImpl(Color cardColor, String description, 
+	public BankruptCircusImpl(String cardColor, String description, 
 			List<Talent> talentCircus) {
 		super(cardColor, description);
 		this.talentCircus = talentCircus;
