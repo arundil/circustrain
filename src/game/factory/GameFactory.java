@@ -12,6 +12,7 @@ import board.Board;
 import board.BoardImpl;
 import player.Player;
 import player.PlayerImpl;
+import talent.AcrobatImpl;
 import talent.BigCatImpl;
 import talent.ClownImpl;
 import talent.ElephantImpl;
