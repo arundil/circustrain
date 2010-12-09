@@ -127,8 +127,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			}
 			addCities();
 			playerSelector=0;
-			//Intercambiar orden de jugadores: �Haria falta el atributo first_player?
-			rotatePlayers();			
+			
+						
 			week++;			
 		}			
 		gameOver();
@@ -136,16 +136,16 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 
 	public void startGame() {
 		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
-		theClown.add(new ClownImpl());
+		theClown.add(GameFactory.createTalent("CLOWN"));
 		week=0;
 		System.out.println("Welcome to Circus Train!");
-		//TODO peticion de numero de jugadores
+		//Peticion de numero de jugadores
 		String askNumberOfPlayers="How many players are going to play: ";
-		//Habria que poner que estuviera entre 1 y 2, por ahora
-		numberOfPlayers=GameFactory.takeParametersToInteger(askNumberOfPlayers);
-		//TODO constructores de los jugadores segun haya
-		String selectGameMode="Select game mode: BASIC, ADVANCED";
-		String selectGameModeCondition="BASIC,ADVANCED";
+		String askNumberOfPlayersCondition="1,2";
+		numberOfPlayers=GameFactory.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
+		//Seleccion de modo de juego
+		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
+		String selectGameModeCondition="1,2";
 		String gameMode=GameFactory.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
 		Boolean advancedMode=gameMode.equals("ADVANCED");		
 		if(numberOfPlayers==1){
@@ -164,10 +164,10 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}
 		//TODO iniciacion de bolsas, tablero, y actuaciones
 		//TODO opcion de cartas de evento
-		String withEventCards="Are you going to play using Event Cards?: YES, NO";
-		String withEventCardsCondition="YES,NO";
+		String withEventCards="Are you going to play using Event Cards?:"+"\n"+"1 : Yes, I'm pr0"+"\n"+"2 : No";
+		String withEventCardsCondition="1,2";
 		String eventCards=GameFactory.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
-		Boolean playEventCards=eventCards.equals("YES");
+		
 	}	
 	
 	
@@ -177,7 +177,9 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		if(week>=9 && week<=12)month = "JUNE";
 		if(week>=13 && week<=17)month = "JULY";
 		if(week>=18 && week<=21)month = "AUGUST";
-		if(week>=22 && week<=26)month = "SEPTEMBER";		
+		if(week>=22 && week<=26)month = "SEPTEMBER";	
+		//Intercambiar orden de jugadores: �Haria falta el atributo first_player?
+		rotatePlayers();
 	}
 	
 	private void rotatePlayers(){
@@ -198,8 +200,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}
 		//TODO List<Player>
 		Set<Entry<Talent,Integer>> numberOfTalents1=playersTalentsList.get(0).entrySet();			
-		Set<Entry<Talent,Integer>> numberOfTalents2=playersTalentsList.get(1).entrySet();
-		
+		Set<Entry<Talent,Integer>> numberOfTalents2=playersTalentsList.get(1).entrySet();		
 		for(Entry<Talent,Integer> entry1:numberOfTalents1){
 			for(Entry<Talent,Integer> entry2:numberOfTalents2){
 				if(entry1.getKey().equals(entry2.getKey())){
