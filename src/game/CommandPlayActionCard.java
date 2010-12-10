@@ -1,12 +1,12 @@
 package game;
 
-import game.factory.GameFactory;
 
 import java.util.List;
 import java.util.Set;
 import actionCards.ActionCard;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 
 
 public class CommandPlayActionCard extends AbstractCommand{
@@ -26,7 +26,7 @@ public class CommandPlayActionCard extends AbstractCommand{
 		System.out.println(actionCardList.toString());
 		Integer cardIdToBePlayed=-1;
 		while(!actionCardIdSet.contains(cardIdToBePlayed)){
-			cardIdToBePlayed=GameFactory.takeParametersToInteger("Select the card: NUMBER");
+			cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Select the card: NUMBER");
 		}
 		for(ActionCard actionCard:actionCardList){
 			if(actionCard.getIdCard()==cardIdToBePlayed){

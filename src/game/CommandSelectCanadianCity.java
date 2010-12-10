@@ -1,12 +1,12 @@
 package game;
 
-import game.factory.GameFactory;
 
 import java.util.List;
 
 import board.Board;
 import board.City;
 import player.Player;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class CommandSelectCanadianCity extends AbstractCommand{
 	
@@ -29,7 +29,7 @@ public class CommandSelectCanadianCity extends AbstractCommand{
 			askCanadianCityConditions=askCanadianCityConditions+(optionsCount)+",";
 			askCanadianCity=askCanadianCity+(optionsCount)+" : "+canadianCityList.get(i).getName()+"\n";
 		}
-		String selectedCanadianCity=GameFactory.takeParametersToStringRestricted(askCanadianCity, askCanadianCityConditions);
+		String selectedCanadianCity=readDataFromKeyBoard.takeParametersToStringRestricted(askCanadianCity, askCanadianCityConditions);
 		Integer citySelector=new Integer(selectedCanadianCity);
 		player.moveCity(canadianCityList.get(citySelector-1));		
 	}

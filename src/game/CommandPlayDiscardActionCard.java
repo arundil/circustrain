@@ -1,12 +1,12 @@
 package game;
 
-import game.factory.GameFactory;
 
 import java.util.List;
 
 import actionCards.ActionCard;
 
 import player.Player;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class CommandPlayDiscardActionCard extends AbstractCommand{
 	
@@ -21,7 +21,7 @@ private CircusTrainGame game;
 	public void execute(){
 		List<ActionCard> discardActionCardList=player.getdiscartpile();
 		System.out.println(discardActionCardList.toString());
-		Integer cardIdToBePlayed=GameFactory.takeParametersToInteger("Select the card: NUMBER");
+		Integer cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Select the card: NUMBER");
 		for(ActionCard actionCard:discardActionCardList){
 			if(actionCard.getIdCard()==cardIdToBePlayed){
 				actionCard.execute();

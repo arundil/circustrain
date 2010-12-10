@@ -1,6 +1,5 @@
 package game;
 
-import game.factory.GameFactory;
 
 import java.util.List;
 import java.util.Set;
@@ -10,6 +9,7 @@ import player.Player;
 import talent.Talent;
 import tipos.Cadenas;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class CommandStealTalent extends AbstractCommand{
 	//SOLO DOS JUGADORES
@@ -43,7 +43,7 @@ public class CommandStealTalent extends AbstractCommand{
 		}		
 		String askTalentToBeStolen=player.getName()+" has the following talents: "+"\n"+otherPlayer.getTalents().toString()+
 									"Wich talent are you go to steal: "+"\n"+options;
-		String talentToBeStolen=GameFactory.takeParametersToStringRestricted(askTalentToBeStolen,conditions);
+		String talentToBeStolen=readDataFromKeyBoard.takeParametersToStringRestricted(askTalentToBeStolen,conditions);
 		List<String> l=Cadenas.separaElementos(conditions,",");
 		for(int i=0;i<playerDetailedTalentList.size();i++){
 			if(l.get(i).equals(talentToBeStolen)){

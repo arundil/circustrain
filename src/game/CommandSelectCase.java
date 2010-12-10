@@ -1,7 +1,7 @@
 package game;
 
-import game.factory.GameFactory;
 import player.Player;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class CommandSelectCase extends AbstractCommand{
 	
@@ -30,21 +30,21 @@ public class CommandSelectCase extends AbstractCommand{
 			//Si puede perder 2 puntos de reputacion,podra optar a jugar una carta de accion de su mano,
 			//jugar carta de accion descartadao o a obtener dinero del banco
 			if(player.getReputation()<=6){
-				action=GameFactory.takeParametersToStringRestricted(askAllActions, askAllActionsCondition);
+				action=readDataFromKeyBoard.takeParametersToStringRestricted(askAllActions, askAllActionsCondition);
 			}else{	
 				//Si solo puede perder 1 punto de reputacion solo podra optar a jugar una carta de accion de su mano o a coger dinero del banco
 				if(player.getReputation()<=7){
-					action=GameFactory.takeParametersToStringRestricted(askActionsNoDiscardedMoney, askActionsNoDiscardedMoneyCondition);
+					action=readDataFromKeyBoard.takeParametersToStringRestricted(askActionsNoDiscardedMoney, askActionsNoDiscardedMoneyCondition);
 				}else{
-					action=GameFactory.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
+					action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
 				}
 			}						
 		}else{
 			//Si puede perder 4 puntos de victoria, podra optar a jugar una carta de accion de su mano o a jugar una carta de accion descartada
 			if(player.getVictoryPoints()>=4){
-				action=GameFactory.takeParametersToStringRestricted(askActionsDiscardedNoMoney, askActionsDiscardedNoMoneyCondition);
+				action=readDataFromKeyBoard.takeParametersToStringRestricted(askActionsDiscardedNoMoney, askActionsDiscardedNoMoneyCondition);
 			}else{
-				action=GameFactory.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
+				action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
 			}
 			
 		}
