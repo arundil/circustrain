@@ -2,7 +2,6 @@ package test;
 
 import java.awt.Color;
 import java.util.Map;
-
 import actionCards.ActionCard;
 import actionCards.BasicMoveImpl;
 import actionCards.FastMoveImpl;

@@ -19,7 +19,7 @@ public class OvernighterImpl extends CardImpl implements ActionCard {
 	private Integer id;
 	
 	public OvernighterImpl(Player p) {
-		super("OvernighterImpl", "You can move toward 2 cities and/or perform/contract");
+		super("Overnighter", "You can move toward 2 cities and/or perform/contract");
 		player=p;
 		id = 6;
 	}

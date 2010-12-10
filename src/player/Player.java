@@ -41,7 +41,6 @@ public interface Player {
 	public void changeFirstPlayer();
 	
 	public Integer wage();//-> paga los salarios....
-	public boolean wage(Talent ttc);
 	
 	public Integer getWeeksToPerformance();
 	public void setWeeksToPerformance(Integer weeks);

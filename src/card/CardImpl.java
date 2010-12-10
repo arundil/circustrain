@@ -23,6 +23,6 @@ public class CardImpl implements Card{
 
 	@Override
 	public String toString() {
-		return "CardImpl [description=" + description + ", name=" + name + "]";
+		return name + " :" + description +"\n";
 	}
 }
