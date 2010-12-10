@@ -54,10 +54,10 @@ public class CommandPerformance extends AbstractCommand{
 	}
 	
 	private void refresh(){
-		if(performance.getColor().equals(Color.GREEN)){
+		if(performance.getColor().equals("green")){
 			player.addMoney(5);
 		}else{
-			if(performance.getColor().equals(Color.YELLOW)){
+			if(performance.getColor().equals("yellow")){
 				player.addMoney(10);
 			}else{
 				player.addMoney(20);
