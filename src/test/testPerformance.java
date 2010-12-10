@@ -3,7 +3,6 @@ package test;
 import java.awt.Color;
 import java.util.Map;
 
-import game.factory.GameFactory;
 import performance.Performance;
 import performance.PerformanceDemandImpl;
 import player.Player;
@@ -12,6 +11,7 @@ import talent.BigCatImpl;
 import talent.ClownImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 import actionCards.ActionCard;
 import actionCards.BasicMoveImpl;
 import actionCards.FastMoveImpl;
@@ -38,7 +38,7 @@ public class testPerformance extends Test{
 				"[0]Sacar una carta aleatoriamente verde\n" +
 				"[1]Sacar otra carta aleatoriamente amarilla\n"+
 				"[2]Sacar otra carta aleatoriamente roja\n");
-		Integer elec = GameFactory.takeParametersToIntegerTopValue("Opcion:", 2);
+		Integer elec = readDataFromKeyBoard.takeParametersToIntegerTopValue("Opcion:", 2);
 		
 		if (elec == 0){
 			System.out.println(p1.getPerformance("green").toString());

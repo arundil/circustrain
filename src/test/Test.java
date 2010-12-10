@@ -1,12 +1,12 @@
 package test;
 
-import game.factory.GameFactory;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.List;
 
 import tipos.Cadenas;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class Test {
 	
@@ -14,7 +14,7 @@ public class Test {
 		List<String> conditions=Cadenas.separaElementos(condition,",");
 		String line="";
 		while(!conditions.contains(line)){
-			line= GameFactory.takeParametersToString(message);
+			line= readDataFromKeyBoard.takeParametersToString(message);
 		}
 		return line;		
 	}
@@ -22,7 +22,7 @@ public class Test {
 		List<String> conditions=Cadenas.separaElementos(condition,",");
 		String line="";
 		while((!line.equals(conditions.get(0))) || (!line.equals(conditions.get(1)))){
-			line= GameFactory.takeParametersToString(message);
+			line= readDataFromKeyBoard.takeParametersToString(message);
 			if((line.equals(conditions.get(0))) || (line.equals(conditions.get(1)))){
 				break;
 			}

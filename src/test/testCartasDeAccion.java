@@ -3,7 +3,6 @@ package test;
 import java.awt.Color;
 import java.util.Map;
 
-import game.factory.GameFactory;
 import actionCards.ActionCard;
 import actionCards.BasicMoveImpl;
 import actionCards.FastMoveImpl;
@@ -23,6 +22,7 @@ import talent.Clown;
 import talent.ClownImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class testCartasDeAccion extends Test {
 
@@ -49,7 +49,7 @@ public class testCartasDeAccion extends Test {
 				"[5]De noche\n" +
 				"[6]Descanso\n" +
 				"[7]Quedarse");
-		Integer elec = GameFactory.takeParametersToIntegerTopValue("Opcion:", 7);
+		Integer elec = readDataFromKeyBoard.takeParametersToIntegerTopValue("Opcion:", 7);
 		
 		if (elec == 0){
 			ActionCard ac = new TravelImpl(p);
