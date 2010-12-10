@@ -1,7 +1,5 @@
 package board;
 
-import java.awt.Color;
-
 import performance.VictoryPoints;
 import performance.VictoryPointsImpl;
 
