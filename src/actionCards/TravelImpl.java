@@ -1,12 +1,12 @@
 package actionCards;
 
-import game.factory.GameFactory;
 
 import java.util.List;
 
 import player.Player;
 
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 import board.City;
 import card.CardImpl;
 
@@ -34,7 +34,7 @@ public class TravelImpl extends CardImpl implements ActionCard {
 			System.out.println("--> ["+i+"]"+ adjCities.get(i));
 		}
 
-		resp= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
+		resp= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCities.size());
 		
 		player.moveCity(adjCities.get(resp));
 		

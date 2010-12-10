@@ -2,7 +2,6 @@ package actionCards;
 
 import game.CommandPerformance;
 import game.CommandToHire;
-import game.factory.GameFactory;
 import java.util.List;
 import board.City;
 import performance.BankruptCircus;
@@ -10,6 +9,7 @@ import performance.Performance;
 import performance.PerformanceDemand;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 
 import card.CardImpl;
 
@@ -37,7 +37,7 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 		System.out.println(player.getName()+" has used ==> BASIC MOVE <== \n" +
 		"What do you want to do, move[0] or perform/contract[1]");
 
-		answer=GameFactory.takeParametersToIntegerRestricted("Option:","0,1");
+		answer=readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","0,1");
 
 		if (answer ==0){
 			System.out.println("Select the city below where you want to move:");
@@ -48,13 +48,13 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 				System.out.println("--> ["+i+"]"+ adjCities.get(i));
 			}
 
-			answer= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
+			answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCities.size());
 			
 			player.moveCity(adjCities.get(answer));
 		}
 		if(answer==1){ 	
 			System.out.println("What do you want to do? perform [0] or contract[1]");
-			answer = GameFactory.takeParametersToIntegerRestricted("Option:","0,1");
+			answer = readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","0,1");
 			Performance p = player.getCity().getPerformance();
 			if (answer ==0){
 				if (p instanceof PerformanceDemand){

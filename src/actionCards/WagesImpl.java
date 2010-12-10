@@ -1,6 +1,5 @@
 package actionCards;
 
-import game.factory.GameFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -10,6 +9,7 @@ import board.City;
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 import card.CardImpl;
 
 public class WagesImpl extends CardImpl implements ActionCard {
@@ -45,7 +45,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		if(fire && player.getMoney() -cont >= 0){
 			mess = "Do you want to pay all Talents? You paid "+cont+"$ \n 0: No \n 1: Yes";
 			cond = "0,1";
-			resp = GameFactory.takeParametersToStringRestricted(mess, cond);
+			resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, cond);
 			respuesta = new Integer (resp);
 			if(respuesta == 1)
 				player.addMoney(-cont);
@@ -82,7 +82,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 			mess = mess + i + ": " + adjCities.get(i-1).toString() + "\n";
 			cond = cond + i+",";
 		}
-		resp = GameFactory.takeParametersToStringRestricted(mess, cond);
+		resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, cond);
 		respuesta = new Integer(resp);
 		player.moveCity(adjCities.get(respuesta-1));	
 	}
@@ -114,7 +114,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 			cond=cond + cont + ",";
 			cont++;
 		}
-		resp = GameFactory.takeParametersToStringRestricted(mess, cond);
+		resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, cond);
 		respuesta = new Integer(resp);
 		talent = listtalent.get(respuesta-1);
 		cont = mapt.get(talent);

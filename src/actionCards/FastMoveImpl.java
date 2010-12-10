@@ -3,9 +3,9 @@ package actionCards;
 import java.util.List;
 
 import board.City;
-import game.factory.GameFactory;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 import card.CardImpl;
 
 public class FastMoveImpl extends CardImpl implements ActionCard {
@@ -32,7 +32,7 @@ public class FastMoveImpl extends CardImpl implements ActionCard {
 			System.out.println("--> ["+i+"]"+ adjCities.get(i));
 		}
 
-		answer= GameFactory.takeParametersToIntegerTopValue("Option:", adjCities.size());
+		answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCities.size());
 		
 		player.moveCity(adjCities.get(answer));
 	}

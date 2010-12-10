@@ -2,7 +2,6 @@ package actionCards;
 
 import java.util.List;
 
-import game.factory.GameFactory;
 import bag.TalentBag;
 import board.City;
 import player.Player;
@@ -12,6 +11,7 @@ import talent.Clown;
 import talent.ClownImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 import card.CardImpl;
 
 public class RestImpl extends CardImpl implements ActionCard {
@@ -44,7 +44,7 @@ public class RestImpl extends CardImpl implements ActionCard {
 					"[2]one acrobat \n " +
 					"[3]or rise your reputation in one level");
 			
-			answer= GameFactory.takeParametersToIntegerRestricted("Option:", "1,2,3");
+			answer= readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:", "1,2,3");
 			
 			if(answer == 1){
 				if(talentbag.getNumTalents(clown)>0){

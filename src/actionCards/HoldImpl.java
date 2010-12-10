@@ -2,12 +2,12 @@ package actionCards;
 
 import game.CommandPerformance;
 import game.CommandToHire;
-import game.factory.GameFactory;
 import card.CardImpl;
 import performance.BankruptCircus;
 import performance.Performance;
 import performance.PerformanceDemand;
 import player.Player;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class HoldImpl extends CardImpl implements ActionCard {
 	private Player player;
@@ -23,7 +23,7 @@ public class HoldImpl extends CardImpl implements ActionCard {
 		Integer answer;
 		System.out.println(player.getName()+" has used ==> HOLD <== \n" );
 		System.out.println("What do you want to do? perform [0] or contract[1]");
-		answer = GameFactory.takeParametersToIntegerRestricted("Option:","0,1");
+		answer = readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","0,1");
 		Performance p = player.getCity().getPerformance();
 		if (answer ==0){
 			if (p instanceof PerformanceDemand){
