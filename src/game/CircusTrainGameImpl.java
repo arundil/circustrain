@@ -2,7 +2,6 @@ package game;
 
 import game.factory.GameFactory;
 
-import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,9 +13,9 @@ import board.Board;
 import performance.Performance;
 import player.Player;
 import talent.Clown;
-import talent.ClownImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class CircusTrainGameImpl implements CircusTrainGame{
 	
@@ -142,21 +141,21 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		//Peticion de numero de jugadores
 		String askNumberOfPlayers="How many players are going to play: ";
 		String askNumberOfPlayersCondition="1,2";
-		numberOfPlayers=GameFactory.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
+		numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
 		//Seleccion de modo de juego
 		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
 		String selectGameModeCondition="1,2";
-		String gameMode=GameFactory.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
+		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
 		Boolean advancedMode=gameMode.equals("ADVANCED");		
 		if(numberOfPlayers==1){
-			String name=GameFactory.takeParametersToString("Player name: ");
+			String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
 			Player player=GameFactory.createPlayer(name,advancedMode, true);	
 			player.addTalent(theClown);
 			playerList.add(player);
 		}else{		
 			for(int i=0;i<numberOfPlayers;i++){
 				Boolean firstPlayer=i==0;
-				String name=GameFactory.takeParametersToString("Player name: ");
+				String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
 				Player player=GameFactory.createPlayer(name,advancedMode, firstPlayer);
 				player.addTalent(theClown);
 				playerList.add(player);
@@ -166,7 +165,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		//TODO opcion de cartas de evento
 		String withEventCards="Are you going to play using Event Cards?:"+"\n"+"1 : Yes, I'm pr0"+"\n"+"2 : No";
 		String withEventCardsCondition="1,2";
-		String eventCards=GameFactory.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
+		String eventCards=readDataFromKeyBoard.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
 		
 	}	
 	

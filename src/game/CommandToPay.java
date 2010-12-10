@@ -27,8 +27,10 @@ public class CommandToPay extends AbstractCommand{
 	List<Entry<Talent,Integer>> playerTalentList=CollectionsFactory.createListFactory().createList();
 	
 	for(Entry<Talent,Integer> entry:playerTalents){
-		
+		talentsNumber=talentsNumber+entry.getValue();
 	}
+	
+	
 	
 	public void execute(){
 			
