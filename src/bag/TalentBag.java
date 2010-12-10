@@ -3,7 +3,6 @@ package bag;
 import java.util.Map;
 
 import talent.Talent;
-import talent.TalentImpl;
 
 public interface TalentBag {
 

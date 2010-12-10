@@ -2,7 +2,6 @@ package bag;
 
 import game.factory.GameFactory;
 
-import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
