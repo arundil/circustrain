@@ -28,6 +28,7 @@ public class CommandToPay extends AbstractCommand{
 	
 	for(Entry<Talent,Integer> entry:playerTalents){
 		talentsNumber=talentsNumber+entry.getValue();
+		}
 	}
 	
 	
