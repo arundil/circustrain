@@ -108,7 +108,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			refreshMonth();
 			String newMonth=this.getMonth();
 			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-			if(!oldMonth.equals(newMonth)){
+			if(!(oldMonth == newMonth)){
 				finalMonth();
 			}
 			while(playerSelector<numberOfPlayers){
