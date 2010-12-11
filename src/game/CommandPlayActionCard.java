@@ -32,6 +32,7 @@ public class CommandPlayActionCard extends AbstractCommand{
 			if(actionCard.getIdCard()==cardIdToBePlayed){
 				actionCard.execute();
 				player.discardActionCard(cardIdToBePlayed);
+				break;
 			}
 		}
 	}
