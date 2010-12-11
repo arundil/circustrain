@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
+import board.CityImpl;
 import performance.Performance;
 import player.Player;
 import talent.Clown;
@@ -33,6 +34,29 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		board=GameFactory.createBoard();
 		performanceBag= GameFactory.createPerformanceBag();
 		talentBag = GameFactory.createTalentBag();
+		//PARA PRUEBAS
+		playerList.add(GameFactory.createPlayer("ÑE", true, true));
+		playerList.add(GameFactory.createPlayer("ÑU", true, false));
+		playerList.get(0).addMoney(20);
+		playerList.get(1).addMoney(15);
+		List<Talent> talentsp1=CollectionsFactory.createListFactory().createList();
+		talentsp1.add(GameFactory.createTalent("CLOWN"));
+		talentsp1.add(GameFactory.createTalent("CLOWN"));
+		talentsp1.add(GameFactory.createTalent("ELEPHANT"));
+		List<Talent> talentsp2=CollectionsFactory.createListFactory().createList();
+		talentsp2.add(GameFactory.createTalent("CLOWN"));
+		talentsp2.add(GameFactory.createTalent("ACROBAT"));
+		talentsp2.add(GameFactory.createTalent("BIG CAT"));
+		talentsp2.add(GameFactory.createTalent("BIG CAT"));
+		playerList.get(0).addTalent(talentsp1);
+		playerList.get(1).addTalent(talentsp2);
+		playerList.get(0).moveCity(new CityImpl("COPON",true));
+		playerList.get(1).moveCity(new CityImpl("COPON",true));
+		month = "APRIL";
+	}
+	
+	public TalentBag getTalentBag(){
+		return talentBag;
 	}
 	
 	public List<Player> getPlayerList(){
@@ -125,9 +149,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 				playerSelector++;
 			}
 			addCities();
-			playerSelector=0;
-			
-						
+			playerSelector=0;						
 			week++;			
 		}			
 		gameOver();
