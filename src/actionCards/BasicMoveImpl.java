@@ -20,7 +20,7 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 
 	public BasicMoveImpl(Integer n, Player p) {
 		super("Basic Move", "You can move towards 1 city or perform/contract");
-		n=id;
+		id=n;
 		player = p;
 	}
 
@@ -76,4 +76,10 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 			}
 		}
 	}
+
+
+	public String toString() {
+		return "[" + id + "]" + super.toString();
+	}
+	
 }

@@ -79,5 +79,9 @@ public class RestImpl extends CardImpl implements ActionCard {
 	public Integer getIdCard() {
 		return id;
 	}
+	
+	public String toString() {
+		return "[" + id + "]" + super.toString();
+	}
 
 }

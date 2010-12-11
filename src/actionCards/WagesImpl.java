@@ -121,4 +121,8 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		player.getTalents().put(talent, cont-1);
 	}
 	
+	public String toString() {
+		return "[" + id + "]" + super.toString();
+	}
+	
 }

@@ -20,6 +20,7 @@ public interface Player {
 	public String getName();
 	public City	getCity();
 	public Integer getHigherDiceScore();
+	public Boolean getPlay_Mode();
 	
 	
 	public void addTalent(List<Talent> t);
