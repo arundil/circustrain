@@ -1,6 +1,6 @@
 package performance;
 
-import java.awt.Color;
+
 
 public class VictoryPointsImpl extends performanceImpl implements VictoryPoints {
 	private Integer victoryPoints;

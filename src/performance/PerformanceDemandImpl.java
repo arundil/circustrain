@@ -1,6 +1,5 @@
 package performance;
 
-import java.awt.Color;
 import java.util.Iterator;
 import java.util.Map;
 

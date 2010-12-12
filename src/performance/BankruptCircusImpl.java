@@ -1,6 +1,6 @@
 package performance;
 
-import java.awt.Color;
+
 import java.util.List;
 
 import talent.Talent;

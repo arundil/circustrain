@@ -145,6 +145,7 @@ public class BoardImpl implements Board {
 		return CollectionsUtils.filteredList(this.getCities(), hasPerformance);
 	}
 	
+	@SuppressWarnings("unused")
 	private City getRandomCity(){
 		List<City> cities=this.getCities();
 		Integer random=(int)(Math.random()*cities.size()); 

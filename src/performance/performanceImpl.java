@@ -1,6 +1,6 @@
 package performance;
 
-import java.awt.Color;
+
 
 public class performanceImpl implements Performance {
 	
@@ -11,7 +11,7 @@ public class performanceImpl implements Performance {
 	}
 
 	private String cardColor;
-	private String description,name;
+	private String description;
 	@Override
 	
 	
