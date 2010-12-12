@@ -20,6 +20,8 @@ import player.Player;
 import player.PlayerImpl;
 import talent.Clown;
 import talent.ClownImpl;
+import talent.Elephant;
+import talent.ElephantImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
@@ -33,12 +35,18 @@ public class testCartasDeAccion extends Test {
 	public static void main(String[] args) {
 		Board b = new BoardImpl("/data/boardcfg.txt");
 		Clown cl = new ClownImpl();
+		Elephant el = new ElephantImpl();
 		Player p = new PlayerImpl("Pepe",false, true);
 		p.moveCity(b.getCityByName("Toronto"));
-		p.addMoney(100);
+		p.addMoney(15);
 		Map<Talent, Integer> talentPoints= CollectionsFactory.createMapFactory().createMap();
 		talentPoints.put(cl, 3);
 		List<Talent> talents  = CollectionsFactory.createListFactory().createList();
+		talents.add(el);
+		talents.add(cl);
+		talents.add(cl);
+		talents.add(cl);
+		talents.add(cl);
 		talents.add(cl);
 		p.addTalent(talents);
 		PerformanceDemand pd = new PerformanceDemandImpl("green", "Bla Bla Bla", 2, talentPoints, false);

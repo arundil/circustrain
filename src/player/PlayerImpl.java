@@ -220,23 +220,16 @@ public class PlayerImpl implements Player {
 	}
 	
 	@Override
-	public Integer wage() {
-		Integer wages=0;
-		Set<Talent> s = talents.keySet();
-		for (Talent t : s){
-			Integer n= talents.get(t);
-			wages=wages + t.getWage()*n;				
-			}
-		return wages;
-	}
-	
-	@Override
 	public boolean isFirstPlayer() {
 		return first_player;
 	}
 	
 	public void discardTalent(Talent t){
-		talents.remove(t);
+		if(talents.get(t)<=1){
+			talents.remove(t);			
+		}else{
+			talents.put(t, talents.get(t)-1);
+		}
 	}
 	@Override
 	

@@ -40,9 +40,7 @@ public interface Player {
 	public boolean isFirstPlayer();
 	
 	public void changeFirstPlayer();
-	
-	public Integer wage();//-> paga los salarios....
-	
+
 	public Integer getWeeksToPerformance();
 	public void setWeeksToPerformance(Integer weeks);
 	

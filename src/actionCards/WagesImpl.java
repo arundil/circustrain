@@ -34,9 +34,9 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		Integer cont=0;
 		Map<Talent, Integer> mapt = player.getTalents();
 		
-		System.out.println(player.getName()+" has used ==> WAGES <== \n" );
 		
 		if(!move){
+			System.out.println(player.getName()+" has used ==> WAGES <== \n" );
 			moveCity();
 			move=true;
 		}
@@ -45,7 +45,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		for(Entry<Talent,Integer> entry : mapt.entrySet()){
 			cont = cont + entry.getKey().getWage() * entry.getValue();
 		}
-		if(!(cont==0)){
+		if(!(cont<=0)){
 			//Si estamos en el modo avanzado y podemos pagar todos los talentos.
 			if(fire && player.getMoney() -cont >= 0){
 				mess = "Do you want to pay all Talents? You paid "+cont+"$ \n 1: No \n 2: Yes";
@@ -114,15 +114,15 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		}
 
 		for(Talent t : mapt.keySet()){
-			mess = mess + cont + ": " + t.toString()+ "\n";
+			mess = mess + cont + ": "+"You have " + mapt.get(t)+ " " + t.getName()+ " and " +t.toString() +"\n";
 			cond=cond + cont + ",";
 			cont++;
 		}
 		resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, cond);
 		respuesta = new Integer(resp);
 		talent = listtalent.get(respuesta-1);
-		cont = mapt.get(talent);
-		player.getTalents().put(talent, cont-1);
+		player.discardTalent(talent);
+		//Falta aumentar en uno la bolsa de talentos del juego. Pero no se como hacerlo.
 	}
 
 	public String toString() {
