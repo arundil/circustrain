@@ -24,9 +24,9 @@ public class TestGame {
 		CircusTrainGame game=GameFactory.createCircusTrainGame();
 
 		CommandPay pay=new CommandPay(game.getPlayerList().get(0),game,1);
-		pay.execute();
-		//game.startGame();
-		//game.runGame();
+//		pay.execute();
+		game.startGame();
+		game.runGame();
 		
 //		Player p1=GameFactory.createPlayer("Tristan", true, true);
 //		List<Talent> talentList=CollectionsFactory.createListFactory().createList();

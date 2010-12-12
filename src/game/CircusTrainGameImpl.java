@@ -158,7 +158,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	public void startGame() {
 		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
 		theClown.add(GameFactory.createTalent("CLOWN"));
-		week=0;
+		week=3;
 		System.out.println("Welcome to Circus Train!");
 		//Peticion de numero de jugadores
 		String askNumberOfPlayers="How many players are going to play: ";

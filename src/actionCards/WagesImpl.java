@@ -16,6 +16,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 	Integer id;
 	Player player;
 	Boolean fire;
+	Boolean move = false;
 	
 	public WagesImpl(Player player, Boolean fire) {
 		super("Wages", "You can move until 2 cities. Then, you have to " +
@@ -32,43 +33,54 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		Integer respuesta =0;
 		Integer cont=0;
 		Map<Talent, Integer> mapt = player.getTalents();
-		Boolean move = false;
+		
+		System.out.println(player.getName()+" has used ==> WAGES <== \n" );
 		
 		if(!move){
 			moveCity();
 			move=true;
 		}
 		
+		//Calculamos cuanto valen todos los talentos.
 		for(Entry<Talent,Integer> entry : mapt.entrySet()){
 			cont = cont + entry.getKey().getWage() * entry.getValue();
 		}
-		if(fire && player.getMoney() -cont >= 0){
-			mess = "Do you want to pay all Talents? You paid "+cont+"$ \n 0: No \n 1: Yes";
-			cond = "0,1";
-			resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, cond);
-			respuesta = new Integer (resp);
-			if(respuesta == 1)
-				player.addMoney(-cont);
-			
-		}else if(fire){
-			fire();
-			execute();	
-			
-		}else{
-			if(player.getMoney() -cont >= 0){
-				player.addMoney(-cont);
-			}else{
+		if(!(cont==0)){
+			//Si estamos en el modo avanzado y podemos pagar todos los talentos.
+			if(fire && player.getMoney() -cont >= 0){
+				mess = "Do you want to pay all Talents? You paid "+cont+"$ \n 1: No \n 2: Yes";
+				cond = "1,2";
+				resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, cond);
+				respuesta = new Integer (resp);
+				if(respuesta == 2){				
+					player.addMoney(-cont);
+				}
+				else{
+					fire();
+					execute();
+				}
+				//Modo avanzado y no se pueden pagar todos los talentos.
+			}else if(fire){
 				fire();
-				execute();
+				execute();	
+				//Modo básico.
+			}else{
+				if(player.getMoney() -cont >= 0){
+					player.addMoney(-cont);
+				}else{
+					fire();
+					execute();
+				}
 			}
+
 		}
 	}
 
 	public Integer getIdCard() {
 		return id;
 	}
-	
-	
+
+
 	private void moveCity(){
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 		City city = player.getCity();
@@ -77,7 +89,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		String resp="";
 		Integer respuesta =0;
 		adjCities = city.maxMovement(2);
-		
+
 		for(int i=1; i <= adjCities.size(); i++){
 			mess = mess + i + ": " + adjCities.get(i-1).toString() + "\n";
 			cond = cond + i+",";
@@ -86,29 +98,21 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		respuesta = new Integer(resp);
 		player.moveCity(adjCities.get(respuesta-1));	
 	}
-	
+
 	private void fire(){
-		System.out.println(player.getName()+" has used ==> WAGES <== \n" );
 		String mess = "What talent do you want to fire? \n"; 
 		String cond="";
 		String resp ="";
 		Integer respuesta =0;
 		Integer cont = 1;
 		Map<Talent, Integer> mapt = player.getTalents();
-		
-		//I have one problem, big problem. No solution problem :S
-		//falta de informacion de talentos toString.
-		//Acepto ideas, tengo una solucion fea.
-		
-		// Francis: Ya puedes llamar al toString de talentos. Si lo necesitas
-		// tengo implementado el toString de forma que me muestra todo lo que hay
-		// en el map (Nombre talento y salario), en la clase TestTalents puedes ver como va.
+
 		List<Talent> listtalent = CollectionsFactory.createListFactory().createList();
 		Talent talent;
 		for(Talent t:mapt.keySet()){
 			listtalent.add(t);
 		}
-		
+
 		for(Talent t : mapt.keySet()){
 			mess = mess + cont + ": " + t.toString()+ "\n";
 			cond=cond + cont + ",";
@@ -120,9 +124,9 @@ public class WagesImpl extends CardImpl implements ActionCard {
 		cont = mapt.get(talent);
 		player.getTalents().put(talent, cont-1);
 	}
-	
+
 	public String toString() {
 		return "[" + id + "]" + super.toString();
 	}
-	
+
 }

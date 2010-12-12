@@ -1,6 +1,7 @@
 package test;
 
 import java.awt.Color;
+import java.util.List;
 import java.util.Map;
 import actionCards.ActionCard;
 import actionCards.BasicMoveImpl;
@@ -37,6 +38,9 @@ public class testCartasDeAccion extends Test {
 		p.addMoney(100);
 		Map<Talent, Integer> talentPoints= CollectionsFactory.createMapFactory().createMap();
 		talentPoints.put(cl, 3);
+		List<Talent> talents  = CollectionsFactory.createListFactory().createList();
+		talents.add(cl);
+		p.addTalent(talents);
 		PerformanceDemand pd = new PerformanceDemandImpl("green", "Bla Bla Bla", 2, talentPoints, false);
 		p.getCity().setPerfomance(pd);
 		System.out.println(p);
@@ -78,6 +82,7 @@ public class testCartasDeAccion extends Test {
 			ActionCard ac = new HoldImpl(p);
 			ac.execute();
 		}
+		System.out.println(p.getMoney());
 		System.out.println("La ciudad actual de "+p.getName()+" es " + p.getCity());
 		System.out.println("La ejecución ha terminado correctamente");
 	}
