@@ -30,9 +30,13 @@ public class TalentImpl implements Comparable<Talent>, Talent {
 	}
 
 	@Override
-	public String toString() {
-		return "Actualmente los " + this.getName() + " tienen salario: "
-				+ this.getWage();
+//	public String toString() {
+//		return "Actualmente los " + this.getName() + " tienen salario: "
+//				+ this.getWage();
+//	}
+	
+	public String toString(){
+		return this.getName();
 	}
 
 	@Override
