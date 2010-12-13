@@ -1,5 +1,7 @@
 package actionCards;
 
+import game.CircusTrainGame;
+
 import java.util.List;
 
 import bag.TalentBag;
@@ -14,17 +16,17 @@ import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 import card.CardImpl;
 
-public class RestImpl extends CardImpl implements ActionCard {
+public class RestImpl extends CardImpl  implements ActionCard  {
 	Integer id;
 	Player player;
-	TalentBag talentbag;
+	CircusTrainGame ctg;
 	
-	public RestImpl(Player player, TalentBag talentbag) {
+	public RestImpl(Player player, CircusTrainGame ctg) {
 		super("Rest","If you are in Canada (Winnipeg, Montreal or Toronto), " +
 				"you can take one clown, one acrobat or rise your reputation in one level" );
-		this.id = 7;
+		this.id = 8;
 		this.player = player;
-		this.talentbag = talentbag;
+		this.ctg = ctg;
 	}
 
 	public void execute() {
@@ -47,8 +49,8 @@ public class RestImpl extends CardImpl implements ActionCard {
 			answer= readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:", "1,2,3");
 			
 			if(answer == 1){
-				if(talentbag.getNumTalents(clown)>0){
-					listtalent.add(talentbag.removeTalent(clown));
+				if(ctg.getTalentBag().getNumTalents(clown)>0){
+					listtalent.add(ctg.getTalentBag().removeTalent(clown));
 					player.addTalent(listtalent);
 				}else{
 					System.out.println("Clowns are not available");
@@ -56,8 +58,8 @@ public class RestImpl extends CardImpl implements ActionCard {
 				}
 			}
 			if(answer == 2){
-				if(talentbag.getNumTypeTalent(acrobat)>0){
-					listtalent.add(talentbag.removeTalent(acrobat));
+				if(ctg.getTalentBag().getNumTypeTalent(acrobat)>0){
+					listtalent.add(ctg.getTalentBag().removeTalent(acrobat));
 					player.addTalent(listtalent);
 				}else{
 					System.out.println("Acrobat are not available");
@@ -79,6 +81,8 @@ public class RestImpl extends CardImpl implements ActionCard {
 	public Integer getIdCard() {
 		return id;
 	}
+	
+	
 	
 	public String toString() {
 		return "[" + id + "]" + super.toString();

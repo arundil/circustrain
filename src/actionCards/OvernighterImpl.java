@@ -1,9 +1,10 @@
 package actionCards;
 
-import game.CommandPerformance;
-import game.CommandToHire;
 
 import java.util.List;
+
+import commands.CommandPerformance;
+import commands.CommandToHire;
 
 import board.City;
 import performance.BankruptCircus;

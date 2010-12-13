@@ -1,4 +1,4 @@
-package game;
+package commands;
 
 import java.awt.Color;
 import java.util.List;
@@ -20,6 +20,7 @@ import utiles.factoria.CollectionsFactory;
 import org.junit.Before;
 import org.junit.Test;
 
+
 public class TestCommandPerformance {
 	Player player;
 	PerformanceDemand greenPerformance;
@@ -33,7 +34,7 @@ public class TestCommandPerformance {
 	
 	@Before
 	public void setUp(){
-		player = GameFactory.createPlayer("Tristan",true, true);
+		player = GameFactory.createPlayer("Tristan",true);
 		List<Talent> playerTalents=CollectionsFactory.createListFactory().createList();
 		playerTalents.add(new ClownImpl());
 		playerTalents.add(new ElephantImpl());

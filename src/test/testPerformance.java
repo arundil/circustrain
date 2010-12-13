@@ -29,7 +29,7 @@ import board.BoardImpl;
 public class testPerformance extends Test{
 	public static void main(String[] args) {
 		Board b = new BoardImpl("/src/board/boardcfg.txt");
-		Player p = new PlayerImpl("Pepe",false, true);
+		Player p = new PlayerImpl("Pepe",false);
 		PerformanceBag p1=new PerformanceBagImpl();
 		p.moveCity(b.getCityByName("Toronto"));
 		p.addMoney(100);

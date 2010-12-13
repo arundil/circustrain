@@ -1,5 +1,6 @@
-package game;
+package commands;
 
+import game.AbstractCommand;
 import player.Player;
 
 public class CommandCollectMoney extends AbstractCommand{

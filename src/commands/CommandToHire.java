@@ -1,5 +1,6 @@
-package game;
+package commands;
 
+import game.AbstractCommand;
 import game.factory.GameFactory;
 
 import java.util.List;

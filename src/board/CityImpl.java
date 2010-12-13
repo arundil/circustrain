@@ -55,9 +55,9 @@ public class CityImpl extends VertexImpl implements City {
 	@Override
 	public String toString() {
 		String stringToPrint;
-		stringToPrint=this.getName();
+		stringToPrint = this.getName();
 		if(this.hasPerfomance()){
-			stringToPrint=stringToPrint+" ("+this.getPerformance().toString()+")";
+			stringToPrint = "\n"+stringToPrint+" (" + this.getPerformance().toString()+") ";
 		}
 		return stringToPrint;
 	}

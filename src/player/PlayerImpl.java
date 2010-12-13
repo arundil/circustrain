@@ -2,16 +2,8 @@ package player;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.lang.Math;
 import actionCards.ActionCard;
-import actionCards.BasicMoveImpl;
-import actionCards.FastMoveImpl;
-import actionCards.HoldImpl;
-import actionCards.OvernighterImpl;
-import actionCards.RestImpl;
-import actionCards.TravelImpl;
-import actionCards.WagesImpl;
 import board.City;
 import performance.Performance;
 import talent.Talent;
@@ -22,7 +14,7 @@ public class PlayerImpl implements Player {
 	
 	private String name;
 	private Integer money,reputation,victorypoints,perfomance_max;
-	private Boolean first_player,play_mode;
+	private Boolean play_mode;
 	private List<ActionCard> action_cards,discart_pile;
 	private List<Performance> perfomance_list;
 	private Map<Talent,Integer> talents;
@@ -31,20 +23,19 @@ public class PlayerImpl implements Player {
 	private Integer higherDiceScore; //Tirada de dado maxima asociada a la reputacion
 	private Integer weeksToPerformance; //Semanas restantes para poder puntuar en una actuacion
 	
-	public PlayerImpl (String n,Boolean p_mode, Boolean firstp){ //basic = 0 Advanced =1
+	public PlayerImpl (String n,Boolean p_mode){ //basic = 0 Advanced =1
 		
 		name=n;
 		play_mode = p_mode;
 		money = 0;
 		perfomance_max =0;
 		victorypoints = 0;
-		first_player=firstp;
-		action_cards= inicializateActionCards();
+
 		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createSortedMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
 		reputationList=initializeReputation();
-		if (play_mode == false){
+		if (!play_mode){
 			reputation = 2;
 			higherDiceScore=reputationList.get(2);
 		}
@@ -59,7 +50,6 @@ public class PlayerImpl implements Player {
 	public PlayerImpl (String n){
 		name = n;
 		money =0;
-		action_cards = inicializateActionCards();
 		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
@@ -86,7 +76,9 @@ public class PlayerImpl implements Player {
 	public Integer getHigherDiceScore(){
 		return higherDiceScore;
 	}
-	
+	public void addActionCards(List<ActionCard> actioncards){
+		action_cards = actioncards; 
+	}
 
 	@Override
 	public ActionCard discardActionCard(Integer id) {
@@ -205,11 +197,6 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public void changeFirstPlayer() {
-		first_player= !first_player;
-	}
-	
-	@Override
 	public City getCity() {
 		return city;
 	}
@@ -217,11 +204,6 @@ public class PlayerImpl implements Player {
 	@Override
 	public void moveCity(City c) {
 		city = c;
-	}
-	
-	@Override
-	public boolean isFirstPlayer() {
-		return first_player;
 	}
 	
 	public void discardTalent(Talent t){
@@ -245,18 +227,7 @@ public class PlayerImpl implements Player {
 	//=========================================================================
 	
 	
-	private List<ActionCard> inicializateActionCards(){
-		List<ActionCard> ac = CollectionsFactory.createListFactory().createList();
-		ac.add(new TravelImpl(this));
-		ac.add(new BasicMoveImpl(2, this));
-		ac.add(new BasicMoveImpl(3, this));
-		ac.add(new FastMoveImpl(this));
-		ac.add(new WagesImpl(this, play_mode));
-		ac.add(new OvernighterImpl(this));
-		//ac.add(new RestImpl(this,null));
-		ac.add(new HoldImpl(this));
-		return ac;
-	}
+
 
 	
 	private List<Integer> initializeReputation(){

@@ -1,8 +1,10 @@
 package actionCards;
 
-import game.CommandPerformance;
-import game.CommandToHire;
 import java.util.List;
+
+import commands.CommandPerformance;
+import commands.CommandToHire;
+
 import board.City;
 import performance.BankruptCircus;
 import performance.Performance;
@@ -51,7 +53,7 @@ public class BasicMoveImpl extends CardImpl implements ActionCard {
 			answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCities.size());
 			
 			player.moveCity(adjCities.get(answer));
-		}
+		}else
 		if(answer==1){ 	
 			System.out.println("What do you want to do? perform [0] or contract[1]");
 			answer = readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","0,1");

@@ -1,4 +1,7 @@
-package game;
+package commands;
+
+import game.AbstractCommand;
+import game.CircusTrainGame;
 
 import java.util.List;
 import java.util.Map;

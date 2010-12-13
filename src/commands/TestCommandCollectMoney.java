@@ -1,4 +1,4 @@
-package game;
+package commands;
 
 public class TestCommandCollectMoney {
 	

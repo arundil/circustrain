@@ -9,9 +9,7 @@ import board.City;
 import performance.Performance;
 import talent.Talent;
 
-public interface Player {
-	//Boolean Es circoFamoso, lo tengo que tener en cuenta para después.
-	
+public interface Player {	
 	public Integer getMoney();
 	public Integer getPerformanceMax();
 	public Map<Talent,Integer> getTalents ();
@@ -37,16 +35,9 @@ public interface Player {
 	public boolean addPerfomanceUsed(Performance p);
 	public ActionCard discardActionCard(Integer id);
 	public void discardTalent(Talent t);
-	public boolean isFirstPlayer();
-	
-	public void changeFirstPlayer();
+	public void addActionCards(List<ActionCard> actioncards);
 
 	public Integer getWeeksToPerformance();
 	public void setWeeksToPerformance(Integer weeks);
-	
-	//22 métodos
-	
-	//private Integer PVCalculate(); [pa dentro de la clase]
-	//private List<Talent> addAditionalsTalents(); [pa dentro de la clase] 
 	
 }

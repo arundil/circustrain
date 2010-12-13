@@ -7,10 +7,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
+import commands.CommandExecuteCase;
+import commands.CommandPay;
+import commands.CommandPlayerState;
+import commands.CommandSelectCanadianCity;
+import commands.CommandSelectCase;
+import commands.CommandStealTalent;
+
+import actionCards.ActionCard;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
-import board.CityImpl;
 import performance.Performance;
 import player.Player;
 import talent.Clown;
@@ -28,33 +35,164 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	private TalentBag talentBag;
 	private Integer numberOfPlayers;
 	private String followingAction;	
+	private Boolean advancedMode;
 	
 	public CircusTrainGameImpl(){
 		playerList=CollectionsFactory.createListFactory().createList();
 		board=GameFactory.createBoard();
 		performanceBag= GameFactory.createPerformanceBag();
 		talentBag = GameFactory.createTalentBag();
-		//PARA PRUEBAS
-		playerList.add(GameFactory.createPlayer("ÑE", true, true));
-		playerList.add(GameFactory.createPlayer("ÑU", true, false));
-		playerList.get(0).addMoney(20);
-		playerList.get(1).addMoney(15);
-		List<Talent> talentsp1=CollectionsFactory.createListFactory().createList();
-		talentsp1.add(GameFactory.createTalent("CLOWN"));
-		talentsp1.add(GameFactory.createTalent("CLOWN"));
-		talentsp1.add(GameFactory.createTalent("ELEPHANT"));
-		List<Talent> talentsp2=CollectionsFactory.createListFactory().createList();
-		talentsp2.add(GameFactory.createTalent("CLOWN"));
-		talentsp2.add(GameFactory.createTalent("ACROBAT"));
-		talentsp2.add(GameFactory.createTalent("BIG CAT"));
-		talentsp2.add(GameFactory.createTalent("BIG CAT"));
-		playerList.get(0).addTalent(talentsp1);
-		playerList.get(1).addTalent(talentsp2);
-		playerList.get(0).moveCity(new CityImpl("COPON",true));
-		playerList.get(1).moveCity(new CityImpl("COPON",true));
-		month = "APRIL";
 	}
 	
+	public void startGame() {
+		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
+		Talent clown = GameFactory.createTalent("CLOWN");
+
+		theClown.add(clown);
+		
+		System.out.println("Welcome to Circus Train!");
+		
+		//Peticion de numero de jugadores
+		String askNumberOfPlayers="How many players are going to play: ";
+		String askNumberOfPlayersCondition="1,2";
+		numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
+		
+		//Seleccion de modo de juego
+		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
+		String selectGameModeCondition="1,2";
+		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
+		
+		if(gameMode.equals("1")){
+			advancedMode = false;
+		}else{
+			advancedMode = true;
+		}
+		
+		if(numberOfPlayers==1){
+			String name = readDataFromKeyBoard.takeParametersToString("Player name: ");
+			Player player = GameFactory.createPlayer(name,advancedMode);	
+			player.addTalent(theClown);
+			talentBag.removeTalent(clown);
+			playerList.add(player);
+		}else{		
+			for(int i=0;i<numberOfPlayers;i++){
+				String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
+				Player player=GameFactory.createPlayer(name,advancedMode);
+				player.addTalent(theClown);
+				talentBag.removeTalent(clown);
+				playerList.add(player);
+			}
+		}
+		for(Player p: playerList){
+			p.addActionCards(GameFactory.inicializateActionCards(this, p));
+		}
+		//opcion de cartas de evento
+//		String withEventCards="Are you going to play using Event Cards?:"+"\n"+"1 : Yes, I'm pro"+"\n"+"2 : No";
+//		String withEventCardsCondition="1,2";
+//		String eventCards=readDataFromKeyBoard.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
+	}	
+	
+	
+	public void runGame() {
+		week = 0;
+		refreshMonth();
+		
+		performanceBag.createGreenBag();
+		addCities();
+		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
+		
+		for(Player playerSelectsCity:playerList){
+			CommandSelectCanadianCity selectCanadianCity=new CommandSelectCanadianCity(playerSelectsCity, this);
+			selectCanadianCity.execute();
+		}
+		
+		while(week<27){
+			String oldMonth=this.getMonth();
+			refreshMonth();
+			String newMonth=this.getMonth();
+			
+			
+			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
+			if(!(oldMonth == newMonth)){
+				finalMonth();
+				rotatePlayers();
+			}
+			System.out.println(board.getCitiesWithPerfomance().toString());
+			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
+			
+			for(Player currentPlayer : playerList){
+								
+				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
+				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
+				playerState.execute();
+				
+				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
+				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
+				selectCase.execute();
+				
+				//Se lleva a cabo la accion que el jugador a elegido
+				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
+				executeCase.execute();				
+			}
+			addCities();					
+			week++;			
+		}
+		System.out.println("\n \n Weeeee final del juego a irse a cenar");
+		if(playerList.size()>1){
+			gameOver2();			
+		}else{
+			gameOver1();
+		}
+	}
+	
+	public void finalMonth(){
+		//Puntos de victoria segun el nº de talentos
+		compareTalentsCountAndAddVictoryPoints();
+		//Puntos de victoria segun actuacion maxima
+		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
+		if(comparatorPerformancePoints>0)
+			playerList.get(0).addVictoryPoints(4);
+		if(comparatorPerformancePoints<0)
+			playerList.get(1).addVictoryPoints(4);			
+		//Robar talentos
+		//En modo basico solo puede robar el que tenga menos puntos de victoria
+		//Habria que invalidar lo de la reputacion si esta en modo basico				
+		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
+			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
+			stealTalent.execute();
+		}
+		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
+			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
+			stealTalent.execute();
+		}		
+		//si es junio o agosto cambiar las bolsas de actuacion
+		if(month.equals("JUNE")){
+			performanceBag.createYellowBag();
+		}
+		if(month.equals("AUGUST")){
+			performanceBag.createRedBag();
+		}
+	}
+	
+	
+	public void gameOver1(){
+		//TODO Reglas de un solo jugador.
+	}
+	
+	//Game over de dos players.
+	public void gameOver2() {
+		wageCardNoDiscarded();
+		higherClownNumber();
+		higherMoneyAmount();
+		higherPerformancesNumber();
+		higherReputation();
+		noClownsNoAnimals();
+		results();
+	}
+
+	
+
+
 	public TalentBag getTalentBag(){
 		return talentBag;
 	}
@@ -79,118 +217,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		return board;
 	}
 	
-	public void gameOver() {
-		// TODO Si hay carta de salarios pagar el doble a cada talento
-		//wageCardNoDiscarded();
-		higherClownNumber();
-		higherMoneyAmount();
-		higherPerformancesNumber();
-		higherReputation();
-		noClownsNoAnimals();
-		results();
-		
-	}
-	
-	public void finalMonth(){
-		//Puntos de victoria segun el nº de talentos
-		compareTalentsCountAndAddVictoryPoints();
-		//Puntos de victoria segun actuacion maxima
-		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
-		if(comparatorPerformancePoints>0)
-			playerList.get(0).addVictoryPoints(4);
-		if(comparatorPerformancePoints<0)
-			playerList.get(1).addVictoryPoints(4);			
-		//Robar talentos
-		//En modo basico solo puede robar el que tenga menos puntos de victoria
-		//Habria que invalidar lo de la reputacion si esta en modo basico				
-		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
-			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
-			stealTalent.execute();
-		}
-		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
-			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
-			stealTalent.execute();
-		}		
-		//TODO si es junio o agosto cambiar las bolsas de actuacion
-		if(month.equals("JUNE")){
-			performanceBag.createYellowBag();
-		}
-		if(month.equals("AUGUST")){
-			performanceBag.createRedBag();
-		}
-	}
-	
-	public void runGame() {
-		Integer playerSelector=0;
-		performanceBag.createGreenBag();
-		for(Player playerSelectsCity:playerList){
-			CommandSelectCanadianCity selectCanadianCity=new CommandSelectCanadianCity(playerSelectsCity, this);
-			selectCanadianCity.execute();
-		}
-		while(week<27){
-			String oldMonth=this.getMonth();
-			refreshMonth();
-			String newMonth=this.getMonth();
-			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-			if(!(oldMonth == newMonth)){
-				finalMonth();
-			}
-			while(playerSelector<numberOfPlayers){
-				Player currentPlayer=playerList.get(playerSelector);
-				CommandPlayerState playerState=new CommandPlayerState(currentPlayer);				
-				System.out.println("Its you turn, "+currentPlayer.getName());				
-				playerState.execute();				
-				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-				CommandSelectCase selectCase=new CommandSelectCase(currentPlayer, this);
-				selectCase.execute();				
-				//Se lleva a cabo la accion que el jugador a elegido
-				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
-				executeCase.execute();				
-				playerSelector++;
-			}
-			addCities();
-			playerSelector=0;						
-			week++;			
-		}			
-		gameOver();
-	}
-
-	public void startGame() {
-		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
-		theClown.add(GameFactory.createTalent("CLOWN"));
-		week=3;
-		System.out.println("Welcome to Circus Train!");
-		//Peticion de numero de jugadores
-		String askNumberOfPlayers="How many players are going to play: ";
-		String askNumberOfPlayersCondition="1,2";
-		numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
-		//Seleccion de modo de juego
-		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
-		String selectGameModeCondition="1,2";
-		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
-		Boolean advancedMode=gameMode.equals("ADVANCED");		
-		if(numberOfPlayers==1){
-			String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
-			Player player=GameFactory.createPlayer(name,advancedMode, true);	
-			player.addTalent(theClown);
-			playerList.add(player);
-		}else{		
-			for(int i=0;i<numberOfPlayers;i++){
-				Boolean firstPlayer=i==0;
-				String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
-				Player player=GameFactory.createPlayer(name,advancedMode, firstPlayer);
-				player.addTalent(theClown);
-				playerList.add(player);
-			}
-		}
-		//TODO iniciacion de bolsas, tablero, y actuaciones
-		//TODO opcion de cartas de evento
-		String withEventCards="Are you going to play using Event Cards?:"+"\n"+"1 : Yes, I'm pr0"+"\n"+"2 : No";
-		String withEventCardsCondition="1,2";
-		String eventCards=readDataFromKeyBoard.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
-		
-	}	
-	
+	//====================================== X =====================================
 	
 	private void refreshMonth(){
 		if(week>=0 && week<=3)month = "APRIL";
@@ -199,8 +226,6 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		if(week>=13 && week<=17)month = "JULY";
 		if(week>=18 && week<=21)month = "AUGUST";
 		if(week>=22 && week<=26)month = "SEPTEMBER";	
-		//Intercambiar orden de jugadores: �Haria falta el atributo first_player?
-		rotatePlayers();
 	}
 	
 	private void rotatePlayers(){
@@ -238,25 +263,38 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	private void addCities(){
 		if(month.equals("APRIL") || month.equals("MAY")){
 			while(board.getCitiesWithPerfomance().size()<8){
-				Performance randomPerformance=performanceBag.getPerformance("green");/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
+				Performance randomPerformance = performanceBag.getPerformance("green");
 				board.addPerfomanceInRandomCity(randomPerformance);
 				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 		if(month.equals("JUNE") || month.equals("JULY")){
 			while(board.getCitiesWithPerfomance().size()<10){
-				Performance randomPerformance=performanceBag.getPerformance("yellow");/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
+				Performance randomPerformance=performanceBag.getPerformance("yellow");
 				board.addPerfomanceInRandomCity(randomPerformance);
 				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 		if(month.equals("AUGUST") || month.equals("SEPTEMBER")){
 			while(board.getCitiesWithPerfomance().size()<12){
-				Performance randomPerformance=performanceBag.getPerformance("red");/*edito:getPerformance lo hace ya de forma aleatoria:Necesito obtener una performance aleatoria*/;
+				Performance randomPerformance=performanceBag.getPerformance("red");
 				board.addPerfomanceInRandomCity(randomPerformance);
 				performanceBag.removePerformance(randomPerformance);
 			}
 		}
+	}
+	
+	private void wageCardNoDiscarded() {
+		for(Player player: playerList){
+			for(ActionCard actioncard : player.getActionCards()){
+				if(actioncard.getIdCard() == 5){
+					player.addVictoryPoints(-3);
+					CommandPay cmp = new CommandPay(player, this, 2);
+					cmp.execute();
+				}
+			}
+		}
+		
 	}
 	private void higherClownNumber(){
 		Integer playerClownNumber=0;
@@ -408,4 +446,5 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}
 		System.out.println(winner+"\n"+"\n"+"---=== Thank you for playing Train Circus! ===---");
 	}
+	
 }

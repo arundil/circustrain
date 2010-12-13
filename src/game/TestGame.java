@@ -3,18 +3,11 @@ package game;
 import game.factory.GameFactory;
 
 import java.util.List;
-import java.util.Map;
 
-import performance.Performance;
-import performance.PerformanceDemand;
-import performance.PerformanceDemandImpl;
 import player.Player;
-import talent.AcrobatImpl;
-import talent.BigCatImpl;
-import talent.ClownImpl;
-import talent.ElephantImpl;
-import talent.FreakShowImpl;
-import talent.HumanCannonballImpl;
+
+import actionCards.ActionCard;
+
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 
@@ -22,13 +15,18 @@ public class TestGame {
 	public static void main (String[] args){
 		
 		CircusTrainGame game=GameFactory.createCircusTrainGame();
-
-		CommandPay pay=new CommandPay(game.getPlayerList().get(0),game,1);
 //		pay.execute();
 		game.startGame();
-		game.runGame();
-		
-//		Player p1=GameFactory.createPlayer("Tristan", true, true);
+		Player one = game.getPlayerList().get(0);
+//		one.addMoney(25);
+//		ActionCard mb = one.getActionCards().get(1);
+//		ActionCard mb2 = one.getActionCards().get(2);
+//		
+//		List<ActionCard> list = CollectionsFactory.createListFactory().createList();
+//		list.add(mb);
+//		list.add(mb2);
+//		one.addActionCards(list);
+//		
 //		List<Talent> talentList=CollectionsFactory.createListFactory().createList();
 //		talentList.add(GameFactory.createTalent("CLOWN"));
 //		talentList.add(GameFactory.createTalent("CLOWN"));
@@ -37,6 +35,11 @@ public class TestGame {
 //		talentList.add(GameFactory.createTalent("ELEPHANT"));
 //		talentList.add(GameFactory.createTalent("HORSE"));
 //		talentList.add(GameFactory.createTalent("HORSE"));
+//		one.addTalent(talentList);
+//		
+		game.runGame();
+		
+//		Player p1=GameFactory.createPlayer("Tristan", true, true);
 //		p1.addMoney(27);
 		
 		

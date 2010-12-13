@@ -1,6 +1,7 @@
-package game;
+package commands;
 
-import java.awt.Color;
+import game.AbstractCommand;
+
 import java.util.List;
 import java.util.Set;
 import java.util.Map.Entry;

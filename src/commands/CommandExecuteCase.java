@@ -1,5 +1,7 @@
-package game;
+package commands;
 
+import game.AbstractCommand;
+import game.CircusTrainGame;
 import player.Player;
 
 public class CommandExecuteCase extends AbstractCommand{
@@ -14,7 +16,7 @@ public class CommandExecuteCase extends AbstractCommand{
 	
 	public void execute(){
 		if(game.getFollowingAction().equals("1")){
-			CommandPlayActionCard playActionCard=new CommandPlayActionCard(player);
+			CommandPlayActionCard playActionCard=new CommandPlayActionCard(player,game);
 			playActionCard.execute();
 		}else{
 			if(game.getFollowingAction().equals("2")){

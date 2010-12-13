@@ -36,7 +36,7 @@ public class testCartasDeAccion extends Test {
 		Board b = new BoardImpl("/data/boardcfg.txt");
 		Clown cl = new ClownImpl();
 		Elephant el = new ElephantImpl();
-		Player p = new PlayerImpl("Pepe",false, true);
+		Player p = new PlayerImpl("Pepe",false);
 		p.moveCity(b.getCityByName("Toronto"));
 		p.addMoney(15);
 		Map<Talent, Integer> talentPoints= CollectionsFactory.createMapFactory().createMap();
@@ -74,18 +74,18 @@ public class testCartasDeAccion extends Test {
 			ActionCard ac = new FastMoveImpl(p);
 			ac.execute();
 		}
-		if (elec == 4){
-			ActionCard ac = new WagesImpl(p, true);
-			ac.execute();
-		}
+//		if (elec == 4){
+//			ActionCard ac = new WagesImpl(p, true);
+//			ac.execute();
+//		}
 		if (elec == 5){
 			ActionCard ac = new OvernighterImpl(p);
 			ac.execute();	
 		}
-		if (elec == 6){
-			ActionCard ac = new RestImpl(p,new TalentBagImpl());
-			ac.execute();
-		}
+//		if (elec == 6){
+//			ActionCard ac = new RestImpl(p,new TalentBagImpl());
+//			ac.execute();
+//		}
 		if (elec == 7){
 			ActionCard ac = new HoldImpl(p);
 			ac.execute();

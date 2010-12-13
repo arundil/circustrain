@@ -1,7 +1,8 @@
 package actionCards;
 
-import game.CommandPerformance;
-import game.CommandToHire;
+import commands.CommandPerformance;
+import commands.CommandToHire;
+
 import card.CardImpl;
 import performance.BankruptCircus;
 import performance.Performance;
@@ -16,7 +17,7 @@ public class HoldImpl extends CardImpl implements ActionCard {
 	public HoldImpl (Player p){
 		super("Hold","You can perform/contract");
 		player = p;
-		id = 8;
+		id = 7;
 	}
 	@Override
 	public void execute() {

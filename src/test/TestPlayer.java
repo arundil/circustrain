@@ -13,7 +13,7 @@ public class TestPlayer extends Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Player p = new PlayerImpl("Pepe", true, true);
+		Player p = new PlayerImpl("Pepe", true);
 		Board b = new BoardImpl("/data/boardcfg.txt");
 		p.moveCity(b.getCityByName("Toronto"));
 		

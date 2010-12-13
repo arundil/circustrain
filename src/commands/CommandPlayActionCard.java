@@ -1,9 +1,13 @@
-package game;
+package commands;
 
+
+import game.AbstractCommand;
+import game.CircusTrainGame;
 
 import java.util.List;
 import java.util.Set;
 import actionCards.ActionCard;
+import actionCards.RestImpl;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
@@ -12,9 +16,11 @@ import utiles.factoria.readDataFromKeyBoard;
 public class CommandPlayActionCard extends AbstractCommand{
 	
 	private Player player;
+	private CircusTrainGame ctg;
 	
-	public CommandPlayActionCard(Player player){
+	public CommandPlayActionCard(Player player, CircusTrainGame ctg){
 		this.player=player;
+		this.ctg = ctg;
 	}
 	
 	public void execute(){
@@ -30,10 +36,19 @@ public class CommandPlayActionCard extends AbstractCommand{
 		}
 		for(ActionCard actionCard:actionCardList){
 			if(actionCard.getIdCard()==cardIdToBePlayed){
+				if(actionCard instanceof RestImpl){
+					actionCard = new RestImpl(player, ctg);
+				}
 				actionCard.execute();
+				
 				player.discardActionCard(cardIdToBePlayed);
+				
 				break;
 			}
+		}
+		if(player.getActionCards().isEmpty()){
+			player.getActionCards().addAll(player.getdiscartpile());
+			player.getdiscartpile().clear();
 		}
 	}
 }

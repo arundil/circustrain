@@ -3,7 +3,17 @@ package game.factory;
 import game.CircusTrainGame;
 import game.CircusTrainGameImpl;
 
+import java.util.List;
 import java.util.Random;
+
+import actionCards.ActionCard;
+import actionCards.BasicMoveImpl;
+import actionCards.FastMoveImpl;
+import actionCards.HoldImpl;
+import actionCards.OvernighterImpl;
+import actionCards.RestImpl;
+import actionCards.TravelImpl;
+import actionCards.WagesImpl;
 import bag.PerformanceBag;
 import bag.PerformanceBagImpl;
 import bag.TalentBag;
@@ -20,6 +30,7 @@ import talent.FreakShowImpl;
 import talent.HorseImpl;
 import talent.HumanCannonballImpl;
 import talent.Talent;
+import utiles.factoria.CollectionsFactory;
 
 public class GameFactory {
 	
@@ -27,8 +38,8 @@ public class GameFactory {
 	// podria poner el create con la ruta del archivo. Ejemplo: 
 	// Board board=GameFactory.createBoard().create("C:\tablero.txt")
 	
-	public static Player createPlayer(String name,Boolean play_mode, Boolean firstp){
-		return new PlayerImpl(name,play_mode,firstp);
+	public static Player createPlayer(String name,Boolean play_mode){
+		return new PlayerImpl(name,play_mode);
 	}
 	
 //	public static EventBag createEventBag(){
@@ -88,6 +99,22 @@ public class GameFactory {
 		}
 		return null;
 	}
+	
+	public static List<ActionCard> inicializateActionCards(CircusTrainGame ctg, Player player){
+		List<ActionCard> ac = CollectionsFactory.createListFactory().createList();
+		ac.add(new TravelImpl(player));
+		ac.add(new BasicMoveImpl(2, player));
+		ac.add(new BasicMoveImpl(3, player));
+		ac.add(new FastMoveImpl(player));
+		ac.add(new WagesImpl(player,ctg));
+		ac.add(new OvernighterImpl(player));
+		ac.add(new HoldImpl(player));
+		if(player.getPlay_Mode()){
+			ac.add(new RestImpl(player,ctg));			
+		}
+		return ac;
+	}
+	
 	public static CircusTrainGame createCircusTrainGame(){
 		return new CircusTrainGameImpl();
 	}
