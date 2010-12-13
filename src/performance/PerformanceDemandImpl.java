@@ -39,30 +39,45 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 	
 	
 	@Override
+//	public String toString(){
+//		String r;
+//		if(this.isTwoWeeks()){
+//			r = "Esto es "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
+//			Iterator<Talent> i = this.getTalentPoints().keySet().iterator();
+//			Talent s;
+//			while(i.hasNext()){
+//				s=i.next();
+//				r+= " su talento es "+s.toString();//falta el nombre de los talents
+//				r+= " su valor es " + this.getTalentPoints().get(s).toString();
+//				}
+//			r+=" y es de dos semanas ";
+//		}else{
+//			r = "Esto es  "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
+//			Iterator<Talent> i = this.getTalentPoints().keySet().iterator();
+//			Talent s;
+//			while(i.hasNext()){
+//				s=i.next();
+//				r+= " su talento es "+s.toString();//falta el nombre de los talents
+//				r+= " su valor es " + this.getTalentPoints().get(s).toString();
+//				}
+//			r+=" y no es de dos semanas ";
+//			}
+//		return r;
+//	}
+	
 	public String toString(){
-		String r;
+		String stringToReturn=super.toString();
 		if(this.isTwoWeeks()){
-			r = "Esto es "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
-			Iterator<Talent> i = this.getTalentPoints().keySet().iterator();
-			Talent s;
-			while(i.hasNext()){
-				s=i.next();
-				r+= " su talento es "+s.toString();//falta el nombre de los talents
-				r+= " su valor es " + this.getTalentPoints().get(s).toString();
-				}
-			r+=" y es de dos semanas ";
-		}else{
-			r = "Esto es  "+ this.getDescription()+" es de color "+ this.getColor().toString()+" sus puntos basicos son "+this.getBasicPoints()+" y sus puntos de talento son: ";
-			Iterator<Talent> i = this.getTalentPoints().keySet().iterator();
-			Talent s;
-			while(i.hasNext()){
-				s=i.next();
-				r+= " su talento es "+s.toString();//falta el nombre de los talents
-				r+= " su valor es " + this.getTalentPoints().get(s).toString();
-				}
-			r+=" y no es de dos semanas ";
-			}
-		return r;
+			stringToReturn=stringToReturn+" (TWO WEEKS) ";
+		}
+		stringToReturn=stringToReturn+" "+this.getBasicPoints()+"+(";
+		
+		
+		for(Talent t:this.getTalentPoints().keySet()){
+			stringToReturn=stringToReturn+" "+t.toString()+":"+this.getTalentPoints().get(t);
+		}
+		stringToReturn=stringToReturn+")";
+		return stringToReturn;
 	}
 
 

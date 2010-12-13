@@ -27,7 +27,6 @@ public class performanceImpl implements Performance {
 
 
 	public String toString(){
-		//TODO
-		return "Hay una performaance NPI de cual es?¿";//"La carta con descripcion "+ this.getDescription()+" y color "+this.getColor().toString();
+		return this.getDescription();
 	}
 }
