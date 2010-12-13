@@ -99,7 +99,6 @@ public class PerformanceBagImpl implements PerformanceBag {
 					   }
 					   performanceToAdd=new BankruptCircusImpl(color, description, talentList);
 				   }
-				   
 				   addPerformance(performanceToAdd);
 			}
 
@@ -188,7 +187,7 @@ public class PerformanceBagImpl implements PerformanceBag {
 	@Override
 	public Performance getPerformance(String color) {
 		// TODO Auto-generated method stub
-		Performance r= new performanceImpl(null,null);
+		Performance r=null;
 		if(color.equals("red")){
 			Collections.shuffle(redBag);
 			r = redBag.get(1);
@@ -198,11 +197,12 @@ public class PerformanceBagImpl implements PerformanceBag {
 			r = yellowBag.get(1);
 			yellowBag.remove(1);}
 		
-		else if (color.equals("red")){
+		else if (color.equals("green")){
 			Collections.shuffle(greenBag);
 			r = greenBag.get(1);
 			greenBag.get(1);
 			greenBag.remove(1);}
+
 		return r;
 	}
 
