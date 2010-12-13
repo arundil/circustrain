@@ -53,12 +53,11 @@ public class PerformanceBagImpl implements PerformanceBag {
 				   if(readedString[1].equals("R")){
 					   color="red";
 				   }
-				   
 				   if(readedString[0].equals("D")){
 					   String description="Performance Demand";
 					   
-					   Integer basicPoints=new Integer(readedString[4]);
-					   Boolean twoWeeks=new Boolean(readedString[3]);
+					   Integer basicPoints=new Integer(readedString[3]);
+					   Boolean twoWeeks=new Boolean(readedString[2]);
 					   Map<Talent,Integer> demandedTalents=CollectionsFactory.createMapFactory().createMap();
 					   if(!readedString[6].equals("0")){
 						   demandedTalents.put(GameFactory.createTalent("clown"), new Integer(readedString[6]));
@@ -116,11 +115,11 @@ public class PerformanceBagImpl implements PerformanceBag {
 	
 	public Performance addPerformance(Performance e) {
 		if(e.getColor().equals("green")){
-			redBag.add(e);}
+			greenBag.add(e);}
 		else if (e.getColor().equals("yellow")){
 			yellowBag.add(e);}
 		else if (e.getColor().equals("red")){
-			greenBag.add(e);}
+			redBag.add(e);}
 		return e;
 	}
 
