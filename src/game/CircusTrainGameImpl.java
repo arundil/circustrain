@@ -27,77 +27,79 @@ import utiles.factoria.readDataFromKeyBoard;
 
 public class CircusTrainGameImpl implements CircusTrainGame{
 	
-	private List<Player> playerList;
-	private static Integer week;
-	private static String month;
-	private Board board;
-	private PerformanceBag performanceBag;
-	private TalentBag talentBag;
-	private Integer numberOfPlayers;
-	private String followingAction;	
-	private Boolean advancedMode;
+	protected List<Player> playerList;
+	protected static Integer week;
+	protected static String month;
+	protected Board board;
+	protected PerformanceBag performanceBag;
+	protected TalentBag talentBag;
+	protected Integer numberOfPlayers;
+	protected String followingAction;	
+	protected Boolean advancedMode;
+	protected List<Talent> theClown=CollectionsFactory.createListFactory().createList();
+	protected Talent clown = GameFactory.createTalent("CLOWN");
 	
 	public CircusTrainGameImpl(){
 		playerList=CollectionsFactory.createListFactory().createList();
 		board=GameFactory.createBoard();
 		performanceBag= GameFactory.createPerformanceBag();
 		talentBag = GameFactory.createTalentBag();
+		theClown.add(clown);
 	}
 	
-	public void startGame() {
-		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
-		Talent clown = GameFactory.createTalent("CLOWN");
-
-		theClown.add(clown);
-		
-		System.out.println("Welcome to Circus Train!");
-		
-		//Peticion de numero de jugadores
-		String askNumberOfPlayers="How many players are going to play: ";
-		String askNumberOfPlayersCondition="1,2";
-		numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
-		
-		//Seleccion de modo de juego
-		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
-		String selectGameModeCondition="1,2";
-		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
-		
-		if(gameMode.equals("1")){
-			advancedMode = false;
-		}else{
-			advancedMode = true;
-		}
-		
-		if(numberOfPlayers==1){
-			String name = readDataFromKeyBoard.takeParametersToString("Player name: ");
-			Player player = GameFactory.createPlayer(name,advancedMode);	
-			player.addTalent(theClown);
-			talentBag.removeTalent(clown);
-			playerList.add(player);
-		}else{		
-			for(int i=0;i<numberOfPlayers;i++){
-				String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
-				Player player=GameFactory.createPlayer(name,advancedMode);
-				player.addTalent(theClown);
-				talentBag.removeTalent(clown);
-				playerList.add(player);
-			}
-		}
-		for(Player p: playerList){
-			p.addActionCards(GameFactory.inicializateActionCards(this, p));
-		}
-		//opcion de cartas de evento
-//		String withEventCards="Are you going to play using Event Cards?:"+"\n"+"1 : Yes, I'm pro"+"\n"+"2 : No";
-//		String withEventCardsCondition="1,2";
-//		String eventCards=readDataFromKeyBoard.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
-	}	
-	
+//	public void startGame() {
+//		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
+//		Talent clown = GameFactory.createTalent("CLOWN");
+//
+//		theClown.add(clown);
+//		
+//		System.out.println("Welcome to Circus Train!");
+//		
+//		//Peticion de numero de jugadores
+//		String askNumberOfPlayers="How many players are going to play: ";
+//		String askNumberOfPlayersCondition="1,2";
+//		numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
+//		
+//		//Seleccion de modo de juego
+//		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
+//		String selectGameModeCondition="1,2";
+//		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
+//		
+//		if(gameMode.equals("1")){
+//			advancedMode = false;
+//		}else{
+//			advancedMode = true;
+//		}
+//		
+//		if(numberOfPlayers==1){
+//			String name = readDataFromKeyBoard.takeParametersToString("Player name: ");
+//			Player player = GameFactory.createPlayer(name,advancedMode);	
+//			player.addTalent(theClown);
+//			talentBag.removeTalent(clown);
+//			playerList.add(player);
+//		}else{		
+//			for(int i=0;i<numberOfPlayers;i++){
+//				String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
+//				Player player=GameFactory.createPlayer(name,advancedMode);
+//				player.addTalent(theClown);
+//				talentBag.removeTalent(clown);
+//				playerList.add(player);
+//			}
+//		}
+//		for(Player p: playerList){
+//			p.addActionCards(GameFactory.inicializateActionCards(this, p));
+//		}
+//		//opcion de cartas de evento
+////		String withEventCards="Are you going to play using Event Cards?:"+"\n"+"1 : Yes, I'm pro"+"\n"+"2 : No";
+////		String withEventCardsCondition="1,2";
+////		String eventCards=readDataFromKeyBoard.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
+//	}	
+//	
 	
 	public void runGame() {
 		week = 0;
 		refreshMonth();
 		
-		performanceBag.createGreenBag();
 		addCities();
 		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
 		
