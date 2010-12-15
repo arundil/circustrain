@@ -22,9 +22,6 @@ public class PerformanceBagImpl implements PerformanceBag {
 	
 	public PerformanceBagImpl() {
 		super();
-//		this.createGreenBag();
-//		this.createYellowBag();
-//		this.createRedBag();
 	}
 	
 	public PerformanceBagImpl(String file){
@@ -122,61 +119,7 @@ public class PerformanceBagImpl implements PerformanceBag {
 		return e;
 	}
 
-	@Override
-	public List<Performance> createGreenBag() {
-		//esto es a modo de prueba, realmente debera hacerlo desde fichero
-		
-		List<Talent> listatalentos= CollectionsFactory.createListFactory().createList();
-		listatalentos.add(new ClownImpl());
-		listatalentos.add(new AcrobatImpl());
-		Performance bancarrota = new BankruptCircusImpl("green","circo en bancarrota" , listatalentos);
-		Map<Talent, Integer> talents = CollectionsFactory.createMapFactory().createMap();
-		talents.put(new ClownImpl(), 10);
-		talents.put(new BigCatImpl(), 6);
-		Performance demandaActuacion = new PerformanceDemandImpl("green","actuacion",10,talents,true);
-		Performance puntosDeVictoria = new VictoryPointsImpl("green","Puntos",2);
-		greenBag.add(bancarrota);
-		greenBag.add(demandaActuacion);
-		greenBag.add(puntosDeVictoria);
-		return greenBag;
-	}
-
-	@Override
-
-	public List<Performance> createRedBag() {
-		// Aunque sea el mismo codigo que el anterior y el siguiente, realmente cambiara
-		List<Talent> listatalentos= CollectionsFactory.createListFactory().createList();
-		listatalentos.add(new ClownImpl());
-		listatalentos.add(new AcrobatImpl());
-		Performance bancarrota = new BankruptCircusImpl("red","circo en bancarrota" , listatalentos);
-		Map<Talent, Integer> talents = CollectionsFactory.createMapFactory().createMap();
-		talents.put(new ClownImpl(), 10);
-		talents.put(new BigCatImpl(), 6);
-		Performance demandaActuacion = new PerformanceDemandImpl("red","actuacion",10,talents,true);
-		Performance puntosDeVictoria = new VictoryPointsImpl("red","Puntos",2);
-		redBag.add(bancarrota);
-		redBag.add(demandaActuacion);
-		redBag.add(puntosDeVictoria);
-		return 	redBag;
-	}
-
-	@Override
-	public List<Performance> createYellowBag() {
-		List<Talent> listatalentos= CollectionsFactory.createListFactory().createList();
-		listatalentos.add(new ClownImpl());
-		listatalentos.add(new AcrobatImpl());
-		Performance bancarrota = new BankruptCircusImpl("yellow","circo en bancarrota" , listatalentos);
-		Map<Talent, Integer> talents = CollectionsFactory.createMapFactory().createMap();
-		talents.put(new ClownImpl(), 10);
-		talents.put(new BigCatImpl(), 6);
-		Performance demandaActuacion = new PerformanceDemandImpl("yellow","actuacion",10,talents,true);
-		Performance puntosDeVictoria = new VictoryPointsImpl("yellow","Puntos",2);
-		yellowBag.add(bancarrota);
-		yellowBag.add(demandaActuacion);
-		yellowBag.add(puntosDeVictoria);
-		return yellowBag;
-	}
-
+	
 	@Override
 
 	public List<Performance> getGreenBag() {

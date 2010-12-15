@@ -120,21 +120,16 @@ public class GameFactory {
 	}
 	
 	public static CircusTrainGame createCircusTrainGame(){
-		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
-		Talent clown = GameFactory.createTalent("CLOWN");
-		Integer numberOfPlayers;
+
 		CircusTrainGame game=null;
 
-
-		theClown.add(clown);
-		
 		System.out.println("Welcome to Circus Train!");
 		
 		//Peticion de numero de jugadores
 //		String askNumberOfPlayers="How many players are going to play: ";
 //		String askNumberOfPlayersCondition="1,2";
 //		numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
-		numberOfPlayers=2;
+		Integer numberOfPlayers=2;
 		
 		//Seleccion de modo de juego
 //		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";

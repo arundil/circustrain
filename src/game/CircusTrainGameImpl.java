@@ -168,12 +168,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			stealTalent.execute();
 		}		
 		//si es junio o agosto cambiar las bolsas de actuacion
-		if(month.equals("JUNE")){
-			performanceBag.createYellowBag();
-		}
-		if(month.equals("AUGUST")){
-			performanceBag.createRedBag();
-		}
+
 	}
 	
 	
