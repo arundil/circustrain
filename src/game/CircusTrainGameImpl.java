@@ -28,8 +28,8 @@ import utiles.factoria.readDataFromKeyBoard;
 public class CircusTrainGameImpl implements CircusTrainGame{
 	
 	protected List<Player> playerList;
-	protected static Integer week;
-	protected static String month;
+	protected static Integer week=0;
+	protected static String month="APRIL";
 	protected Board board;
 	protected PerformanceBag performanceBag;
 	protected TalentBag talentBag;
@@ -38,6 +38,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	protected Boolean advancedMode;
 	protected List<Talent> theClown=CollectionsFactory.createListFactory().createList();
 	protected Talent clown = GameFactory.createTalent("CLOWN");
+	
 	
 	public CircusTrainGameImpl(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -97,7 +98,6 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 //	
 	
 	public void runGame() {
-		week = 0;
 		refreshMonth();
 		
 		addCities();
@@ -158,17 +158,18 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			playerList.get(1).addVictoryPoints(4);			
 		//Robar talentos
 		//En modo basico solo puede robar el que tenga menos puntos de victoria
-		//Habria que invalidar lo de la reputacion si esta en modo basico				
-		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
-			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
-			stealTalent.execute();
-		}
-		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
-			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
-			stealTalent.execute();
-		}		
-		//si es junio o agosto cambiar las bolsas de actuacion
 
+		
+		
+//TODO SOLO PARA AdvancedTwoPlayersGame:REUBICADO
+//		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
+//			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
+//			stealTalent.execute();
+//		}
+//		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
+//			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
+//			stealTalent.execute();
+//		}		
 	}
 	
 	
@@ -182,7 +183,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		higherClownNumber();
 		higherMoneyAmount();
 		higherPerformancesNumber();
-		higherReputation();
+	//TODO SOLO PARA AdvancedTwoPlayersGame	
+		//higherReputation();
 		noClownsNoAnimals();
 		results();
 	}
@@ -281,19 +283,20 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}
 	}
 	
-	private void wageCardNoDiscarded() {
+	protected void wageCardNoDiscarded() {
 		for(Player player: playerList){
 			for(ActionCard actioncard : player.getActionCards()){
 				if(actioncard.getIdCard() == 5){
 					player.addVictoryPoints(-3);
 					CommandPay cmp = new CommandPay(player, this, 2);
 					cmp.execute();
+					break;
 				}
 			}
 		}
 		
 	}
-	private void higherClownNumber(){
+	protected void higherClownNumber(){
 		Integer playerClownNumber=0;
 		Integer maximumClownNumber=-1;
 		Integer sameClownNumberTimes=0;
@@ -329,7 +332,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}
 	}
 	
-	private void noClownsNoAnimals(){
+	protected void noClownsNoAnimals(){
 		for(Player thisPlayer:playerList){
 			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
 			if(!thisPlayerTalents.containsKey(talent.Clown.class)){
@@ -344,7 +347,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}
 	}
 	
-	private void higherMoneyAmount(){
+	protected void higherMoneyAmount(){
 		List<Integer> playersMoney=CollectionsFactory.createListFactory().createList();
 		Integer sameMoneyTimes=0;
 		Integer maximumMoney=-1;
@@ -368,7 +371,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}
 	}
 	
-	private void higherPerformancesNumber(){
+	protected void higherPerformancesNumber(){
 		List<Integer> playersNumberOfPerformances=CollectionsFactory.createListFactory().createList();
 		Integer sameNumberOfPerformancesTimes=0;
 		Integer maximumNumberOfPerformances=-1;
@@ -392,52 +395,73 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		}
 	}
 	
-	private void higherReputation(){
-		List<Integer> playersReputation=CollectionsFactory.createListFactory().createList();
-		Integer sameReputationTimes=0;
-		Integer maximumReputation=-1;
-		Integer previousReputation=0;
-		for(int i=0;i<playerList.size();i++){
-			if(i>0){
-				previousReputation=playerList.get(i-1).getReputation();
-			}
-			Player thisPlayer=playerList.get(i);
-			playersReputation.add(thisPlayer.getReputation());
-			if(maximumReputation<thisPlayer.getReputation()){
-				maximumReputation=thisPlayer.getReputation();
-			}
-			if(previousReputation==thisPlayer.getReputation()){
-				sameReputationTimes++;
-			}
-		}
-		if(sameReputationTimes==0){
-			Integer playerIndex=playersReputation.indexOf(maximumReputation);
-			playerList.get(playerIndex).addVictoryPoints(3);
-		}
-	}
-	private void results(){
+//	protected void higherReputation(){
+//		List<Integer> playersReputation=CollectionsFactory.createListFactory().createList();
+//		Integer sameReputationTimes=0;
+//		Integer maximumReputation=-1;
+//		Integer previousReputation=0;
+//		for(int i=0;i<playerList.size();i++){
+//			if(i>0){
+//				previousReputation=playerList.get(i-1).getReputation();
+//			}
+//			Player thisPlayer=playerList.get(i);
+//			playersReputation.add(thisPlayer.getReputation());
+//			if(maximumReputation<thisPlayer.getReputation()){
+//				maximumReputation=thisPlayer.getReputation();
+//			}
+//			if(previousReputation==thisPlayer.getReputation()){
+//				sameReputationTimes++;
+//			}
+//		}
+//		if(sameReputationTimes==0){
+//			Integer playerIndex=playersReputation.indexOf(maximumReputation);
+//			playerList.get(playerIndex).addVictoryPoints(3);
+//		}
+//	}
+	protected void results(){
+		// TODO DOCUMENTAR CAMBIO
 		String winner="";
 		Integer maxVictoryPoints=0;
-		Integer drawGame=0;
+		Integer maxPerformancePoints=0;
+		Integer victoryPointsDrawGame=0;
+		Integer performancePointsDrawGame=0;
 		Integer previousPlayerVictoryPoints=0;
-		List<Integer> playerPoints=CollectionsFactory.createListFactory().createList();
+		Integer previousPlayerPerformancePoints=0;
+		List<Integer> playerVictoryPoints=CollectionsFactory.createListFactory().createList();
+		List<Integer> playerPerformancePoints=CollectionsFactory.createListFactory().createList();
 		for(int i=0;i<playerList.size();i++){
 			Player player=playerList.get(i);
 			if(i>0){
 				previousPlayerVictoryPoints=playerList.get(i-1).getVictoryPoints();
+				previousPlayerPerformancePoints=playerList.get(i-1).getPerformanceMax();
 			}
-			playerPoints.add(player.getVictoryPoints());
+			playerVictoryPoints.add(player.getVictoryPoints());
+			playerPerformancePoints.add(player.getPerformanceMax());
 			if(maxVictoryPoints<player.getVictoryPoints()){
 				maxVictoryPoints=player.getVictoryPoints();				
 			}
-			if(player.getVictoryPoints()==previousPlayerVictoryPoints){
-				drawGame=1;
+			if(maxPerformancePoints<player.getPerformanceMax()){
+				maxPerformancePoints=player.getPerformanceMax();
 			}
+			if(player.getVictoryPoints()==previousPlayerVictoryPoints){
+				victoryPointsDrawGame=1;
+			}
+			if(player.getPerformanceMax()==previousPlayerPerformancePoints){
+				performancePointsDrawGame=1;
+			}
+			
 		}
-		if(drawGame==1){
-			winner="There's no winner."+"\n"+"============= DRAW GAME =============";
+		
+		if(victoryPointsDrawGame==1){
+			if(performancePointsDrawGame==1){
+				winner="There's no winner."+"\n"+"============= DRAW GAME =============";
+			}else{
+				Integer winnerIndex=playerPerformancePoints.indexOf(maxPerformancePoints);
+				Player winnerPlayer=playerList.get(winnerIndex);
+				winner="Here's your winner! The winner is"+"\n"+"============= "+winnerPlayer.getName()+" =============";
+			}
 		}else{
-			Integer winnerIndex=playerPoints.indexOf(maxVictoryPoints);
+			Integer winnerIndex=playerVictoryPoints.indexOf(maxVictoryPoints);
 			Player winnerPlayer=playerList.get(winnerIndex);
 			winner="Here's your winner! The winner is"+"\n"+"============= "+winnerPlayer.getName()+" =============";
 		}
