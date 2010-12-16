@@ -139,12 +139,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			addCities();					
 			week++;			
 		}
-		System.out.println("\n \n Weeeee final del juego a irse a cenar");
-		if(playerList.size()>1){
-			gameOver2();			
-		}else{
-			gameOver1();
-		}
+		gameOver();
 	}
 	
 	public void finalMonth(){
@@ -172,13 +167,8 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 //		}		
 	}
 	
-	
-	public void gameOver1(){
-		//TODO Reglas de un solo jugador.
-	}
-	
 	//Game over de dos players.
-	public void gameOver2() {
+	public void gameOver() {
 		wageCardNoDiscarded();
 		higherClownNumber();
 		higherMoneyAmount();
@@ -218,7 +208,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	
 	//====================================== X =====================================
 	
-	private void refreshMonth(){
+	protected void refreshMonth(){
 		if(week>=0 && week<=3)month = "APRIL";
 		if(week>=4 && week<=8) month = "MAY";
 		if(week>=9 && week<=12)month = "JUNE";
@@ -227,7 +217,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		if(week>=22 && week<=26)month = "SEPTEMBER";	
 	}
 	
-	private void rotatePlayers(){
+	protected void rotatePlayers(){
 		if(numberOfPlayers!=1){
 			List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
 			for(int i=1;i<playerList.size();i++){
@@ -259,7 +249,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			}
 		}
 	}
-	private void addCities(){
+	protected void addCities(){
 		if(month.equals("APRIL") || month.equals("MAY")){
 			while(board.getCitiesWithPerfomance().size()<8){
 				Performance randomPerformance = performanceBag.getPerformance("green");
