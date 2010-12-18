@@ -19,18 +19,11 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 	}
 	
 	@Override
-
-//	public String toString(){
-//		return "Esta carta es de color "+ this.getColor().toString()+ " es un " + this.getDescription()+ this.getTalentCircus().toString();
-//	}
-	
 	public String toString(){
 		String stringToReturn=super.toString();
 		for(Talent t:this.getTalentCircus()){
 			stringToReturn=stringToReturn+" "+t.toString()+"("+t.getWage()+")";
 		}
-		
 		return stringToReturn;
 	}
-
 }

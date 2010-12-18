@@ -12,19 +12,14 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 
 	@Override
 	public Integer getVictoryPoints() {
-		// TODO Auto-generated method stub
 		return victoryPoints;
 	}
 	
 	@Override
 
-//	public String toString(){
-//		return " Esto es " + this.getDescription() +" de color "+ this.getColor().toString() +"y con los siguientes puntos de victoria : "+ this.getVictoryPoints().toString();
-//	}
-	
+
 	public String toString(){
 		String stringToReturn=super.toString()+": "+this.getVictoryPoints();
-		
 		return stringToReturn;
 	}
 
