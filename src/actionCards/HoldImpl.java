@@ -1,21 +1,13 @@
 package actionCards;
 
-import commands.CommandPerformance;
-import commands.CommandToHire;
-
-import card.CardImpl;
-import performance.BankruptCircus;
-import performance.Performance;
-import performance.PerformanceDemand;
 import player.Player;
-import utiles.factoria.readDataFromKeyBoard;
 
 public class HoldImpl extends ActionCardImpl implements ActionCard {
 	private Player player;
 	private Integer id;
 
 	public HoldImpl (Player p){
-		super("Hold","You can perform/contract");
+		super("Permanecer","Puedes Actuar/Contratar en la ciudad actual");
 		player = p;
 		id = 7;
 	}

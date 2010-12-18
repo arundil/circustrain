@@ -4,7 +4,6 @@ import game.TwoPlayersGame;
 
 import java.util.List;
 
-import bag.TalentBag;
 import board.City;
 import player.Player;
 import talent.Acrobat;

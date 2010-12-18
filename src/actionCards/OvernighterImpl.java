@@ -9,35 +9,39 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 	private Integer id;
 	
 	public OvernighterImpl(Player p) {
-		super("Overnighter", "You can move toward 2 cities and/or perform/contract");
+		super("De Noche", "Puedes moverte hasta 2 ciudades y/o actuar/contratar");
 		player=p;
 		id = 6;
 	}
 
-	@Override
 	public void execute() {
 		Integer answer;
 		
-		System.out.println(player.getName()+" has used ==> OVERNIGHTER <== \n");
+		System.out.println(player.getName()+" ha usado la carta ==> DE NOCHE <== \n");
 		
 		if (player.getCity().hasPerfomance()){
-			System.out.print("What do you want to do?, move[0], perform/contract[1] or both[2]");
-			answer = readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","0,1,2");
+			System.out.print("¿Que quieres hacer?, Viajar[1],Viajar Primero y luego Actuar/Contratar[2] o Actuar/Contratar[3]");
+			answer = readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","1,2,3");
 		}
 		else{
-			System.out.println(player.getCity()+" has no Performance. Where do you want to travel?");
+			System.out.println(player.getCity()+" no tiene Performance. ¿Qué quieres hacer? Viajar[1] o ViViajar Primero y luego Actuar/Contratar[2]");
 			answer=0;
 		}
 		
-		if (answer == 0 || answer ==2){
-			super.movePlayer(player, 2);
+		if (answer == 1){
+			super.movePlayer(player, 2,false);
 		}
 		
-		if (answer == 1 || answer ==2){
+		if (answer == 2){
+			System.out.println("Estas son las ciudades que poseen actuación. ¿A qué ciudad quieres viajar?");
+			super.movePlayer(player,2,true);
+		}
+		
+		if ((answer == 2 || answer ==3)){
 			super.performPlayer(player);
 		}
 	}
-	@Override
+	
 	public Integer getIdCard() {
 		return id;
 	}

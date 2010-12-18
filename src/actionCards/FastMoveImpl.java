@@ -15,7 +15,7 @@ public class FastMoveImpl extends ActionCardImpl implements ActionCard {
 
 	@Override
 	public void execute() {
-		super.movePlayer(player, 5);
+		super.movePlayer(player, 5,false);
 	}
 
 	@Override

@@ -8,14 +8,14 @@ public class TravelImpl extends ActionCardImpl implements ActionCard {
 	Player player;
 	
 	public TravelImpl(Player p) {
-		super("Travel", "You can move until 3 cities");
+		super("VIAJE", "Puedes viajar hasta 3 ciudades");
 		player=p;
 		id =1;
 	}
 
 	@Override
 	public void execute() {
-		super.movePlayer(player, 3);
+		super.movePlayer(player, 3,false);
 	}
 
 	@Override
