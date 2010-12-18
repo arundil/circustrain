@@ -13,49 +13,52 @@ import utiles.factoria.CollectionsFactory;
 public class PlayerImpl implements Player {
 	
 	private String name;
-	private Integer money,reputation,victorypoints,perfomance_max;
-	private Boolean play_mode;
+	private Integer money,reputation,victoryPoints,perfomance_max;
+	//private Boolean play_mode;
+	//En teoría no es necesario
+	
 	private List<ActionCard> action_cards,discart_pile;
 	private List<Performance> perfomance_list;
 	private Map<Talent,Integer> talents;
 	private City city;
+	
 	private List<Integer> reputationList;
-	private Integer higherDiceScore; //Tirada de dado maxima asociada a la reputacion
 	private Integer weeksToPerformance; //Semanas restantes para poder puntuar en una actuacion
 	
 	public PlayerImpl (String n,Boolean p_mode){ //basic = 0 Advanced =1
+	//TODO: Quitar parametro p_mode. No es necesario;
 		
 		name=n;
-		play_mode = p_mode;
+//		play_mode = p_mode;
+		//EN teoría no es necesario;
 		money = 0;
 		perfomance_max =0;
-		victorypoints = 0;
+		victoryPoints = 0;
 
 		discart_pile = CollectionsFactory.createListFactory().createList();
 		talents = CollectionsFactory.createMapFactory().createSortedMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
 		reputationList=initializeReputation();
-		if (!play_mode){
-			reputation = 2;
-			higherDiceScore=reputationList.get(2);
-		}
-		else {
+//		if (!play_mode){
 			reputation = 1;
-			higherDiceScore= reputationList.get(1);
-		}
+//		}
+//		else {
+//			reputation = 1;
+//			higherDiceScore= reputationList.get(1);
+//		}
 		city = null;
 		weeksToPerformance=1;
 	}
 	
-	public PlayerImpl (String n){
-		name = n;
-		money =0;
-		discart_pile = CollectionsFactory.createListFactory().createList();
-		talents = CollectionsFactory.createMapFactory().createMap();
-		perfomance_list = CollectionsFactory.createListFactory().createList();
-		city = null;
-		weeksToPerformance=1;
-	}
+//	public PlayerImpl (String n){
+//		name = n;
+//		money =0;
+//		discart_pile = CollectionsFactory.createListFactory().createList();
+//		talents = CollectionsFactory.createMapFactory().createMap();
+//		perfomance_list = CollectionsFactory.createListFactory().createList();
+//		city = null;
+//		weeksToPerformance=1;
+//	}
 	public Integer getWeeksToPerformance(){
 		return weeksToPerformance;
 	}
@@ -69,12 +72,12 @@ public class PlayerImpl implements Player {
 		return name;
 	}
 	
-	public Boolean getPlay_Mode(){
-		return play_mode;
-	}
+//	public Boolean getPlay_Mode(){
+//		return play_mode;
+//	}
 	
 	public Integer getHigherDiceScore(){
-		return higherDiceScore;
+		return reputationList.get(this.getReputation());
 	}
 	public void addActionCards(List<ActionCard> actioncards){
 		action_cards = actioncards; 
@@ -82,75 +85,71 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public ActionCard discardActionCard(Integer id) {
-		ActionCard ac =null;
-		for (ActionCard e : action_cards){
-			if (e.getIdCard().equals(id)){
-				ac= e;
-				discart_pile.add(e);
-				action_cards.remove(e);
+		ActionCard descartedCard =null;
+		for (ActionCard card : action_cards){
+			if (card.getIdCard().equals(id)){
+				descartedCard= card;
+				discart_pile.add(card);
+				action_cards.remove(card);
 				break;
 			}
 		}
-		return ac;
+		return descartedCard;
 	}
 	
 	@Override
-	public boolean addActionCard(ActionCard ac) { //metodo para rescatar una carta de la pila.
-		boolean res =false;
-		if(discart_pile.contains(ac)){
-			discart_pile.remove(ac);
-			action_cards.add(ac);
-			res =true;
+	public boolean addActionCard(ActionCard card) { //metodo para rescatar una carta de la pila.
+		boolean addedCard =false;
+		if(discart_pile.contains(card)){
+			discart_pile.remove(card);
+			action_cards.add(card);
+			addedCard =true;
 		}
-		return res;
+		return addedCard;
 	}
 
 	@Override
-	public boolean addMoney(Integer m) {
-		money = money+m;
+	public boolean addMoney(Integer money) {
+		this.money = this.money+money;
 		return true;
 	}
 
 	@Override
-	public boolean addPerfomanceUsed(Performance p) {
-		return perfomance_list.add(p);
+	public boolean addPerfomanceUsed(Performance performance) {
+		return perfomance_list.add(performance);
 	}
 
 	@Override
-	public boolean addPerformance(Integer p) {
-		perfomance_max = Math.max(perfomance_max,p);
+	public boolean addPerformance(Integer performancePoints) {
+		perfomance_max = Math.max(perfomance_max,performancePoints);
 		return true;
 	}
 
 	@Override
-	public boolean addReputation(Integer r) {
-		Integer newReputation=reputation-r;
-		if(newReputation<0 || newReputation>7){
-			throw new IllegalArgumentException("Reputation is wrong");
-		}
-		reputation=newReputation;
-		reputation = reputation+r;
+	public boolean addReputation(Integer reputationIncrement) {
+
+		reputation = reputation+reputationIncrement;
 		
 		return true;
 	}
 
 	@Override
-	public void addTalent(List<Talent> t) {
+	public void addTalent(List<Talent> talentsToAdd) {
 		
-		for (Talent e :t){
-			if (talents.containsKey(e)){
-				Integer n = talents.get(e);
-				talents.put(e, n+1);
+		for (Talent talent :talentsToAdd){
+			if (talents.containsKey(talent)){
+				Integer numberOfTalents = talents.get(talent);
+				talents.put(talent, numberOfTalents+1);
 			}
 			else{
-				talents.put(e, 1);
+				talents.put(talent, 1);
 			}
 		}
 	}
 
 	@Override
-	public boolean addVictoryPoints(Integer vp) {
-		victorypoints = victorypoints +vp;
+	public boolean addVictoryPoints(Integer victoryPointsToAdd) {
+		victoryPoints = victoryPoints +victoryPointsToAdd;
 		return true;
 	}
 
@@ -188,7 +187,7 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public Integer getVictoryPoints() {
-		return victorypoints;
+		return victoryPoints;
 	}
 
 	@Override
@@ -202,15 +201,15 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public void moveCity(City c) {
-		city = c;
+	public void moveCity(City cityToGo) {
+		city = cityToGo;
 	}
 	
-	public void discardTalent(Talent t){
-		if(talents.get(t)<=1){
-			talents.remove(t);			
+	public void discardTalent(Talent talentToDiscard){
+		if(talents.get(talentToDiscard)<=1){
+			talents.remove(talentToDiscard);			
 		}else{
-			talents.put(t, talents.get(t)-1);
+			talents.put(talentToDiscard, talents.get(talentToDiscard)-1);
 		}
 	}
 	@Override
