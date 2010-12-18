@@ -1,6 +1,5 @@
 package test;
 
-import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 import actionCards.ActionCard;
@@ -11,7 +10,6 @@ import actionCards.OvernighterImpl;
 import actionCards.RestImpl;
 import actionCards.TravelImpl;
 import actionCards.WagesImpl;
-import bag.TalentBagImpl;
 import board.Board;
 import board.BoardImpl;
 import performance.BankruptCircus;
