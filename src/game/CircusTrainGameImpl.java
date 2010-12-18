@@ -48,55 +48,6 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		theClown.add(clown);
 	}
 	
-//	public void startGame() {
-//		List<Talent> theClown=CollectionsFactory.createListFactory().createList();
-//		Talent clown = GameFactory.createTalent("CLOWN");
-//
-//		theClown.add(clown);
-//		
-//		System.out.println("Welcome to Circus Train!");
-//		
-//		//Peticion de numero de jugadores
-//		String askNumberOfPlayers="How many players are going to play: ";
-//		String askNumberOfPlayersCondition="1,2";
-//		numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
-//		
-//		//Seleccion de modo de juego
-//		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
-//		String selectGameModeCondition="1,2";
-//		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
-//		
-//		if(gameMode.equals("1")){
-//			advancedMode = false;
-//		}else{
-//			advancedMode = true;
-//		}
-//		
-//		if(numberOfPlayers==1){
-//			String name = readDataFromKeyBoard.takeParametersToString("Player name: ");
-//			Player player = GameFactory.createPlayer(name,advancedMode);	
-//			player.addTalent(theClown);
-//			talentBag.removeTalent(clown);
-//			playerList.add(player);
-//		}else{		
-//			for(int i=0;i<numberOfPlayers;i++){
-//				String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
-//				Player player=GameFactory.createPlayer(name,advancedMode);
-//				player.addTalent(theClown);
-//				talentBag.removeTalent(clown);
-//				playerList.add(player);
-//			}
-//		}
-//		for(Player p: playerList){
-//			p.addActionCards(GameFactory.inicializateActionCards(this, p));
-//		}
-//		//opcion de cartas de evento
-////		String withEventCards="Are you going to play using Event Cards?:"+"\n"+"1 : Yes, I'm pro"+"\n"+"2 : No";
-////		String withEventCardsCondition="1,2";
-////		String eventCards=readDataFromKeyBoard.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
-//	}	
-//	
-	
 	public void runGame() {
 		refreshMonth();
 		
@@ -154,17 +105,6 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 		//Robar talentos
 		//En modo basico solo puede robar el que tenga menos puntos de victoria
 
-		
-		
-//TODO SOLO PARA AdvancedTwoPlayersGame:REUBICADO
-//		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
-//			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
-//			stealTalent.execute();
-//		}
-//		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
-//			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
-//			stealTalent.execute();
-//		}		
 	}
 	
 	//Game over de dos players.

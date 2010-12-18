@@ -7,6 +7,8 @@ import java.util.List;
 import performance.Performance;
 import tipos.CollectionsUtils;
 import tipos.Filter;
+import tipos.reverseFilter;
+import tipos.unionFilter;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.Graph;
 import utiles.factoria.ReadFile;
@@ -20,6 +22,7 @@ public class BoardImpl implements Board {
 	Filter<City> hasPerformance=new hasPerfomanceFilter();
 	Filter<City> hasNotPerformance=new hasNotPerformanceFilter();
 	Filter<City> isCanadian=new isCanadianFilter();
+	Filter<City> isNotCanadian=new reverseFilter<City>(isCanadian);
 	
 	//Constructor sin parametros
 	public BoardImpl(){
@@ -103,10 +106,11 @@ public class BoardImpl implements Board {
 	}
 
 	
-	//Recoge un performance y lo a�ade a una ciudad que no tenga aleatoriamente
+	//Recoge un performance y lo añade a una ciudad que no tenga aleatoriamente
 	@Override
 	public City addPerfomanceInRandomCity(Performance performance) {
-		City city=this.getRandomCity(hasNotPerformance);
+		Filter<City> notCandadianWithoutPerformanceFilter=new unionFilter<City>(hasNotPerformance, isNotCanadian);
+		City city=this.getRandomCity(notCandadianWithoutPerformanceFilter);
 		city.setPerfomance(performance);
 		return city;
 	}

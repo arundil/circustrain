@@ -152,27 +152,5 @@ public class GameFactory {
 		}
 		
 		return game;
-//		if(numberOfPlayers==1){
-//			String name = readDataFromKeyBoard.takeParametersToString("Player name: ");
-//			Player player = GameFactory.createPlayer(name,advancedMode);	
-//			player.addTalent(theClown);
-//			talentBag.removeTalent(clown);
-//			playerList.add(player);
-//		}else{		
-//			for(int i=0;i<numberOfPlayers;i++){
-//				String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
-//				Player player=GameFactory.createPlayer(name,advancedMode);
-//				player.addTalent(theClown);
-//				talentBag.removeTalent(clown);
-//				playerList.add(player);
-//			}
-//		}
-//		for(Player p: playerList){
-//			p.addActionCards(GameFactory.inicializateActionCards(this, p));
-//		}
-		//opcion de cartas de evento
-//		String withEventCards="Are you going to play using Event Cards?:"+"\n"+"1 : Yes, I'm pro"+"\n"+"2 : No";
-//		String withEventCardsCondition="1,2";
-//		String eventCards=readDataFromKeyBoard.takeParametersToStringRestricted(withEventCards, withEventCardsCondition);
 	}
 }
