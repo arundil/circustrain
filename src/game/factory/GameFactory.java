@@ -2,8 +2,8 @@ package game.factory;
 
 import game.AdvancedTwoPlayersGame;
 import game.BasicSoloGame;
-import game.CircusTrainGame;
-import game.CircusTrainGameImpl;
+import game.TwoPlayersGame;
+import game.TwoPlayersGameImpl;
 import game.BasicTwoPlayersGame;
 
 import java.util.List;
@@ -104,7 +104,7 @@ public class GameFactory {
 		return null;
 	}
 	
-	public static List<ActionCard> inicializateActionCards(CircusTrainGame ctg, Player player){
+	public static List<ActionCard> inicializateActionCards(TwoPlayersGame ctg, Player player){
 		List<ActionCard> ac = CollectionsFactory.createListFactory().createList();
 		ac.add(new TravelImpl(player));
 		ac.add(new BasicMoveImpl(2, player));
@@ -119,9 +119,9 @@ public class GameFactory {
 		return ac;
 	}
 	
-	public static CircusTrainGame createCircusTrainGame(){
+	public static TwoPlayersGame createCircusTrainGame(){
 
-		CircusTrainGame game=null;
+		TwoPlayersGame game=null;
 
 		System.out.println("Welcome to Circus Train!");
 		
