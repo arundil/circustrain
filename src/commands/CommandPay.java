@@ -5,8 +5,6 @@ import game.CircusTrainGame;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
@@ -17,9 +15,7 @@ public class CommandPay extends AbstractCommand{
 	private Player player;
 	private CircusTrainGame game;
 	private Integer wageMultiplicator;
-	
-	
-	
+
 	public CommandPay(Player player,CircusTrainGame game){
 		this.player=player;
 		this.game=game;
@@ -40,8 +36,9 @@ public class CommandPay extends AbstractCommand{
 		Integer cont=0;
 		
 		//Calculamos cuanto valen pagar todos los talentos.
-		for(Entry<Talent,Integer> entry : maptalents.entrySet()){
-			cont=cont + (entry.getValue() * entry.getKey().getWage() * wageMultiplicator);
+		
+		for(Talent talent:maptalents.keySet()){
+			cont=cont+(talent.getWage()*maptalents.get(talent)*wageMultiplicator);
 		}
 		
 		if(!(cont<=0)){

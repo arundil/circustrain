@@ -4,7 +4,6 @@ import game.AbstractCommand;
 
 import java.util.List;
 import java.util.Set;
-import java.util.Map.Entry;
 import performance.Performance;
 import performance.PerformanceDemand;
 import player.Player;
@@ -27,12 +26,10 @@ public class CommandPerformance extends AbstractCommand{
 			Integer performancePoints=player.getPerformanceMax();
 			Integer newPerformancePoints=0;
 			Set<Talent> talents=player.getTalents().keySet();
-			Set<Entry<Talent,Integer>> performanceTalents=performance.getTalentPoints().entrySet();
-			
 			for(Talent t:talents){
-				for(Entry<Talent,Integer> entry:performanceTalents){
-					if(t.equals(entry.getKey())){
-						newPerformancePoints+=entry.getValue();
+				for(Talent talent:performance.getTalentPoints().keySet()){
+					if(t.equals(talent)){
+						newPerformancePoints+=performance.getTalentPoints().get(talent);
 					}
 				}
 			}

@@ -26,36 +26,7 @@ public class CommandGameOver extends AbstractCommand{
 	public void execute() {
 		List<Player> playerList=game.getPlayerList();
 		Player player1=playerList.get(0);
-		Player player2=	playerList.get(1);	
 		Map<Talent,Integer> playerTalents = player1.getTalents();
-		Map<Talent,Integer> otherPlayerTalents = player2.getTalents();
-		//TODO si hay carta de salario sin jugar: restar 3 ptos de victoria y pagar el doble de los salarios
-		
-		
-		
-		
-		//TODO si el jugador es el que tiene mas payasos: suma 3 ptos de victoria
-//		Integer player1ClownNumber;
-//		Integer player2ClownNumber;
-//		if(playerTalents.containsKey(Clown.class)){
-//			player1ClownNumber=playerTalents.get(Clown.class);			
-//		}else{
-//			player1ClownNumber=0;
-//		}
-//		
-//		if(otherPlayerTalents.containsKey(Clown.class)){
-//			player2ClownNumber=otherPlayerTalents.get(Clown.class);
-//		}else{
-//			player2ClownNumber=0;
-//		}
-//		Integer comparePlayer1ClownWithPlayer2Clowns=player1ClownNumber.compareTo(player2ClownNumber);
-//		if(comparePlayer1ClownWithPlayer2Clowns>0){
-//			player1.addVictoryPoints(3);
-//		}
-//		if(comparePlayer1ClownWithPlayer2Clowns<0){
-//			player2.addVictoryPoints(3);
-//		}
-		
 		//De esta manera se puede hacer para mas de 2 jugadores		
 		Integer playerClownNumber=0;
 		Integer maximumClownNumber=-1;
