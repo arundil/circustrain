@@ -2,7 +2,7 @@ package commands;
 
 
 import game.AbstractCommand;
-import game.TwoPlayersGame;
+import game.CircusTrainGame;
 
 import java.util.List;
 
@@ -14,9 +14,9 @@ import utiles.factoria.readDataFromKeyBoard;
 public class CommandSelectCanadianCity extends AbstractCommand{
 	
 	private Player player;
-	private TwoPlayersGame game;
+	private CircusTrainGame game;
 	
-	public CommandSelectCanadianCity(Player player, TwoPlayersGame game){
+	public CommandSelectCanadianCity(Player player, CircusTrainGame game){
 		this.player=player;
 		this.game=game;
 	}
