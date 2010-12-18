@@ -315,8 +315,18 @@ public class TwoPlayersGame extends CircusTrainGame{
 		}
 		System.out.println(winner+"\n"+"\n"+"---=== Thank you for playing Train Circus! ===---");
 	}
-
-	
-
-	
+	public void noClownsNoAnimals(){
+		for(Player thisPlayer:playerList){
+			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
+			if(!thisPlayerTalents.containsKey(talent.Clown.class)){
+				thisPlayer.addVictoryPoints(-3);
+			}			
+			Boolean noAnimals=(!thisPlayerTalents.containsKey(talent.BigCat.class))&&
+			(!thisPlayerTalents.containsKey(talent.Elephant.class))&&
+			(!thisPlayerTalents.containsKey(talent.Horse.class));
+			if(noAnimals){
+				thisPlayer.addVictoryPoints(-3);
+			}			
+		}
+	}	
 }

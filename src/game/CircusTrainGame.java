@@ -70,20 +70,7 @@ public abstract class CircusTrainGame{
 	protected abstract void wageCardNoDiscarded();
 	protected abstract void results();
 	
-	public void noClownsNoAnimals(){
-		for(Player thisPlayer:playerList){
-			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
-			if(!thisPlayerTalents.containsKey(talent.Clown.class)){
-				thisPlayer.addVictoryPoints(-3);
-			}			
-			Boolean noAnimals=(!thisPlayerTalents.containsKey(talent.BigCat.class))&&
-			(!thisPlayerTalents.containsKey(talent.Elephant.class))&&
-			(!thisPlayerTalents.containsKey(talent.Horse.class));
-			if(noAnimals){
-				thisPlayer.addVictoryPoints(-3);
-			}			
-		}
-	}
+	public abstract void noClownsNoAnimals();
 	
 	public Board getBoard(){
 		return board;
