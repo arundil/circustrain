@@ -1,7 +1,7 @@
 package actionCards;
 
 
-import game.CircusTrainGame;
+import game.TwoPlayersGame;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ import card.CardImpl;
 public class WagesImpl extends CardImpl implements ActionCard {
 	Integer id;
 	Player player;
-	CircusTrainGame ctg;
+	TwoPlayersGame ctg;
 	
-	public WagesImpl(Player player, CircusTrainGame ctg) {
+	public WagesImpl(Player player, TwoPlayersGame ctg) {
 		super("Wages", "You can move until 2 cities. Then, you have to " +
 				"pay the wages or eliminate Talents");
 		this.id = 5;

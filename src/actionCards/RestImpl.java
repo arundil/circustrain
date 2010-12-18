@@ -1,6 +1,6 @@
 package actionCards;
 
-import game.CircusTrainGame;
+import game.TwoPlayersGame;
 
 import java.util.List;
 
@@ -19,9 +19,9 @@ import card.CardImpl;
 public class RestImpl extends CardImpl  implements ActionCard  {
 	Integer id;
 	Player player;
-	CircusTrainGame ctg;
+	TwoPlayersGame ctg;
 	
-	public RestImpl(Player player, CircusTrainGame ctg) {
+	public RestImpl(Player player, TwoPlayersGame ctg) {
 		super("Rest","If you are in Canada (Winnipeg, Montreal or Toronto), " +
 				"you can take one clown, one acrobat or rise your reputation in one level" );
 		this.id = 8;
