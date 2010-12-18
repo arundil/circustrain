@@ -4,7 +4,7 @@ import game.AdvancedTwoPlayersGame;
 import game.BasicSoloGame;
 import game.CircusTrainGame;
 import game.CircusTrainGameImpl;
-import game.basicTwoPlayersGame;
+import game.BasicTwoPlayersGame;
 
 import java.util.List;
 import java.util.Random;
@@ -145,7 +145,7 @@ public class GameFactory {
 			}
 		}else if (numberOfPlayers==2){
 			if(gameMode=="1"){
-				game=new basicTwoPlayersGame();
+				game=new BasicTwoPlayersGame();
 			}else if(gameMode=="2"){
 				game=new AdvancedTwoPlayersGame();
 			}
