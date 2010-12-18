@@ -42,36 +42,36 @@ public class CommandPay extends AbstractCommand{
 			cont=cont+(talent.getWage()*maptalents.get(talent)*wageMultiplicator);
 		}
 		
-		if(!(cont<=0)){
-			//Si estamos en el modo avanzado y podemos pagar todos los talentos.
-			if(player.getPlay_Mode() && player.getMoney() - cont > 0){
-				mess = "Do you want to pay all Talents? You paid "+cont+"$ \n 1: No \n 2: Yes";
-				conditions = "1,2";
-				resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, conditions);
-				respuesta = new Integer (resp);
-				if(respuesta == 2){                             
-					player.addMoney(-cont);
-				}
-				else{
-					toFire(true);
-					execute();
-				}
-				//Modo avanzado y no puede pagar todos los talentos.
-			}else if(player.getPlay_Mode()){
-				toFire(false);
-				execute(); 
-				
-			}else{
-				//Modo básico pagando todos los talentos.
-				if(player.getMoney() -cont >= 0){
-					player.addMoney(-cont);
-					//Modo basico no puede pagar todos los talentos.
-				}else{
-					toFire(false);
-					execute();
-				}
-			}
-		}
+//		if(!(cont<=0)){
+//			//Si estamos en el modo avanzado y podemos pagar todos los talentos.
+//			if(player.getPlay_Mode() && player.getMoney() - cont > 0){
+//				mess = "Do you want to pay all Talents? You paid "+cont+"$ \n 1: No \n 2: Yes";
+//				conditions = "1,2";
+//				resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, conditions);
+//				respuesta = new Integer (resp);
+//				if(respuesta == 2){                             
+//					player.addMoney(-cont);
+//				}
+//				else{
+//					toFire(true);
+//					execute();
+//				}
+//				//Modo avanzado y no puede pagar todos los talentos.
+//			}else if(player.getPlay_Mode()){
+//				toFire(false);
+//				execute(); 
+//				
+//			}else{
+//				//Modo básico pagando todos los talentos.
+//				if(player.getMoney() -cont >= 0){
+//					player.addMoney(-cont);
+//					//Modo basico no puede pagar todos los talentos.
+//				}else{
+//					toFire(false);
+//					execute();
+//				}
+//			}
+//		}
 	}
 	
 	private void toFire(Boolean money){

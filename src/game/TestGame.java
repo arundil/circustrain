@@ -13,9 +13,9 @@ import utiles.factoria.CollectionsFactory;
 
 public class TestGame {
 	public static void main (String[] args){
-		
-		CircusTrainGame game=GameFactory.createCircusTrainGame();
-		
-		game.runGame();
+//		
+//		CircusTrainGame game=GameFactory.createCircusTrainGame();
+//		
+//		game.runGame();
 	}
 }

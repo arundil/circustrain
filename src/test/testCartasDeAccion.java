@@ -36,7 +36,7 @@ public class testCartasDeAccion extends Test {
 		Board b = new BoardImpl("/data/boardcfg.txt");
 		Clown cl = new ClownImpl();
 		Elephant el = new ElephantImpl();
-		Player p = new PlayerImpl("Pepe",false);
+		Player p = new PlayerImpl("Pepe");
 		List<Talent> lt = CollectionsFactory.createListFactory().createList();
 		p.moveCity(b.getCityByName("Toronto"));
 		p.addMoney(15);

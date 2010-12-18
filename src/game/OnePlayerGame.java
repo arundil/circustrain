@@ -72,17 +72,7 @@ public class OnePlayerGame extends CircusTrainGame{
 	
 	//====================================== X =====================================
 
-	protected void rotatePlayers(){
-		if(numberOfPlayers!=1){
-			List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
-			for(int i=1;i<playerList.size();i++){
-				newPlayerList.add(playerList.get(i));	
-			}
-			newPlayerList.add(playerList.get(0));
-			playerList.clear();
-			playerList.addAll(newPlayerList);
-		}
-	}
+
 	private void compareTalentsCountAndAddVictoryPoints(){
 		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
 		for(Player player:playerList){
@@ -258,6 +248,13 @@ public class OnePlayerGame extends CircusTrainGame{
 
 	@Override
 	public void noClownsNoAnimals() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	protected void finalMonth() {
 		// TODO Auto-generated method stub
 		
 	}
