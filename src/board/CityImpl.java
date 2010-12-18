@@ -67,10 +67,10 @@ public class CityImpl extends VertexImpl implements City {
 		if(jump==1){
 			return getAdjacents();
 		}else{
-			for(Vertex v:getAdjacents()){
-				City c=(City)v;
+			for(Vertex vertex:getAdjacents()){
+				City city=(City)vertex;
 				
-				vertices.addAll(c.exactMovement(jump-1));
+				vertices.addAll(city.exactMovement(jump-1));
 			}
 		}
 		return vertices;
@@ -79,9 +79,9 @@ public class CityImpl extends VertexImpl implements City {
 	public List<City> exactMovement(Integer jump){
 		Set<Vertex> vertices=exactMovementSet(jump);
 		List<City> cities=CollectionsFactory.createListFactory().createList();
-		for(Vertex v:vertices){
-			City c=(City)v;
-			cities.add(c);
+		for(Vertex vertex:vertices){
+			City city=(City)vertex;
+			cities.add(city);
 		}
 		return cities;
 	}
@@ -90,12 +90,12 @@ public class CityImpl extends VertexImpl implements City {
 	public List<City> maxMovement(Integer jump) {
 		Set<Vertex> vertices=CollectionsFactory.createSetFactory().createSet();
 		List<City> cities=CollectionsFactory.createListFactory().createList();
-		for(int i=jump;i>0;i--){
-			vertices.addAll(exactMovement(i));
+		for(int contador=jump;contador>0;contador--){
+			vertices.addAll(exactMovement(contador));
 		}
-		for(Vertex v:vertices){
-			City c=(City)v;
-			cities.add(c);
+		for(Vertex vertex:vertices){
+			City ccity=(City)vertex;
+			cities.add(ccity);
 		}
 		return cities;
 	}
@@ -133,9 +133,9 @@ public class CityImpl extends VertexImpl implements City {
 	public List<City> getCitiesAdjacents(){
 		List<City> cities=CollectionsFactory.createListFactory().createList();
 		
-		for(Vertex v:getAdjacents()){
-			City c=(City)v;
-			cities.add(c);
+		for(Vertex vertex:getAdjacents()){
+			City city=(City)vertex;
+			cities.add(city);
 		}
 		return cities;
 	}
