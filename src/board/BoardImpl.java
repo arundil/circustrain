@@ -31,7 +31,6 @@ public class BoardImpl implements Board {
 	
 	//Constructor desde un archivo
 	public BoardImpl(String file){
-		
 		this();
 		String fileLine=null;
 		BufferedReader fileReader = null;
@@ -64,19 +63,16 @@ public class BoardImpl implements Board {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}   
-
-
-
 	}
 
 
-	//Devuelve un Set de City
+	//Devuelve un List de City
 	@Override
 	public List<City> getCities() {
 		List<City> cityList=CollectionsFactory.createListFactory().createList();
-			for(Vertex v:gameMap.getVertexList()){
-				cityList.add((City)v);
-			}
+		for(Vertex vertexAdjacent:gameMap.getVertexList()){
+			cityList.add((City)vertexAdjacent);
+		}
 		return cityList;
 	}
 
@@ -84,9 +80,9 @@ public class BoardImpl implements Board {
 	@Override
 	public City getCityByName(String name) {
 		
-		for(City c:this.getCities()){
-			if(c.getName().equals(name)){
-				return c;
+		for(City cityToCompare:this.getCities()){
+			if(cityToCompare.getName().equals(name)){
+				return cityToCompare;
 			}
 		}
 		return null;
@@ -96,16 +92,9 @@ public class BoardImpl implements Board {
 	//Devuelve un List de ciudades que son Canadiense
 	@Override
 	public List<City> getCanadianCities() {
-		List<City> canadianCities=CollectionsFactory.createListFactory().createList();
-		for(City c:this.getCities()){
-			if(isCanadian.exp(c)){
-				canadianCities.add(c);
-			}
-		}
-		return canadianCities;
+		return CollectionsUtils.filteredList(this.getCities(), isCanadian);
 	}
 
-	
 	//Recoge un performance y lo añade a una ciudad que no tenga aleatoriamente
 	@Override
 	public City addPerfomanceInRandomCity(Performance performance) {
@@ -115,31 +104,29 @@ public class BoardImpl implements Board {
 		return city;
 	}
 
-	//Devuelve el n�mero de ciudades que tengan Performance
+	//Devuelve el número de ciudades que tengan Performance
 
 	public Integer countCitiesWithPerfomance() {
 		return CollectionsUtils.count(this.getCities(), hasPerformance);
 	}
 	
 	public List<City> getCitiesWithoutPerformance() {
-		
 		return CollectionsUtils.filteredList(this.getCities(),hasNotPerformance);
 	}
 
 	@Override
-	public void addCity(City c) {
-		Vertex v=(Vertex)c;
-		gameMap.addVertex(v);
+	public void addCity(City cityToAdd) {
+		gameMap.addVertex(cityToAdd);
 	}
 
 	@Override
-	public void addTrack(City c1, City c2) {
-			this.gameMap.addEdge(c1, c2);
+	public void addTrack(City city1, City city2) {
+			this.gameMap.addEdge(city1, city2);
 	}
 	public String toString(){
 		String stringToPrint="";
-		for (City c:this.getCities()){
-			stringToPrint=stringToPrint+c.getName()+"("+c.getAdjacents().toString()+")\r\n";
+		for (City cityToPrint:this.getCities()){
+			stringToPrint=stringToPrint+cityToPrint.getName()+"("+cityToPrint.getAdjacents().toString()+")\r\n";
 		}
 		return stringToPrint;
 	}
@@ -147,13 +134,6 @@ public class BoardImpl implements Board {
 	@Override
 	public List<City> getCitiesWithPerfomance() {
 		return CollectionsUtils.filteredList(this.getCities(), hasPerformance);
-	}
-	
-	@SuppressWarnings("unused")
-	private City getRandomCity(){
-		List<City> cities=this.getCities();
-		Integer random=(int)(Math.random()*cities.size()); 
-		return cities.get(random);
 	}
 	
 	private City getRandomCity(Filter<City> filter){
