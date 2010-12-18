@@ -7,12 +7,11 @@ import java.util.Map;
 
 import commands.CommandExecuteCase;
 import commands.CommandPlayerState;
-import commands.CommandSelectCase;
-
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
 import board.City;
+import performance.BankruptCircus;
 import performance.Performance;
 import player.Player;
 import talent.Talent;
@@ -47,39 +46,63 @@ public abstract class CircusTrainGame{
 		refreshMonth();	
 		completeBoardPerformances();
 	}
-	
-	
+
+
 
 	public void refreshMonth(){
-			if(week>=0 && week<=3)month = "APRIL";
-			if(week>=4 && week<=8) month = "MAY";
-			if(week>=9 && week<=12)month = "JUNE";
-			if(week>=13 && week<=17)month = "JULY";
-			if(week>=18 && week<=21)month = "AUGUST";
-			if(week>=22 && week<=26)month = "SEPTEMBER";	
+		if(week>=0 && week<=3)month = "APRIL";
+		if(week>=4 && week<=8) month = "MAY";
+		if(week>=9 && week<=12)month = "JUNE";
+		if(week>=13 && week<=17)month = "JULY";
+		if(week>=18 && week<=21)month = "AUGUST";
+		if(week>=22 && week<=26)month = "SEPTEMBER";	
 	}
-	
+
 	public void completeBoardPerformances(){
 		if(month.equals("APRIL") || month.equals("MAY")){
 			while(board.getCitiesWithPerfomance().size()<8){
 				Performance randomPerformance = performanceBag.getPerformance("green");
-				board.addPerfomanceInRandomCity(randomPerformance);
 				
-//				performanceBag.removePerformance(randomPerformance);
+				if(randomPerformance instanceof BankruptCircus){
+					BankruptCircus bck = (BankruptCircus) randomPerformance;
+					for(Talent t: bck.getTalentCircus()){
+						if(talentBag.getNumTalents(t)>0){
+							talentBag.removeTalent(t);
+						}else{
+							bck.getTalentCircus().remove(t);
+						}
+					}
+					board.addPerfomanceInRandomCity(bck);
+				}else
+					board.addPerfomanceInRandomCity(randomPerformance);
+
+				performanceBag.removePerformance(randomPerformance);
 			}
 		}
+		
 		if(month.equals("JUNE") || month.equals("JULY")){
 			while(board.getCitiesWithPerfomance().size()<10){
 				Performance randomPerformance=performanceBag.getPerformance("yellow");
-				board.addPerfomanceInRandomCity(randomPerformance);
-//				performanceBag.removePerformance(randomPerformance);
+				if(randomPerformance instanceof BankruptCircus){
+					BankruptCircus bck = (BankruptCircus) randomPerformance;
+					for(Talent t: bck.getTalentCircus()){
+						if(talentBag.getNumTalents(t)>0){
+							talentBag.removeTalent(t);
+						}else{
+							bck.getTalentCircus().remove(t);
+						}
+					}
+					board.addPerfomanceInRandomCity(bck);
+				}else
+					board.addPerfomanceInRandomCity(randomPerformance);
+				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 		if(month.equals("AUGUST") || month.equals("SEPTEMBER")){
 			while(board.getCitiesWithPerfomance().size()<12){
 				Performance randomPerformance=performanceBag.getPerformance("red");
 				board.addPerfomanceInRandomCity(randomPerformance);
-//				performanceBag.removePerformance(randomPerformance);
+				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 	}

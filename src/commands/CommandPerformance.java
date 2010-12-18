@@ -9,6 +9,7 @@ import performance.PerformanceDemand;
 import player.Player;
 import talent.Talent;
 
+
 public class CommandPerformance extends AbstractCommand{
 	
 	private Player player;
@@ -49,6 +50,8 @@ public class CommandPerformance extends AbstractCommand{
 		}else{
 			player.setWeeksToPerformance(player.getWeeksToPerformance()-1);
 		}
+		//Quita la performance que usa en una ciudad.
+		player.getCity().removePerformance();
 	}
 	
 	private void refresh(){

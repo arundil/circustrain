@@ -10,7 +10,6 @@ import commands.CommandExecuteCase;
 import commands.CommandPay;
 import commands.CommandPlayerState;
 import commands.CommandSelectCanadianCity;
-import commands.CommandSelectCase;
 
 import actionCards.ActionCard;
 import bag.PerformanceBag;

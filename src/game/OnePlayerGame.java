@@ -19,7 +19,6 @@ import commands.CommandExecuteCase;
 import commands.CommandPay;
 import commands.CommandPlayerState;
 import commands.CommandSelectCanadianCity;
-import commands.CommandSelectCase;
 
 //Quitado efinalMounth() puesto en sus hijos;
 //Añadido parte de los constructores de los hijos por ser iguales.
