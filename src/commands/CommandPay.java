@@ -1,6 +1,7 @@
 package commands;
 
 import game.AbstractCommand;
+import game.CircusTrainGame;
 import game.TwoPlayersGame;
 
 import java.util.List;
@@ -13,15 +14,15 @@ import utiles.factoria.readDataFromKeyBoard;
 public class CommandPay extends AbstractCommand{
 	
 	private Player player;
-	private TwoPlayersGame game;
+	private CircusTrainGame game;
 	private Integer wageMultiplicator;
 
-	public CommandPay(Player player,TwoPlayersGame game){
+	public CommandPay(Player player,CircusTrainGame game){
 		this.player=player;
 		this.game=game;
 		this.wageMultiplicator=1;
 	}
-	public CommandPay(Player player,TwoPlayersGame game,Integer multiplicator){
+	public CommandPay(Player player,CircusTrainGame game,Integer multiplicator){
 		this.player=player;
 		this.game=game;
 		this.wageMultiplicator=multiplicator;

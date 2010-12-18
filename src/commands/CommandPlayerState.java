@@ -25,16 +25,15 @@ public class CommandPlayerState extends AbstractCommand{
 		}
 		String actionCardList=player.getActionCards().toString();
 		System.out.println("You have the following action card/s: \n "+actionCardList);
-		if(player.getPlay_Mode() && !player.getdiscartpile().isEmpty()){
+		if(!player.getdiscartpile().isEmpty()){
 			String discardActionCardList=player.getdiscartpile().toString();			
 			System.out.println("You have the following discarded action card/s: "+discardActionCardList);
 		}
 		System.out.println("You have the following talents: "+player.getTalents().toString());
-		if(player.getPlay_Mode()){
-			System.out.println("Your reputation is: "+player.getReputation());			
-			//No haria falta si mostramo el tablero.
-			System.out.println("Your higher dice score is: "+player.getHigherDiceScore());
-		}
+		System.out.println("Your reputation is: "+player.getReputation());			
+	//No haria falta si mostramo el tablero.
+		System.out.println("Your higher dice score is: "+player.getHigherDiceScore());
+		
 		System.out.println("Your current position is: "+player.getCity().toString());
 		System.out.println("Your higher performance score is: "+player.getPerformanceMax());
 		System.out.println("You have "+player.getMoney()+" $");

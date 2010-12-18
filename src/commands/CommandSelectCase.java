@@ -31,7 +31,7 @@ public class CommandSelectCase extends AbstractCommand{
 		String askActionsDiscardedNoMoneyCondition = "1,2";
 		String askActionsNoDiscardedMoneyCondition = "1,3";
 
-		String action;
+		String action="1";
 		
 		
 		//TODO metodolizar en gordo
@@ -69,6 +69,6 @@ public class CommandSelectCase extends AbstractCommand{
 //		}else{
 //			action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
 //		}
-//		game.setFollowingAction(action);
+		game.setFollowingAction(action);
 	}
 }
