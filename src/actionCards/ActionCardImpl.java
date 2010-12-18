@@ -55,7 +55,7 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 
 		Performance p = player.getCity().getPerformance();
 		if (p instanceof PerformanceDemand){
-			System.out.println("Se hace saber que la ciudad de "+player.getCity()+" demanda urgentemente una Actuación : "+ p );
+			System.out.println("La ciudad de "+player.getCity()+" agradece tu actuación de : "+ p );
 			if (p instanceof PerformanceDemand){
 				CommandPerformance cp = new CommandPerformance(player,(PerformanceDemand) p);
 				cp.execute();
