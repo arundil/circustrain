@@ -1,15 +1,16 @@
 package commands;
 
 import game.AbstractCommand;
+import game.CircusTrainGame;
 import game.TwoPlayersGame;
 import player.Player;
 
 public class CommandExecuteCase extends AbstractCommand{
 	
 	private Player player;
-	private TwoPlayersGame game;
+	private CircusTrainGame game;
 	
-	public CommandExecuteCase(Player player,TwoPlayersGame game){
+	public CommandExecuteCase(Player player,CircusTrainGame game){
 		this.player=player;
 		this.game=game;
 	}

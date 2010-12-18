@@ -84,4 +84,12 @@ public abstract class CircusTrainGame{
 			}			
 		}
 	}
+	
+	public Board getBoard(){
+		return board;
+	}
+	
+	public String getFollowingAction(){
+		return followingAction;
+	}
 }
