@@ -100,7 +100,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 	public void runGame() {
 		refreshMonth();
 		
-		addCities();
+		completeBoardPerformances();
 		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
 		
 		for(Player playerSelectsCity:playerList){
@@ -136,7 +136,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
 				executeCase.execute();				
 			}
-			addCities();					
+			completeBoardPerformances();					
 			week++;			
 		}
 		gameOver();
@@ -249,7 +249,7 @@ public class CircusTrainGameImpl implements CircusTrainGame{
 			}
 		}
 	}
-	protected void addCities(){
+	protected void completeBoardPerformances(){
 		if(month.equals("APRIL") || month.equals("MAY")){
 			while(board.getCitiesWithPerfomance().size()<8){
 				Performance randomPerformance = performanceBag.getPerformance("green");

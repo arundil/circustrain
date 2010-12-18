@@ -51,7 +51,7 @@ public class AdvancedTwoPlayersGame extends CircusTrainGameImpl {
 	
 	public void runGame(){
 		super.refreshMonth();		
-		super.addCities();
+		super.completeBoardPerformances();
 		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
 		
 		for(Player playerSelectsCity:playerList){
@@ -87,7 +87,7 @@ public class AdvancedTwoPlayersGame extends CircusTrainGameImpl {
 				executeCase.execute();				
 			}
 			//Se mira el número de ciudades y se añaden si es el caso
-			addCities();					
+			completeBoardPerformances();					
 			week++;			
 		}
 		this.gameOver();
