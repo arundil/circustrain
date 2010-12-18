@@ -31,50 +31,50 @@ public class TwoPlayersGame extends CircusTrainGame{
 		
 	}
 	
-	public void runGame() {
-		refreshMonth();
-		
-		super.completeBoardPerformances();
-		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
-		
-		for(Player playerSelectsCity:playerList){
-			CommandSelectCanadianCity selectCanadianCity=new CommandSelectCanadianCity(playerSelectsCity, this);
-			selectCanadianCity.execute();
-		}
-		
-		while(week<27){
-			String oldMonth=this.getMonth();
-			super.refreshMonth();
-			String newMonth=this.getMonth();
-			
-			
-			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-			if(!(oldMonth.equals(newMonth))){
-				finalMonth();
-				rotatePlayers();
-			}
-			System.out.println(board.getCitiesWithPerfomance().toString());
-			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
-			
-			for(Player currentPlayer : playerList){
-								
-				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
-				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
-				playerState.execute();
-				
-				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
-				selectCase.execute();
-				
-				//Se lleva a cabo la accion que el jugador a elegido
-				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
-				executeCase.execute();				
-			}
-			super.completeBoardPerformances();					
-			week++;			
-		}
-		gameOver();
-	}
+//	public void runGame() {
+//		refreshMonth();
+//		
+//		super.completeBoardPerformances();
+//		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
+//		
+//		for(Player playerSelectsCity:playerList){
+//			CommandSelectCanadianCity selectCanadianCity=new CommandSelectCanadianCity(playerSelectsCity, this);
+//			selectCanadianCity.execute();
+//		}
+//		
+//		while(week<27){
+//			String oldMonth=this.getMonth();
+//			super.refreshMonth();
+//			String newMonth=this.getMonth();
+//			
+//			
+//			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
+//			if(!(oldMonth.equals(newMonth))){
+//				finalMonth();
+//				rotatePlayers();
+//			}
+//			System.out.println(board.getCitiesWithPerfomance().toString());
+//			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
+//			
+//			for(Player currentPlayer : playerList){
+//								
+//				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
+//				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
+//				playerState.execute();
+//				
+//				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
+//				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
+//				selectCase.execute();
+//				
+//				//Se lleva a cabo la accion que el jugador a elegido
+//				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
+//				executeCase.execute();				
+//			}
+//			super.completeBoardPerformances();					
+//			week++;			
+//		}
+//		gameOver();
+//	}
 	
 	public void finalMonth(){
 		//Puntos de victoria segun el nº de talentos
@@ -98,29 +98,29 @@ public class TwoPlayersGame extends CircusTrainGame{
 		results();
 	}
 	
-	public TalentBag getTalentBag(){
-		return talentBag;
-	}
-	
-	public List<Player> getPlayerList(){
-		return playerList;
-	}	
-	
-	public String getMonth(){
-		return month;
-	}	
-	
-	public void setFollowingAction(String action){
-		followingAction=action;
-	}
-	
-	public String getFollowingAction() {
-		return followingAction;
-	}
-	
-	public Board getBoard(){
-		return board;
-	}
+//	public TalentBag getTalentBag(){
+//		return talentBag;
+//	}
+//	
+//	public List<Player> getPlayerList(){
+//		return playerList;
+//	}	
+//	
+//	public String getMonth(){
+//		return month;
+//	}	
+//	
+//	public void setFollowingAction(String action){
+//		followingAction=action;
+//	}
+//	
+//	public String getFollowingAction() {
+//		return followingAction;
+//	}
+//	
+//	public Board getBoard(){
+//		return board;
+//	}
 	
 	//====================================== X =====================================
 
