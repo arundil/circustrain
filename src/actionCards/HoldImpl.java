@@ -7,7 +7,7 @@ public class HoldImpl extends ActionCardImpl implements ActionCard {
 	private Integer id;
 
 	public HoldImpl (Player p){
-		super("Permanecer","Puedes Actuar/Contratar en la ciudad actual");
+		super("PERMANECER","Puedes Actuar/Contratar en la ciudad actual");
 		player = p;
 		id = 7;
 	}

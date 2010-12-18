@@ -8,7 +8,7 @@ public class FastMoveImpl extends ActionCardImpl implements ActionCard {
 	Player player;
 
 	public FastMoveImpl(Player p) {
-		super("Fast Move","You can move until 5 cities");
+		super("MOVIMIENTO RAPIDO","Puedes moverte hasta 5 ciudades");
 		id = 4;
 		player = p;
 	}

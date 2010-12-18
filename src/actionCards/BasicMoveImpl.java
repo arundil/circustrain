@@ -10,7 +10,7 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 	Player player;
 
 	public BasicMoveImpl(Integer n, Player p) {
-		super("Basic Move", "You can move towards 1 city or perform/contract");
+		super("Movimiento Básico", "Puedes moverte hacia una ciudad adyacente o Actuar/Contratar");
 		id=n;
 		player = p;
 	}
@@ -24,7 +24,7 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 	public void execute() {
 		Integer answer;
 		
-		System.out.println(player.getName()+" has used ==> BASIC MOVE <== \n");
+		System.out.println(player.getName()+" ha usado la carta ==> MOVIMIENTO BÁSICO <== \n");
 		
 		if (player.getCity().hasPerfomance()){
 			System.out.println("What do you want to do, move[0] or perform/contract[1]");

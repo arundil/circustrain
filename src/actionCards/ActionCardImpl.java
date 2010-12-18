@@ -53,34 +53,22 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 
 	public void performPlayer(Player player){
 
-		Integer answer;
 		Performance p = player.getCity().getPerformance();
 		if (p instanceof PerformanceDemand){
 			System.out.println("Se hace saber que la ciudad de "+player.getCity()+" demanda urgentemente una Actuación : "+ p );
-			answer = 0;
-		}else if (p instanceof BankruptCircus){
-			System.out.println("Por la calles de esta ciudad deambula un Circo en Bancarrota: "+ p + "\n");
-			answer =1;
-		} else {
-			throw new IllegalArgumentException("No puedes instanciar otra cosa que no sea Performance or BankruptCircus");
-		}
-		if (answer ==0){
 			if (p instanceof PerformanceDemand){
 				CommandPerformance cp = new CommandPerformance(player,(PerformanceDemand) p);
 				cp.execute();
 			}
-			else{
-				System.out.print("This city has no performance\n");
-			}
-		}
-		if (answer ==1){
+		}else if (p instanceof BankruptCircus){
+			System.out.println("Por la calles de esta ciudad deambula un Circo en Bancarrota: "+ p + "\n");
 			if(p instanceof BankruptCircus){
 				CommandToHire ch = new CommandToHire((BankruptCircus)p, player);
 				ch.execute();
+			} else {
+				throw new IllegalArgumentException("No puedes instanciar otra cosa que no sea Performance or BankruptCircus");
 			}
-			else{
-				System.out.print("This city has no BankruptCircus\n");
-			}
+
 		}
 	}
 }

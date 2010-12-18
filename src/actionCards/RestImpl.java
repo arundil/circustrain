@@ -21,8 +21,8 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 	TwoPlayersGame ctg;
 	
 	public RestImpl(Player player, TwoPlayersGame ctg) {
-		super("Rest","If you are in Canada (Winnipeg, Montreal or Toronto), " +
-				"you can take one clown, one acrobat or rise your reputation in one level" );
+		super("DESCANSO","Si estas en Canada (Winnipeg, Montreal or Toronto), " +
+				"puedes coger un payaso, un acrobata o incrementar tu reputación en un nivel" );
 		this.id = 8;
 		this.player = player;
 		this.ctg = ctg;
