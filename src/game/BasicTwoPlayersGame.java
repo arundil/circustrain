@@ -2,8 +2,6 @@ package game;
 
 import commands.CommandExecuteCase;
 import commands.CommandPlayerState;
-import commands.CommandSelectCase;
-
 import game.factory.GameFactory;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
@@ -53,8 +51,7 @@ public void runGame(){
 				playerState.execute();
 				
 				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
-				selectCase.execute();
+				selectCase(currentPlayer);
 				
 				//Se lleva a cabo la accion que el jugador a elegido
 				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
@@ -66,5 +63,14 @@ public void runGame(){
 		}
 		gameOver();
 		results();
+	}
+	
+	void selectCase(Player player){
+		String action1="1 : Play one Action card from my hand";
+		String askBasicAction = "What are you going to do:" + "\n" + action1;
+		String askBasicActionCondition = "1";
+		String action="1";
+		action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
+		this.setFollowingAction(action);
 	}
 }
