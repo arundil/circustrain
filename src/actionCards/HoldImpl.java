@@ -13,7 +13,7 @@ import utiles.factoria.readDataFromKeyBoard;
 public class HoldImpl extends CardImpl implements ActionCard {
 	private Player player;
 	private Integer id;
-	
+
 	public HoldImpl (Player p){
 		super("Hold","You can perform/contract");
 		player = p;
@@ -22,10 +22,16 @@ public class HoldImpl extends CardImpl implements ActionCard {
 	@Override
 	public void execute() {
 		Integer answer;
-		System.out.println(player.getName()+" has used ==> HOLD <== \n" );
-		System.out.println("What do you want to do? perform [0] or contract[1]");
-		answer = readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","0,1");
 		Performance p = player.getCity().getPerformance();
+		if (p instanceof PerformanceDemand){
+			System.out.println("This City has this PerformanceDemand : "+ p +" .You perform at "+player.getCity());
+			answer = 0;
+		}else if (p instanceof BankruptCircus){
+			System.out.println("In this City there is this BankruptCircus: "+ p + "\n");
+			answer =1;
+		} else {
+			throw new IllegalArgumentException("No puedes instanciar otra cosa que no sea Performance or BankruptCircus");
+		}
 		if (answer ==0){
 			if (p instanceof PerformanceDemand){
 				CommandPerformance cp = new CommandPerformance(player,(PerformanceDemand) p);
@@ -45,12 +51,12 @@ public class HoldImpl extends CardImpl implements ActionCard {
 			}
 		}
 	}
-	
+
 	@Override
 	public Integer getIdCard() {
 		return id;
 	}
-	
+
 	public String toString() {
 		return "[" + id + "]" + super.toString();
 	}

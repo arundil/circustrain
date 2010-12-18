@@ -14,6 +14,8 @@ import actionCards.WagesImpl;
 import bag.TalentBagImpl;
 import board.Board;
 import board.BoardImpl;
+import performance.BankruptCircus;
+import performance.BankruptCircusImpl;
 import performance.PerformanceDemand;
 import performance.PerformanceDemandImpl;
 import player.Player;
@@ -37,6 +39,7 @@ public class testCartasDeAccion extends Test {
 		Clown cl = new ClownImpl();
 		Elephant el = new ElephantImpl();
 		Player p = new PlayerImpl("Pepe",false);
+		List<Talent> lt = CollectionsFactory.createListFactory().createList();
 		p.moveCity(b.getCityByName("Toronto"));
 		p.addMoney(15);
 		Map<Talent, Integer> talentPoints= CollectionsFactory.createMapFactory().createMap();
@@ -48,7 +51,10 @@ public class testCartasDeAccion extends Test {
 		talents.add(cl);
 		talents.add(cl);
 		talents.add(cl);
+		lt.add(cl);
+		lt.add(cl);
 		p.addTalent(talents);
+		//BankruptCircus bk = new BankruptCircusImpl("Rojo", "soy un pudrecolchones",lt );
 		PerformanceDemand pd = new PerformanceDemandImpl("green", "Bla Bla Bla", 2, talentPoints, false);
 		p.getCity().setPerfomance(pd);
 		System.out.println(p);
