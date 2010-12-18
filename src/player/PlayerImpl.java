@@ -14,8 +14,6 @@ public class PlayerImpl implements Player {
 	
 	private String name;
 	private Integer money,reputation,victoryPoints,perfomance_max;
-	//private Boolean play_mode;
-	//En teoría no es necesario
 	
 	private List<ActionCard> action_cards,discart_pile;
 	private List<Performance> perfomance_list;
@@ -25,12 +23,8 @@ public class PlayerImpl implements Player {
 	private List<Integer> reputationList;
 	private Integer weeksToPerformance; //Semanas restantes para poder puntuar en una actuacion
 	
-	public PlayerImpl (String n,Boolean p_mode){ //basic = 0 Advanced =1
-	//TODO: Quitar parametro p_mode. No es necesario;
-		
+	public PlayerImpl (String n){
 		name=n;
-//		play_mode = p_mode;
-		//EN teoría no es necesario;
 		money = 0;
 		perfomance_max =0;
 		victoryPoints = 0;
@@ -39,26 +33,11 @@ public class PlayerImpl implements Player {
 		talents = CollectionsFactory.createMapFactory().createSortedMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
 		reputationList=initializeReputation();
-//		if (!play_mode){
-			reputation = 1;
-//		}
-//		else {
-//			reputation = 1;
-//			higherDiceScore= reputationList.get(1);
-//		}
+		reputation = 1;
 		city = null;
 		weeksToPerformance=1;
 	}
 	
-//	public PlayerImpl (String n){
-//		name = n;
-//		money =0;
-//		discart_pile = CollectionsFactory.createListFactory().createList();
-//		talents = CollectionsFactory.createMapFactory().createMap();
-//		perfomance_list = CollectionsFactory.createListFactory().createList();
-//		city = null;
-//		weeksToPerformance=1;
-//	}
 	public Integer getWeeksToPerformance(){
 		return weeksToPerformance;
 	}
@@ -71,11 +50,7 @@ public class PlayerImpl implements Player {
 	public String getName() {
 		return name;
 	}
-	
-//	public Boolean getPlay_Mode(){
-//		return play_mode;
-//	}
-	
+		
 	public Integer getHigherDiceScore(){
 		return reputationList.get(this.getReputation());
 	}
@@ -127,9 +102,7 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public boolean addReputation(Integer reputationIncrement) {
-
 		reputation = reputation+reputationIncrement;
-		
 		return true;
 	}
 
