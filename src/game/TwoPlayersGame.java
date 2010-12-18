@@ -28,7 +28,8 @@ public class TwoPlayersGame extends CircusTrainGame{
 	
 	public TwoPlayersGame(){
 		super();
-		
+		talentBag.removeTalent(theClown.get(0));
+		talentBag.removeTalent(theClown.get(0));
 	}
 	
 //	public void runGame() {
@@ -90,7 +91,7 @@ public class TwoPlayersGame extends CircusTrainGame{
 	}
 
 	public void gameOver() {
-		wageCardNoDiscarded();
+		finalWage();
 		higherClownNumber();
 		higherMoneyAmount();
 		higherPerformancesNumber();
@@ -168,7 +169,7 @@ public class TwoPlayersGame extends CircusTrainGame{
 		}
 	}
 
-	protected void wageCardNoDiscarded() {
+	protected void finalWage() {
 		for(Player player: playerList){
 			for(ActionCard actioncard : player.getActionCards()){
 				if(actioncard.getIdCard() == 5){

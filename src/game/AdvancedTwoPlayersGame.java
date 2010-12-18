@@ -41,7 +41,7 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
 	@Override
 	public void gameOver(){
-		wageCardNoDiscarded();
+		finalWage();
 		higherClownNumber();
 		higherMoneyAmount();
 		higherPerformancesNumber();

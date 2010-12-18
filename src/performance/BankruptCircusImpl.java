@@ -26,4 +26,9 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 		}
 		return stringToReturn;
 	}
+	
+	@Override
+	public void execute(){
+		
+	}
 }

@@ -28,4 +28,9 @@ public class performanceImpl implements Performance {
 	public String toString(){
 		return this.getDescription();
 	}
+	
+	public void execute(){
+		
+	}
+
 }

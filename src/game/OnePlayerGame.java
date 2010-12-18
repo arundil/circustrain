@@ -25,73 +25,64 @@ public class OnePlayerGame extends CircusTrainGame{
 	
 	public OnePlayerGame(){
 		super();
-		
+		talentBag.removeTalent(theClown.get(0));		
 	}
 	
 	public void runGame() {
-		refreshMonth();
-		
-		completeBoardPerformances();
-		
-		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
-		
-		for(Player playerSelectsCity:playerList){
-			CommandSelectCanadianCity selectCanadianCity=new CommandSelectCanadianCity(playerSelectsCity, this);
-			selectCanadianCity.execute();
-		}
-		
-		while(week<27){
-			String oldMonth=this.getMonth();
-			super.refreshMonth();
-			String newMonth=this.getMonth();
-			
-			
-			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-			if(!(oldMonth.equals(newMonth))){
-				finalMonth();
-				rotatePlayers();
-			}
-			System.out.println(board.getCitiesWithPerfomance().toString());
-			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
-			
-			for(Player currentPlayer : playerList){
-								
-				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
-				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
-				playerState.execute();
-				
-				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
-				selectCase.execute();
-				
-				//Se lleva a cabo la accion que el jugador a elegido
-				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
-				executeCase.execute();				
-			}
-			completeBoardPerformances();					
-			week++;			
-		}
+//		refreshMonth();
+//		
+//		completeBoardPerformances();
+//		
+//		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
+//		
+//		for(Player playerSelectsCity:playerList){
+//			CommandSelectCanadianCity selectCanadianCity=new CommandSelectCanadianCity(playerSelectsCity, this);
+//			selectCanadianCity.execute();
+//		}
+//		
+//		while(week<27){
+//			String oldMonth=this.getMonth();
+//			super.refreshMonth();
+//			String newMonth=this.getMonth();
+//			
+//			
+//			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
+//			if(!(oldMonth.equals(newMonth))){
+//				finalMonth();
+//				rotatePlayers();
+//			}
+//			System.out.println(board.getCitiesWithPerfomance().toString());
+//			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
+//			
+//			for(Player currentPlayer : playerList){
+//								
+//				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
+//				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
+//				playerState.execute();
+//				
+//				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
+//				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
+//				selectCase.execute();
+//				
+//				//Se lleva a cabo la accion que el jugador a elegido
+//				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
+//				executeCase.execute();				
+//			}
+//			completeBoardPerformances();					
+//			week++;			
+//		}
+		super.runGame();
 		gameOver();
 	}
 	
 	public void finalMonth(){
-		//Puntos de victoria segun el nº de talentos
-		compareTalentsCountAndAddVictoryPoints();
-		//Puntos de victoria segun actuacion maxima
-		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
-		if(comparatorPerformancePoints>0)
-			playerList.get(0).addVictoryPoints(4);
-		if(comparatorPerformancePoints<0)
-			playerList.get(1).addVictoryPoints(4);			
-		//Robar talentos
-		//En modo basico solo puede robar el que tenga menos puntos de victoria
 	}
 
 	public void gameOver() {
-		wageCardNoDiscarded();
-		higherClownNumber();
-		higherMoneyAmount();
-		higherPerformancesNumber();
+		finalWage();
+//		higherClownNumber();
+//		higherMoneyAmount();
+//		higherPerformancesNumber();
 		noClownsNoAnimals();
 		results();
 	}
@@ -166,17 +157,9 @@ public class OnePlayerGame extends CircusTrainGame{
 		}
 	}
 
-	protected void wageCardNoDiscarded() {
-		for(Player player: playerList){
-			for(ActionCard actioncard : player.getActionCards()){
-				if(actioncard.getIdCard() == 5){
-					player.addVictoryPoints(-3);
-					CommandPay cmp = new CommandPay(player, this, 2);
-					cmp.execute();
-					break;
-				}
-			}
-		}		
+	protected void finalWage() {
+		CommandPay cmp = new CommandPay(playerList.get(0), this, 2);
+		cmp.execute();	
 	}
 	
 	protected void higherClownNumber(){
@@ -314,8 +297,9 @@ public class OnePlayerGame extends CircusTrainGame{
 		System.out.println(winner+"\n"+"\n"+"---=== Thank you for playing Train Circus! ===---");
 	}
 
-	
-
-	
-
+	@Override
+	public void noClownsNoAnimals() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -30,15 +30,19 @@ public abstract class CircusTrainGame{
 	protected TalentBag talentBag;
 	protected List<Player> playerList;
 	
+	protected abstract void gameOver();
+	protected abstract void finalWage();
+	protected abstract void results();
+	
 	public CircusTrainGame(){
 		playerList=CollectionsFactory.createListFactory().createList();
 		board=GameFactory.createBoard();
 		performanceBag= GameFactory.createPerformanceBag();
 		talentBag = GameFactory.createTalentBag();
 		theClown.add(clown);
-		refreshMonth();		
+		refreshMonth();	
 		completeBoardPerformances();
-	}	
+	}
 	
 	public void refreshMonth(){
 			if(week>=0 && week<=3)month = "APRIL";
@@ -47,7 +51,6 @@ public abstract class CircusTrainGame{
 			if(week>=13 && week<=17)month = "JULY";
 			if(week>=18 && week<=21)month = "AUGUST";
 			if(week>=22 && week<=26)month = "SEPTEMBER";	
-		
 	}
 	
 	public void completeBoardPerformances(){
@@ -55,28 +58,27 @@ public abstract class CircusTrainGame{
 			while(board.getCitiesWithPerfomance().size()<8){
 				Performance randomPerformance = performanceBag.getPerformance("green");
 				board.addPerfomanceInRandomCity(randomPerformance);
-				performanceBag.removePerformance(randomPerformance);
+				
+//				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 		if(month.equals("JUNE") || month.equals("JULY")){
 			while(board.getCitiesWithPerfomance().size()<10){
 				Performance randomPerformance=performanceBag.getPerformance("yellow");
 				board.addPerfomanceInRandomCity(randomPerformance);
-				performanceBag.removePerformance(randomPerformance);
+//				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 		if(month.equals("AUGUST") || month.equals("SEPTEMBER")){
 			while(board.getCitiesWithPerfomance().size()<12){
 				Performance randomPerformance=performanceBag.getPerformance("red");
 				board.addPerfomanceInRandomCity(randomPerformance);
-				performanceBag.removePerformance(randomPerformance);
+//				performanceBag.removePerformance(randomPerformance);
 			}
 		}
 	}
 	
-	protected abstract void gameOver();
-	protected abstract void wageCardNoDiscarded();
-	protected abstract void results();
+
 	
 	public abstract void noClownsNoAnimals();
 	
@@ -171,9 +173,6 @@ public abstract class CircusTrainGame{
 			playerList.clear();
 			playerList.addAll(newPlayerList);
 		}
-		
-		
-		
 	}
 
 }
