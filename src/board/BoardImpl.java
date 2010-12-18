@@ -20,7 +20,7 @@ public class BoardImpl implements Board {
 	Graph gameMap;
 	
 	Filter<City> hasPerformance=new hasPerfomanceFilter();
-	Filter<City> hasNotPerformance=new hasNotPerformanceFilter();
+	Filter<City> hasNotPerformance=new reverseFilter<City>(hasPerformance);
 	Filter<City> isCanadian=new isCanadianFilter();
 	Filter<City> isNotCanadian=new reverseFilter<City>(isCanadian);
 	
