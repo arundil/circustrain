@@ -1,7 +1,7 @@
 package commands;
 
 import game.AbstractCommand;
-import game.CircusTrainGame;
+import game.TwoPlayersGame;
 
 import java.util.List;
 import java.util.Map;
@@ -17,9 +17,9 @@ public class CommandGameOver extends AbstractCommand{
 
 	//SOLO PARA 2 JUGADORES
 	
-	private CircusTrainGame game;
+	private TwoPlayersGame game;
 	
-	public CommandGameOver(CircusTrainGame game){
+	public CommandGameOver(TwoPlayersGame game){
 		this.game=game;
 	}	
 	

@@ -2,7 +2,7 @@ package commands;
 
 
 import game.AbstractCommand;
-import game.CircusTrainGame;
+import game.TwoPlayersGame;
 
 import java.util.List;
 import java.util.Set;
@@ -16,10 +16,10 @@ import utiles.factoria.readDataFromKeyBoard;
 
 public class CommandStealTalent extends AbstractCommand{
 	//SOLO DOS JUGADORES
-	private CircusTrainGame game;
+	private TwoPlayersGame game;
 	private Player player;
 	
-	public CommandStealTalent(Player player,CircusTrainGame game){
+	public CommandStealTalent(Player player,TwoPlayersGame game){
 		this.player=player;
 		this.game=game;
 	}

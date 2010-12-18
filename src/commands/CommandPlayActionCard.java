@@ -2,7 +2,7 @@ package commands;
 
 
 import game.AbstractCommand;
-import game.CircusTrainGame;
+import game.TwoPlayersGame;
 
 import java.util.List;
 import java.util.Set;
@@ -16,9 +16,9 @@ import utiles.factoria.readDataFromKeyBoard;
 public class CommandPlayActionCard extends AbstractCommand{
 	
 	private Player player;
-	private CircusTrainGame ctg;
+	private TwoPlayersGame ctg;
 	
-	public CommandPlayActionCard(Player player, CircusTrainGame ctg){
+	public CommandPlayActionCard(Player player, TwoPlayersGame ctg){
 		this.player=player;
 		this.ctg = ctg;
 	}

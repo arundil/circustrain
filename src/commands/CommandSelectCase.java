@@ -1,16 +1,16 @@
 package commands;
 
 import game.AbstractCommand;
-import game.CircusTrainGame;
+import game.TwoPlayersGame;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 
 public class CommandSelectCase extends AbstractCommand{
 	
 	private Player player;
-	private CircusTrainGame game;
+	private TwoPlayersGame game;
 	
-	public CommandSelectCase(Player player,CircusTrainGame game){
+	public CommandSelectCase(Player player,TwoPlayersGame game){
 		this.player=player;
 		this.game=game;
 	}
