@@ -1,5 +1,7 @@
 package game;
 
+import game.factory.GameFactory;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -8,6 +10,7 @@ import player.Player;
 import talent.Clown;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 import actionCards.ActionCard;
 import bag.TalentBag;
 import board.Board;
@@ -18,73 +21,29 @@ import commands.CommandPlayerState;
 import commands.CommandSelectCanadianCity;
 import commands.CommandSelectCase;
 
-public class OnePlayerGame extends CircusTrainGame{
-	
+//Quitado efinalMounth() puesto en sus hijos;
+//Añadido parte de los constructores de los hijos por ser iguales.
 
-	protected Integer numberOfPlayers=1;
+public class OnePlayerGame extends CircusTrainGame{
+	protected Player player;
+
+//	protected Integer numberOfPlayers=1;
 	
 	public OnePlayerGame(){
 		super();
-		talentBag.removeTalent(theClown.get(0));		
+		String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
+		player=GameFactory.createPlayer(name);
+		player.addTalent(theClown);
+		talentBag.removeTalent(clown);
+		player.addActionCards(GameFactory.inicializateActionCards(this, player));
+		playerList.add(player);	
 	}
 	
-	public void runGame() {
-//		refreshMonth();
-//		
-//		completeBoardPerformances();
-//		
-//		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
-//		
-//		for(Player playerSelectsCity:playerList){
-//			CommandSelectCanadianCity selectCanadianCity=new CommandSelectCanadianCity(playerSelectsCity, this);
-//			selectCanadianCity.execute();
-//		}
-//		
-//		while(week<27){
-//			String oldMonth=this.getMonth();
-//			super.refreshMonth();
-//			String newMonth=this.getMonth();
-//			
-//			
-//			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-//			if(!(oldMonth.equals(newMonth))){
-//				finalMonth();
-//				rotatePlayers();
-//			}
-//			System.out.println(board.getCitiesWithPerfomance().toString());
-//			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
-//			
-//			for(Player currentPlayer : playerList){
-//								
-//				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
-//				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
-//				playerState.execute();
-//				
-//				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-//				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
-//				selectCase.execute();
-//				
-//				//Se lleva a cabo la accion que el jugador a elegido
-//				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
-//				executeCase.execute();				
-//			}
-//			completeBoardPerformances();					
-//			week++;			
-//		}
-		super.runGame();
-		gameOver();
-	}
-	
-	public void finalMonth(){
-	}
 
 	public void gameOver() {
-		finalWage();
-//		higherClownNumber();
-//		higherMoneyAmount();
-//		higherPerformancesNumber();
-		noClownsNoAnimals();
-		results();
+//		finalWage();
+//		noClownsNoAnimals();
+//		results();
 	}
 	
 	public TalentBag getTalentBag(){

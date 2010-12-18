@@ -29,10 +29,12 @@ public abstract class CircusTrainGame{
 	protected Talent clown = GameFactory.createTalent("CLOWN");
 	protected TalentBag talentBag;
 	protected List<Player> playerList;
+	private Integer numberOfPlayers = 2;
 	
 	protected abstract void gameOver();
 	protected abstract void finalWage();
 	protected abstract void results();
+	protected abstract void finalMonth();
 	
 	public CircusTrainGame(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -40,10 +42,14 @@ public abstract class CircusTrainGame{
 		performanceBag= GameFactory.createPerformanceBag();
 		talentBag = GameFactory.createTalentBag();
 		theClown.add(clown);
+		week = 0;
+		month = "APRIL";
 		refreshMonth();	
 		completeBoardPerformances();
 	}
 	
+	
+
 	public void refreshMonth(){
 			if(week>=0 && week<=3)month = "APRIL";
 			if(week>=4 && week<=8) month = "MAY";
@@ -105,47 +111,7 @@ public abstract class CircusTrainGame{
 		return canadianCityList.get(citySelector);
 	}
 	
-	public void runGame(){
-		
-		System.out.println("\n \n Ciudades con actuaciones: "+ board.getCitiesWithPerfomance() +"\n \n");
-		
-		for(Player playerSelectsCity:playerList){
-			playerSelectsCity.moveCity(selectCanadianCity());
-		}
-		
-		while(week<27){
-			String oldMonth=this.getMonth();
-			refreshMonth();
-			String newMonth=this.getMonth();
-			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-			if(!(oldMonth.equals(newMonth))){
-				finalMonth();
-				rotatePlayers();
-			}
-			//Mostrar ciudades con eventos
-			System.out.println(board.getCitiesWithPerfomance().toString());
-			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
-			
-			for(Player currentPlayer : playerList){
-				//Se muestra el estado del jugador
-				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
-				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
-				playerState.execute();
-				
-				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
-				selectCase.execute();
-				
-				//Se lleva a cabo la accion que el jugador a elegido
-				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
-				executeCase.execute();				
-			}
-			//Se mira el número de ciudades y se añaden si es el caso
-			completeBoardPerformances();					
-			week++;			
-		}
-		this.gameOver();
-	}
+	
 	
 	public TalentBag getTalentBag(){
 		return talentBag;
@@ -174,5 +140,4 @@ public abstract class CircusTrainGame{
 			playerList.addAll(newPlayerList);
 		}
 	}
-
 }

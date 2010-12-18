@@ -8,31 +8,22 @@ import game.factory.GameFactory;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 
-public class BasicTwoPlayersGame extends TwoPlayersGame{
+//Mandamos al padre el constructor
+public class BasicSingleGame extends OnePlayerGame {
 	
-	public BasicTwoPlayersGame(){
+	public BasicSingleGame(){
 		super();
-		for(int i=0;i<2;i++){
-			String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
-			Player player=GameFactory.createPlayer(name);
-			player.addTalent(theClown);
-			talentBag.removeTalent(clown);
-			player.addActionCards(GameFactory.inicializateActionCards(this, player));
-			playerList.add(player);
-			//Quitar la carta rest en basico
-			player.discardActionCard(8);
-			player.getdiscartpile().clear();
-			
-		}
+		//Quitar la carta rest en basico
+		player.discardActionCard(8);
+		player.getdiscartpile().clear();
 	}
-	
-public void runGame(){
-		
+
+	public void runGame(){
+
 		System.out.println("\n \n Ciudades con actuaciones: "+ board.getCitiesWithPerfomance() +"\n \n");
-		
-		for(Player playerSelectsCity:playerList){
-			playerSelectsCity.moveCity(selectCanadianCity());
-		}
+
+		playerList.get(0).moveCity(selectCanadianCity());
+
 		while(week<27){
 			String oldMonth=this.getMonth();
 			refreshMonth();
@@ -45,17 +36,17 @@ public void runGame(){
 			//Mostrar ciudades con eventos
 			System.out.println(board.getCitiesWithPerfomance().toString());
 			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
-			
+
 			for(Player currentPlayer : playerList){
 				//Se muestra el estado del jugador
 				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
 				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
 				playerState.execute();
-				
+
 				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
 				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
 				selectCase.execute();
-				
+
 				//Se lleva a cabo la accion que el jugador a elegido
 				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
 				executeCase.execute();				
@@ -64,7 +55,5 @@ public void runGame(){
 			completeBoardPerformances();					
 			week++;			
 		}
-		gameOver();
-		results();
 	}
 }
