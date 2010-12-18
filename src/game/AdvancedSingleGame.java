@@ -5,7 +5,8 @@ import utiles.factoria.readDataFromKeyBoard;
 import commands.CommandExecuteCase;
 import commands.CommandPlayerState;
 
-public class AdvancedSingleGame extends TwoPlayersGame {
+//creado metodo selectCase();
+public class AdvancedSingleGame extends OnePlayerGame {
 	
 	public void runGame(){
 

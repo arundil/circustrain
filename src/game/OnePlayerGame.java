@@ -73,38 +73,7 @@ public class OnePlayerGame extends CircusTrainGame{
 	//====================================== X =====================================
 
 
-	private void compareTalentsCountAndAddVictoryPoints(){
-		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
-		for(Player player:playerList){
-			playersTalentsList.add(player.getTalents());
-		}
-		//TODO List<Player>
-		Set<Talent> playerOneTalents= playersTalentsList.get(0).keySet();
-		Set<Talent> playerTwoTalents=playersTalentsList.get(1).keySet();
-		
-		Map<Talent,Integer> playerOneTalentsMap=playersTalentsList.get(0);
-		Map<Talent,Integer> playerTwoTalentsMap=playersTalentsList.get(1);
-
-		//Por cada talento del player1 mira todos los del player2
-		for(Talent playerOneTalent:playerOneTalents){
-			for(Talent playerTwoTalent:playerTwoTalents){
-				//Se comprueba si ambos jugadores tienen el mismo talento
-				if(playerTwoTalentsMap.containsKey(playerOneTalent)){
-					//Si existe se compara la cantidad de talentos
-					int comparation=playerOneTalentsMap.get(playerOneTalent).compareTo(playerTwoTalentsMap.get(playerTwoTalent));
-					//Si player1 tiene mas se le añaden tantos puntos de victoria como talentos tenga
-					if(comparation>0){
-						playerList.get(0).addVictoryPoints(playerOneTalentsMap.get(playerOneTalent));
-					}
-					//Si player2 tiene mas se le añaden tantos puntos de victoria como talentos tenga
-					if(comparation<0){
-						playerList.get(1).addVictoryPoints(playerTwoTalentsMap.get(playerTwoTalent));
-					}
-					break;
-				}
-			}
-		}
-	}
+	
 
 	protected void finalWage() {
 		CommandPay cmp = new CommandPay(playerList.get(0), this, 2);

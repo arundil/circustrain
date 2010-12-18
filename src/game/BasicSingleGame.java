@@ -2,13 +2,11 @@ package game;
 
 import commands.CommandExecuteCase;
 import commands.CommandPlayerState;
-import commands.CommandSelectCase;
-
-import game.factory.GameFactory;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 
 //Mandamos al padre el constructor
+//Creado el metodo selectCase();
 public class BasicSingleGame extends OnePlayerGame {
 	
 	public BasicSingleGame(){

@@ -38,6 +38,7 @@ import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 
+//Para no tener que hacer if( x instanceof w) he hecho que cada juego llame a su propio runGame().
 public class GameFactory {
 	
 	public static Player createPlayer(String name){
@@ -57,12 +58,6 @@ public class GameFactory {
 	
 	public static TalentBag createTalentBag(){
 		return new TalentBagImpl();
-		/*
-		 * NOTA DE FRANCIS:
-		 * el constructor TalentBagImpl no existía como tal, había creado un método llamado
-		 * createInitialTalentBag(). Lo he modificado de nombre para que pudiera llamarse
-		 * como está aquí.
-		 */
 	}
 	
 	public static Board createBoard(){
@@ -115,39 +110,37 @@ public class GameFactory {
 		return ac;
 	}
 	
-	public static CircusTrainGame createCircusTrainGame(){
-
-		CircusTrainGame game=null;
-
+	public static void createCircusTrainGame(){
 		System.out.println("Welcome to Circus Train!");
 		
 		//Peticion de numero de jugadores
-//		String askNumberOfPlayers="How many players are going to play: ";
-//		String askNumberOfPlayersCondition="1,2";
-//		Integer numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
-		Integer numberOfPlayers=1;
+		String askNumberOfPlayers="How many players are going to play: ";
+		String askNumberOfPlayersCondition="1,2";
+		Integer numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
+
 		
 		//Seleccion de modo de juego
-//		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
-//		String selectGameModeCondition="1,2";
-//		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
-		String gameMode="1";
+		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
+		String selectGameModeCondition="1,2";
+		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
+
 		
 		if(numberOfPlayers==1){
 			if(gameMode=="1"){
-				game=new BasicSingleGame();
+				BasicSingleGame game=new BasicSingleGame();
+				game.runGame();				
 			}else if(gameMode=="2"){
-
-				game=new AdvancedSingleGame();
+				AdvancedSingleGame game=new AdvancedSingleGame();
+				game.runGame();
 			}
 		}else if (numberOfPlayers==2){
 			if(gameMode=="1"){
-				game=new BasicTwoPlayersGame();
+				BasicTwoPlayersGame game=new BasicTwoPlayersGame();
+				game.runGame();
 			}else if(gameMode=="2"){
-				game=new AdvancedTwoPlayersGame();
+				AdvancedTwoPlayersGame game=new AdvancedTwoPlayersGame();
+				game.runGame();
 			}
 		}
-		
-		return game;
 	}
 }
