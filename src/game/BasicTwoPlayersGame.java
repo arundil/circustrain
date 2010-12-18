@@ -4,7 +4,7 @@ import game.factory.GameFactory;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 
-public class BasicTwoPlayersGame extends CircusTrainGameImpl{
+public class BasicTwoPlayersGame extends TwoPlayersGame{
 	
 	public BasicTwoPlayersGame(){
 		super();
@@ -16,6 +16,10 @@ public class BasicTwoPlayersGame extends CircusTrainGameImpl{
 			player.addActionCards(GameFactory.inicializateActionCards(this, player));
 			playerList.add(player);
 		}
+	}
+	
+	public void runGame(){
+		super.runGame();
 	}
 	
 	

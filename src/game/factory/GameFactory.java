@@ -3,7 +3,7 @@ package game.factory;
 import game.AdvancedTwoPlayersGame;
 import game.BasicSoloGame;
 import game.TwoPlayersGame;
-import game.TwoPlayersGameImpl;
+import game.TwoPlayersGame;
 import game.BasicTwoPlayersGame;
 
 import java.util.List;

@@ -1,5 +1,5 @@
 package game;
 
-public class AdvancedSoloGame extends TwoPlayersGameImpl {
+public class AdvancedSoloGame extends TwoPlayersGame {
 
 }

@@ -13,7 +13,7 @@ import player.Player;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 
-public class AdvancedTwoPlayersGame extends TwoPlayersGameImpl {
+public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
 	public AdvancedTwoPlayersGame(){
 		super();
@@ -41,13 +41,13 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGameImpl {
 	
 	@Override
 	public void gameOver(){
-		super.wageCardNoDiscarded();
-		super.higherClownNumber();
-		super.higherMoneyAmount();
-		super.higherPerformancesNumber();
-		this.higherReputation();
-		super.noClownsNoAnimals();
-		super.results();
+		wageCardNoDiscarded();
+		higherClownNumber();
+		higherMoneyAmount();
+		higherPerformancesNumber();
+		higherReputation();
+		noClownsNoAnimals();
+		results();
 	}
 	
 	public void runGame(){
