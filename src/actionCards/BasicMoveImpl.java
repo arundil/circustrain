@@ -27,16 +27,16 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 		System.out.println(player.getName()+" ha usado la carta ==> MOVIMIENTO BÁSICO <== \n");
 		
 		if (player.getCity().hasPerfomance()){
-			System.out.println("What do you want to do, move[0] or perform/contract[1]");
-			answer=readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","0,1");
+			System.out.println("¿Que quieres hacer, Viajar[1] o Actuar/Contratar[2]");
+			answer=readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","1,2");
 		}else{
-			System.out.println(player.getCity()+" has no Performance. Where do you want to travel?");
-			answer=0;
+			System.out.println(player.getCity()+" no tiene Performance");
+			answer=1;
 		}
 
-		if (answer ==0){
+		if (answer ==1){
 			super.movePlayer(player,1,false);
-		}else if(answer==1){ 	
+		}else if(answer==2){ 	
 			super.performPlayer(player);
 		}
 	}

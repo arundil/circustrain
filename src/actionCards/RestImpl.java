@@ -31,7 +31,7 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 	public void execute() {
 		City city = player.getCity();
 		
-		System.out.println(player.getName()+" has used ==> REST <== \n" );
+		System.out.println(player.getName()+" ha usado ==> DESCANSO <== \n" );
 		System.out.print("You city now is "+player.getCity());
 		
 		if(city.isCanada()){

@@ -19,8 +19,8 @@ public class WagesImpl extends CardImpl implements ActionCard {
 	TwoPlayersGame ctg;
 	
 	public WagesImpl(Player player, TwoPlayersGame ctg) {
-		super("Wages", "You can move until 2 cities. Then, you have to " +
-				"pay the wages or eliminate Talents");
+		super("Salarios", "Puedes moverte hasta 2 ciudades. Después tendrás que " +
+				"pagar los salarios o eliminar talentos");
 		this.id = 5;
 		this.player = player;
 		this.ctg = ctg;
@@ -28,7 +28,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 
 	public void execute() {
 
-		System.out.println(player.getName()+" has used ==> WAGES <== \n" );
+		System.out.println(player.getName()+" ha usado la carta ==> SALARIOS <== \n" );
 
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 		City city = player.getCity();
