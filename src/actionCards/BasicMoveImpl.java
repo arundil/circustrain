@@ -10,7 +10,7 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 	Player player;
 
 	public BasicMoveImpl(Integer n, Player p) {
-		super("Movimiento Básico", "Puedes moverte hacia una ciudad adyacente o Actuar/Contratar");
+		super("MOVIMIENTO BÁSICO", "Puedes moverte hacia una ciudad adyacente o Actuar/Contratar");
 		id=n;
 		player = p;
 	}

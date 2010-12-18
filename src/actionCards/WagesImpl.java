@@ -19,7 +19,7 @@ public class WagesImpl extends CardImpl implements ActionCard {
 	TwoPlayersGame ctg;
 	
 	public WagesImpl(Player player, TwoPlayersGame ctg) {
-		super("Salarios", "Puedes moverte hasta 2 ciudades. Después tendrás que " +
+		super("SALARIOS", "Puedes moverte hasta 2 ciudades. Después tendrás que " +
 				"pagar los salarios o eliminar talentos");
 		this.id = 5;
 		this.player = player;
