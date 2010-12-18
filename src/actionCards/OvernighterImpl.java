@@ -24,8 +24,8 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 			answer = readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","1,2,3");
 		}
 		else{
-			System.out.println(player.getCity()+" no tiene Performance. ¿Qué quieres hacer? Viajar[1] o ViViajar Primero y luego Actuar/Contratar[2]");
-			answer=0;
+			System.out.println(player.getCity()+" no tiene Performance. ¿Qué quieres hacer? Viajar[1] o Viajar Primero y luego Actuar/Contratar[2]");
+			answer = readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","1,2");
 		}
 		
 		if (answer == 1){
@@ -33,11 +33,11 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 		}
 		
 		if (answer == 2){
-			System.out.println("Estas son las ciudades que poseen actuación. ¿A qué ciudad quieres viajar?");
+			System.out.println("Estas son las ciudades que poseen Performance.");
 			super.movePlayer(player,2,true);
 		}
 		
-		if ((answer == 2 || answer ==3)){
+		if (answer == 2 || answer ==3){
 			super.performPlayer(player);
 		}
 	}

@@ -47,7 +47,7 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 				System.out.println("--> ["+i+"]"+ adjCitiesWithPerformance.get(i));
 			}
 			answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCitiesWithPerformance.size());
-			player.moveCity(adjCities.get(answer));
+			player.moveCity(adjCitiesWithPerformance.get(answer));
 		}
 	}
 
