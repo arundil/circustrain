@@ -1,10 +1,7 @@
 package actionCards;
 
 import game.CircusTrainGame;
-import game.TwoPlayersGame;
-
 import java.util.List;
-
 import board.City;
 import player.Player;
 import talent.Acrobat;

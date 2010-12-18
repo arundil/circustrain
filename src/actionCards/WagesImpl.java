@@ -2,12 +2,8 @@ package actionCards;
 
 
 import game.CircusTrainGame;
-import game.TwoPlayersGame;
-
 import java.util.List;
-
 import commands.CommandPay;
-
 import board.City;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
