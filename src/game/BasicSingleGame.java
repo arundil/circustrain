@@ -44,8 +44,7 @@ public class BasicSingleGame extends OnePlayerGame {
 				playerState.execute();
 
 				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
-				selectCase.execute();
+				selectCase(player);
 
 				//Se lleva a cabo la accion que el jugador a elegido
 				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
@@ -55,5 +54,14 @@ public class BasicSingleGame extends OnePlayerGame {
 			completeBoardPerformances();					
 			week++;			
 		}
+	}
+	
+	void selectCase(Player p){
+		String action1="1 : Play one Action card from my hand";
+		String askBasicAction = "What are you going to do:" + "\n" + action1;
+		String askBasicActionCondition = "1";
+		String action="1";
+		action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
+		this.setFollowingAction(action);
 	}
 }

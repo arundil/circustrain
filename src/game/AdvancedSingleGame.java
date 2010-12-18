@@ -1,18 +1,12 @@
 package game;
 
 import player.Player;
-
+import utiles.factoria.readDataFromKeyBoard;
 import commands.CommandExecuteCase;
 import commands.CommandPlayerState;
-import commands.CommandSelectCase;
 
 public class AdvancedSingleGame extends TwoPlayersGame {
 	
-	
-	
-	
-
-
 	public void runGame(){
 
 		System.out.println("\n \n Ciudades con actuaciones: "+ board.getCitiesWithPerfomance() +"\n \n");
@@ -39,8 +33,7 @@ public class AdvancedSingleGame extends TwoPlayersGame {
 				playerState.execute();
 
 				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-				CommandSelectCase selectCase = new CommandSelectCase(currentPlayer, this);
-				selectCase.execute();
+				selectCase(player);
 
 				//Se lleva a cabo la accion que el jugador a elegido
 				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
@@ -52,4 +45,17 @@ public class AdvancedSingleGame extends TwoPlayersGame {
 		}
 	}
 
+	private void selectCase (Player player){
+		String action1="1 : Play one Action card from my hand";
+		String action2="2 : Play one Action card from my discard pile";		
+		String askBasicAction = "What are you going to do:" + "\n" + action1;
+		String askActionsDiscardedNoMoney = askBasicAction + "\n" + action2;
+		String action;
+		if(player.getdiscartpile().isEmpty()){
+			action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, "1");
+		}else{
+			action=readDataFromKeyBoard.takeParametersToStringRestricted(askActionsDiscardedNoMoney, "1,2");
+		}
+		this.setFollowingAction(action);
+	}
 }
