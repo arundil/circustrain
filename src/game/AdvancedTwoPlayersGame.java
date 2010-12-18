@@ -13,7 +13,7 @@ import player.Player;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 
-public class AdvancedTwoPlayersGame extends CircusTrainGameImpl {
+public class AdvancedTwoPlayersGame extends TwoPlayersGameImpl {
 	
 	public AdvancedTwoPlayersGame(){
 		super();
@@ -39,6 +39,7 @@ public class AdvancedTwoPlayersGame extends CircusTrainGameImpl {
 		}
 	}
 	
+	@Override
 	public void gameOver(){
 		super.wageCardNoDiscarded();
 		super.higherClownNumber();
@@ -64,7 +65,7 @@ public class AdvancedTwoPlayersGame extends CircusTrainGameImpl {
 			super.refreshMonth();
 			String newMonth=this.getMonth();
 			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-			if(!(oldMonth == newMonth)){
+			if(!(oldMonth.equals(newMonth))){
 				finalMonth();
 				super.rotatePlayers();
 			}
