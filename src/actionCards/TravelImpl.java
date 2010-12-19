@@ -15,7 +15,7 @@ public class TravelImpl extends ActionCardImpl implements ActionCard {
 
 	@Override
 	public void execute() {
-		super.movePlayer(player, 3,false);
+		super.movePlayer(player, 3);
 	}
 
 	@Override

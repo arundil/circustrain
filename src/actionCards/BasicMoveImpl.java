@@ -35,7 +35,7 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 		}
 
 		if (answer ==1){
-			super.movePlayer(player,1,false);
+			super.movePlayer(player,1);
 		}else if(answer==2){ 	
 			super.performPlayer(player);
 		}

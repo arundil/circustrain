@@ -21,34 +21,18 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 		super(name, des);
 	}
 
-	public void movePlayer(Player player,Integer move,Boolean onlyPerformance){
+	public void movePlayer(Player player,Integer move){
 		Integer answer;
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 
 		System.out.println("Selecciona la ciudad a la que quieres viajar:");
 
-		if(!onlyPerformance){
-			adjCities=player.getCity().maxMovement(move);
-			for (int i=0;i<adjCities.size();i++){
-				System.out.println("--> ["+i+"]"+ adjCities.get(i));
-			}
-			answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCities.size());
-			player.moveCity(adjCities.get(answer));
+		adjCities=player.getCity().maxMovement(move);
+		for (int i=0;i<adjCities.size();i++){
+			System.out.println("--> ["+i+"]"+ adjCities.get(i));
 		}
-		else{
-			adjCities=player.getCity().maxMovement(move);
-			List<City> adjCitiesWithPerformance = CollectionsFactory.createListFactory().createList();
-			for (City c: adjCities){
-				if (c.hasPerfomance()){
-					adjCitiesWithPerformance.add(c);
-				}
-			}
-			for (int i=0; i< adjCitiesWithPerformance.size() ; i++){
-				System.out.println("--> ["+i+"]"+ adjCitiesWithPerformance.get(i));
-			}
-			answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCitiesWithPerformance.size());
-			player.moveCity(adjCitiesWithPerformance.get(answer));
-		}
+		answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCities.size());
+		player.moveCity(adjCities.get(answer));
 	}
 
 	public void performPlayer(Player player){
