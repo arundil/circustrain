@@ -3,8 +3,6 @@ package game;
 import game.factory.GameFactory;
 
 import java.util.List;
-import java.util.Map;
-
 import commands.CommandExecuteCase;
 import commands.CommandPlayerState;
 import bag.PerformanceBag;
@@ -34,6 +32,7 @@ public abstract class CircusTrainGame{
 	protected abstract void finalWage();
 	protected abstract void results();
 	protected abstract void finalMonth();
+	protected abstract void selectCase(Player player);
 	
 	public CircusTrainGame(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -119,9 +118,9 @@ public abstract class CircusTrainGame{
 		return followingAction;
 	}
 	
-	protected City selectCanadianCity(){
+	protected City selectCanadianCity(Player selectorPlayer){
 		List<City> canadianCityList=board.getCanadianCities();
-		String askCanadianCity="Seleccione una ciudad canadiense: "+"\n";
+		String askCanadianCity=selectorPlayer.getName()+", Seleccione una ciudad canadiense: "+"\n";
 		String askCanadianCityConditions="";
 		
 		for(int i=0;i<canadianCityList.size();i++){
@@ -164,11 +163,7 @@ public abstract class CircusTrainGame{
 		}
 	}
 	protected void showPerformanceSituation() {
-		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
-	}
-	
-	public void prueba(){
-		System.out.print("Esto es CircusTrainGame");
+		System.out.println("\n \n Ciudades con actuación: "+ board.getCitiesWithPerfomance() +"\n \n");
 	}
 	
 	public void runGame(){
@@ -177,26 +172,20 @@ public abstract class CircusTrainGame{
 		canadianSelector();
 		
 		while(week<27){
-			String oldMonth=this.getMonth();
-			refreshMonth();
-			String newMonth=this.getMonth();
-			//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-			if(!(oldMonth.equals(newMonth))){
-				finalMonth();
-				rotatePlayers();
-			}
+			//Comprueba si se ha cambiado de mes y en caso positivo, ejecuta las acciones de cambio de mes.
+			monthChangeComprobator();
 			//Mostrar ciudades con eventos
-			System.out.println(board.getCitiesWithPerfomance().toString());
-			System.out.println("\n \n This is the Week " + week + " and Mounth " + month);
+			showPerformanceSituation();
+			System.out.println("\n \n Esta es la semana " + week + " del mes " + month);
 			
 			for(Player currentPlayer : playerList){
 				//Se muestra el estado del jugador
-				System.out.println("\n \n Its you turn, " + currentPlayer.getName());
+				System.out.println("\n \n Es tu turno, " + currentPlayer.getName());
 				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
 				playerState.execute();
 				
 				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
-				//selectCase(currentPlayer);
+				selectCase(currentPlayer);
 				
 				//Se lleva a cabo la accion que el jugador a elegido
 				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
@@ -206,10 +195,22 @@ public abstract class CircusTrainGame{
 			completeBoardPerformances();					
 			week++;			
 		}
+		gameOver();
+		results();
+	}
+	private void monthChangeComprobator() {
+		String oldMonth=this.getMonth();
+		refreshMonth();
+		String newMonth=this.getMonth();
+		//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
+		if(!(oldMonth.equals(newMonth))){
+			finalMonth();
+			rotatePlayers();
+		}
 	}
 	protected void canadianSelector() {
 		for(Player playerSelectsCity:playerList){
-			playerSelectsCity.moveCity(selectCanadianCity());
+			playerSelectsCity.moveCity(selectCanadianCity(playerSelectsCity));
 		}
 	}
 }

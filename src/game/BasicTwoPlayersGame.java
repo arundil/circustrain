@@ -1,7 +1,5 @@
 package game;
 
-import commands.CommandExecuteCase;
-import commands.CommandPlayerState;
 import game.factory.GameFactory;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
@@ -24,19 +22,14 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 		}
 	}
 	
-public void runGame(){
-		
 
-		gameOver();
-		results();
-	}
-	
-	void selectCase(Player player){
-		String action1="1 : Play one Action card from my hand";
-		String askBasicAction = "What are you going to do:" + "\n" + action1;
-		String askBasicActionCondition = "1";
+	protected void selectCase(Player player){
+//		Si solo hay una opcion, para que preguntar;
+//		String action1="1 : Play one Action card from my hand";
+//		String askBasicAction = "What are you going to do:" + "\n" + action1;
+//		String askBasicActionCondition = "1";
 		String action="1";
-		action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
+//		action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
 		this.setFollowingAction(action);
 	}
 }

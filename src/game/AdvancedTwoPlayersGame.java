@@ -1,40 +1,18 @@
 package game;
 
-import game.factory.GameFactory;
 
 import java.util.List;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
-import commands.CommandExecuteCase;
-import commands.CommandPlayerState;
 import commands.CommandStealTalent;
 
 public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
 	public AdvancedTwoPlayersGame(){
 		super();
-		for(int i=0;i<2;i++){
-			String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
-			Player player=GameFactory.createPlayer(name);
-			player.addTalent(theClown);
-			talentBag.removeTalent(clown);
-			player.addActionCards(GameFactory.inicializateActionCards(this, player));
-			playerList.add(player);
-		}
+		setPlayersNames();
 	}
-	@Override
-	public void prueba(){
-		System.out.print("Esto es AsvancedTwoPlayerGame");
-	}
-
-//	public void runGame(){
-//
-//		
-//		this.gameOver();
-//		results();
-//	}
-
 
 
 	public void finalMonth(){
@@ -87,10 +65,10 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 		}
 	}
 	
-	void selectCase(Player player){
-		String action1="1 : Play one Action card from my hand";
-		String action2="2 : Play one Action card from my discard pile";		
-		String action3="3 : Collect money from the bank";
+	protected void selectCase(Player player){
+		String action1="1 : Jugar una carta de acción";
+		String action2="2 : Jugar una carta de acción ya descartada";		
+		String action3="3 : Pedir dinero al banco";
 
 		String askBasicAction = "What are you going to do:" + "\n" + action1;
 		String askAllActions = askBasicAction + "\n" + action2+"\n" + action3;

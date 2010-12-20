@@ -1,7 +1,6 @@
 package commands;
 
 import game.CircusTrainGame;
-import game.TwoPlayersGame;
 import player.Player;
 
 public class CommandExecuteCase implements Command{

@@ -1,9 +1,6 @@
 package game;
 
-import commands.CommandExecuteCase;
-import commands.CommandPlayerState;
 import player.Player;
-import utiles.factoria.readDataFromKeyBoard;
 
 //Mandamos al padre el constructor
 //Creado el metodo selectCase();
@@ -16,17 +13,15 @@ public class BasicSingleGame extends OnePlayerGame {
 		player.getdiscartpile().clear();
 	}
 
-	public void runGame(){
-
+	protected void selectCase(Player p){
+		//Si la unica opción que puede usar es jugar una carta de acción, ¿para que preguntarle lo que quiere hacer, ir directamente a preguntarle que carta quiere jugar
 		
-	}
-	
-	void selectCase(Player p){
-		String action1="1 : Play one Action card from my hand";
-		String askBasicAction = "What are you going to do:" + "\n" + action1;
-		String askBasicActionCondition = "1";
+		
+//		String action1="1 : Play one Action card from my hand";
+//		String askBasicAction = "What are you going to do:" + "\n" + action1;
+//		String askBasicActionCondition = "1";
 		String action="1";
-		action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
+//		action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
 		this.setFollowingAction(action);
 	}
 }

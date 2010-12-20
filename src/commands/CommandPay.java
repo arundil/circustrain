@@ -1,8 +1,6 @@
 package commands;
 
 import game.CircusTrainGame;
-import game.TwoPlayersGame;
-
 import java.util.List;
 import java.util.Map;
 import player.Player;

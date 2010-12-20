@@ -4,26 +4,20 @@ import game.factory.GameFactory;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
 import player.Player;
 import talent.Clown;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
-import actionCards.ActionCard;
 import bag.TalentBag;
 import board.Board;
 
-import commands.CommandExecuteCase;
 import commands.CommandPay;
-import commands.CommandPlayerState;
-import commands.CommandSelectCanadianCity;
 
 //Quitado efinalMounth() puesto en sus hijos;
 //Añadido parte de los constructores de los hijos por ser iguales.
 
-public class OnePlayerGame extends CircusTrainGame{
+public abstract class OnePlayerGame extends CircusTrainGame{
 	protected Player player;
 
 //	protected Integer numberOfPlayers=1;
@@ -225,5 +219,17 @@ public class OnePlayerGame extends CircusTrainGame{
 	protected void finalMonth() {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	protected void setPlayersNames() {
+
+		String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
+		Player player=GameFactory.createPlayer(name);
+		player.addTalent(theClown);
+		talentBag.removeTalent(clown);
+		player.addActionCards(GameFactory.inicializateActionCards(this, player));
+		playerList.add(player);
+
 	}
 }

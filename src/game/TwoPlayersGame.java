@@ -6,29 +6,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import commands.CommandExecuteCase;
 import commands.CommandPay;
-import commands.CommandPlayerState;
-import commands.CommandSelectCanadianCity;
-
 import actionCards.ActionCard;
-import bag.PerformanceBag;
-import bag.TalentBag;
-import board.Board;
-import performance.Performance;
 import player.Player;
 import talent.Clown;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 
-public class TwoPlayersGame extends CircusTrainGame{
+public abstract class TwoPlayersGame extends CircusTrainGame{
 
 	protected Integer numberOfPlayers=2;
-	
-	public TwoPlayersGame(){
-		super();
-	}
-	
 	
 	
 	public void finalMonth(){
@@ -282,6 +270,19 @@ public class TwoPlayersGame extends CircusTrainGame{
 			if(noAnimals){
 				thisPlayer.addVictoryPoints(-3);
 			}			
+		}
+	}
+
+
+
+	protected void setPlayersNames() {
+		for(int i=0;i<2;i++){
+			String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
+			Player player=GameFactory.createPlayer(name);
+			player.addTalent(theClown);
+			talentBag.removeTalent(clown);
+			player.addActionCards(GameFactory.inicializateActionCards(this, player));
+			playerList.add(player);
 		}
 	}	
 }

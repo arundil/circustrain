@@ -4,8 +4,6 @@ import game.AdvancedSingleGame;
 import game.AdvancedTwoPlayersGame;
 import game.BasicSingleGame;
 import game.CircusTrainGame;
-import game.TwoPlayersGame;
-import game.TwoPlayersGame;
 import game.BasicTwoPlayersGame;
 
 import java.util.List;
@@ -117,28 +115,28 @@ public class GameFactory {
 		System.out.println("Welcome to Circus Train!");
 		
 		//Peticion de numero de jugadores
-//		String askNumberOfPlayers="How many players are going to play: ";
-//		String askNumberOfPlayersCondition="1,2";
-//		Integer numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
-		Integer numberOfPlayers=2;
+		String askNumberOfPlayers="How many players are going to play: ";
+		String askNumberOfPlayersCondition="1,2";
+		Integer numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
+
 		
 		//Seleccion de modo de juego
-//		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
-//		String selectGameModeCondition="1,2";
-//		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
-		String gameMode="2";
+		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
+		String selectGameModeCondition="1,2";
+		Integer gameMode=readDataFromKeyBoard.takeParametersToIntegerRestricted(selectGameMode,selectGameModeCondition);
+
 		
 		if(numberOfPlayers==1){
-			if(gameMode=="1"){
+			if(gameMode==1){
 				game=new BasicSingleGame();
-			}else if(gameMode=="2"){
+			}else if(gameMode==2){
 
 				game=new AdvancedSingleGame();
 			}
 		}else if (numberOfPlayers==2){
-			if(gameMode=="1"){
+			if(gameMode==1){
 				game=new BasicTwoPlayersGame();
-			}else if(gameMode=="2"){
+			}else if(gameMode==2){
 				game=new AdvancedTwoPlayersGame();
 			}
 		}
