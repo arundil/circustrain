@@ -9,7 +9,7 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 	public BasicTwoPlayersGame(){
 		super();
 		for(int i=0;i<2;i++){
-			String name=readDataFromKeyBoard.takeParametersToString("Player name: ");
+			String name=readDataFromKeyBoard.takeParametersToString("Nombre del jugador: ");
 			Player player=GameFactory.createPlayer(name);
 			player.addTalent(theClown);
 			talentBag.removeTalent(clown);

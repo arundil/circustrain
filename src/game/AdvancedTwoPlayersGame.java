@@ -66,11 +66,11 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	}
 	
 	protected void selectCase(Player player){
-		String action1="1 : Jugar una carta de acción";
-		String action2="2 : Jugar una carta de acción ya descartada";		
-		String action3="3 : Pedir dinero al banco";
+		String action1="[1] Jugar una carta de acción";
+		String action2="[2] Jugar una carta de acción ya descartada";		
+		String action3="[3] Pedir dinero al banco";
 
-		String askBasicAction = "What are you going to do:" + "\n" + action1;
+		String askBasicAction = "¿Qué vas a hacer?:" + "\n" + action1;
 		String askAllActions = askBasicAction + "\n" + action2+"\n" + action3;
 		String askActionsDiscardedNoMoney = askBasicAction + "\n" + action2;
 		String askActionsNoDiscardedMoney = askBasicAction + "\n" + action3;

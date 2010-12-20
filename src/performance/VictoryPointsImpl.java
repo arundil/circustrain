@@ -1,5 +1,7 @@
 package performance;
 
+import player.Player;
+
 
 
 public class VictoryPointsImpl extends performanceImpl implements VictoryPoints {
@@ -21,6 +23,11 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 	public String toString(){
 		String stringToReturn=super.toString()+": "+this.getVictoryPoints();
 		return stringToReturn;
+	}
+
+	@Override
+	public void execute(Player player) {
+		player.addVictoryPoints(victoryPoints);		
 	}
 
 }

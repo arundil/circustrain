@@ -101,10 +101,10 @@ public class GameFactory {
 		ac.add(new BasicMoveImpl(2, player));
 		ac.add(new BasicMoveImpl(3, player));
 		ac.add(new FastMoveImpl(player));
-		ac.add(new WagesImpl(player,ctg));
+		ac.add(new WagesImpl(ctg,player));
 		ac.add(new OvernighterImpl(player));
 		ac.add(new HoldImpl(player));
-		ac.add(new RestImpl(player,ctg));			
+		ac.add(new RestImpl(ctg,player));			
 		return ac;
 	}
 	

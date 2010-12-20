@@ -28,18 +28,18 @@ public class WagesImpl extends CardImpl implements ActionCard {
 
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 		City city = getPlayer().getCity();
-		String mess = "Select the city below where you want to move: \n";
-		String cond="";
-		String resp="";
+		String askCityToMove = "Selecciona la ciudad a la que vas a viajar: \n";
+		String condition="";
+		String answer="";
 		Integer respuesta =0;
 		adjCities = city.maxMovement(2);
 
 		for(int i=1; i <= adjCities.size(); i++){
-			mess = mess + i + ": " + adjCities.get(i-1).toString() + "\n";
-			cond = cond + i+",";
+			askCityToMove = askCityToMove + i + ": " + adjCities.get(i-1).toString() + "\n";
+			condition = condition + i+",";
 		}
-		resp = readDataFromKeyBoard.takeParametersToStringRestricted(mess, cond);
-		respuesta = new Integer(resp);
+		answer = readDataFromKeyBoard.takeParametersToStringRestricted(askCityToMove, condition);
+		respuesta = new Integer(answer);
 		getPlayer().moveCity(adjCities.get(respuesta-1));
 
 		CommandPay cmp = new CommandPay(getPlayer(), ctg);

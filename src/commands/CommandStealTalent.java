@@ -1,12 +1,11 @@
 package commands;
 
-
 import game.TwoPlayersGame;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
-import java.util.Map.Entry;
-
 import player.Player;
 import talent.Talent;
 import tipos.Cadenas;
@@ -32,24 +31,30 @@ public class CommandStealTalent implements Command{
 				break;
 			}
 		}
-		Set<Entry<Talent,Integer>> playerDetailedTalents=otherPlayer.getTalents().entrySet();
-		List<Entry<Talent,Integer>> playerDetailedTalentList=CollectionsFactory.createListFactory().createList();
-		playerDetailedTalentList.addAll(playerDetailedTalents);
-		String options="";
-		String conditions="";
-		Integer index=1;
-		for(Entry<Talent,Integer> entry:playerDetailedTalents){
-			options=options+index+" : "+entry.getKey().toString()+"\n";
-			conditions=conditions+index+",";
-			index++;
-		}		
-		String askTalentToBeStolen=player.getName()+" has the following talents: "+"\n"+otherPlayer.getTalents().toString()+
-									"Wich talent are you go to steal: "+"\n"+options;
-		String talentToBeStolen=readDataFromKeyBoard.takeParametersToStringRestricted(askTalentToBeStolen,conditions);
-		List<String> l=Cadenas.separaElementos(conditions,",");
-		for(int i=0;i<playerDetailedTalentList.size();i++){
-			if(l.get(i).equals(talentToBeStolen)){
-				Talent talent=playerDetailedTalentList.get(i).getKey();
+		Map<Talent,Integer> otherPlayerTalents=otherPlayer.getTalents();
+		Set<Talent> otherPlayerTalentsSet1=otherPlayerTalents.keySet();
+		List<Talent> talentsToStealList=CollectionsFactory.createListFactory().createList();
+		talentsToStealList.addAll(otherPlayerTalentsSet1);
+		String options1="";
+		String conditions1="";
+		Iterator<Talent> talentSetIterator=otherPlayerTalentsSet1.iterator();
+		for(int i=0;i<otherPlayerTalentsSet1.size();i++){			
+			Talent talent= talentSetIterator.next();
+			options1=options1+"["+ i+1 +"] "+talent.getName()+"\n";
+			conditions1=conditions1+i+",";
+		}
+			
+		String askTalentToBeStolen=otherPlayer.getName()+" tiene los siguientes talentos: "+"\n"+otherPlayer.getTalents().toString()+
+									"¿Qué talentos vas a robarle?: "+"\n"+options1;
+		String talentToBeStolen=readDataFromKeyBoard.takeParametersToStringRestricted(askTalentToBeStolen,conditions1);
+		List<String> talentToBeSteloneSelectionNumbers=Cadenas.separaElementos(conditions1,",");
+		
+		//Recorre la lista de los talentos a robar
+		for(int i=0;i<talentsToStealList.size();i++){
+			//Si el talento que hemos querido robar coincide con el de la posicion en la lista
+			if(talentToBeSteloneSelectionNumbers.get(i).equals(talentToBeStolen)){
+				//El otro jugador descarta al talento y se le añade al jugador que quiere robar
+				Talent talent=talentsToStealList.get(i);
 				otherPlayer.discardTalent(talent);
 				List<Talent> talentToBeAdded=CollectionsFactory.createListFactory().createList();
 				talentToBeAdded.add(talent);

@@ -1,8 +1,10 @@
 package performance;
 
+import player.Player;
 
 
-public class performanceImpl implements Performance {
+
+public abstract class performanceImpl{
 	
 	public performanceImpl(String cardColor, String description) {
 		super();
@@ -12,14 +14,11 @@ public class performanceImpl implements Performance {
 
 	private String cardColor;
 	private String description;
-	@Override
-	
 	
 	public String getColor() {
 		return cardColor;
 	}
 
-	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -29,8 +28,7 @@ public class performanceImpl implements Performance {
 		return this.getDescription();
 	}
 	
-	public void execute(){
-		
-	}
+	public abstract void execute(Player player);
+	
 
 }

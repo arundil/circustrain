@@ -1,9 +1,15 @@
 package performance;
 
 
+import game.factory.GameFactory;
+
 import java.util.List;
 
+import player.Player;
+
 import talent.Talent;
+import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 
 public class BankruptCircusImpl extends performanceImpl implements BankruptCircus {
 	
@@ -27,8 +33,34 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 		return stringToReturn;
 	}
 	
-	@Override
-	public void execute(){
-		
+	public void execute(Player player) {
+		List<Talent> newtalents=CollectionsFactory.createListFactory().createList();
+		for(Talent t:getTalentCircus()){
+			String answers="\n" + "[1] SI" + "\n" + "[2] NO";
+			String question="El talento  "+t.toString()+" está sin empleo. ¿Quieres contratarlo?"+answers;
+			String condition="1,2";
+			String election= readDataFromKeyBoard.takeParametersToStringRestricted(question, condition);
+
+			if(!election.equals("2")){
+				Integer dice=GameFactory.throwDice();
+				System.out.println("Al tirar el dado ha salido: "+dice);
+				Integer repMaxValue=player.getHigherDiceScore();
+				if((1<=dice) && (dice<=repMaxValue)){
+					newtalents.add(t);
+				}else{
+					if(!((player.getMoney())<10)){	
+						String answers1="\n" + "[1] SI" + "\n" + "[2] NO";
+						String message1="Tu tirada no es suficiente para contratar gratis al talento,¿Quieres pagar?"+answers1;
+						String condition1="1,2";
+						String failure=readDataFromKeyBoard.takeParametersToStringRestricted(message1, condition1);
+						if(!failure.equals("2")){
+							newtalents.add(t);
+							player.addMoney(-10);							
+						}						
+					}
+				}
+			}
+		}
+		player.addTalent(newtalents);
 	}
 }

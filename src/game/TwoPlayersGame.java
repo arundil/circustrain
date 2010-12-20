@@ -222,19 +222,20 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		
 		if(victoryPointsDrawGame==1){
 			if(performancePointsDrawGame==1){
-				winner="There's no winner."+"\n"+"============= DRAW GAME =============";
+				winner="No hay ganador."+"\n"+"============= ¡EMPATE! =============";
 			}else{
 				Integer winnerIndex=playerPerformancePoints.indexOf(maxPerformancePoints);
 				Player winnerPlayer=playerList.get(winnerIndex);
-				winner="Here's your winner! The winner is"+"\n"+"============= "+winnerPlayer.getName()+" =============";
+				winner="¡Tenemos un ganador!"+"\n"+"============= "+winnerPlayer.getName()+" =============";
 			}
 		}else{
 			Integer winnerIndex=playerVictoryPoints.indexOf(maxVictoryPoints);
 			Player winnerPlayer=playerList.get(winnerIndex);
-			winner="Here's your winner! The winner is"+"\n"+"============= "+winnerPlayer.getName()+" =============";
+			winner="¡Tenemos un ganador!"+"\n"+"============= "+winnerPlayer.getName()+" =============";
 		}
-		System.out.println(winner+"\n"+"\n"+"---=== Thank you for playing Train Circus! ===---");
+		System.out.println(winner+"\n"+"\n"+"---=== Gracias por jugar a Train Circus! ===---");
 	}
+	
 	public void noClownsNoAnimals(){
 		for(Player thisPlayer:playerList){
 			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();

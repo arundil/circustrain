@@ -2,12 +2,7 @@ package actionCards;
 
 import java.util.List;
 
-import commands.CommandPerformance;
-import commands.CommandToHire;
-
-import performance.BankruptCircus;
 import performance.Performance;
-import performance.PerformanceDemand;
 import player.Player;
 
 import board.City;
@@ -38,21 +33,7 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 	public void performPlayer(){
 		//cambio de player a getPlayer()
 		Performance p = getPlayer().getCity().getPerformance();
-		if (p instanceof PerformanceDemand){
-			System.out.println("La ciudad de "+getPlayer().getCity()+" agradece tu actuación de : "+ p );
-			if (p instanceof PerformanceDemand){
-				CommandPerformance cp = new CommandPerformance(getPlayer(),(PerformanceDemand) p);
-				cp.execute();
-			}
-		}else if (p instanceof BankruptCircus){
-			System.out.println("Por la calles de esta ciudad deambula un Circo en Bancarrota: "+ p + "\n");
-			if(p instanceof BankruptCircus){
-				CommandToHire ch = new CommandToHire((BankruptCircus)p, getPlayer());
-				ch.execute();
-			} else {
-				throw new IllegalArgumentException("No puedes instanciar otra cosa que no sea Performance or BankruptCircus");
-			}
-
-		}
+		//MUAHAHAHAHAHA vivan los commands!!! borrado todo el tocho
+		p.execute(getPlayer());
 	}
 }

@@ -30,7 +30,7 @@ public class CommandPlayActionCard implements Command{
 		System.out.println(actionCardList.toString());
 		Integer cardIdToBePlayed=-1;
 		while(!actionCardIdSet.contains(cardIdToBePlayed)){
-			cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Select the card: NUMBER");
+			cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Selecciona una carta:");
 		}
 		for(ActionCard actionCard:actionCardList){
 			if(actionCard.getIdCard()==cardIdToBePlayed){

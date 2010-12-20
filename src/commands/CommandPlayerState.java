@@ -13,29 +13,29 @@ public class CommandPlayerState implements Command{
 	
 	public void execute(){
 		String messageForTwoWeeksPerformance = 
-			"You must to performance " + player.getWeeksToPerformance()+" times more to gain points.";
+			"Debes actuar " + player.getWeeksToPerformance()+" vez/veces más para puntuar.";
 		if(player.getCity().hasPerfomance()){
 			if(player.getCity().getPerformance() instanceof PerformanceDemand){
 				PerformanceDemand performance =(PerformanceDemand) player.getCity().getPerformance();
 				if(performance.isTwoWeeks()){			
-					System.out.println("Rememeber that you are in a city that contains a Two Week Performance Demand."+"\n"+messageForTwoWeeksPerformance);
+					System.out.println("Recuerda que estás en una ciudad que tiene una demanda de actuación de dos semanas."+"\n"+messageForTwoWeeksPerformance);
 				}
 			}
 		}
 		String actionCardList=player.getActionCards().toString();
-		System.out.println("You have the following action card/s: \n "+actionCardList);
+		System.out.println("Tienes la/s siguiente/s carta/s de acción: \n "+actionCardList);
 		if(!player.getdiscartpile().isEmpty()){
 			String discardActionCardList=player.getdiscartpile().toString();			
-			System.out.println("You have the following discarded action card/s: "+discardActionCardList);
+			System.out.println("Tienes la/s siguiente/s carta/s de acción en tu pila de cartas descartadas: "+discardActionCardList);
 		}
-		System.out.println("You have the following talents: "+player.getTalents().toString());
-		System.out.println("Your reputation is: "+player.getReputation());			
+		System.out.println("Tienes los siguientes talentos: "+player.getTalents().toString());
+		System.out.println("Tu reputación es "+player.getReputation());			
 	//No haria falta si mostramo el tablero.
-		System.out.println("Your higher dice score is: "+player.getHigherDiceScore());
+		System.out.println("Tu tirada de dado máxima es: "+player.getHigherDiceScore());
 		
-		System.out.println("Your current position is: "+player.getCity().toString());
-		System.out.println("Your higher performance score is: "+player.getPerformanceMax());
-		System.out.println("You have "+player.getMoney()+" $");
+		System.out.println("Actualmente estás en: "+player.getCity().toString());
+		System.out.println("Tus puntos de máxima actuación son: "+player.getPerformanceMax());
+		System.out.println("Tienes "+player.getMoney()+" $");
 	}
 
 }

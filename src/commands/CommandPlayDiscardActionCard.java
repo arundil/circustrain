@@ -22,7 +22,7 @@ private CircusTrainGame game;
 	public void execute(){
 		List<ActionCard> discardActionCardList=player.getdiscartpile();
 		System.out.println(discardActionCardList.toString());
-		Integer cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Select the card: NUMBER");
+		Integer cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Seleccione una carta: ");
 		for(ActionCard actionCard:discardActionCardList){
 			if(actionCard.getIdCard()==cardIdToBePlayed){
 				actionCard.execute();
