@@ -9,9 +9,6 @@ import talent.Clown;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
-import bag.TalentBag;
-import board.Board;
-
 import commands.CommandPay;
 
 //Quitado efinalMounth() puesto en sus hijos;
