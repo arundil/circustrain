@@ -34,35 +34,13 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 	
 
 	public void gameOver() {
-//		finalWage();
-//		noClownsNoAnimals();
-//		results();
+		finalWage();
+		noClownsNoAnimals();
+		results();
 	}
 	
-	public TalentBag getTalentBag(){
-		return talentBag;
-	}
 	
-	public List<Player> getPlayerList(){
-		return playerList;
-	}	
-	
-	public String getMonth(){
-		return month;
-	}	
-	
-	public void setFollowingAction(String action){
-		followingAction=action;
-	}
-	
-	public String getFollowingAction() {
-		return followingAction;
-	}
-	
-	public Board getBoard(){
-		return board;
-	}
-	
+
 	//====================================== X =====================================
 
 
