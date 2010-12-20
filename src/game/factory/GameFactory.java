@@ -110,37 +110,39 @@ public class GameFactory {
 		return ac;
 	}
 	
-	public static void createCircusTrainGame(){
+	public static CircusTrainGame createCircusTrainGame(){
+
+		CircusTrainGame game=null;
+
 		System.out.println("Welcome to Circus Train!");
 		
 		//Peticion de numero de jugadores
-		String askNumberOfPlayers="How many players are going to play: ";
-		String askNumberOfPlayersCondition="1,2";
-		Integer numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
-
+//		String askNumberOfPlayers="How many players are going to play: ";
+//		String askNumberOfPlayersCondition="1,2";
+//		Integer numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
+		Integer numberOfPlayers=2;
 		
 		//Seleccion de modo de juego
-		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
-		String selectGameModeCondition="1,2";
-		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
-
+//		String selectGameMode="Select game mode:"+"\n"+"1 : Basic mode"+"\n"+"2 : Advanced mode";
+//		String selectGameModeCondition="1,2";
+//		String gameMode=readDataFromKeyBoard.takeParametersToStringRestricted(selectGameMode,selectGameModeCondition);
+		String gameMode="2";
 		
 		if(numberOfPlayers==1){
 			if(gameMode=="1"){
-				BasicSingleGame game=new BasicSingleGame();
-				game.runGame();				
+				game=new BasicSingleGame();
 			}else if(gameMode=="2"){
-				AdvancedSingleGame game=new AdvancedSingleGame();
-				game.runGame();
+
+				game=new AdvancedSingleGame();
 			}
 		}else if (numberOfPlayers==2){
 			if(gameMode=="1"){
-				BasicTwoPlayersGame game=new BasicTwoPlayersGame();
-				game.runGame();
+				game=new BasicTwoPlayersGame();
 			}else if(gameMode=="2"){
-				AdvancedTwoPlayersGame game=new AdvancedTwoPlayersGame();
-				game.runGame();
+				game=new AdvancedTwoPlayersGame();
 			}
 		}
+		
+		return game;
 	}
 }
