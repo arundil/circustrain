@@ -11,6 +11,7 @@ public class CommandCollectMoney implements Command{
 	}
 	@Override
 	public void execute() {
+		//TODO INCOMPLETO
 		player.addMoney(5);
 		player.addReputation(1);
 	}

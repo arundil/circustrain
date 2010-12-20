@@ -5,17 +5,16 @@ import player.Player;
 
 public class FastMoveImpl extends ActionCardImpl implements ActionCard {
 	private Integer id;
-	Player player;
 
-	public FastMoveImpl(Player p) {
-		super("MOVIMIENTO RAPIDO","Puedes moverte hasta 5 ciudades");
+	public FastMoveImpl(Player player) {//borrado atributo player		
+		super("MOVIMIENTO RAPIDO","Puedes moverte hasta 5 ciudades",player);
 		id = 4;
-		player = p;
 	}
 
 	@Override
 	public void execute() {
-		super.movePlayer(player, 5);
+		//borrado atributo player
+		movePlayer(5);
 	}
 
 	@Override

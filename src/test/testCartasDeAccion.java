@@ -7,14 +7,9 @@ import actionCards.BasicMoveImpl;
 import actionCards.FastMoveImpl;
 import actionCards.HoldImpl;
 import actionCards.OvernighterImpl;
-import actionCards.RestImpl;
 import actionCards.TravelImpl;
-import actionCards.WagesImpl;
 import board.Board;
-import board.BoardImpl;
-import performance.BankruptCircus;
-import performance.BankruptCircusImpl;
-import performance.PerformanceDemand;
+import board.BoardImpl;import performance.PerformanceDemand;
 import performance.PerformanceDemandImpl;
 import player.Player;
 import player.PlayerImpl;
@@ -71,7 +66,7 @@ public class testCartasDeAccion extends Test {
 			ac.execute();
 		}
 		if (elec == 1 || elec == 2){
-			ActionCard ac = new BasicMoveImpl(elec, p);
+			ActionCard ac = new BasicMoveImpl(elec,p);
 			ac.execute();
 		}
 		if (elec == 3){

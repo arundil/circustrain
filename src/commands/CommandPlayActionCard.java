@@ -35,7 +35,7 @@ public class CommandPlayActionCard implements Command{
 		for(ActionCard actionCard:actionCardList){
 			if(actionCard.getIdCard()==cardIdToBePlayed){
 				if(actionCard instanceof RestImpl){
-					actionCard = new RestImpl(player, ctg);
+					actionCard = new RestImpl(ctg,player);
 				}
 				actionCard.execute();
 				

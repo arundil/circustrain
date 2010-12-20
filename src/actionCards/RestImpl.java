@@ -2,8 +2,9 @@ package actionCards;
 
 import game.CircusTrainGame;
 import java.util.List;
-import board.City;
+
 import player.Player;
+import board.City;
 import talent.Acrobat;
 import talent.AcrobatImpl;
 import talent.Clown;
@@ -15,22 +16,20 @@ import card.CardImpl;
 
 public class RestImpl extends CardImpl  implements ActionCard  {
 	Integer id;
-	Player player;
 	CircusTrainGame ctg;
-	
-	public RestImpl(Player player, CircusTrainGame ctg) {
+	public RestImpl(CircusTrainGame ctg, Player player) {
 		super("DESCANSO","Si estas en Canada (Winnipeg, Montreal or Toronto), " +
-				"puedes coger un payaso, un acrobata o incrementar tu reputación en un nivel" );
-		this.id = 8;
-		this.player = player;
+				"puedes coger un payaso, un acrobata o incrementar tu reputación en un nivel",player);
+		this.id = 8;		
 		this.ctg = ctg;
 	}
 
 	public void execute() {
-		City city = player.getCity();
+		//cambiado player por getPlayer()
+		City city = getPlayer().getCity();
 		
-		System.out.println(player.getName()+" ha usado ==> DESCANSO <== \n" );
-		System.out.print("You city now is "+player.getCity());
+		System.out.println(getPlayer().getName()+" ha usado ==> DESCANSO <== \n" );
+		System.out.print("You city now is "+getPlayer().getCity());
 		
 		if(city.isCanada()){
 			List<Talent> listtalent = CollectionsFactory.createListFactory().createList();
@@ -48,7 +47,7 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 			if(answer == 1){
 				if(ctg.getTalentBag().getNumTalents(clown)>0){
 					listtalent.add(ctg.getTalentBag().removeTalent(clown));
-					player.addTalent(listtalent);
+					getPlayer().addTalent(listtalent);
 				}else{
 					System.out.println("Clowns are not available");
 					execute();
@@ -57,7 +56,7 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 			if(answer == 2){
 				if(ctg.getTalentBag().getNumTypeTalent(acrobat)>0){
 					listtalent.add(ctg.getTalentBag().removeTalent(acrobat));
-					player.addTalent(listtalent);
+					getPlayer().addTalent(listtalent);
 				}else{
 					System.out.println("Acrobat are not available");
 					execute();
@@ -65,7 +64,7 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 				
 			}
 			if(answer == 3){
-				if(!player.addReputation(1)){
+				if(!getPlayer().addReputation(1)){
 					System.out.println("Rise reputation are not available");
 					execute();
 				}

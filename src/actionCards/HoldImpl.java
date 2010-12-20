@@ -3,17 +3,16 @@ package actionCards;
 import player.Player;
 
 public class HoldImpl extends ActionCardImpl implements ActionCard {
-	private Player player;
 	private Integer id;
+	//borrado atributo player
 
-	public HoldImpl (Player p){
-		super("PERMANECER","Puedes Actuar/Contratar en la ciudad actual");
-		player = p;
+	public HoldImpl (Player player){
+		super("PERMANECER","Puedes Actuar/Contratar en la ciudad actual",player);
 		id = 7;
 	}
 	@Override
 	public void execute() {
-		super.performPlayer(player);
+		super.performPlayer();
 	}
 
 	@Override

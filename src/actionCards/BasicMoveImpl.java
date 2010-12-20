@@ -7,12 +7,10 @@ import utiles.factoria.readDataFromKeyBoard;
 public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 
 	private Integer id;
-	Player player;
-
-	public BasicMoveImpl(Integer n, Player p) {
-		super("MOVIMIENTO BÁSICO", "Puedes moverte hacia una ciudad adyacente o Actuar/Contratar");
+//borrado atributo player
+	public BasicMoveImpl(Integer n,Player player) {
+		super("MOVIMIENTO BÁSICO", "Puedes moverte hacia una ciudad adyacente o Actuar/Contratar",player);
 		id=n;
-		player = p;
 	}
 
 	@Override
@@ -23,21 +21,21 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 	@Override
 	public void execute() {
 		Integer answer;
+//sustituido player por getPlayer()
+		System.out.println(getPlayer().getName()+" ha usado la carta ==> MOVIMIENTO BÁSICO <== \n");
 		
-		System.out.println(player.getName()+" ha usado la carta ==> MOVIMIENTO BÁSICO <== \n");
-		
-		if (player.getCity().hasPerfomance()){
+		if (getPlayer().getCity().hasPerfomance()){
 			System.out.println("¿Que quieres hacer, Viajar[1] o Actuar/Contratar[2]");
 			answer=readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","1,2");
 		}else{
-			System.out.println(player.getCity()+" no tiene Performance");
+			System.out.println(getPlayer().getCity()+" no tiene Performance");
 			answer=1;
 		}
-
+//borrado atributo player
 		if (answer ==1){
-			super.movePlayer(player,1);
+			super.movePlayer(1);
 		}else if(answer==2){ 	
-			super.performPlayer(player);
+			super.performPlayer();
 		}
 	}
 
