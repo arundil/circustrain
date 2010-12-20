@@ -1,9 +1,7 @@
 package performance;
 
-import player.Player;
 
-public interface Performance {
+public interface Performance extends AbstractPerformance{
 	public String getColor();
 	public String getDescription();
-	public void execute(Player player);
 }

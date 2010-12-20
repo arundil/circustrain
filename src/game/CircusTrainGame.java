@@ -126,7 +126,7 @@ public abstract class CircusTrainGame{
 		for(int i=0;i<canadianCityList.size();i++){
 			Integer optionsCount=i+1;
 			askCanadianCityConditions=askCanadianCityConditions+(optionsCount)+",";
-			askCanadianCity=askCanadianCity+(optionsCount)+" : "+canadianCityList.get(i).getName()+"\n";
+			askCanadianCity=askCanadianCity+"["+(optionsCount)+"] "+canadianCityList.get(i).getName()+"\n";
 		}
 		String selectedCanadianCity=readDataFromKeyBoard.takeParametersToStringRestricted(askCanadianCity, askCanadianCityConditions);
 		Integer citySelector=new Integer(selectedCanadianCity);
@@ -190,9 +190,10 @@ public abstract class CircusTrainGame{
 				//Se lleva a cabo la accion que el jugador a elegido
 				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
 				executeCase.execute();				
+				
+				//Se mira el número de ciudades y se añaden si es el caso
+				completeBoardPerformances();					
 			}
-			//Se mira el número de ciudades y se añaden si es el caso
-			completeBoardPerformances();					
 			week++;			
 		}
 		gameOver();
