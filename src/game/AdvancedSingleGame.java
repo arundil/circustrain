@@ -10,9 +10,6 @@ public class AdvancedSingleGame extends OnePlayerGame {
 	
 	public void runGame(){
 
-		System.out.println("\n \n Ciudades con actuaciones: "+ board.getCitiesWithPerfomance() +"\n \n");
-
-		playerList.get(0).moveCity(selectCanadianCity());
 
 		while(week<27){
 			String oldMonth=this.getMonth();
