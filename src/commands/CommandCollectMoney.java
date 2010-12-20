@@ -1,9 +1,8 @@
 package commands;
 
-import game.AbstractCommand;
 import player.Player;
 
-public class CommandCollectMoney extends AbstractCommand{
+public class CommandCollectMoney implements Command{
 
 	private Player player;
 	

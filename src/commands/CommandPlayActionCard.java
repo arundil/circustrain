@@ -1,7 +1,6 @@
 package commands;
 
 
-import game.AbstractCommand;
 import game.CircusTrainGame;
 import game.TwoPlayersGame;
 
@@ -14,7 +13,7 @@ import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 
 
-public class CommandPlayActionCard extends AbstractCommand{
+public class CommandPlayActionCard implements Command{
 	
 	private Player player;
 	private CircusTrainGame ctg;

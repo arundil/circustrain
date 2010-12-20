@@ -1,7 +1,6 @@
 package commands;
 
 
-import game.AbstractCommand;
 import game.CircusTrainGame;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import board.City;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 
-public class CommandSelectCanadianCity extends AbstractCommand{
+public class CommandSelectCanadianCity implements Command{
 	
 	private Player player;
 	private CircusTrainGame game;
@@ -22,18 +21,18 @@ public class CommandSelectCanadianCity extends AbstractCommand{
 	}
 	
 	public void execute(){
-		Board board=game.getBoard();
-		List<City> canadianCityList=board.getCanadianCities();
-		String askCanadianCity="Select a canadian city: "+"\n";
-		String askCanadianCityConditions="";
-		
-		for(int i=0;i<canadianCityList.size();i++){
-			Integer optionsCount=i+1;
-			askCanadianCityConditions=askCanadianCityConditions+(optionsCount)+",";
-			askCanadianCity=askCanadianCity+(optionsCount)+" : "+canadianCityList.get(i).getName()+"\n";
-		}
-		String selectedCanadianCity=readDataFromKeyBoard.takeParametersToStringRestricted(askCanadianCity, askCanadianCityConditions);
-		Integer citySelector=new Integer(selectedCanadianCity);
-		player.moveCity(canadianCityList.get(citySelector-1));		
+//		Board board=game.getBoard();
+//		List<City> canadianCityList=board.getCanadianCities();
+//		String askCanadianCity="Select a canadian city: "+"\n";
+//		String askCanadianCityConditions="";
+//		
+//		for(int i=0;i<canadianCityList.size();i++){
+//			Integer optionsCount=i+1;
+//			askCanadianCityConditions=askCanadianCityConditions+(optionsCount)+",";
+//			askCanadianCity=askCanadianCity+(optionsCount)+" : "+canadianCityList.get(i).getName()+"\n";
+//		}
+//		String selectedCanadianCity=readDataFromKeyBoard.takeParametersToStringRestricted(askCanadianCity, askCanadianCityConditions);
+//		Integer citySelector=new Integer(selectedCanadianCity);
+//		player.moveCity(canadianCityList.get(citySelector-1));		
 	}
 }

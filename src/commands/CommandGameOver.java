@@ -1,6 +1,5 @@
 package commands;
 
-import game.AbstractCommand;
 import game.TwoPlayersGame;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import talent.Clown;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 
-public class CommandGameOver extends AbstractCommand{
+public class CommandGameOver implements Command{
 	
 	//Posiblemente no haga falta este comando. Seria un metodo dentro de la clase game
 

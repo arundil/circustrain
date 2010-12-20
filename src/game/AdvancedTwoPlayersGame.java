@@ -27,8 +27,6 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
 
 	public void runGame(){
-		super.refreshMonth();		
-		super.completeBoardPerformances();
 		System.out.println("\n \n Cities with performance: "+ board.getCitiesWithPerfomance() +"\n \n");
 		
 		for(Player playerSelectsCity:playerList){

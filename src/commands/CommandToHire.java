@@ -1,6 +1,5 @@
 package commands;
 
-import game.AbstractCommand;
 import game.factory.GameFactory;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 
-public class CommandToHire extends AbstractCommand{
+public class CommandToHire implements Command{
 	private BankruptCircus circus;
 	private Player player;
 	

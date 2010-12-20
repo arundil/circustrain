@@ -1,4 +1,4 @@
-package board;
+package test;
 
 
 import java.util.List;
@@ -6,7 +6,12 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestBoard {
+import board.Board;
+import board.BoardImpl;
+import board.City;
+import board.CityImpl;
+
+public class TestBoardJUnit {
 	Board tablero;
 	@Before
 	public void setUp() throws Exception {

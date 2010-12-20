@@ -1,10 +1,9 @@
 package commands;
 
-import game.AbstractCommand;
 import performance.PerformanceDemand;
 import player.Player;
 
-public class CommandPlayerState extends AbstractCommand{
+public class CommandPlayerState implements Command{
 	
 	private Player player;
 	

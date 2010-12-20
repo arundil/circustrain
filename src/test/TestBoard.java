@@ -1,11 +1,12 @@
-package board;
+package test;
 
 import bag.PerformanceBag;
+import board.Board;
 import game.factory.GameFactory;
 import performance.VictoryPoints;
 import performance.VictoryPointsImpl;
 
-public class Test {
+public class TestBoard {
 
 	/**
 	 * @param args

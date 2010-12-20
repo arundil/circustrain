@@ -1,7 +1,6 @@
 package commands;
 
 
-import game.AbstractCommand;
 import game.TwoPlayersGame;
 
 import java.util.List;
@@ -14,7 +13,7 @@ import tipos.Cadenas;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 
-public class CommandStealTalent extends AbstractCommand{
+public class CommandStealTalent implements Command{
 	//SOLO DOS JUGADORES
 	private TwoPlayersGame game;
 	private Player player;

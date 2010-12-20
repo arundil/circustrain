@@ -1,4 +1,4 @@
-package commands;
+package test;
 
 import java.util.List;
 import java.util.Map;
@@ -18,6 +18,8 @@ import utiles.factoria.CollectionsFactory;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import commands.CommandPerformance;
 
 
 public class TestCommandPerformance {

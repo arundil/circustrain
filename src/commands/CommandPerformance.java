@@ -1,6 +1,5 @@
 package commands;
 
-import game.AbstractCommand;
 
 import java.util.List;
 import java.util.Set;
@@ -10,7 +9,7 @@ import player.Player;
 import talent.Talent;
 
 
-public class CommandPerformance extends AbstractCommand{
+public class CommandPerformance implements Command{
 	
 	private Player player;
 	private PerformanceDemand performance;

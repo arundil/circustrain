@@ -1,6 +1,5 @@
 package commands;
 
-import game.AbstractCommand;
 import game.CircusTrainGame;
 import game.TwoPlayersGame;
 
@@ -11,7 +10,7 @@ import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 
-public class CommandPay extends AbstractCommand{
+public class CommandPay implements Command{
 	
 	private Player player;
 	private CircusTrainGame game;
