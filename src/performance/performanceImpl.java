@@ -1,10 +1,8 @@
 package performance;
 
-import player.Player;
 
 
-
-public abstract class performanceImpl{
+public abstract class performanceImpl implements Performance{
 	
 	public performanceImpl(String cardColor, String description) {
 		super();
@@ -27,8 +25,4 @@ public abstract class performanceImpl{
 	public String toString(){
 		return this.getDescription();
 	}
-	
-	public abstract void execute(Player player);
-	
-
 }

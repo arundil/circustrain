@@ -2,12 +2,7 @@ package game;
 
 import game.factory.GameFactory;
 
-import java.util.List;
-import java.util.Map;
 import player.Player;
-import talent.Clown;
-import talent.Talent;
-import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 import commands.CommandPay;
 
