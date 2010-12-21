@@ -16,7 +16,7 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 		super(name,description,player);
 	}
 
-	public void movePlayer(Integer move){//usamos el jugador usado como parametro en el constructor
+	public void movePlayer(Integer move){
 		Integer answer;
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 

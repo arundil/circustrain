@@ -16,12 +16,7 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 	
 	public OnePlayerGame(){
 		super();
-		String name=readDataFromKeyBoard.takeParametersToString("Nombre del jugador: ");
-		player=GameFactory.createPlayer(name);
-		player.addTalent(theClown);
-		talentBag.removeTalent(clown);
-		player.addActionCards(GameFactory.inicializateActionCards(this, player));
-		playerList.add(player);	
+		setPlayersNames();
 	}
 	
 

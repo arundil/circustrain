@@ -33,6 +33,8 @@ public abstract class CircusTrainGame{
 	protected abstract void results();
 	protected abstract void finalMonth();
 	protected abstract void selectCase(Player player);
+	//REDEFINIR EL EXECUTECASE!! URGENTE
+	protected abstract void executeCase(Player player,CircusTrainGame game);
 	
 	public CircusTrainGame(){
 		playerList=CollectionsFactory.createListFactory().createList();
