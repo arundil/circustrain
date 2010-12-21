@@ -18,19 +18,19 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 
 	protected Integer numberOfPlayers=2;
 	
+	protected abstract void finalMonth();
 	
-	public void finalMonth(){
-		//Puntos de victoria segun el nº de talentos
+	protected void comparePlayersAndAddVictoryPoints() {
 		compareTalentsCountAndAddVictoryPoints();
 		//Puntos de victoria segun actuacion maxima
 		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
 		if(comparatorPerformancePoints>0)
 			playerList.get(0).addVictoryPoints(4);
 		if(comparatorPerformancePoints<0)
-			playerList.get(1).addVictoryPoints(4);			
-		//Robar talentos
-		//En modo basico solo puede robar el que tenga menos puntos de victoria
+			playerList.get(1).addVictoryPoints(4);
 	}
+	
+	public abstract void stealTalents();
 
 	public void gameOver() {
 		finalWage();

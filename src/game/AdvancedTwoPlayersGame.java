@@ -14,20 +14,12 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 		setPlayersNames();
 	}
 
-
 	public void finalMonth(){
-		super.finalMonth();
-		
-		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
-			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
-			stealTalent.execute();
-		}
-		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
-			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
-			stealTalent.execute();
-		}
+		//Puntos de victoria segun el nº de talentos
+		comparePlayersAndAddVictoryPoints();			
+		//Robar talentos
+		stealTalents();
 	}
-	
 	@Override
 	public void gameOver(){
 		finalWage();
@@ -37,9 +29,7 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 		higherReputation();
 		noClownsNoAnimals();
 		results();
-	}
-	
-	
+	}	
 	
 	private void higherReputation(){
 		List<Integer> playersReputation=CollectionsFactory.createListFactory().createList();
@@ -80,7 +70,7 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 		String askActionsDiscardedNoMoneyCondition = "1,2";
 		String askActionsNoDiscardedMoneyCondition = "1,3";
 
-		String action="1";
+		String action="";
 		
 		
 		if(!this.getMonth().equals("AUGUST") || !this.getMonth().equals("SEPTEMBER")){
@@ -108,5 +98,17 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 		}
 		this.setFollowingAction(action);
 	}
-
+	
+	
+	
+	public void stealTalents(){
+		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
+			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
+			stealTalent.execute();
+		}
+		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
+			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
+			stealTalent.execute();
+		}
+	}
 }
