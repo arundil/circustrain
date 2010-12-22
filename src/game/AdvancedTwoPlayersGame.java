@@ -5,7 +5,6 @@ import java.util.List;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
-import commands.CommandStealTalent;
 
 public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
@@ -18,7 +17,7 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 		//Puntos de victoria segun el nº de talentos
 		comparePlayersAndAddVictoryPoints();			
 		//Robar talentos
-		stealTalents();
+		stealTalentsSelector();
 	}
 	@Override
 	public void gameOver(){
@@ -101,14 +100,14 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
 	
 	
-	public void stealTalents(){
+	public void stealTalentsSelector(){
 		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
-			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(0), this);
-			stealTalent.execute();
+			stealTalent(playerList.get(0));
+
 		}
 		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
-			CommandStealTalent stealTalent=new CommandStealTalent(playerList.get(1), this);
-			stealTalent.execute();
+			stealTalent(playerList.get(1));
+
 		}
 	}
 }

@@ -1,7 +1,5 @@
 package game;
 
-import commands.CommandStealTalent;
-
 import game.factory.GameFactory;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
@@ -25,12 +23,7 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 	}	
 
 	protected void selectCase(Player player){
-//		Si solo hay una opcion, para que preguntar;
-//		String action1="1 : Play one Action card from my hand";
-//		String askBasicAction = "What are you going to do:" + "\n" + action1;
-//		String askBasicActionCondition = "1";
 		String action="1";
-//		action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
 		this.setFollowingAction(action);
 	}
 	
@@ -38,20 +31,18 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 		//Puntos de victoria segun el nº de talentos
 		comparePlayersAndAddVictoryPoints();			
 		//Robar talentos
-		stealTalents();
+		stealTalentsSelector();
 	}
 	
-	public void stealTalents(){
+	public void stealTalentsSelector(){
 		Integer playerOneVictoryPoints=playerList.get(0).getVictoryPoints();
 		Integer playerTwoVictoryPoints=playerList.get(1).getVictoryPoints();
 		Integer comparator=playerOneVictoryPoints.compareTo(playerTwoVictoryPoints);
 		if(comparator>0){
-			CommandStealTalent steal=new CommandStealTalent(playerList.get(1),this);
-			steal.execute();
+			stealTalent(playerList.get(1));
 		}
 		if(comparator<0){
-			CommandStealTalent steal=new CommandStealTalent(playerList.get(0),this);
-			steal.execute();
+			stealTalent(playerList.get(0));
 		}
 	}
 }

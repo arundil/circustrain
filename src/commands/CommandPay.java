@@ -72,7 +72,7 @@ public class CommandPay implements Command{
 	}
 	
 	private void toFire(Boolean money){
-		String mess = "What talent do you want to fire? \n"; 
+		String mess = "¿A qué talento quieres despedir? \n"; 
         String cond="";
         String resp ="";
         Integer respuesta =0;

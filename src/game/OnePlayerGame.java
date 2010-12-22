@@ -103,4 +103,17 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 		playerList.add(player);
 
 	}
+	
+	protected void rotatePlayers(){
+		//Vacio porque no se hace nada
+	}
+	
+	protected void collectMoney(Player player){
+		//Vacio porque no se hace nada
+	}
+
+
+	protected void playerState(Player player) {
+		commonPlayerState(player);
+	}
 }

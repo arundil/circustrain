@@ -3,14 +3,17 @@ package game;
 import game.factory.GameFactory;
 
 import java.util.List;
-import commands.CommandExecuteCase;
-import commands.CommandPlayerState;
+import java.util.Set;
+
+import actionCards.ActionCard;
+import actionCards.RestImpl;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
 import board.City;
 import performance.BankruptCircus;
 import performance.Performance;
+import performance.PerformanceDemand;
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
@@ -26,15 +29,16 @@ public abstract class CircusTrainGame{
 	protected Talent clown = GameFactory.createTalent("CLOWN");
 	protected TalentBag talentBag;
 	protected List<Player> playerList;
-	private Integer numberOfPlayers = 2;
 	
 	protected abstract void gameOver();
 	protected abstract void finalWage();
 	protected abstract void results();
 	protected abstract void finalMonth();
 	protected abstract void selectCase(Player player);
-	//REDEFINIR EL EXECUTECASE!! URGENTE
-	protected abstract void executeCase(Player player,CircusTrainGame game);
+	protected abstract void rotatePlayers();
+	protected abstract void collectMoney(Player player);
+	protected abstract void playerState(Player player);
+
 	
 	public CircusTrainGame(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -153,17 +157,7 @@ public abstract class CircusTrainGame{
 		followingAction=action;
 	}
 	
-	protected void rotatePlayers(){
-		if(numberOfPlayers!=1){
-			List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
-			for(int i=1;i<playerList.size();i++){
-				newPlayerList.add(playerList.get(i));	
-			}
-			newPlayerList.add(playerList.get(0));
-			playerList.clear();
-			playerList.addAll(newPlayerList);
-		}
-	}
+	
 	protected void showPerformanceSituation() {
 		System.out.println("\n \n Ciudades con actuación: "+ board.getCitiesWithPerfomance() +"\n \n");
 	}
@@ -183,15 +177,13 @@ public abstract class CircusTrainGame{
 			for(Player currentPlayer : playerList){
 				//Se muestra el estado del jugador
 				System.out.println("\n \n Es tu turno, " + currentPlayer.getName());
-				CommandPlayerState playerState = new CommandPlayerState(currentPlayer);				
-				playerState.execute();
+				playerState(currentPlayer);
 				
 				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
 				selectCase(currentPlayer);
 				
 				//Se lleva a cabo la accion que el jugador a elegido
-				CommandExecuteCase executeCase=new CommandExecuteCase(currentPlayer, this);
-				executeCase.execute();				
+				executeCase(currentPlayer);				
 				
 				//Se mira el número de ciudades y se añaden si es el caso
 				completeBoardPerformances();					
@@ -216,4 +208,94 @@ public abstract class CircusTrainGame{
 			playerSelectsCity.moveCity(selectCanadianCity(playerSelectsCity));
 		}
 	}
+	
+	protected void executeCase(Player player){
+		if(getFollowingAction().equals("1")){
+			
+			playActionCard(player);
+		}else{
+			if(getFollowingAction().equals("2")){
+				
+				playDiscardActionCards(player);
+			}
+			if(getFollowingAction().equals("3")){
+				collectMoney(player);
+			}
+		}
+	}
+	
+	protected void commonPlayerState(Player player) {
+		String messageForTwoWeeksPerformance = 
+			"Debes actuar " + player.getWeeksToPerformance()+" vez/veces más para puntuar.";
+		if(player.getCity().hasPerfomance()){
+			
+			//TODO: Peste, peste, peste.....
+			if(player.getCity().getPerformance() instanceof PerformanceDemand){
+				PerformanceDemand performance =(PerformanceDemand) player.getCity().getPerformance();
+				if(performance.isTwoWeeks()){			
+					System.out.println("Recuerda que estás en una ciudad que tiene una demanda de actuación de dos semanas."+"\n"+messageForTwoWeeksPerformance);
+				}
+			}
+		}
+		String actionCardList=player.getActionCards().toString();
+		System.out.println("Tienes la/s siguiente/s carta/s de acción: \n "+actionCardList);
+		if(!player.getdiscartpile().isEmpty()){
+			String discardActionCardList=player.getdiscartpile().toString();			
+			System.out.println("Tienes la/s siguiente/s carta/s de acción en tu pila de cartas descartadas: "+discardActionCardList);
+		}
+		System.out.println("Tienes los siguientes talentos: "+player.getTalents().toString());
+		System.out.println("Tu reputación es "+player.getReputation());			
+	//No haria falta si mostramo el tablero.
+		System.out.println("Tu tirada de dado máxima es: "+player.getHigherDiceScore());
+		
+		System.out.println("Actualmente estás en: "+player.getCity().toString());
+		System.out.println("Tienes "+player.getMoney()+" $");
+	}
+	
+	protected void playActionCard(Player player){
+		List<ActionCard> actionCardList=player.getActionCards();
+		Set<Integer> actionCardIdSet=CollectionsFactory.createSetFactory().createSet();
+		for(ActionCard c:actionCardList){
+			actionCardIdSet.add(c.getIdCard());
+		}
+		System.out.println(actionCardList.toString());
+		Integer cardIdToBePlayed=-1;
+		while(!actionCardIdSet.contains(cardIdToBePlayed)){
+			cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Selecciona una carta:");
+		}
+		for(ActionCard actionCard:actionCardList){
+			if(actionCard.getIdCard()==cardIdToBePlayed){
+				if(actionCard instanceof RestImpl){
+					actionCard = new RestImpl(this,player);
+				}
+				actionCard.execute();
+				
+				player.discardActionCard(cardIdToBePlayed);
+				
+				break;
+			}
+		}
+		if(player.getActionCards().isEmpty()){
+			player.getActionCards().addAll(player.getdiscartpile());
+			player.getdiscartpile().clear();
+		}
+	}
+	
+	protected void playDiscardActionCards(Player player){
+		List<ActionCard> discardActionCardList=player.getdiscartpile();
+		System.out.println(discardActionCardList.toString());
+		Integer cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Seleccione una carta: ");
+		for(ActionCard actionCard:discardActionCardList){
+			if(actionCard.getIdCard()==cardIdToBePlayed){
+				actionCard.execute();
+				if((getMonth()).equals("AUGUST") || (getMonth()).equals("SEPTEMBER")){
+					player.addVictoryPoints(-4);
+				}else{
+					player.addReputation(2);
+				}
+			}
+		}
+	}
+
+	
 }
