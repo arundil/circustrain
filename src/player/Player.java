@@ -36,6 +36,11 @@ public interface Player {
 	public ActionCard discardActionCard(Integer id);
 	public void discardTalent(Talent t);
 	public void addActionCards(List<ActionCard> actioncards);
+	
+	public void playActionCard();
+	public void playDiscardActionCards(String month);
+	public void collectMoney();
+	public void playerState();
 
 	public Integer getWeeksToPerformance();
 	public void setWeeksToPerformance(Integer weeks);

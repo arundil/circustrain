@@ -36,9 +36,6 @@ public abstract class CircusTrainGame{
 	protected abstract void finalMonth();
 	protected abstract void selectCase(Player player);
 	protected abstract void rotatePlayers();
-	protected abstract void collectMoney(Player player);
-	protected abstract void playerState(Player player);
-
 	
 	public CircusTrainGame(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -177,7 +174,7 @@ public abstract class CircusTrainGame{
 			for(Player currentPlayer : playerList){
 				//Se muestra el estado del jugador
 				System.out.println("\n \n Es tu turno, " + currentPlayer.getName());
-				playerState(currentPlayer);
+				currentPlayer.playerState();
 				
 				//Se le pregunta al jugador que va a hacer segun sus condiciones actuales
 				selectCase(currentPlayer);
@@ -209,93 +206,25 @@ public abstract class CircusTrainGame{
 		}
 	}
 	
+	
+	//Candidata a ser movida a Player
 	protected void executeCase(Player player){
 		if(getFollowingAction().equals("1")){
 			
-			playActionCard(player);
+			player.playActionCard();
 		}else{
 			if(getFollowingAction().equals("2")){
-				
-				playDiscardActionCards(player);
+				player.playDiscardActionCards(getMonth());
 			}
 			if(getFollowingAction().equals("3")){
-				collectMoney(player);
+				player.collectMoney();
 			}
 		}
 	}
 	
-	protected void commonPlayerState(Player player) {
-		String messageForTwoWeeksPerformance = 
-			"Debes actuar " + player.getWeeksToPerformance()+" vez/veces más para puntuar.";
-		if(player.getCity().hasPerfomance()){
-			
-			//TODO: Peste, peste, peste.....
-			if(player.getCity().getPerformance() instanceof PerformanceDemand){
-				PerformanceDemand performance =(PerformanceDemand) player.getCity().getPerformance();
-				if(performance.isTwoWeeks()){			
-					System.out.println("Recuerda que estás en una ciudad que tiene una demanda de actuación de dos semanas."+"\n"+messageForTwoWeeksPerformance);
-				}
-			}
-		}
-		String actionCardList=player.getActionCards().toString();
-		System.out.println("Tienes la/s siguiente/s carta/s de acción: \n "+actionCardList);
-		if(!player.getdiscartpile().isEmpty()){
-			String discardActionCardList=player.getdiscartpile().toString();			
-			System.out.println("Tienes la/s siguiente/s carta/s de acción en tu pila de cartas descartadas: "+discardActionCardList);
-		}
-		System.out.println("Tienes los siguientes talentos: "+player.getTalents().toString());
-		System.out.println("Tu reputación es "+player.getReputation());			
-	//No haria falta si mostramo el tablero.
-		System.out.println("Tu tirada de dado máxima es: "+player.getHigherDiceScore());
-		
-		System.out.println("Actualmente estás en: "+player.getCity().toString());
-		System.out.println("Tienes "+player.getMoney()+" $");
-	}
 	
-	protected void playActionCard(Player player){
-		List<ActionCard> actionCardList=player.getActionCards();
-		Set<Integer> actionCardIdSet=CollectionsFactory.createSetFactory().createSet();
-		for(ActionCard c:actionCardList){
-			actionCardIdSet.add(c.getIdCard());
-		}
-		System.out.println(actionCardList.toString());
-		Integer cardIdToBePlayed=-1;
-		while(!actionCardIdSet.contains(cardIdToBePlayed)){
-			cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Selecciona una carta:");
-		}
-		for(ActionCard actionCard:actionCardList){
-			if(actionCard.getIdCard()==cardIdToBePlayed){
-				if(actionCard instanceof RestImpl){
-					actionCard = new RestImpl(this,player);
-				}
-				actionCard.execute();
-				
-				player.discardActionCard(cardIdToBePlayed);
-				
-				break;
-			}
-		}
-		if(player.getActionCards().isEmpty()){
-			player.getActionCards().addAll(player.getdiscartpile());
-			player.getdiscartpile().clear();
-		}
-	}
 	
-	protected void playDiscardActionCards(Player player){
-		List<ActionCard> discardActionCardList=player.getdiscartpile();
-		System.out.println(discardActionCardList.toString());
-		Integer cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Seleccione una carta: ");
-		for(ActionCard actionCard:discardActionCardList){
-			if(actionCard.getIdCard()==cardIdToBePlayed){
-				actionCard.execute();
-				if((getMonth()).equals("AUGUST") || (getMonth()).equals("SEPTEMBER")){
-					player.addVictoryPoints(-4);
-				}else{
-					player.addReputation(2);
-				}
-			}
-		}
-	}
+	
 
 	
 }

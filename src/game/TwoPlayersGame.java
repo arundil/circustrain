@@ -265,18 +265,8 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 	}	
 	
-	protected void collectMoney(Player player){
-		player.addMoney(5);
-		player.addReputation(1);
-	}
-
-	protected void playerState(Player player) {
-		commonPlayerState(player);
-		System.out.println("Tus puntos de máxima actuación son: "+player.getPerformanceMax());
-		System.out.println("Tus Puntos de Victoria son: "+player.getVictoryPoints());
-		
-	}
 	
+
 	protected void stealTalent(Player player){
 		List<Player> playerList=getPlayerList();
 		Player otherPlayer=null;
@@ -317,7 +307,9 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 				break;
 			}
 		}		
+		
+		
 	}
-	
+
 
 }

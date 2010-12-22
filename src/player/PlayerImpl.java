@@ -2,12 +2,15 @@ package player;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.lang.Math;
 import actionCards.ActionCard;
 import board.City;
 import performance.Performance;
+import performance.PerformanceDemand;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 
 
 public class PlayerImpl implements Player {
@@ -191,7 +194,81 @@ public class PlayerImpl implements Player {
 		return "Your turn "+getName()+ ". You are now in " +getCity()+ ".You have $"+getMoney();
 	}
 
+	public void playActionCard(){
+		List<ActionCard> actionCardList=this.getActionCards();
+		Set<Integer> actionCardIdSet=CollectionsFactory.createSetFactory().createSet();
+		for(ActionCard c:actionCardList){
+			actionCardIdSet.add(c.getIdCard());
+		}
+		System.out.println(actionCardList.toString());
+		Integer cardIdToBePlayed=-1;
+		while(!actionCardIdSet.contains(cardIdToBePlayed)){
+			cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Selecciona una carta:");
+		}
+		for(ActionCard actionCard:actionCardList){
+			if(actionCard.getIdCard()==cardIdToBePlayed){
+
+				actionCard.execute();
+				
+				discardActionCard(cardIdToBePlayed);
+				
+				break;
+			}
+		}
+		if(getActionCards().isEmpty()){
+			getActionCards().addAll(getdiscartpile());
+			getdiscartpile().clear();
+		}
+	}
 	
+	public void playDiscardActionCards(String month){
+		List<ActionCard> discardActionCardList=getdiscartpile();
+		System.out.println(discardActionCardList.toString());
+		Integer cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Seleccione una carta: ");
+		for(ActionCard actionCard:discardActionCardList){
+			if(actionCard.getIdCard()==cardIdToBePlayed){
+				actionCard.execute();
+				if((month).equals("AUGUST") || (month).equals("SEPTEMBER")){
+					addVictoryPoints(-4);
+				}else{
+					addReputation(2);
+				}
+			}
+		}
+	}
+	
+	public void collectMoney(){
+		addMoney(5);
+		addReputation(1);
+	}
+	
+	public void playerState() {
+		String messageForTwoWeeksPerformance = 
+			"Debes actuar " + getWeeksToPerformance()+" vez/veces más para puntuar.";
+		if(getCity().hasPerfomance()){
+			
+			//TODO: Peste, peste, peste.....
+			if(getCity().getPerformance() instanceof PerformanceDemand){
+				PerformanceDemand performance =(PerformanceDemand)getCity().getPerformance();
+				if(performance.isTwoWeeks()){			
+					System.out.println("Recuerda que estás en una ciudad que tiene una demanda de actuación de dos semanas."+"\n"+messageForTwoWeeksPerformance);
+				}
+			}
+		}
+		String actionCardList=getActionCards().toString();
+		System.out.println("Tienes la/s siguiente/s carta/s de acción: \n "+actionCardList);
+		if(!getdiscartpile().isEmpty()){
+			String discardActionCardList=getdiscartpile().toString();			
+			System.out.println("Tienes la/s siguiente/s carta/s de acción en tu pila de cartas descartadas: "+discardActionCardList);
+		}
+		System.out.println("Tienes los siguientes talentos: "+getTalents().toString());
+		System.out.println("Tu reputación es "+getReputation());			
+	//No haria falta si mostramo el tablero.
+		System.out.println("Tu tirada de dado máxima es: "+getHigherDiceScore());
+		
+		System.out.println("Actualmente estás en: "+getCity().toString());
+		System.out.println("Tienes "+getMoney()+" $");
+	}
 	
 	
 	//=========================================================================
@@ -215,5 +292,7 @@ public class PlayerImpl implements Player {
 		
 		return list;		
 	}
+
+
 	
 }

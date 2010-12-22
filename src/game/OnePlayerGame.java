@@ -113,7 +113,4 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 	}
 
 
-	protected void playerState(Player player) {
-		commonPlayerState(player);
-	}
 }

@@ -37,19 +37,19 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 			Acrobat acrobat = new AcrobatImpl();
 			Integer answer;
 			
-			System.out.println(" You are in Canada! You can take \n " +
-					"[1]one clown \n " +
-					"[2]one acrobat \n " +
-					"[3]or rise your reputation in one level");
+			System.out.println(" ¡¡¡Estás en Canada!!! Puedes contratar \n " +
+					"[1] un payaso \n " +
+					"[2] un acrobata \n " +
+					"[3] incrementar un nivel tu reputación");
 			
-			answer= readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:", "1,2,3");
+			answer= readDataFromKeyBoard.takeParametersToIntegerRestricted("Opciones:", "1,2,3");
 			
 			if(answer == 1){
 				if(ctg.getTalentBag().getNumTalents(clown)>0){
 					listtalent.add(ctg.getTalentBag().removeTalent(clown));
 					getPlayer().addTalent(listtalent);
 				}else{
-					System.out.println("Clowns are not available");
+					System.out.println("No quedan payasos");
 					execute();
 				}
 			}
@@ -58,19 +58,19 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 					listtalent.add(ctg.getTalentBag().removeTalent(acrobat));
 					getPlayer().addTalent(listtalent);
 				}else{
-					System.out.println("Acrobat are not available");
+					System.out.println("No quedan acrobatas");
 					execute();
 				}
 				
 			}
 			if(answer == 3){
 				if(!getPlayer().addReputation(1)){
-					System.out.println("Rise reputation are not available");
+					System.out.println("Ya tienes la mejor reputación. No es posible subirla más.");
 					execute();
 				}
 			}
 		}else{
-			System.out.println("so you are not in Canada. Now you rest");
+			System.out.println("No estás en Canada. Descansa.");
 		}
 	}
 
