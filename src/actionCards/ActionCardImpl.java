@@ -20,13 +20,13 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 		Integer answer;
 		List<City> adjCities = CollectionsFactory.createListFactory().createList();
 
-		System.out.println("Selecciona la ciudad a la que quieres viajar:");
+		String mens="Selecciona la ciudad a la que quieres viajar:";
 		//cambio de player a getPlayer()
 		adjCities=getPlayer().getCity().maxMovement(move);
 		for (int i=0;i<adjCities.size();i++){
 			System.out.println("--> ["+i+"]"+ adjCities.get(i));
 		}
-		answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Option:", adjCities.size());
+		answer= readDataFromKeyBoard.takeParametersToIntegerTopValue(mens+"\nOpcion:", adjCities.size());
 		getPlayer().moveCity(adjCities.get(answer));
 	}
 	//borrado parametro player

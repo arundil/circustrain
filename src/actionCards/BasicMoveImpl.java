@@ -25,8 +25,8 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 		System.out.println(getPlayer().getName()+" ha usado la carta ==> MOVIMIENTO BÁSICO <== \n");
 		
 		if (getPlayer().getCity().hasPerfomance()){
-			System.out.println("¿Que quieres hacer, Viajar[1] o Actuar/Contratar[2]");
-			answer=readDataFromKeyBoard.takeParametersToIntegerRestricted("Option:","1,2");
+			String mens="¿Que quieres hacer, Viajar[1] o Actuar/Contratar[2]";
+			answer=readDataFromKeyBoard.takeParametersToIntegerRestricted(mens+"\nOption:","1,2");
 		}else{
 			System.out.println(getPlayer().getCity()+" no tiene Performance");
 			answer=1;
