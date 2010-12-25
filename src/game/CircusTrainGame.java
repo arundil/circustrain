@@ -1,6 +1,8 @@
 package game;
 
 import game.factory.GameFactory;
+import gameState.GameState;
+import gameState.GreenState;
 
 import java.util.List;
 import java.util.Set;
@@ -29,6 +31,7 @@ public abstract class CircusTrainGame{
 	protected Talent clown = GameFactory.createTalent("CLOWN");
 	protected TalentBag talentBag;
 	protected List<Player> playerList;
+	protected GameState stage;
 	
 	protected abstract void gameOver();
 	protected abstract void finalWage();
@@ -43,21 +46,40 @@ public abstract class CircusTrainGame{
 		performanceBag= GameFactory.createPerformanceBag();
 		talentBag = GameFactory.createTalentBag();
 		theClown.add(clown);
-		week = 0;
-		month = "APRIL";
-		refreshMonth();	
+		stage=new GreenState(0,"APRIL");
 		completeBoardPerformances();
 	}
 
 
 
 	public void refreshMonth(){
-		if(week>=0 && week<=3)month = "APRIL";
-		if(week>=4 && week<=8) month = "MAY";
-		if(week>=9 && week<=12)month = "JUNE";
-		if(week>=13 && week<=17)month = "JULY";
-		if(week>=18 && week<=21)month = "AUGUST";
-		if(week>=22 && week<=26)month = "SEPTEMBER";	
+		Boolean changed=false;
+		week++;
+		if (week==4){
+			month="MAY";
+			changed=true;
+		}
+		if (week==9){
+			month="JUNE";
+			changed=true;
+		}
+		if (week==13){
+			month="JULY";
+			changed=true;
+		}
+		if (week==18){
+			month="AUGUST";
+			changed=true;
+		}
+		if (week==22){
+			month="SEPTEMBER";
+			changed=true;
+		}
+		
+		if(changed){
+			finalMonth();
+			rotatePlayers();
+		}
 	}
 
 	public void completeBoardPerformances(){
@@ -165,8 +187,7 @@ public abstract class CircusTrainGame{
 		canadianSelector();
 		
 		while(week<27){
-			//Comprueba si se ha cambiado de mes y en caso positivo, ejecuta las acciones de cambio de mes.
-			monthChangeComprobator();
+			
 			//Mostrar ciudades con eventos
 			showPerformanceSituation();
 			System.out.println("\n \n Esta es la semana " + week + " del mes " + month);
@@ -185,21 +206,13 @@ public abstract class CircusTrainGame{
 				//Se mira el número de ciudades y se añaden si es el caso
 				completeBoardPerformances();					
 			}
-			week++;			
+			//Incrementa la semana y en caso de cambio de mes, ejecuta las acciones de final de mes;
+			refreshMonth();			
 		}
 		gameOver();
 		results();
 	}
-	private void monthChangeComprobator() {
-		String oldMonth=this.getMonth();
-		refreshMonth();
-		String newMonth=this.getMonth();
-		//Si hay cambio de mes se llevaran a cabo las acciones de fin de mes
-		if(!(oldMonth.equals(newMonth))){
-			finalMonth();
-			rotatePlayers();
-		}
-	}
+
 	protected void canadianSelector() {
 		for(Player playerSelectsCity:playerList){
 			playerSelectsCity.moveCity(selectCanadianCity(playerSelectsCity));
