@@ -168,6 +168,10 @@ Día 11 de noviembre de 2010 a las 21:00, entrega iteración 3
 Día 9 de diciembre de 2010 a las 23:00, entrega iteración 4
 \end_layout
 
+\begin_layout Itemize
+Día 23 de diciembre de 2010 a las 11:40, entrega iteración 5
+\end_layout
+
 \begin_layout Chapter*
 Seguimiento
 \end_layout
@@ -341,7 +345,7 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -368,7 +372,7 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+25
 \end_layout
 
 \end_inset
@@ -426,7 +430,7 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -453,7 +457,7 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+25
 \end_layout
 
 \end_inset
@@ -511,7 +515,7 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -538,7 +542,7 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+25
 \end_layout
 
 \end_inset
@@ -596,7 +600,7 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -623,7 +627,7 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+25
 \end_layout
 
 \end_inset
@@ -681,7 +685,7 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -708,7 +712,7 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+25
 \end_layout
 
 \end_inset
@@ -766,7 +770,7 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -793,7 +797,7 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+25
 \end_layout
 
 \end_inset
@@ -852,7 +856,7 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+30
 \end_layout
 
 \end_inset
@@ -879,7 +883,7 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
-120
+150
 \end_layout
 
 \end_inset
@@ -949,7 +953,7 @@ Memorandos técnicos.
 \end_layout
 
 \begin_layout Section*
-Asuntos pendientes:
+Asuntos pendientes para iteración 5:
 \end_layout
 
 \begin_layout Itemize
@@ -972,6 +976,48 @@ Documentos de asignación de responsabilidades.
 Integración de las diferentes partes.
 \end_layout
 
+\begin_layout Section*
+Añadidos en la iteración 5:
+\end_layout
+
+\begin_layout Itemize
+Añadidos documentos de asginación de responsabilidades.
+\end_layout
+
+\begin_layout Itemize
+Reestructuración de las clases del juego (refactorización) con los memorandos
+ técnicos correspondientes.
+\end_layout
+
+\begin_layout Itemize
+Integración de los componentes del juego (ya se puede jugar con ciertos
+ bugs).
+\end_layout
+
+\begin_layout Itemize
+Implementación casi total de los modos de juego pendientes.
+\end_layout
+
+\begin_layout Section*
+Asuntos pendientes para iteración 6:
+\end_layout
+
+\begin_layout Itemize
+Terminar de implementar los modos de juego.
+\end_layout
+
+\begin_layout Itemize
+Documentar las estructuras que faltan y las que surjan.
+\end_layout
+
+\begin_layout Itemize
+Realizar las pruebas unitarias correspondientes.
+\end_layout
+
+\begin_layout Itemize
+Subsanar los fallos en el funcionamiento del juego.
+\end_layout
+
 \begin_layout Chapter*
 URL de implementación
 \end_layout
@@ -988,12 +1034,12 @@ Pruebas unitarias
 Pruebas para Board
 \end_layout
 
-\begin_layout Itemize
-Pruebas para el comando CommandPerformance
-\end_layout
-
 \begin_layout Chapter*
 Extensiones
+\end_layout
+
+\begin_layout Itemize
+Posible interfaz gráfica
 \end_layout
 
 \begin_layout Standard
