@@ -129,7 +129,7 @@ public class PerformanceBagImpl implements PerformanceBag {
 
 	@Override
 	public Performance getPerformance(String color) {
-		// TODO Auto-generated method stub
+		color=color.toLowerCase();
 		Performance r=null;
 		if(color.equals("red")){
 			Collections.shuffle(redBag);

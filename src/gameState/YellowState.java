@@ -5,22 +5,18 @@ import java.util.List;
 import performance.Performance;
 import game.CircusTrainGame;
 
-public class GreenState extends GameStateImpl implements GameState {
-	
-	public GreenState(CircusTrainGame game){
+public class YellowState extends GameStateImpl implements GameState {
+
+	public YellowState(CircusTrainGame game){
 		super(game);
-		month="APRIL";
 		completeBoard();
 	}
-	
 	public void completeBoard() {
-		completeBoardPerformances(8);
+		completeBoardPerformances(10);
 	}
-	
 	public Performance getPerformance(){
-		List<Performance> bag=game.getPerformanceBag().getGreenBag();
+		List<Performance> bag=game.getPerformanceBag().getYellowBag();
 		return getPerformanceInList(bag);
 	}
-
 
 }

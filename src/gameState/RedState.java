@@ -1,18 +1,23 @@
 package gameState;
 
+import java.util.List;
+
+import performance.Performance;
 import game.CircusTrainGame;
 
 public class RedState extends GameStateImpl implements GameState {
-
-	public RedState(Integer week, String month) {
-		super(week, month);
-
+	
+	public RedState(CircusTrainGame game){
+		super(game);
+		completeBoard();
 	}
 
-	@Override
-	public void completePerfomances(CircusTrainGame game) {
-		// TODO Auto-generated method stub
-		
+	public void completeBoard() {
+		completeBoardPerformances(10);
 	}
-
+	
+	public Performance getPerformance(){
+		List<Performance> bag=game.getPerformanceBag().getRedBag();
+		return getPerformanceInList(bag);
+	}
 }

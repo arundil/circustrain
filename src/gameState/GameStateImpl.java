@@ -1,49 +1,34 @@
 package gameState;
 
+import java.util.List;
+
+import performance.BankruptCircus;
+import performance.Performance;
+import talent.Talent;
 import game.CircusTrainGame;
 
 public abstract class GameStateImpl implements GameState {
 	
-	private String month="APRIL";
-	private Integer week=0;
+	protected String month;
+	protected CircusTrainGame game;
 	
-	public abstract void completePerfomances(CircusTrainGame game);
-	
-	public GameStateImpl(Integer week,String month){
-		this.week=week;
-		this.month=month;
-	}
-
-
-	@Override
-	public String getMonth() {
-		return month;
-	}
-
-	@Override
-	public Integer getWeek() {
-		return week;
+	public GameStateImpl(CircusTrainGame game){
+		this.game=game;
 	}
 	
-	protected void setMonth(String month){
-		this.month=month;
-	}
-	
-	protected void setWeek(Integer week){
-		this.week=week;
-	}
-
 	@Override
 	public GameState incrementTime() {
 		GameState stateToReturn=this;
-		week++;
+		game.incrementWeek();
+		Integer week=game.getWeek();
+		completeBoard();
 		if (week==4){
 			month="MAY";
-			
 		}
 		if (week==9){
 			month="JUNE";
-			stateToReturn=new OrangeState(week,month);
+			game.getBoard().removeAllPerformances();
+			stateToReturn=new YellowState(game);
 		}
 		if (week==13){
 			month="JULY";
@@ -51,12 +36,48 @@ public abstract class GameStateImpl implements GameState {
 		}
 		if (week==18){
 			month="AUGUST";
-			stateToReturn=new RedState(week,month);
+			game.getBoard().removeAllPerformances();
+			stateToReturn=new RedState(game);
 		}
 		if (week==22){
 			month="SEPTEMBER";
 		}
 		return stateToReturn;
 
+	}
+	
+	public String getMonth(){
+		return month;
+	}
+	
+	public Performance getPerformanceInList(List<Performance> bag){
+		Performance performanceToReturn;
+		performanceToReturn = bag.get(1);
+		bag.get(1);
+		bag.remove(1);
+		return performanceToReturn;
+	}
+	
+	public String toString(){
+		return this.getClass().getName();
+	}
+	
+	public void completeBoardPerformances(Integer maxNumberOfPerformances){
+		while(game.getBoard().countCitiesWithPerfomance()<maxNumberOfPerformances){
+			Performance randomPerformance = getPerformance();
+			if(randomPerformance instanceof BankruptCircus){
+				BankruptCircus bck = (BankruptCircus) randomPerformance;
+				for(Talent t: bck.getTalentCircus()){
+					if(game.getTalentBag().getNumTalents(t)>0){
+						game.getTalentBag().removeTalent(t);
+					}else{
+						bck.getTalentCircus().remove(t);
+					}
+				}
+				game.getBoard().addPerfomanceInRandomCity(bck);
+			}else{
+				game.getBoard().addPerfomanceInRandomCity(randomPerformance);
+			}	
+		}
 	}
 }

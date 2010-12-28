@@ -1,10 +1,10 @@
 package gameState;
 
-import game.CircusTrainGame;
+import performance.Performance;
 
 public interface GameState {
-	public void completePerfomances(CircusTrainGame game);
+	public void completeBoard();
 	public GameState incrementTime();
-	public Integer getWeek();
 	public String getMonth();
+	public Performance getPerformance();
 }

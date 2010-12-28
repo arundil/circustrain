@@ -5,17 +5,10 @@ import gameState.GameState;
 import gameState.GreenState;
 
 import java.util.List;
-import java.util.Set;
-
-import actionCards.ActionCard;
-import actionCards.RestImpl;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
 import board.City;
-import performance.BankruptCircus;
-import performance.Performance;
-import performance.PerformanceDemand;
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
@@ -31,7 +24,7 @@ public abstract class CircusTrainGame{
 	protected Talent clown = GameFactory.createTalent("CLOWN");
 	protected TalentBag talentBag;
 	protected List<Player> playerList;
-	protected GameState stage;
+	protected GameState gameState=null;
 	
 	protected abstract void gameOver();
 	protected abstract void finalWage();
@@ -44,10 +37,11 @@ public abstract class CircusTrainGame{
 		playerList=CollectionsFactory.createListFactory().createList();
 		board=GameFactory.createBoard();
 		performanceBag= GameFactory.createPerformanceBag();
+		System.out.println(performanceBag.getGreenBag().size());
 		talentBag = GameFactory.createTalentBag();
 		theClown.add(clown);
-		stage=new GreenState(0,"APRIL");
-		completeBoardPerformances();
+		week=0;
+		gameState=new GreenState(this);
 	}
 
 
@@ -82,57 +76,8 @@ public abstract class CircusTrainGame{
 		}
 	}
 
-	public void completeBoardPerformances(){
-		if(month.equals("APRIL") || month.equals("MAY")){
-			while(board.getCitiesWithPerfomance().size()<8){
-				Performance randomPerformance = performanceBag.getPerformance("green");
-				
-				if(randomPerformance instanceof BankruptCircus){
-					BankruptCircus bck = (BankruptCircus) randomPerformance;
-					for(Talent t: bck.getTalentCircus()){
-						if(talentBag.getNumTalents(t)>0){
-							talentBag.removeTalent(t);
-						}else{
-							bck.getTalentCircus().remove(t);
-						}
-					}
-					board.addPerfomanceInRandomCity(bck);
-				}else
-					board.addPerfomanceInRandomCity(randomPerformance);
-
-				performanceBag.removePerformance(randomPerformance);
-			}
-		}
+	
 		
-		if(month.equals("JUNE") || month.equals("JULY")){
-			while(board.getCitiesWithPerfomance().size()<10){
-				Performance randomPerformance=performanceBag.getPerformance("yellow");
-				if(randomPerformance instanceof BankruptCircus){
-					BankruptCircus bck = (BankruptCircus) randomPerformance;
-					for(Talent t: bck.getTalentCircus()){
-						if(talentBag.getNumTalents(t)>0){
-							talentBag.removeTalent(t);
-						}else{
-							bck.getTalentCircus().remove(t);
-						}
-					}
-					board.addPerfomanceInRandomCity(bck);
-				}else
-					board.addPerfomanceInRandomCity(randomPerformance);
-				performanceBag.removePerformance(randomPerformance);
-			}
-		}
-		if(month.equals("AUGUST") || month.equals("SEPTEMBER")){
-			while(board.getCitiesWithPerfomance().size()<12){
-				Performance randomPerformance=performanceBag.getPerformance("red");
-				board.addPerfomanceInRandomCity(randomPerformance);
-				performanceBag.removePerformance(randomPerformance);
-			}
-		}
-	}
-	
-
-	
 	public abstract void noClownsNoAnimals();
 	
 	public Board getBoard(){
@@ -169,7 +114,7 @@ public abstract class CircusTrainGame{
 	}	
 	
 	public String getMonth(){
-		return month;
+		return gameState.getMonth();
 	}	
 	
 	public void setFollowingAction(String action){
@@ -182,7 +127,7 @@ public abstract class CircusTrainGame{
 	}
 	
 	public void runGame(){
-
+		System.out.println(performanceBag.getGreenBag().size());
 		showPerformanceSituation();
 		canadianSelector();
 		
@@ -190,7 +135,7 @@ public abstract class CircusTrainGame{
 			
 			//Mostrar ciudades con eventos
 			showPerformanceSituation();
-			System.out.println("\n \n Esta es la semana " + week + " del mes " + month);
+			System.out.println("\n \n Esta es la semana " + week + " del mes " + gameState.getMonth());
 			
 			for(Player currentPlayer : playerList){
 				//Se muestra el estado del jugador
@@ -203,11 +148,9 @@ public abstract class CircusTrainGame{
 				//Se lleva a cabo la accion que el jugador a elegido
 				executeCase(currentPlayer);				
 				
-				//Se mira el número de ciudades y se añaden si es el caso
-				completeBoardPerformances();					
 			}
 			//Incrementa la semana y en caso de cambio de mes, ejecuta las acciones de final de mes;
-			refreshMonth();			
+			gameState.incrementTime();		
 		}
 		gameOver();
 		results();
@@ -233,6 +176,16 @@ public abstract class CircusTrainGame{
 				player.collectMoney();
 			}
 		}
+	}
+	
+	public PerformanceBag getPerformanceBag(){
+		return performanceBag;
+	}
+	public void incrementWeek(){
+		week++;
+	}
+	public Integer getWeek(){
+		return week;
 	}
 	
 	

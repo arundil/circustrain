@@ -142,5 +142,13 @@ public class BoardImpl implements Board {
 		Integer random=(int)(Math.random()*cities.size()); 
 		return cities.get(random);
 	}
+
+	@Override
+	public void removeAllPerformances() {
+		for (City cityWithPerformance:this.getCitiesWithPerfomance()){
+			cityWithPerformance.removePerformance();
+		}
+		
+	}
 	
 }
