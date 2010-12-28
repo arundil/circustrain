@@ -1,6 +1,7 @@
 package performance;
 
 
+import game.CircusTrainGame;
 import game.factory.GameFactory;
 
 import java.util.List;
@@ -62,5 +63,22 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 			}
 		}
 		player.addTalent(newtalents);
+		this.getTalentCircus().removeAll(newtalents);
+		if (getTalentCircus().size()==0){
+			player.getCity().removePerformance();
+			}	
+	}
+	
+	public void land(Player p){
+		
+	}
+	public void put(CircusTrainGame game){
+		for(Talent t: getTalentCircus()){
+			if(game.getTalentBag().getNumTalents(t)>0){
+				game.getTalentBag().removeTalent(t);
+			}else{
+				getTalentCircus().remove(t);
+			}
+		}
 	}
 }

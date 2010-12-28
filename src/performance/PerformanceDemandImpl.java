@@ -1,6 +1,8 @@
 package performance;
 
 
+import game.CircusTrainGame;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -101,5 +103,11 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 		if(player.getWeeksToPerformance()==0){
 			player.setWeeksToPerformance(1);
 		}
+	}
+	public void land(Player p){
+		
+	}
+	public void put(CircusTrainGame game){
+		game.getBoard().addPerfomanceInRandomCity(this);
 	}
 }

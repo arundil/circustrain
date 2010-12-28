@@ -179,6 +179,9 @@ public class PlayerImpl implements Player {
 	@Override
 	public void moveCity(City cityToGo) {
 		city = cityToGo;
+		if(city.hasPerfomance()){
+			city.getPerformance().land(this);
+		}
 	}
 	
 	public void discardTalent(Talent talentToDiscard){

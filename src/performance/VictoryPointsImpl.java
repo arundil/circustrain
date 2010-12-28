@@ -1,5 +1,6 @@
 package performance;
 
+import game.CircusTrainGame;
 import player.Player;
 
 
@@ -27,7 +28,15 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 
 	@Override
 	public void execute(Player player) {
-		player.addVictoryPoints(victoryPoints);		
+
+	}
+	
+	public void land(Player player){
+		player.addVictoryPoints(victoryPoints);
+		player.getCity().removePerformance();
+	}
+public void put(CircusTrainGame game){
+		game.getBoard().addPerfomanceInRandomCity(this);
 	}
 
 }

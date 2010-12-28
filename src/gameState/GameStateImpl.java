@@ -52,9 +52,9 @@ public abstract class GameStateImpl implements GameState {
 	
 	public Performance getPerformanceInList(List<Performance> bag){
 		Performance performanceToReturn;
-		performanceToReturn = bag.get(1);
-		bag.get(1);
-		bag.remove(1);
+		Integer random=(int)(Math.random()*bag.size()); 
+		performanceToReturn = bag.get(random);
+		bag.remove(random);
 		return performanceToReturn;
 	}
 	
@@ -65,19 +65,7 @@ public abstract class GameStateImpl implements GameState {
 	public void completeBoardPerformances(Integer maxNumberOfPerformances){
 		while(game.getBoard().countCitiesWithPerfomance()<maxNumberOfPerformances){
 			Performance randomPerformance = getPerformance();
-			if(randomPerformance instanceof BankruptCircus){
-				BankruptCircus bck = (BankruptCircus) randomPerformance;
-				for(Talent t: bck.getTalentCircus()){
-					if(game.getTalentBag().getNumTalents(t)>0){
-						game.getTalentBag().removeTalent(t);
-					}else{
-						bck.getTalentCircus().remove(t);
-					}
-				}
-				game.getBoard().addPerfomanceInRandomCity(bck);
-			}else{
-				game.getBoard().addPerfomanceInRandomCity(randomPerformance);
-			}	
+			randomPerformance.put(game);
 		}
 	}
 }

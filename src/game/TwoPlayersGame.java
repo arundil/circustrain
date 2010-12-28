@@ -265,8 +265,6 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 	}	
 	
-	
-
 	protected void stealTalent(Player player){
 		List<Player> playerList=getPlayerList();
 		Player otherPlayer=null;

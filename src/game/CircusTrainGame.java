@@ -101,7 +101,7 @@ public abstract class CircusTrainGame{
 		}
 		String selectedCanadianCity=readDataFromKeyBoard.takeParametersToStringRestricted(askCanadianCity, askCanadianCityConditions);
 		Integer citySelector=new Integer(selectedCanadianCity);
-		return canadianCityList.get(citySelector);
+		return canadianCityList.get(citySelector-1);
 	}
 	
 	
