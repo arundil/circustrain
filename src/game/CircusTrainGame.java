@@ -9,6 +9,8 @@ import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
 import board.City;
+import performance.BankruptCircus;
+import performance.Performance;
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
@@ -25,7 +27,6 @@ public abstract class CircusTrainGame{
 	protected TalentBag talentBag;
 	protected List<Player> playerList;
 	protected GameState gameState=null;
-	
 	protected abstract void gameOver();
 	protected abstract void finalWage();
 	protected abstract void results();
@@ -188,9 +189,22 @@ public abstract class CircusTrainGame{
 		return week;
 	}
 	
-	
-	
-	
-
-	
+	public void completeBoardPerformances(Integer maxNumberOfPerformances){
+		while(getBoard().countCitiesWithPerfomance()<maxNumberOfPerformances){
+			Performance randomPerformance = gameState.getPerformance();
+			if(randomPerformance instanceof BankruptCircus){
+				BankruptCircus bck = (BankruptCircus) randomPerformance;
+				for(Talent t: bck.getTalentCircus()){
+					if(getTalentBag().getNumTalents(t)>0){
+						getTalentBag().removeTalent(t);
+					}else{
+						bck.getTalentCircus().remove(t);
+					}
+				}
+				getBoard().addPerfomanceInRandomCity(bck);
+			}else{
+				getBoard().addPerfomanceInRandomCity(randomPerformance);
+			}	
+		}
+	}
 }

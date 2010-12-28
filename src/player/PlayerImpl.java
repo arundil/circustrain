@@ -237,6 +237,11 @@ public class PlayerImpl implements Player {
 		}
 	}
 	
+	public void selectCard(List<ActionCard> actionCardsList){
+		
+		
+	}
+	
 	public void collectMoney(){
 		addMoney(5);
 		addReputation(1);
