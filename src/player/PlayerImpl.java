@@ -241,7 +241,18 @@ public class PlayerImpl implements Player {
 	}
 	
 	public void selectCard(List<ActionCard> actionCardsList){
-		
+		String question="Seleccione una carta:/n";
+		String restriction="";
+		for(int i=0;i<actionCardsList.size();i++){
+			question=question+"["+i+1+"]"+actionCardsList.iterator().next().toString()+"\n";
+			restriction=restriction+","+i;
+		}
+		String answer=readDataFromKeyBoard.takeParametersToStringRestricted(question, restriction);
+		Integer cardSelector=new Integer(answer);
+		ActionCard actionCardToBeUsed=actionCardsList.get(cardSelector-1);
+		actionCardToBeUsed.execute();
+		//NO se debe dejar utilizar la carta de descanso en la primera ronda de juego
+		//Creo que esto deberia estar en la clase del juego y no aqui para referenciar las semanas
 		
 	}
 	
