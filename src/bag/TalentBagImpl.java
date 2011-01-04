@@ -15,18 +15,19 @@ import utiles.factoria.CollectionsFactory;
 
 public class TalentBagImpl implements TalentBag {
 
-	private Map<Talent, Integer> talents = CollectionsFactory
-			.createMapFactory().createMap();
-
-	Talent cw = new ClownImpl();
-	Talent ac = new AcrobatImpl();
-	Talent fk = new FreakShowImpl();
-	Talent hc = new HumanCannonballImpl();
-	Talent h = new HorseImpl();
-	Talent e = new ElephantImpl();
-	Talent bc = new BigCatImpl();
+	Map<Talent, Integer> talents;
 
 	public TalentBagImpl() {
+
+		Talent cw = new ClownImpl();
+		Talent ac = new AcrobatImpl();
+		Talent fk = new FreakShowImpl();
+		Talent hc = new HumanCannonballImpl();
+		Talent h = new HorseImpl();
+		Talent e = new ElephantImpl();
+		Talent bc = new BigCatImpl();
+
+		talents = CollectionsFactory.createMapFactory().createMap();
 
 		talents.put(cw, 6);
 		talents.put(ac, 6);
@@ -37,8 +38,8 @@ public class TalentBagImpl implements TalentBag {
 		talents.put(e, 5);
 	}
 
-	// Devuelve el número de talentos totales.
-	public Integer getNumTalents(Talent t) {
+	// Devuelve el número de talentos TOTALES que hay en la bolsa.
+	public Integer getNumTalents() {
 		Set<Talent> s = talents.keySet();
 		Integer n = 0;
 		for (Talent ta : s) {
@@ -102,7 +103,7 @@ public class TalentBagImpl implements TalentBag {
 			if (n == 1)
 				s += "y ";
 			s += talents.get(t) + " " + t.getName() + "s\n";
-			// la s final es porque el getInterfaces del toString me lo devuelve
+			// la s final es porque el getInterfaces del toString de TalentImpl me lo devuelve
 			// en singular
 			n--;
 		}

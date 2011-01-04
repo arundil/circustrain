@@ -45,7 +45,7 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 			answer= readDataFromKeyBoard.takeParametersToIntegerRestricted("Opciones:", "1,2,3");
 			
 			if(answer == 1){
-				if(ctg.getTalentBag().getNumTalents(clown)>0){
+				if(ctg.getTalentBag().getNumTypeTalent(clown)>0){
 					listtalent.add(ctg.getTalentBag().removeTalent(clown));
 					getPlayer().addTalent(listtalent);
 				}else{

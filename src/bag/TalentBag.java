@@ -6,7 +6,7 @@ import talent.Talent;
 
 public interface TalentBag {
 
-	public Integer getNumTalents(Talent t);
+	public Integer getNumTalents();
 
 	public Map<Talent, Integer> getTalentBag();
 

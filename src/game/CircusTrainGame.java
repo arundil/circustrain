@@ -195,7 +195,7 @@ public abstract class CircusTrainGame{
 			if(randomPerformance instanceof BankruptCircus){
 				BankruptCircus bck = (BankruptCircus) randomPerformance;
 				for(Talent t: bck.getTalentCircus()){
-					if(getTalentBag().getNumTalents(t)>0){
+					if(getTalentBag().getNumTypeTalent(t)>0){
 						getTalentBag().removeTalent(t);
 					}else{
 						bck.getTalentCircus().remove(t);

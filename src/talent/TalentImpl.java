@@ -19,7 +19,7 @@ public class TalentImpl implements Comparable<Talent>, Talent {
 
 	/*
 	 * Este método devolverá el nombre de la interfaz (nombre del talento) que
-	 * se vaya llamando desde las distintas interfaces esto me servirá para
+	 * se vaya llamando desde las distintas interfaces, esto me servirá para
 	 * hacer una simple llamada al toString de esta clase sin necesidad de crear
 	 * uno para cada tipo de talento.
 	 */

@@ -74,7 +74,7 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 	}
 	public void put(CircusTrainGame game){
 		for(Talent t: getTalentCircus()){
-			if(game.getTalentBag().getNumTalents(t)>0){
+			if(game.getTalentBag().getNumTypeTalent(t)>0){
 				game.getTalentBag().removeTalent(t);
 			}else{
 				getTalentCircus().remove(t);
