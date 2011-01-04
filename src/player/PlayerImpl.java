@@ -105,8 +105,14 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public boolean addReputation(Integer reputationIncrement) {
-		reputation = reputation+reputationIncrement;
-		return true;
+		//Aseguro que reputation esta entre 0 y 7.
+		Boolean res = false;
+		Integer newReputation = reputation + reputationIncrement;
+		if(newReputation<8 && newReputation>-1){
+			reputation = newReputation;
+			res = true;
+		}
+		return res;
 	}
 
 	@Override
@@ -257,8 +263,17 @@ public class PlayerImpl implements Player {
 	}
 	
 	public void collectMoney(){
-		addMoney(5);
-		addReputation(1);
+		Boolean ok = true;
+		Integer level = 0;
+		while(ok){
+			String question="¿Cuántos niveles de reputación deseas bajar?: \n";
+			String restriction="0,1,2,3,4,5,6,7";
+			level = readDataFromKeyBoard.takeParametersToIntegerRestricted(question, restriction);
+			if(addReputation(1*level)){
+				addMoney(5*level);
+				ok = false;
+			}
+		}
 	}
 	
 	public void playerState() {
@@ -266,7 +281,7 @@ public class PlayerImpl implements Player {
 			"Debes actuar " + getWeeksToPerformance()+" vez/veces más para puntuar.";
 		if(getCity().hasPerfomance()){
 			
-			//TODO: Peste, peste, peste.....
+			//TODO: Peste, peste, peste..... pues se quita y santas pascuas que cada jugador se acuerde de donde esta
 			if(getCity().getPerformance() instanceof PerformanceDemand){
 				PerformanceDemand performance =(PerformanceDemand)getCity().getPerformance();
 				if(performance.isTwoWeeks()){			
@@ -282,7 +297,7 @@ public class PlayerImpl implements Player {
 		}
 		System.out.println("Tienes los siguientes talentos: "+getTalents().toString());
 		System.out.println("Tu reputación es "+getReputation());			
-	//No haria falta si mostramo el tablero.
+		//No haria falta si mostramo el tablero.
 		System.out.println("Tu tirada de dado máxima es: "+getHigherDiceScore());
 		
 		System.out.println("Actualmente estás en: "+getCity().toString());
