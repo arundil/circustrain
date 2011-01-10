@@ -1,5 +1,7 @@
 package player;
 
+import gameState.GameState;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -203,56 +205,20 @@ public class PlayerImpl implements Player {
 		return "Your turn "+getName()+ ". You are now in " +getCity()+ ".You have $"+getMoney();
 	}
 
-	public void playActionCard(){
-		List<ActionCard> actionCardList=this.getActionCards();
-		Set<Integer> actionCardIdSet=CollectionsFactory.createSetFactory().createSet();
-		for(ActionCard c:actionCardList){
-			actionCardIdSet.add(c.getIdCard());
-		}
-		System.out.println(actionCardList.toString());
-		Integer cardIdToBePlayed=-1;
-		while(!actionCardIdSet.contains(cardIdToBePlayed)){
-			cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Selecciona una carta:");
-		}
-		for(ActionCard actionCard:actionCardList){
-			if(actionCard.getIdCard()==cardIdToBePlayed){
-
-				actionCard.execute();
-				
-				discardActionCard(cardIdToBePlayed);
-				
-				break;
-			}
-		}
-		if(getActionCards().isEmpty()){
-			getActionCards().addAll(getdiscartpile());
-			getdiscartpile().clear();
-		}
-	}
-	
-	public void playDiscardActionCards(String month){
-		List<ActionCard> discardActionCardList=getdiscartpile();
-		System.out.println(discardActionCardList.toString());
-		Integer cardIdToBePlayed=readDataFromKeyBoard.takeParametersToInteger("Seleccione una carta: ");
-		for(ActionCard actionCard:discardActionCardList){
-			if(actionCard.getIdCard()==cardIdToBePlayed){
-				actionCard.execute();
-				if((month).equals("AUGUST") || (month).equals("SEPTEMBER")){
-					addVictoryPoints(-4);
-				}else{
-					addReputation(2);
-				}
-			}
-		}
-	}
-	
 	public void selectCard(List<ActionCard> actionCardsList){
-		String question="Seleccione una carta:/n";
+		String question="Seleccione una carta:\n";
 		String restriction="";
+		
+		
 		for(int i=0;i<actionCardsList.size();i++){
-			question=question+"["+i+1+"]"+actionCardsList.iterator().next().toString()+"\n";
-			restriction=restriction+","+i;
+			question=question+"["+i+"]"+ actionCardsList.get(i).toString() +"\n";
+			restriction=restriction+i;
+			if(i!=actionCardsList.size()-1){
+				restriction=restriction+",";
+			}
 		}
+		System.out.print(restriction);
+		
 		String answer=readDataFromKeyBoard.takeParametersToStringRestricted(question, restriction);
 		Integer cardSelector=new Integer(answer);
 		ActionCard actionCardToBeUsed=actionCardsList.get(cardSelector-1);

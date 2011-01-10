@@ -24,4 +24,9 @@ public class BasicSingleGame extends OnePlayerGame {
 //		action=readDataFromKeyBoard.takeParametersToStringRestricted(askBasicAction, askBasicActionCondition);
 		this.setFollowingAction(action);
 	}
+
+	protected void executeCase(Player player) {
+		player.selectCard(player.getActionCards());
+	}
+	
 }

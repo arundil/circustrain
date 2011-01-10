@@ -19,9 +19,6 @@ public class TravelImpl extends ActionCardImpl implements ActionCard {
 	public Integer getIdCard() {
 		return id;
 	}
-	
-	public String toString() {
-		return "[" + id + "]" + super.toString();
-	}
+
 
 }

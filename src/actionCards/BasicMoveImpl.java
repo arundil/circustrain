@@ -40,8 +40,6 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 	}
 
 
-	public String toString() {
-		return "[" + id + "]" + super.toString();
-	}
+
 	
 }

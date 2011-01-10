@@ -39,4 +39,9 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 			stealTalent(playerList.get(0));
 		}
 	}
+
+	protected void executeCase(Player player) {
+
+			player.selectCard(player.getActionCards());
+		}
 }

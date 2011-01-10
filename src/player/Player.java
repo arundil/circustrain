@@ -37,8 +37,10 @@ public interface Player {
 	public void discardTalent(Talent t);
 	public void addActionCards(List<ActionCard> actioncards);
 	
-	public void playActionCard();
-	public void playDiscardActionCards(String month);
+//	public void playActionCard();
+//	public void playDiscardActionCards(String month);
+	
+	public void selectCard(List<ActionCard> cards);
 	public void collectMoney();
 	public void playerState();
 

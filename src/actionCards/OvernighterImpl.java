@@ -76,10 +76,7 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 		return id;
 	}
 	
-	public String toString() {
-		return "[" + id + "]" + super.toString();
-	}
-	
+
 	
 	
 

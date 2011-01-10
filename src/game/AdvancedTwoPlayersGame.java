@@ -110,4 +110,18 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 
 		}
 	}
+
+	protected void executeCase(Player player) {
+		if(getFollowingAction().equals("1")){
+			player.selectCard(player.getActionCards());
+		}else{
+			if(getFollowingAction().equals("2")){
+				player.selectCard(player.getdiscartpile());
+				gameState.discardPilePunishment(player);
+			}
+			if(getFollowingAction().equals("3")){
+				player.collectMoney();
+			}
+		}
+	}
 }

@@ -32,8 +32,6 @@ public class WagesImpl extends ActionCardImpl implements ActionCard {
 		return id;
 	}
 
-		public String toString() {
-		return "[" + id + "]" + super.toString();
-	}
+
 
 }

@@ -33,6 +33,7 @@ public abstract class CircusTrainGame{
 	protected abstract void finalMonth();
 	protected abstract void selectCase(Player player);
 	protected abstract void rotatePlayers();
+	protected abstract void executeCase(Player player);
 	
 	public CircusTrainGame(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -163,21 +164,6 @@ public abstract class CircusTrainGame{
 		}
 	}
 	
-	
-	//Candidata a ser movida a Player
-	protected void executeCase(Player player){
-		if(getFollowingAction().equals("1")){
-			
-			player.playActionCard();
-		}else{
-			if(getFollowingAction().equals("2")){
-				player.playDiscardActionCards(getMonth());
-			}
-			if(getFollowingAction().equals("3")){
-				player.collectMoney();
-			}
-		}
-	}
 	
 	public PerformanceBag getPerformanceBag(){
 		return performanceBag;

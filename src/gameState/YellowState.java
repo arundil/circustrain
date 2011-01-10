@@ -3,6 +3,7 @@ package gameState;
 import java.util.List;
 
 import performance.Performance;
+import player.Player;
 import game.CircusTrainGame;
 
 public class YellowState extends GameStateImpl implements GameState {
@@ -17,6 +18,9 @@ public class YellowState extends GameStateImpl implements GameState {
 	public Performance getPerformance(){
 		List<Performance> bag=game.getPerformanceBag().getYellowBag();
 		return getPerformanceInList(bag);
+	}
+	public void discardPilePunishment(Player player) {
+		player.addReputation(2);
 	}
 
 }

@@ -78,10 +78,6 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 		return id;
 	}
 	
-	
-	
-	public String toString() {
-		return "[" + id + "]" + super.toString();
-	}
+
 
 }

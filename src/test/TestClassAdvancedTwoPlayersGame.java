@@ -330,6 +330,20 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 			playerList.get(playerIndex).addVictoryPoints(3);
 		}
 	}
+
+	protected void executeCase(Player player) {
+		if(getFollowingAction().equals("1")){
+			
+			player.playActionCard();
+		}else{
+			if(getFollowingAction().equals("2")){
+				player.playDiscardActionCards(getMonth());
+			}
+			if(getFollowingAction().equals("3")){
+				player.collectMoney();
+			}
+		}
+	}
 	
 
 }
