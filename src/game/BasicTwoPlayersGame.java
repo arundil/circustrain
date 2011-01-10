@@ -4,11 +4,6 @@ import player.Player;
 
 public class BasicTwoPlayersGame extends TwoPlayersGame{
 	
-	public BasicTwoPlayersGame(){
-		super();
-		setPlayersNames();
-	}	
-
 	@Override
 	protected void selectCase(Player player){
 		String action="1";

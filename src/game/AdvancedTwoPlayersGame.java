@@ -10,11 +10,6 @@ import actionCards.ActionCard;
 
 public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
-	public AdvancedTwoPlayersGame(){
-		super();
-		setPlayersNames();
-	}
-
 	@Override
 	public void finalMonth(){
 		//Puntos de victoria segun el nº de talentos
@@ -24,12 +19,8 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	}
 	@Override
 	public void gameOver(){
-		finalWage();
-		higherClownNumber();
-		higherMoneyAmount();
-		higherPerformancesNumber();
+		super.gameOver();
 		higherReputation();
-		noClownsNoAnimals();
 		results();
 	}	
 	

@@ -45,7 +45,6 @@ public abstract class CircusTrainGame{
 		playerList=CollectionsFactory.createListFactory().createList();
 		board=GameFactory.createBoard();
 		performanceBag= GameFactory.createPerformanceBag();
-		System.out.println(performanceBag.getGreenBag().size());
 		talentBag = GameFactory.createTalentBag();
 		theClown.add(clown);
 		week=0;

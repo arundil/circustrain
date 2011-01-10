@@ -18,6 +18,11 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 
 	protected Integer numberOfPlayers=2;
 	
+	public TwoPlayersGame(){
+		super();
+		setPlayersNames();
+	}
+	
 	@Override
 	public abstract void finalMonth();
 	
