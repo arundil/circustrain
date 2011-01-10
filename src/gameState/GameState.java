@@ -9,4 +9,5 @@ public interface GameState {
 	public String getMonth();
 	public Performance getPerformance();
 	public void discardPilePunishment(Player player);
+	public Integer getWeek();
 }

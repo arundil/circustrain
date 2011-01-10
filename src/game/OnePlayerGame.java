@@ -87,7 +87,7 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 
 
 	@Override
-	protected void finalMonth() {
+	public void finalMonth() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -110,6 +110,14 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 	
 	protected void collectMoney(Player player){
 		//Vacio porque no se hace nada
+	}
+	
+	public void stealTalentSelector() {
+		//No puedes robarte a ti mismo
+	}
+	
+	public void stealTalent(Player player){
+		//No puedes robarte a ti mismo   
 	}
 
 

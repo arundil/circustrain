@@ -2,15 +2,14 @@ package gameState;
 
 import java.util.List;
 
-import performance.BankruptCircus;
 import performance.Performance;
-import talent.Talent;
 import game.CircusTrainGame;
 
 public abstract class GameStateImpl implements GameState {
 	
 	protected String month;
 	protected CircusTrainGame game;
+	protected Integer week=0;
 	
 	public GameStateImpl(CircusTrainGame game){
 		this.game=game;
@@ -19,27 +18,35 @@ public abstract class GameStateImpl implements GameState {
 	@Override
 	public GameState incrementTime() {
 		GameState stateToReturn=this;
-		game.incrementWeek();
+		week++;
 		Integer week=game.getWeek();
 		completeBoard();
 		if (week==4){
+			game.finalMonth();
 			month="MAY";
 		}
 		if (week==9){
+			game.finalMonth();
+			game.stealTalentSelector();
 			month="JUNE";
 			game.getBoard().removeAllPerformances();
 			stateToReturn=new YellowState(game);
 		}
 		if (week==13){
+			game.finalMonth();
 			month="JULY";
 			
 		}
 		if (week==18){
+			game.finalMonth();
+			game.stealTalentSelector();
 			month="AUGUST";
 			game.getBoard().removeAllPerformances();
 			stateToReturn=new RedState(game);
 		}
 		if (week==22){
+			game.finalMonth();
+			game.stealTalentSelector();
 			month="SEPTEMBER";
 		}
 		return stateToReturn;
@@ -67,5 +74,8 @@ public abstract class GameStateImpl implements GameState {
 			Performance randomPerformance = getPerformance();
 			randomPerformance.put(game);
 		}
+	}
+	public Integer getWeek(){
+		return week;
 	}
 }

@@ -18,8 +18,8 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	public void finalMonth(){
 		//Puntos de victoria segun el nº de talentos
 		comparePlayersAndAddVictoryPoints();			
-		//Robar talentos
-		stealTalentsSelector();
+//		//Robar talentos
+//		stealTalentsSelector();
 	}
 	@Override
 	public void gameOver(){
@@ -102,17 +102,6 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
 	
 	
-	public void stealTalentsSelector(){
-		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
-			stealTalent(playerList.get(0));
-
-		}
-		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
-			stealTalent(playerList.get(1));
-
-		}
-	}
-
 	protected void executeCase(Player player) {
 		if(getFollowingAction().equals("1")){
 			List<ActionCard> actionCards=player.getActionCards();

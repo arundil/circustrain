@@ -18,8 +18,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 
 	protected Integer numberOfPlayers=2;
 	
-	protected abstract void finalMonth();
-	protected abstract void stealTalentsSelector();
+	public abstract void finalMonth();
 	
 	protected void comparePlayersAndAddVictoryPoints() {
 		compareTalentsCountAndAddVictoryPoints();
@@ -265,7 +264,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 	}	
 	
-	protected void stealTalent(Player player){
+	public void stealTalent(Player player){
 		List<Player> playerList=getPlayerList();
 		Player otherPlayer=null;
 		for(Player thisPlayer:playerList){
@@ -307,6 +306,15 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}		
 		
 		
+	}
+	
+	public void stealTalentSelector() {
+		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
+			stealTalent(playerList.get(0));
+		}
+		if(playerList.get(1).getReputation()>playerList.get(0).getReputation()){
+			stealTalent(playerList.get(1));
+		}
 	}
 
 

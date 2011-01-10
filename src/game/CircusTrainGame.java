@@ -27,13 +27,18 @@ public abstract class CircusTrainGame{
 	protected TalentBag talentBag;
 	protected List<Player> playerList;
 	protected GameState gameState=null;
+	
 	protected abstract void gameOver();
 	protected abstract void finalWage();
 	protected abstract void results();
-	protected abstract void finalMonth();
+	public abstract void finalMonth();
+	protected abstract void stealTalent(Player player);
+	public abstract void stealTalentSelector();
 	protected abstract void selectCase(Player player);
 	protected abstract void rotatePlayers();
 	protected abstract void executeCase(Player player);
+	protected abstract void noClownsNoAnimals();
+	
 	
 	public CircusTrainGame(){
 		playerList=CollectionsFactory.createListFactory().createList();
@@ -46,42 +51,6 @@ public abstract class CircusTrainGame{
 		gameState=new GreenState(this);
 	}
 
-
-
-	public void refreshMonth(){
-		Boolean changed=false;
-		week++;
-		if (week==4){
-			month="MAY";
-			changed=true;
-		}
-		if (week==9){
-			month="JUNE";
-			changed=true;
-		}
-		if (week==13){
-			month="JULY";
-			changed=true;
-		}
-		if (week==18){
-			month="AUGUST";
-			changed=true;
-		}
-		if (week==22){
-			month="SEPTEMBER";
-			changed=true;
-		}
-		
-		if(changed){
-			finalMonth();
-			rotatePlayers();
-		}
-	}
-
-	
-		
-	public abstract void noClownsNoAnimals();
-	
 	public Board getBoard(){
 		return board;
 	}
@@ -105,8 +74,6 @@ public abstract class CircusTrainGame{
 		return canadianCityList.get(citySelector-1);
 	}
 	
-	
-	
 	public TalentBag getTalentBag(){
 		return talentBag;
 	}
@@ -122,8 +89,7 @@ public abstract class CircusTrainGame{
 	public void setFollowingAction(String action){
 		followingAction=action;
 	}
-	
-	
+		
 	protected void showPerformanceSituation() {
 		System.out.println("\n \n Ciudades con actuación: "+ board.getCitiesWithPerfomance() +"\n \n");
 	}
@@ -133,11 +99,11 @@ public abstract class CircusTrainGame{
 		showPerformanceSituation();
 		canadianSelector();
 		
-		while(week<27){
+		while(gameState.getWeek()<27){
 			
 			//Mostrar ciudades con eventos
 			showPerformanceSituation();
-			System.out.println("\n \n Esta es la semana " + week + " del mes " + gameState.getMonth());
+			System.out.println("\n \n Esta es la semana " + gameState.getWeek() + " del mes " + gameState.getMonth());
 			
 			for(Player currentPlayer : playerList){
 				//Se muestra el estado del jugador
@@ -163,14 +129,11 @@ public abstract class CircusTrainGame{
 			playerSelectsCity.moveCity(selectCanadianCity(playerSelectsCity));
 		}
 	}
-	
-	
+		
 	public PerformanceBag getPerformanceBag(){
 		return performanceBag;
 	}
-	public void incrementWeek(){
-		week++;
-	}
+
 	public Integer getWeek(){
 		return week;
 	}
