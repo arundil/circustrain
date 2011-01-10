@@ -66,6 +66,7 @@ public abstract class GameStateImpl implements GameState {
 		return performanceToReturn;
 	}
 	
+	@Override
 	public String toString(){
 		return this.getClass().getName();
 	}

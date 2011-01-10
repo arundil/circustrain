@@ -13,10 +13,10 @@ public class GraphImpl implements Graph {
 	@Override
 	public void addEdge(Vertex v1, Vertex v2) {
 		if(!vertices.contains(v1)){
-			throw new IllegalArgumentException("El vertice v1 no está en el grafo");
+			throw new IllegalArgumentException("El vertice v1 no estï¿½ en el grafo");
 		}
 		if(!vertices.contains(v2)){
-			throw new IllegalArgumentException("El vertice v2 no está en el grafo");
+			throw new IllegalArgumentException("El vertice v2 no estï¿½ en el grafo");
 		}
 		v1.setAdjacent(v2);
 		v2.setAdjacent(v1);
@@ -34,6 +34,7 @@ public class GraphImpl implements Graph {
 		return v1.isAdjacent(v2);
 	}
 	
+	@Override
 	public String toString(){
 		return vertices.toString();
 	}

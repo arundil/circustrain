@@ -15,6 +15,7 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 		setPlayersNames();
 	}
 
+	@Override
 	public void finalMonth(){
 		//Puntos de victoria segun el nº de talentos
 		comparePlayersAndAddVictoryPoints();			
@@ -56,6 +57,7 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 		}
 	}
 	
+	@Override
 	protected void selectCase(Player player){
 		String action1="[1] Jugar una carta de acción";
 		String action2="[2] Jugar una carta de acción ya descartada";		
@@ -102,6 +104,7 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	
 	
 	
+	@Override
 	protected void executeCase(Player player) {
 		if(getFollowingAction().equals("1")){
 			List<ActionCard> actionCards=player.getActionCards();

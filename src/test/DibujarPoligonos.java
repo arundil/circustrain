@@ -22,6 +22,7 @@ public class DibujarPoligonos extends JFrame {
 	}
 
 	// dibujar polígonos y polilíneas
+	@Override
 	public void paint( Graphics g )
 	{
 		super.paint( g ); // llamar al método paint de la superclase

@@ -18,6 +18,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 
 	protected Integer numberOfPlayers=2;
 	
+	@Override
 	public abstract void finalMonth();
 	
 	protected void comparePlayersAndAddVictoryPoints() {
@@ -30,6 +31,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 			playerList.get(1).addVictoryPoints(4);
 	}
 	
+	@Override
 	public void gameOver() {
 		finalWage();
 		higherClownNumber();
@@ -42,6 +44,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 	
 	//====================================== X =====================================
 
+	@Override
 	protected void rotatePlayers(){
 		
 		List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
@@ -86,6 +89,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 	}
 
+	@Override
 	protected void finalWage() {
 		for(Player player: playerList){
 			//Comentado para paliar error en idcard
@@ -186,6 +190,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 	}
 	
 
+	@Override
 	protected void results(){
 		// TODO DOCUMENTAR CAMBIO
 		String winner="";
@@ -236,6 +241,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		System.out.println(winner+"\n"+"\n"+"---=== Gracias por jugar a Train Circus! ===---");
 	}
 	
+	@Override
 	public void noClownsNoAnimals(){
 		for(Player thisPlayer:playerList){
 			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
@@ -264,6 +270,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 	}	
 	
+	@Override
 	public void stealTalent(Player player){
 		List<Player> playerList=getPlayerList();
 		Player otherPlayer=null;
@@ -308,6 +315,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		
 	}
 	
+	@Override
 	public void stealTalentSelector() {
 		if(playerList.get(0).getReputation()>playerList.get(1).getReputation()){
 			stealTalent(playerList.get(0));

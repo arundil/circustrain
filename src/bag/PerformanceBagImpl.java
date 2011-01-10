@@ -170,6 +170,7 @@ public class PerformanceBagImpl implements PerformanceBag {
 		return null;
 	}
 	
+	@Override
 	public String toString(){
 		String cadena="";
 		

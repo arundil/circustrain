@@ -124,6 +124,7 @@ public class BoardImpl implements Board {
 	public void addTrack(City city1, City city2) {
 			this.gameMap.addEdge(city1, city2);
 	}
+	@Override
 	public String toString(){
 		String stringToPrint="";
 		for (City cityToPrint:this.getCities()){

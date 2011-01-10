@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 public class ImagenImpl extends JFrame{
 
@@ -43,7 +44,7 @@ public class ImagenImpl extends JFrame{
 			jContentPane = new JPanel();
 			bl = new BorderLayout();
 			jContentPane.setLayout(bl);
-			jContentPane.add(getJPanel(), bl.CENTER);
+			jContentPane.add(getJPanel(), BorderLayout.CENTER);
 		}
 		return jContentPane;
 	}
@@ -57,7 +58,7 @@ public class ImagenImpl extends JFrame{
 		if (jPanel == null) {
 			
 			jLabelImagen = new JLabel(new ImageIcon(System.getProperty("user.dir")+"/circustrain/data/Tablero.jpg"),
-		    		JLabel.CENTER);
+		    		SwingConstants.CENTER);
 			jLabelImagen.setVisible(false);
 			jLabelImagen.setBounds(new Rectangle(4, 2, 495, 183));
 		}

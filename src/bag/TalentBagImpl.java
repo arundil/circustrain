@@ -94,6 +94,7 @@ public class TalentBagImpl implements TalentBag {
 		return talents.get(t);
 	}
 
+	@Override
 	public String toString() {
 		String s = "En la bolsa de talentos hay actualmente:\n\n";
 		int n = talents.size();

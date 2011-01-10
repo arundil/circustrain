@@ -35,6 +35,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 	}
 	
 	
+	@Override
 	protected void comparePlayersAndAddVictoryPoints() {
 		compareTalentsCountAndAddVictoryPoints();
 		//Puntos de victoria segun actuacion maxima
@@ -45,6 +46,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 			playerList.get(1).addVictoryPoints(4);
 	}
 	
+	@Override
 	public void gameOver() {
 		finalWage();
 		higherClownNumber();
@@ -58,6 +60,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 	
 	//====================================== X =====================================
 
+	@Override
 	protected void rotatePlayers(){
 		
 		List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
@@ -102,6 +105,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 		}
 	}
 
+	@Override
 	protected void finalWage() {
 		for(Player player: playerList){
 			for(ActionCard actioncard : player.getActionCards()){
@@ -115,6 +119,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 		}		
 	}
 	
+	@Override
 	protected void higherClownNumber(){
 		Integer playerClownNumber=0;
 		Integer maximumClownNumber=-1;
@@ -151,6 +156,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 		}
 	}
 	
+	@Override
 	protected void higherMoneyAmount(){
 		List<Integer> playersMoney=CollectionsFactory.createListFactory().createList();
 		Integer sameMoneyTimes=0;
@@ -175,6 +181,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 		}
 	}
 	
+	@Override
 	protected void higherPerformancesNumber(){
 		List<Integer> playersNumberOfPerformances=CollectionsFactory.createListFactory().createList();
 		Integer sameNumberOfPerformancesTimes=0;
@@ -200,6 +207,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 	}
 	
 
+	@Override
 	protected void results(){
 		String winner="";
 		Integer maxVictoryPoints=0;
@@ -249,6 +257,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 		System.out.println(winner+"\n"+"\n"+"---=== Gracias por jugar a Train Circus! ===---");
 	}
 	
+	@Override
 	public void noClownsNoAnimals(){
 		for(Player thisPlayer:playerList){
 			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
@@ -264,6 +273,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 		}
 	}
 	
+	@Override
 	protected void stealTalent(Player player){
 		List<Player> playerList=getPlayerList();
 		Player otherPlayer=null;
@@ -330,6 +340,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 		}
 	}
 
+	@Override
 	protected void executeCase(Player player) {
 		if(getFollowingAction().equals("1")){
 			

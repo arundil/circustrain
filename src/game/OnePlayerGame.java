@@ -20,6 +20,7 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 	}
 	
 
+	@Override
 	public void gameOver() {
 		finalWage();
 		noClownsNoAnimals();
@@ -33,11 +34,13 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 
 	
 
+	@Override
 	protected void finalWage() {
 		CommandPay cmp = new CommandPay(playerList.get(0), this, 2);
 		cmp.execute();	
 	}
 
+	@Override
 	protected void results(){
 		Integer playerFinalMoney=player.getMoney();
 		System.out.println("Tu dinero al final de la temporada es: "+playerFinalMoney+ "$");
@@ -104,6 +107,7 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 
 	}
 	
+	@Override
 	protected void rotatePlayers(){
 		//Vacio porque no se hace nada
 	}
@@ -112,10 +116,12 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 		//Vacio porque no se hace nada
 	}
 	
+	@Override
 	public void stealTalentSelector() {
 		//No puedes robarte a ti mismo
 	}
 	
+	@Override
 	public void stealTalent(Player player){
 		//No puedes robarte a ti mismo   
 	}

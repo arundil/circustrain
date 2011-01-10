@@ -10,6 +10,7 @@ public class BasicSingleGame extends OnePlayerGame {
 		super();
 	}
 
+	@Override
 	protected void selectCase(Player p){
 		//Si la unica opción que puede usar es jugar una carta de acción, ¿para que preguntarle lo que quiere hacer, ir directamente a preguntarle que carta quiere jugar
 		
@@ -22,6 +23,7 @@ public class BasicSingleGame extends OnePlayerGame {
 		this.setFollowingAction(action);
 	}
 
+	@Override
 	protected void executeCase(Player player) {
 		player.selectCard(player.getActionCards());
 	}

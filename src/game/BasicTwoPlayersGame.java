@@ -9,11 +9,13 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 		setPlayersNames();
 	}	
 
+	@Override
 	protected void selectCase(Player player){
 		String action="1";
 		this.setFollowingAction(action);
 	}
 	
+	@Override
 	public void finalMonth(){
 		//Puntos de victoria segun el nº de talentos
 		comparePlayersAndAddVictoryPoints();			
@@ -33,6 +35,7 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 		}
 	}
 
+	@Override
 	protected void executeCase(Player player) {
 
 			player.selectCard(player.getActionCards());

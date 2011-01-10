@@ -9,6 +9,7 @@ import actionCards.ActionCard;
 //creado metodo selectCase();
 public class AdvancedSingleGame extends OnePlayerGame {
 		
+	@Override
 	protected void selectCase (Player player){
 		String action1="[1] Jugar una carta de acción";
 		String action2="[2] Jugar una carta de acción ya descartada";		
@@ -25,6 +26,7 @@ public class AdvancedSingleGame extends OnePlayerGame {
 		this.setFollowingAction(action);
 	}
 
+	@Override
 	protected void executeCase(Player player) {
 		if(getFollowingAction().equals("1")){
 			List<ActionCard> actionCards=player.getActionCards();
