@@ -1,8 +1,10 @@
 package commands;
 
 import game.CircusTrainGame;
+
 import java.util.List;
 import java.util.Map;
+
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;

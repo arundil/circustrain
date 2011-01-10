@@ -1,9 +1,10 @@
 package gameState;
 
+import game.CircusTrainGame;
+
 import java.util.List;
 
 import performance.Performance;
-import game.CircusTrainGame;
 
 public abstract class GameStateImpl implements GameState {
 	

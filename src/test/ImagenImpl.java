@@ -1,12 +1,12 @@
 package test;
 
 import java.awt.BorderLayout;
+import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.awt.Rectangle;
+import javax.swing.JPanel;
 
 public class ImagenImpl extends JFrame{
 

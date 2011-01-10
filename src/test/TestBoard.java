@@ -1,8 +1,8 @@
 package test;
 
+import game.factory.GameFactory;
 import bag.PerformanceBag;
 import board.Board;
-import game.factory.GameFactory;
 
 public class TestBoard {
 

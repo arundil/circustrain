@@ -1,21 +1,17 @@
 package test;
 
-import java.util.List;
-
-import game.AdvancedTwoPlayersGame;
-import game.CircusTrainGame;
-import game.TwoPlayersGame;
 import game.factory.GameFactory;
+
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import bag.PerformanceBag;
 
 import performance.Performance;
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
+import bag.PerformanceBag;
 
 public class TestAdvancedTwoPlayersGame {
 	

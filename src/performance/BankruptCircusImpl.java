@@ -7,7 +7,6 @@ import game.factory.GameFactory;
 import java.util.List;
 
 import player.Player;
-
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;

@@ -1,7 +1,10 @@
 package test;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Graphics;
+import java.awt.Polygon;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 public class DibujarPoligonos extends JFrame {
 

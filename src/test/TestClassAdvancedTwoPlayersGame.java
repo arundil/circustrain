@@ -1,21 +1,20 @@
 package test;
 
+import game.TwoPlayersGame;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import actionCards.ActionCard;
-
-import commands.CommandPay;
 
 import player.Player;
 import talent.Clown;
 import talent.Talent;
 import tipos.Cadenas;
 import utiles.factoria.CollectionsFactory;
-import utiles.factoria.readDataFromKeyBoard;
-import game.TwoPlayersGame;
+import actionCards.ActionCard;
+
+import commands.CommandPay;
 
 public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 

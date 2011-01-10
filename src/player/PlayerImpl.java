@@ -2,14 +2,14 @@ package player;
 
 import java.util.List;
 import java.util.Map;
-import java.lang.Math;
-import actionCards.ActionCard;
-import board.City;
+
 import performance.Performance;
 import performance.PerformanceDemand;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import actionCards.ActionCard;
+import board.City;
 
 
 public class PlayerImpl implements Player {

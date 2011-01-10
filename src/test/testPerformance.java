@@ -1,28 +1,10 @@
 package test;
 
-import java.awt.Color;
-import java.util.Map;
-
-import performance.Performance;
-import performance.PerformanceDemandImpl;
 import player.Player;
 import player.PlayerImpl;
-import talent.BigCatImpl;
-import talent.ClownImpl;
-import talent.Talent;
-import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
-import actionCards.ActionCard;
-import actionCards.BasicMoveImpl;
-import actionCards.FastMoveImpl;
-import actionCards.HoldImpl;
-import actionCards.OvernighterImpl;
-import actionCards.RestImpl;
-import actionCards.TravelImpl;
-import actionCards.WagesImpl;
 import bag.PerformanceBag;
 import bag.PerformanceBagImpl;
-import bag.TalentBagImpl;
 import board.Board;
 import board.BoardImpl;
 

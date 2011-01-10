@@ -2,14 +2,8 @@ package test;
 
 import java.util.List;
 import java.util.Map;
-import actionCards.ActionCard;
-import actionCards.BasicMoveImpl;
-import actionCards.FastMoveImpl;
-import actionCards.HoldImpl;
-import actionCards.OvernighterImpl;
-import actionCards.TravelImpl;
-import board.Board;
-import board.BoardImpl;import performance.PerformanceDemand;
+
+import performance.PerformanceDemand;
 import performance.PerformanceDemandImpl;
 import player.Player;
 import player.PlayerImpl;
@@ -20,6 +14,14 @@ import talent.ElephantImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import actionCards.ActionCard;
+import actionCards.BasicMoveImpl;
+import actionCards.FastMoveImpl;
+import actionCards.HoldImpl;
+import actionCards.OvernighterImpl;
+import actionCards.TravelImpl;
+import board.Board;
+import board.BoardImpl;
 
 public class testCartasDeAccion extends Test {
 

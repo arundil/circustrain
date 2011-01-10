@@ -1,10 +1,11 @@
 package gameState;
 
+import game.CircusTrainGame;
+
 import java.util.List;
 
 import performance.Performance;
 import player.Player;
-import game.CircusTrainGame;
 
 public class YellowState extends GameStateImpl implements GameState {
 

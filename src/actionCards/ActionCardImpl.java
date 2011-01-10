@@ -4,10 +4,9 @@ import java.util.List;
 
 import performance.Performance;
 import player.Player;
-
-import board.City;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import board.City;
 import card.CardImpl;
 
 public abstract class ActionCardImpl extends CardImpl implements ActionCard {

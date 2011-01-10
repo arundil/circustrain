@@ -1,10 +1,10 @@
 package actionCards;
 
 import game.CircusTrainGame;
+
 import java.util.List;
 
 import player.Player;
-import board.City;
 import talent.Acrobat;
 import talent.AcrobatImpl;
 import talent.Clown;
@@ -12,6 +12,7 @@ import talent.ClownImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import board.City;
 import card.CardImpl;
 
 public class RestImpl extends CardImpl  implements ActionCard  {

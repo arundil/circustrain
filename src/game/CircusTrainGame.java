@@ -5,16 +5,17 @@ import gameState.GameState;
 import gameState.GreenState;
 
 import java.util.List;
-import bag.PerformanceBag;
-import bag.TalentBag;
-import board.Board;
-import board.City;
+
 import performance.BankruptCircus;
 import performance.Performance;
 import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import bag.PerformanceBag;
+import bag.TalentBag;
+import board.Board;
+import board.City;
 
 public abstract class CircusTrainGame{
 	protected static String month;

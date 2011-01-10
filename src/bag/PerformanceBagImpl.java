@@ -9,8 +9,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import performance.*;
-import talent.*;
+import performance.BankruptCircusImpl;
+import performance.Performance;
+import performance.PerformanceDemandImpl;
+import performance.VictoryPointsImpl;
+import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.ReadFile;
 

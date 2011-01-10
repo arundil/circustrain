@@ -3,7 +3,6 @@ package board;
 import java.util.List;
 import java.util.Set;
 
-
 import performance.Performance;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.Vertex;

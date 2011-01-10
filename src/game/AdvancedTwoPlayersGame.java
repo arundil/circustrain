@@ -3,10 +3,10 @@ package game;
 
 import java.util.List;
 
-import actionCards.ActionCard;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import actionCards.ActionCard;
 
 public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	

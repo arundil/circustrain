@@ -1,9 +1,9 @@
 package game;
 
 import game.factory.GameFactory;
-
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
+
 import commands.CommandPay;
 
 //Quitado efinalMounth() puesto en sus hijos;

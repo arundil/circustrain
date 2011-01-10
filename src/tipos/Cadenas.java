@@ -1,12 +1,14 @@
 package tipos;
 
-import java.util.*;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
 public class Cadenas {
 
 	/**
 	 * Divide la cadena str en subcadenas que son almacenadas en un vector. El
-	 * parámetro delim es una cadena cuyos caracteres serán utilizados como
+	 * parï¿½metro delim es una cadena cuyos caracteres serï¿½n utilizados como
 	 * separadores.
 	 */
 	public static List<String> separaElementos(String str, String delim) {
@@ -20,8 +22,8 @@ public class Cadenas {
 
 	/**
 	 * Divide la cadena str en subcadenas que son almacenadas en un vector. El
-	 * parámetro delim es una cadena cuyos caracteres serán utilizados como
-	 * separadores, que también serán incluidos en el vector devuelto.
+	 * parï¿½metro delim es una cadena cuyos caracteres serï¿½n utilizados como
+	 * separadores, que tambiï¿½n serï¿½n incluidos en el vector devuelto.
 	 */
 	public static List<String> separaElementosDelimitadores(String str,
 			String delim) {

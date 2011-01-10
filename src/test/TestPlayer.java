@@ -1,9 +1,9 @@
 package test;
 
-import board.Board;
-import board.BoardImpl;
 import player.Player;
 import player.PlayerImpl;
+import board.Board;
+import board.BoardImpl;
 
 public class TestPlayer extends Test {
 

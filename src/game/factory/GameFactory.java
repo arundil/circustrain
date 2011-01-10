@@ -3,12 +3,24 @@ package game.factory;
 import game.AdvancedSingleGame;
 import game.AdvancedTwoPlayersGame;
 import game.BasicSingleGame;
-import game.CircusTrainGame;
 import game.BasicTwoPlayersGame;
+import game.CircusTrainGame;
 
 import java.util.List;
 import java.util.Random;
 
+import player.Player;
+import player.PlayerImpl;
+import talent.AcrobatImpl;
+import talent.BigCatImpl;
+import talent.ClownImpl;
+import talent.ElephantImpl;
+import talent.FreakShowImpl;
+import talent.HorseImpl;
+import talent.HumanCannonballImpl;
+import talent.Talent;
+import utiles.factoria.CollectionsFactory;
+import utiles.factoria.readDataFromKeyBoard;
 import actionCards.ActionCard;
 import actionCards.BasicMoveImpl;
 import actionCards.FastMoveImpl;
@@ -23,18 +35,6 @@ import bag.TalentBag;
 import bag.TalentBagImpl;
 import board.Board;
 import board.BoardImpl;
-import player.Player;
-import player.PlayerImpl;
-import talent.AcrobatImpl;
-import talent.BigCatImpl;
-import talent.ClownImpl;
-import talent.ElephantImpl;
-import talent.FreakShowImpl;
-import talent.HorseImpl;
-import talent.HumanCannonballImpl;
-import talent.Talent;
-import utiles.factoria.CollectionsFactory;
-import utiles.factoria.readDataFromKeyBoard;
 
 //Para no tener que hacer if( x instanceof w) he hecho que cada juego llame a su propio runGame().
 public class GameFactory {

@@ -4,10 +4,9 @@ package actionCards;
 import java.util.List;
 
 import player.Player;
-
-import board.City;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import board.City;
 
 public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 
