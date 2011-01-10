@@ -98,8 +98,8 @@ public class GameFactory {
 	public static List<ActionCard> inicializateActionCards(CircusTrainGame ctg, Player player){
 		List<ActionCard> ac = CollectionsFactory.createListFactory().createList();
 		ac.add(new TravelImpl(player));
-		ac.add(new BasicMoveImpl(2, player));
-		ac.add(new BasicMoveImpl(3, player));
+		ac.add(new BasicMoveImpl(player));
+		ac.add(new BasicMoveImpl(player));
 		ac.add(new FastMoveImpl(player));
 		ac.add(new WagesImpl(ctg,player));
 		ac.add(new OvernighterImpl(player));

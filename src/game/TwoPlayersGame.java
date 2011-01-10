@@ -91,14 +91,16 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 
 	protected void finalWage() {
 		for(Player player: playerList){
-			for(ActionCard actioncard : player.getActionCards()){
-				if(actioncard.getIdCard() == 5){
-					player.addVictoryPoints(-3);
-					CommandPay cmp = new CommandPay(player, this, 2);
-					cmp.execute();
-					break;
-				}
-			}
+			//Comentado para paliar error en idcard
+			
+//			for(ActionCard actioncard : player.getActionCards()){
+//				if(actioncard.getIdCard() == 5){
+//					player.addVictoryPoints(-3);
+//					CommandPay cmp = new CommandPay(player, this, 2);
+//					cmp.execute();
+//					break;
+//				}
+//			}
 		}		
 	}
 	

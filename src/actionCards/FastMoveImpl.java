@@ -4,11 +4,9 @@ import player.Player;
 
 
 public class FastMoveImpl extends ActionCardImpl implements ActionCard {
-	private Integer id;
 
 	public FastMoveImpl(Player player) {//borrado atributo player		
 		super("MOVIMIENTO RAPIDO","Puedes moverte hasta 5 ciudades",player);
-		id = 4;
 	}
 
 	@Override
@@ -16,11 +14,4 @@ public class FastMoveImpl extends ActionCardImpl implements ActionCard {
 		//borrado atributo player
 		movePlayer(5);
 	}
-
-	@Override
-	public Integer getIdCard() {
-		return id;
-	}
-	
-
 }

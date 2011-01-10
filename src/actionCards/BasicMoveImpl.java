@@ -6,17 +6,11 @@ import utiles.factoria.readDataFromKeyBoard;
 
 public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 
-	private Integer id;
 //borrado atributo player
-	public BasicMoveImpl(Integer n,Player player) {
+	public BasicMoveImpl(Player player) {
 		super("MOVIMIENTO BÁSICO", "Puedes moverte hacia una ciudad adyacente o Actuar/Contratar",player);
-		id=n;
 	}
 
-	@Override
-	public Integer getIdCard() {
-		return id;
-	}
 
 	@Override
 	public void execute() {
@@ -38,8 +32,4 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 			super.performPlayer();
 		}
 	}
-
-
-
-	
 }

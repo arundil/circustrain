@@ -33,14 +33,13 @@ public interface Player {
 	public List<ActionCard> getdiscartpile();
 	public boolean addActionCard(ActionCard ac);
 	public boolean addPerfomanceUsed(Performance p);
-	public ActionCard discardActionCard(Integer id);
 	public void discardTalent(Talent t);
 	public void addActionCards(List<ActionCard> actioncards);
 	
 //	public void playActionCard();
 //	public void playDiscardActionCards(String month);
 	
-	public void selectCard(List<ActionCard> cards);
+	public Integer selectCard(List<ActionCard> cards);
 	public void collectMoney();
 	public void playerState();
 

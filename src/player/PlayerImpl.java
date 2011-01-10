@@ -64,20 +64,6 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public ActionCard discardActionCard(Integer id) {
-		ActionCard descartedCard =null;
-		for (ActionCard card : action_cards){
-			if (card.getIdCard().equals(id)){
-				descartedCard= card;
-				discart_pile.add(card);
-				action_cards.remove(card);
-				break;
-			}
-		}
-		return descartedCard;
-	}
-	
-	@Override
 	public boolean addActionCard(ActionCard card) { //metodo para rescatar una carta de la pila.
 		boolean addedCard =false;
 		if(discart_pile.contains(card)){
@@ -205,7 +191,7 @@ public class PlayerImpl implements Player {
 		return "Your turn "+getName()+ ". You are now in " +getCity()+ ".You have $"+getMoney();
 	}
 
-	public void selectCard(List<ActionCard> actionCardsList){
+	public Integer selectCard(List<ActionCard> actionCardsList){
 		String question="Seleccione una carta:\n";
 		String restriction="";
 		
@@ -217,15 +203,16 @@ public class PlayerImpl implements Player {
 				restriction=restriction+",";
 			}
 		}
-		System.out.print(restriction);
 		
 		String answer=readDataFromKeyBoard.takeParametersToStringRestricted(question, restriction);
 		Integer cardSelector=new Integer(answer);
-		ActionCard actionCardToBeUsed=actionCardsList.get(cardSelector-1);
+		ActionCard actionCardToBeUsed=actionCardsList.get(cardSelector);
+		
 		actionCardToBeUsed.execute();
 		//NO se debe dejar utilizar la carta de descanso en la primera ronda de juego
 		//Creo que esto deberia estar en la clase del juego y no aqui para referenciar las semanas
 		
+		return cardSelector;
 	}
 	
 	public void collectMoney(){

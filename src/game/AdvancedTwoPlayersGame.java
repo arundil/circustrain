@@ -2,6 +2,8 @@ package game;
 
 
 import java.util.List;
+
+import actionCards.ActionCard;
 import player.Player;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
@@ -113,7 +115,10 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 
 	protected void executeCase(Player player) {
 		if(getFollowingAction().equals("1")){
-			player.selectCard(player.getActionCards());
+			List<ActionCard> actionCards=player.getActionCards();
+			Integer selectedCard=player.selectCard(actionCards);
+			player.getdiscartpile().add(actionCards.get(selectedCard));
+			player.getActionCards().remove(actionCards.get(selectedCard));
 		}else{
 			if(getFollowingAction().equals("2")){
 				player.selectCard(player.getdiscartpile());

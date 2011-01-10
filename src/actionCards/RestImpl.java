@@ -15,12 +15,10 @@ import utiles.factoria.readDataFromKeyBoard;
 import card.CardImpl;
 
 public class RestImpl extends CardImpl  implements ActionCard  {
-	Integer id;
 	CircusTrainGame ctg;
 	public RestImpl(CircusTrainGame ctg, Player player) {
 		super("DESCANSO","Si estas en Canada (Winnipeg, Montreal or Toronto), " +
 				"puedes coger un payaso, un acrobata o incrementar tu reputación en un nivel",player);
-		this.id = 8;		
 		this.ctg = ctg;
 	}
 
@@ -73,11 +71,4 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 			System.out.println("No estás en Canada. Descansa.");
 		}
 	}
-
-	public Integer getIdCard() {
-		return id;
-	}
-	
-
-
 }

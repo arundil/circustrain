@@ -10,11 +10,9 @@ import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 
 public class OvernighterImpl extends ActionCardImpl implements ActionCard {
-	private Integer id;
-	//borrado atributo player
+
 	public OvernighterImpl(Player player) {
 		super("DE NOCHE", "Puedes moverte hasta 2 ciudades y/o actuar/contratar",player);
-		id = 6;
 	}
 
 	public void execute() {
@@ -71,13 +69,4 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 			super.performPlayer();
 		}
 	}
-	
-	public Integer getIdCard() {
-		return id;
-	}
-	
-
-	
-	
-
 }

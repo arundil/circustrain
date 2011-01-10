@@ -8,9 +8,6 @@ public class BasicSingleGame extends OnePlayerGame {
 	
 	public BasicSingleGame(){
 		super();
-		//Quitar la carta rest en basico
-		player.discardActionCard(8);
-		player.getdiscartpile().clear();
 	}
 
 	protected void selectCase(Player p){

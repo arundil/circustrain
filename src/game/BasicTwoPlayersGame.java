@@ -9,11 +9,6 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 	public BasicTwoPlayersGame(){
 		super();
 		setPlayersNames();
-		//Quitar la carta rest en basico
-		for(Player player : playerList){
-			player.discardActionCard(8);
-			player.getdiscartpile().clear();
-		}
 	}	
 
 	protected void selectCase(Player player){
