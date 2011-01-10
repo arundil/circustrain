@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import commands.CommandPay;
-import actionCards.ActionCard;
 import player.Player;
 import talent.Clown;
 import talent.Talent;

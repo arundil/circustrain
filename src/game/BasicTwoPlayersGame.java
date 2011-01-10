@@ -1,8 +1,6 @@
 package game;
 
-import game.factory.GameFactory;
 import player.Player;
-import utiles.factoria.readDataFromKeyBoard;
 
 public class BasicTwoPlayersGame extends TwoPlayersGame{
 	
