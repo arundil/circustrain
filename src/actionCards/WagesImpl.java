@@ -4,9 +4,6 @@ package actionCards;
 import game.CircusTrainGame;
 import player.Player;
 
-import commands.CommandPay;
-
-
 public class WagesImpl extends ActionCardImpl implements ActionCard {
 	CircusTrainGame ctg;
 	//borrado player como atributo
@@ -21,9 +18,7 @@ public class WagesImpl extends ActionCardImpl implements ActionCard {
 		System.out.println(getPlayer().getName()+" ha usado la carta ==> SALARIOS <== \n" );
 		//Refactorizado...
 		super.movePlayer(2);
-		
-		CommandPay cmp = new CommandPay(getPlayer(), ctg);
-		cmp.execute();
+		ctg.toPay(getPlayer(), 1);
 		
 	}
 }

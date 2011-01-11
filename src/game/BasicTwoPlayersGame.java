@@ -32,7 +32,10 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 
 	@Override
 	protected void executeCase(Player player) {
-
-			player.selectCard(player.getActionCards());
-		}
+		player.selectCard(player.getActionCards());
+	}
+	
+	protected void refreshToFire(Player player){
+		//No hace nada en modo básico
+	}
 }

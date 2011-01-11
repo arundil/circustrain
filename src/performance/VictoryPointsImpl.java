@@ -28,14 +28,13 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 
 	@Override
 	public void execute(Player player) {
-
 	}
 	
 	public void land(Player player){
 		player.addVictoryPoints(victoryPoints);
 		player.getCity().removePerformance();
 	}
-public void put(CircusTrainGame game){
+	public void put(CircusTrainGame game){
 		game.getBoard().addPerfomanceInRandomCity(this);
 	}
 

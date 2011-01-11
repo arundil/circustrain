@@ -41,5 +41,11 @@ public class AdvancedSingleGame extends OnePlayerGame {
 		}
 	}
 	
+	protected void refreshToFire(Player player){
+		if(player.getReputation()<7){
+			player.addReputation(1);
+			assert player.getReputation()<7:"Reputacion fuera de rango";
+		}
+	}
 
 }

@@ -81,12 +81,13 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 			}
 			refresh(player);
 			player.addPerfomanceUsed(this);		
+			//Quita la performance que usa en una ciudad.
+			player.getCity().removePerformance();	
 			
 		}else{
 			player.setWeeksToPerformance(player.getWeeksToPerformance()-1);
 		}
-		//Quita la performance que usa en una ciudad.
-		player.getCity().removePerformance();		
+			
 	}
 	
 	private void refresh(Player player){

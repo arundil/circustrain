@@ -4,8 +4,6 @@ import game.factory.GameFactory;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 
-import commands.CommandPay;
-
 //Quitado efinalMounth() puesto en sus hijos;
 //Añadido parte de los constructores de los hijos por ser iguales.
 
@@ -17,6 +15,7 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 	public OnePlayerGame(){
 		super();
 		setPlayersNames();
+		basicMoneyMultiplicator=2;
 	}
 	
 
@@ -36,8 +35,9 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 
 	@Override
 	protected void finalWage() {
-		CommandPay cmp = new CommandPay(playerList.get(0), this, 2);
-		cmp.execute();	
+		for(Player player:playerList){
+			toPay(player,2);
+		}
 	}
 
 	@Override
@@ -46,53 +46,51 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 		System.out.println("Tu dinero al final de la temporada es: "+playerFinalMoney+ "$");
 		if(playerFinalMoney<100){
 			System.out.println("============= Derrota ============= \nTu circo no" +
-					"sobrevive al invierno y pronto será repartido" +
-					"entre otros trenes del circo más exitosos. Tú" +
-					"suplicarás ser contratado como trabajador en" +
+					"sobrevive al invierno y pronto será repartido\n" +
+					"entre otros trenes del circo más exitosos.\n" +
+					"Tú suplicarás ser contratado como trabajador en" +
 					"otro circo.");
 		}
 		if(playerFinalMoney>=100 && playerFinalMoney<=140){
 			System.out.println("============= Derrota menor ============= \nHas fracasado" +
-					"en crear un circo con éxito y dentro del año" +
-					"acabas en bancarrota. Tu odisea del tren del" +
-					"circo se ha terminado, pero quizás tendrás" +
-					"más éxito comenzando con otro circo o en" +
+					"en crear un circo con éxito y dentro del año\n" +
+					"acabas en bancarrota. Tu odisea del tren del\n" +
+					"circo se ha terminado, pero quizás tendrás más \n" +
+					"éxito comenzando con otro circo o en" +
 					"otra aventura financiera.");
 		}
 		if(playerFinalMoney>140 && playerFinalMoney<=180){
 			System.out.println("============= Empate ============= \nha sido una lucha," +
-					"pero has conseguido sobrevivir a la" +
-					"temporada del circo donde muchos otros han" +
-					"fracasado. ¿Qué te deparará el futuro?" +
+					"pero has conseguido sobrevivir a la temporada del\n" +
+					"circo donde muchos otros han" +
+					"fracasado. ¿Qué te deparará el futuro?\n" +
 					"Puedes preguntar al mimo, pero no puede hablar.");
 		}
 		if(playerFinalMoney>180 && playerFinalMoney<=220){
 			System.out.println("============= ¡Victoria! ============= \nhas impulsado un" +
-					"negocio próspero con tu tren del circo. Con" +
-					"trabajo duro prolongado, tu circo se" +
-					"convierte en popular y es bienvenido por" +
-					"toda América, y los niños esperan con" +
+					"negocio próspero con tu tren del circo." +
+					"Con trabajo duro prolongado, tu circo se convierte\n" +
+					"en popular y es bienvenido por" +
+					"toda América, y los niños esperan con\n" +
 					"impaciencia el día que tu tren para en la ciudad.");
 		}
 		if(playerFinalMoney>220){
 			System.out.println("============= ¡Gran Victoria! ============= \nhas creado el" +
-					"mayor espectáculo del mundo y pasarás a la" +
-					"Historia como uno de los más grandes entre" +
+					"mayor espectáculo del mundo y pasarás a la\n" +
+					"Historia como uno de los más grandes entre\n" +
 					"los emprendedores y empresarios.¡Felicitaciones!.");
 		}
 	}
 
 	@Override
 	public void noClownsNoAnimals() {
-		// TODO Auto-generated method stub
-		
+		//Vacio, puesto que no se especifica nada en las normas
 	}
 
 
 	@Override
 	public void finalMonth() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 
@@ -126,5 +124,10 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 		//No puedes robarte a ti mismo   
 	}
 
-
+//	protected void pointsConversor(Player player){
+//		Integer playerUselessVictorypoints=player.getVictoryPoints();
+//		player.addMoney(playerUselessVictorypoints);
+//		player.addVictoryPoints(-playerUselessVictorypoints);
+//		Integer 
+//	}
 }

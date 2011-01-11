@@ -5,6 +5,7 @@ import gameState.GameState;
 import gameState.GreenState;
 
 import java.util.List;
+import java.util.Map;
 
 import performance.BankruptCircus;
 import performance.Performance;
@@ -28,6 +29,7 @@ public abstract class CircusTrainGame{
 	protected TalentBag talentBag;
 	protected List<Player> playerList;
 	protected GameState gameState=null;
+	protected Integer basicMoneyMultiplicator=1;
 	
 	protected abstract void gameOver();
 	protected abstract void finalWage();
@@ -39,6 +41,10 @@ public abstract class CircusTrainGame{
 	protected abstract void rotatePlayers();
 	protected abstract void executeCase(Player player);
 	protected abstract void noClownsNoAnimals();
+	
+	protected abstract void refreshToFire(Player player);
+//	protected abstract void pointsConversor(Player player);
+	
 	
 	
 	public CircusTrainGame(){
@@ -114,8 +120,9 @@ public abstract class CircusTrainGame{
 				selectCase(currentPlayer);
 				
 				//Se lleva a cabo la accion que el jugador a elegido
-				executeCase(currentPlayer);				
-				
+				executeCase(currentPlayer);	
+				//Transforma puntos de victoria y puntos de actuacion en dinero según el caso
+//				pointsConversor(currentPlayer);
 			}
 			//Incrementa la semana y en caso de cambio de mes, ejecuta las acciones de final de mes;
 			gameState.incrementTime();		
@@ -156,4 +163,50 @@ public abstract class CircusTrainGame{
 			}	
 		}
 	}
+	
+	public void toPay(Player player,Integer multiplicator){
+		if(player.getTalents().isEmpty()){
+			Map<Talent,Integer> talentMap = player.getTalents();
+			Integer totalMoneyToPay=0;
+			String payAllTalentsQuestion="Tienes dinero suficiente para pagar a todos los talentos de una sola vez. ¿Quieres pagarles?:\n[1] Si\n[2] No";
+			String payAllTalentsQuestionRestrictions="1,2";
+			for(Talent talent: talentMap.keySet()){
+				totalMoneyToPay=totalMoneyToPay+talent.getWage()*basicMoneyMultiplicator*multiplicator*talentMap.get(talent);
+			}
+			if(player.getMoney()-totalMoneyToPay>=0){
+				String answer=readDataFromKeyBoard.takeParametersToStringRestricted(payAllTalentsQuestion, payAllTalentsQuestionRestrictions);
+				if(answer.equals("1")){
+					player.addMoney(-totalMoneyToPay);
+				}else{
+					toFire(player);
+					toPay(player,multiplicator);
+				}			
+			}else{
+				toFire(player);
+				toPay(player,multiplicator);
+			}
+		}
+	}
+	
+	protected void toFire(Player player){
+		Map<Talent,Integer> talentMap=player.getTalents();
+		List<Talent> talentList=CollectionsFactory.createListFactory().createList();
+		String question="¿A qué talento vas a despedir?\n";
+		String conditions="";
+		Integer answerNumber=1;		
+		
+		for(Talent talent:talentMap.keySet()){
+			conditions=conditions+answerNumber+",";
+			talentList.add(talent);
+			question=question+"["+answerNumber+"] "+talent.getName()+" Cantidad restante: "+talentMap.get(talent)+"\n";			
+		}
+		
+		Integer answer=new Integer(readDataFromKeyBoard.takeParametersToStringRestricted(question, conditions));
+		Talent talentToBeFired=talentList.get(answer-1);
+		player.discardTalent(talentToBeFired);
+		talentBag.addTalent(talentToBeFired);
+		
+		refreshToFire(player);		
+	}
+	
 }

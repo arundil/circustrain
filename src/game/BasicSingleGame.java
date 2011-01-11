@@ -24,4 +24,8 @@ public class BasicSingleGame extends OnePlayerGame {
 		player.selectCard(player.getActionCards());
 	}
 	
+	protected void refreshToFire(Player player){
+		//No hace nada en modo básico
+	}
+	
 }

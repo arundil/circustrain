@@ -112,4 +112,21 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 			}
 		}
 	}
+	
+	protected void refreshToFire(Player player){
+		if(gameState.getMonth().equals("AUGUST") || gameState.getMonth().equals("SEPTEMBER")){			
+			if(player.getVictoryPoints()<3){
+				player.addVictoryPoints(-player.getVictoryPoints());
+				assert player.getVictoryPoints()!=0:"Puntos de victoria no son 0";
+			}else{
+				player.addVictoryPoints(-3);
+				assert player.getVictoryPoints()>=0:"Puntos de victoria negativos";
+			}
+		}else{
+			if(player.getReputation()<7){
+				player.addReputation(1);
+				assert player.getReputation()<7:"Reputacion fuera de rango";
+			}
+		}
+	}
 }

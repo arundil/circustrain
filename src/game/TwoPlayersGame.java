@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import actionCards.WagesImpl;
+
 import player.Player;
 import talent.Clown;
 import talent.Talent;
@@ -97,16 +99,15 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 	@Override
 	protected void finalWage() {
 		for(Player player: playerList){
-			//Comentado para paliar error en idcard
-			
-//			for(ActionCard actioncard : player.getActionCards()){
-//				if(actioncard.getIdCard() == 5){
-//					player.addVictoryPoints(-3);
-//					CommandPay cmp = new CommandPay(player, this, 2);
-//					cmp.execute();
-//					break;
-//				}
-//			}
+			WagesImpl wageCard=new WagesImpl(this, player);
+			if(player.getActionCards().contains(wageCard)){
+				toPay(player,2);
+				if(player.getVictoryPoints()<3){
+					player.addVictoryPoints(player.getVictoryPoints());
+				}else{
+					player.addVictoryPoints(-3);
+				}
+			}			
 		}		
 	}
 	
@@ -315,9 +316,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 				player.addTalent(talentToBeAdded);
 				break;
 			}
-		}		
-		
-		
+		}			
 	}
 	
 	@Override
@@ -329,6 +328,10 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 			stealTalent(playerList.get(1));
 		}
 	}
-
+	
+//	protected void pointsConversor(Player player){
+//		//Vacio. Con dos jugadores no hace falta convertir puntos.
+//	}
+	
 
 }
