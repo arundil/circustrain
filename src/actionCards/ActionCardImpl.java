@@ -35,6 +35,8 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 		//cambio de player a getPlayer()
 		Performance p = getPlayer().getCity().getPerformance();
 		//MUAHAHAHAHAHA vivan los commands!!! borrado todo el tocho
-		p.execute(getPlayer(),gamestate);
+		if(p!=null){
+			p.execute(getPlayer(),gamestate);
+		}
 	}
 }

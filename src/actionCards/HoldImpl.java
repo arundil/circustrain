@@ -11,7 +11,7 @@ public class HoldImpl extends ActionCardImpl implements ActionCard {
 	
 	public void execute(GameState gamestate) {
 		if(this.getPlayer().getCity().hasPerfomance()){
-			super.performPlayer(gamestate);
+			performPlayer(gamestate);
 		}
 	}
 }

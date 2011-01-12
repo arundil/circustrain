@@ -101,7 +101,6 @@ public abstract class CircusTrainGame{
 	}
 	
 	public void runGame(){
-		System.out.println(performanceBag.getGreenBag().size());
 		showPerformanceSituation();
 		canadianSelector();
 		
@@ -165,7 +164,7 @@ public abstract class CircusTrainGame{
 	}
 	
 	public void toPay(Player player,Integer multiplicator){
-		if(player.getTalents().isEmpty()){
+		if(!player.getTalents().isEmpty()){
 			Map<Talent,Integer> talentMap = player.getTalents();
 			Integer totalMoneyToPay=0;
 			String payAllTalentsQuestion="Tienes dinero suficiente para pagar a todos los talentos de una sola vez. ¿Quieres pagarles?:\n[1] Si\n[2] No";
@@ -198,7 +197,8 @@ public abstract class CircusTrainGame{
 		for(Talent talent:talentMap.keySet()){
 			conditions=conditions+answerNumber+",";
 			talentList.add(talent);
-			question=question+"["+answerNumber+"] "+talent.getName()+" Cantidad restante: "+talentMap.get(talent)+"\n";			
+			question=question+"["+answerNumber+"] "+talent.getName()+" Cantidad restante: "+talentMap.get(talent)+"\n";
+			answerNumber++;
 		}
 		
 		Integer answer=new Integer(readDataFromKeyBoard.takeParametersToStringRestricted(question, conditions));

@@ -7,7 +7,6 @@ import java.util.List;
 
 import player.Player;
 import tipos.CollectionsUtils;
-import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 import board.City;
 import board.hasPerfomanceFilter;
@@ -56,7 +55,7 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 			System.out.println("Estas son las ciudades que poseen Performance.");
 
 			for (int i=0; i< adjCitiesWithPerformance.size() ; i++){
-				System.out.println("--> ["+i+"]"+ adjCitiesWithPerformance.get(i));
+				System.out.println("["+i+"] "+ adjCitiesWithPerformance.get(i));
 			}
 			Integer answerCity= readDataFromKeyBoard.takeParametersToIntegerTopValue("Opcion:", adjCitiesWithPerformance.size());
 			getPlayer().moveCity(adjCitiesWithPerformance.get(answerCity));

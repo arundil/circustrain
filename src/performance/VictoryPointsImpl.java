@@ -29,6 +29,7 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 
 	@Override
 	public void execute(Player player,GameState gamestate) {
+		player.getCity().removePerformance();
 	}
 	
 	public void land(Player player){

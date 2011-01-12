@@ -1,5 +1,8 @@
 package game;
 
+import java.util.List;
+
+import actionCards.ActionCard;
 import player.Player;
 
 //Mandamos al padre el constructor
@@ -21,7 +24,10 @@ public class BasicSingleGame extends OnePlayerGame {
 
 	@Override
 	protected void executeCase(Player player) {
-		selectCard(player.getActionCards());
+		List<ActionCard> actionCards=player.getActionCards();
+		Integer selectedCard=selectCard(actionCards);
+		player.getdiscartpile().add(actionCards.get(selectedCard));
+		player.getActionCards().remove(actionCards.get(selectedCard));
 	}
 	
 	protected void refreshToFire(Player player){
