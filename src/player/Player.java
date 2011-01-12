@@ -38,7 +38,7 @@ public interface Player {
 //	public void playActionCard();
 //	public void playDiscardActionCards(String month);
 	
-	public Integer selectCard(List<ActionCard> cards);
+	
 	public void collectMoney();
 	public void playerState();
 

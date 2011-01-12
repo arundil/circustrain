@@ -43,7 +43,7 @@ public abstract class CircusTrainGame{
 	protected abstract void noClownsNoAnimals();
 	
 	protected abstract void refreshToFire(Player player);
-//	protected abstract void pointsConversor(Player player);
+	protected abstract void pointsConversor(Player player);
 	
 	
 	
@@ -122,7 +122,7 @@ public abstract class CircusTrainGame{
 				//Se lleva a cabo la accion que el jugador a elegido
 				executeCase(currentPlayer);	
 				//Transforma puntos de victoria y puntos de actuacion en dinero según el caso
-//				pointsConversor(currentPlayer);
+				pointsConversor(currentPlayer);
 			}
 			//Incrementa la semana y en caso de cambio de mes, ejecuta las acciones de final de mes;
 			gameState.incrementTime();		

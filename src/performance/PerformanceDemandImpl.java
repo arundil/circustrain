@@ -2,6 +2,7 @@ package performance;
 
 
 import game.CircusTrainGame;
+import gameState.GameState;
 
 import java.util.List;
 import java.util.Map;
@@ -55,7 +56,7 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 	}
 	
 	
-	public void execute(Player player) {
+	public void execute(Player player,GameState gamestate) {
 		Integer weeksToPerformance=player.getWeeksToPerformance();
 		
 		if(!isTwoWeeks() || weeksToPerformance==0){
@@ -79,7 +80,10 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 				player.addMoney(10);
 				player.addPerformance(newPerformancePoints);
 			}
-			refresh(player);
+			gamestate.addMoney(player);
+			if(player.getWeeksToPerformance()==0){
+				player.setWeeksToPerformance(1);
+			}
 			player.addPerfomanceUsed(this);		
 			//Quita la performance que usa en una ciudad.
 			player.getCity().removePerformance();	
@@ -90,20 +94,6 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 			
 	}
 	
-	private void refresh(Player player){
-		if(getColor().equals("green")){
-			player.addMoney(5);
-		}else{
-			if(getColor().equals("yellow")){
-				player.addMoney(10);
-			}else{
-				player.addMoney(20);
-			}				
-		}
-		if(player.getWeeksToPerformance()==0){
-			player.setWeeksToPerformance(1);
-		}
-	}
 	public void land(Player p){
 		
 	}

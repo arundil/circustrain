@@ -1,5 +1,6 @@
 package actionCards;
 
+import gameState.GameState;
 import player.Player;
 
 public class TravelImpl extends ActionCardImpl implements ActionCard {
@@ -8,8 +9,7 @@ public class TravelImpl extends ActionCardImpl implements ActionCard {
 		super("VIAJE", "Puedes viajar hasta 3 ciudades",player);
 	}
 
-	@Override
-	public void execute() {
+	public void execute(GameState gamestate) {
 		super.movePlayer(3);
 	}
 }

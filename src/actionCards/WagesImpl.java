@@ -2,6 +2,7 @@ package actionCards;
 
 
 import game.CircusTrainGame;
+import gameState.GameState;
 import player.Player;
 
 public class WagesImpl extends ActionCardImpl implements ActionCard {
@@ -13,11 +14,11 @@ public class WagesImpl extends ActionCardImpl implements ActionCard {
 		this.ctg = ctg;
 	}
 
-	public void execute() {
+	public void execute(GameState gamestate) {
 		//cambiado player por getPlayer()
 		System.out.println(getPlayer().getName()+" ha usado la carta ==> SALARIOS <== \n" );
 		//Refactorizado...
-		super.movePlayer(2);
+		movePlayer(2);
 		ctg.toPay(getPlayer(), 1);
 		
 	}

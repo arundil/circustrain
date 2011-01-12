@@ -99,12 +99,12 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	protected void executeCase(Player player) {
 		if(getFollowingAction().equals("1")){
 			List<ActionCard> actionCards=player.getActionCards();
-			Integer selectedCard=player.selectCard(actionCards);
+			Integer selectedCard=selectCard(actionCards);
 			player.getdiscartpile().add(actionCards.get(selectedCard));
 			player.getActionCards().remove(actionCards.get(selectedCard));
 		}else{
 			if(getFollowingAction().equals("2")){
-				player.selectCard(player.getdiscartpile());
+				selectCard(player.getdiscartpile());
 				gameState.discardPilePunishment(player);
 			}
 			if(getFollowingAction().equals("3")){

@@ -10,4 +10,5 @@ public interface GameState {
 	public Performance getPerformance();
 	public void discardPilePunishment(Player player);
 	public Integer getWeek();
+	public void addMoney(Player player);
 }

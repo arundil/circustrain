@@ -3,6 +3,7 @@ package performance;
 
 import game.CircusTrainGame;
 import game.factory.GameFactory;
+import gameState.GameState;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 		return stringToReturn;
 	}
 	
-	public void execute(Player player) {
+	public void execute(Player player,GameState gamestate) {
 		List<Talent> newtalents=CollectionsFactory.createListFactory().createList();
 		for(Talent t:getTalentCircus()){
 			String answers="\n" + "[1] SI" + "\n" + "[2] NO";

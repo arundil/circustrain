@@ -28,5 +28,11 @@ public class GreenState extends GameStateImpl implements GameState {
 		player.addReputation(2);
 	}
 
+	@Override
+	public void addMoney(Player player) {
+		player.addMoney(5);
+		
+	}
+
 
 }

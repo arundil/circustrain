@@ -1,6 +1,7 @@
 package actionCards;
 
 import game.CircusTrainGame;
+import gameState.GameState;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 		this.ctg = ctg;
 	}
 
-	public void execute() {
+	public void execute(GameState gamestate) {
 		//cambiado player por getPlayer()
 		City city = getPlayer().getCity();
 		
@@ -49,7 +50,7 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 					getPlayer().addTalent(listtalent);
 				}else{
 					System.out.println("No quedan payasos");
-					execute();
+					execute(gamestate);
 				}
 			}
 			if(answer == 2){
@@ -58,14 +59,14 @@ public class RestImpl extends CardImpl  implements ActionCard  {
 					getPlayer().addTalent(listtalent);
 				}else{
 					System.out.println("No quedan acrobatas");
-					execute();
+					execute(gamestate);
 				}
 				
 			}
 			if(answer == 3){
 				if(!getPlayer().addReputation(1)){
 					System.out.println("Ya tienes la mejor reputación. No es posible subirla más.");
-					execute();
+					execute(gamestate);
 				}
 			}
 		}else{

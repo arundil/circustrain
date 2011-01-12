@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import actionCards.ActionCard;
 import actionCards.WagesImpl;
 
 import player.Player;
@@ -328,10 +329,34 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 			stealTalent(playerList.get(1));
 		}
 	}
+
+	public Integer selectCard(List<ActionCard> actionCardsList) {
+		String question="Seleccione una carta:\n";
+		String restriction="";
+		
+		
+		for(int i=0;i<actionCardsList.size();i++){
+			question=question+"["+i+"]"+ actionCardsList.get(i).toString();
+			restriction=restriction+i;
+			if(i!=actionCardsList.size()-1){
+				restriction=restriction+",";
+			}
+		}
+		
+		String answer=readDataFromKeyBoard.takeParametersToStringRestricted(question, restriction);
+		Integer cardSelector=new Integer(answer);
+		ActionCard actionCardToBeUsed=actionCardsList.get(cardSelector);
+		
+		actionCardToBeUsed.execute(gameState);
+		//NO se debe dejar utilizar la carta de descanso en la primera ronda de juego
+		//Creo que esto deberia estar en la clase del juego y no aqui para referenciar las semanas
+		
+		return cardSelector;
+	}
 	
-//	protected void pointsConversor(Player player){
-//		//Vacio. Con dos jugadores no hace falta convertir puntos.
-//	}
+	protected void pointsConversor(Player player){
+		//Vacio. Con dos jugadores no hace falta convertir puntos.
+	}
 	
 
 }

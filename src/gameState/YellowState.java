@@ -24,4 +24,7 @@ public class YellowState extends GameStateImpl implements GameState {
 		player.addReputation(2);
 	}
 
+	public void addMoney(Player player){
+		player.addMoney(10);
+	}
 }

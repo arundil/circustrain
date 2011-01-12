@@ -1,5 +1,6 @@
 package actionCards;
 
+import gameState.GameState;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 
@@ -12,8 +13,7 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 	}
 
 
-	@Override
-	public void execute() {
+	public void execute(GameState gamestate) {
 		Integer answer;
 //sustituido player por getPlayer()
 		System.out.println(getPlayer().getName()+" ha usado la carta ==> MOVIMIENTO BÁSICO <== \n");
@@ -29,7 +29,7 @@ public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
 		if (answer ==1){
 			super.movePlayer(1);
 		}else if(answer==2){ 	
-			super.performPlayer();
+			super.performPlayer(gamestate);
 		}
 	}
 }

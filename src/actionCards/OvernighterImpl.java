@@ -1,12 +1,16 @@
 package actionCards;
 
 
+import gameState.GameState;
+
 import java.util.List;
 
 import player.Player;
+import tipos.CollectionsUtils;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 import board.City;
+import board.hasPerfomanceFilter;
 
 public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 
@@ -14,18 +18,13 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 		super("DE NOCHE", "Puedes moverte hasta 2 ciudades y/o actuar/contratar",player);
 	}
 
-	public void execute() {
+	public void execute(GameState gamestate) {
 		Integer answer = null;
 		//cambiado player por getPlayer()
 		System.out.println(getPlayer().getName()+" ha usado la carta ==> DE NOCHE <== \n");
 		//Calculo de las ciudades adyacentes con performance
 		List<City> adjCities=getPlayer().getCity().maxMovement(2);
-		List<City> adjCitiesWithPerformance = CollectionsFactory.createListFactory().createList();
-		for (City c: adjCities){
-			if (c.hasPerfomance()){
-				adjCitiesWithPerformance.add(c);
-			}
-		}
+		List<City> adjCitiesWithPerformance =CollectionsUtils.filteredList(adjCities, new hasPerfomanceFilter());
 		
 		//Casos
 		if (getPlayer().getCity().hasPerfomance() && adjCitiesWithPerformance.size()>0){
@@ -50,7 +49,7 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 		
 		if (answer == 1){
 			//borrado player como parametro
-			super.movePlayer( 2);
+			movePlayer( 2);
 		}
 		
 		if (answer == 2){
@@ -59,13 +58,14 @@ public class OvernighterImpl extends ActionCardImpl implements ActionCard {
 			for (int i=0; i< adjCitiesWithPerformance.size() ; i++){
 				System.out.println("--> ["+i+"]"+ adjCitiesWithPerformance.get(i));
 			}
-			answer= readDataFromKeyBoard.takeParametersToIntegerTopValue("Opcion:", adjCitiesWithPerformance.size());
-			getPlayer().moveCity(adjCitiesWithPerformance.get(answer));
+			Integer answerCity= readDataFromKeyBoard.takeParametersToIntegerTopValue("Opcion:", adjCitiesWithPerformance.size());
+			getPlayer().moveCity(adjCitiesWithPerformance.get(answerCity));
+			
 		}
 		
 		if (answer == 2 || answer ==3){
 			//borrado player como parametro
-			super.performPlayer();
+			performPlayer(gamestate);
 		}
 	}
 }

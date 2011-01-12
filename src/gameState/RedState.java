@@ -26,4 +26,10 @@ public class RedState extends GameStateImpl implements GameState {
 	public void discardPilePunishment(Player player) {
 		player.addVictoryPoints(-4);
 	}
+
+	@Override
+	public void addMoney(Player player) {
+		player.addMoney(15);
+		
+	}
 }

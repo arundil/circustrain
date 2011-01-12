@@ -1,6 +1,7 @@
 package performance;
 
 import game.CircusTrainGame;
+import gameState.GameState;
 import player.Player;
 
 
@@ -27,7 +28,7 @@ public class VictoryPointsImpl extends performanceImpl implements VictoryPoints 
 	}
 
 	@Override
-	public void execute(Player player) {
+	public void execute(Player player,GameState gamestate) {
 	}
 	
 	public void land(Player player){

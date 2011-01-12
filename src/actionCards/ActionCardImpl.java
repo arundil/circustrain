@@ -1,5 +1,7 @@
 package actionCards;
 
+import gameState.GameState;
+
 import java.util.List;
 
 import performance.Performance;
@@ -29,10 +31,10 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 		getPlayer().moveCity(adjCities.get(answer));
 	}
 	//borrado parametro player
-	public void performPlayer(){
+	public void performPlayer(GameState gamestate){
 		//cambio de player a getPlayer()
 		Performance p = getPlayer().getCity().getPerformance();
 		//MUAHAHAHAHAHA vivan los commands!!! borrado todo el tocho
-		p.execute(getPlayer());
+		p.execute(getPlayer(),gamestate);
 	}
 }
