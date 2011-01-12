@@ -122,6 +122,9 @@ public abstract class CircusTrainGame{
 				executeCase(currentPlayer);	
 				//Transforma puntos de victoria y puntos de actuacion en dinero según el caso
 				pointsConversor(currentPlayer);
+				//Comprueba si todas las cartas están descartadas y las restaura
+				checkEmptyDeck(currentPlayer);
+				
 			}
 			//Incrementa la semana y en caso de cambio de mes, ejecuta las acciones de final de mes;
 			gameState.incrementTime();		
@@ -207,6 +210,13 @@ public abstract class CircusTrainGame{
 		talentBag.addTalent(talentToBeFired);
 		
 		refreshToFire(player);		
+	}
+	
+	protected void checkEmptyDeck(Player player){
+		if(player.getActionCards().isEmpty()){
+			player.getActionCards().addAll(player.getdiscartpile());
+			player.getdiscartpile().clear();
+		}
 	}
 	
 }

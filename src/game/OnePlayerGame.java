@@ -11,7 +11,6 @@ import utiles.factoria.readDataFromKeyBoard;
 //Añadido parte de los constructores de los hijos por ser iguales.
 
 public abstract class OnePlayerGame extends CircusTrainGame{
-	protected Player player;
 
 //	protected Integer numberOfPlayers=1;
 	
@@ -26,7 +25,6 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 	public void gameOver() {
 		finalWage();
 		noClownsNoAnimals();
-		results();
 	}
 	
 	
@@ -45,7 +43,7 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 
 	@Override
 	protected void results(){
-		Integer playerFinalMoney=player.getMoney();
+		Integer playerFinalMoney=playerList.get(0).getMoney();
 		System.out.println("Tu dinero al final de la temporada es: "+playerFinalMoney+ "$");
 		if(playerFinalMoney<100){
 			System.out.println("============= Derrota ============= \nTu circo no" +
