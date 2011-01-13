@@ -11,6 +11,7 @@ public abstract class GameStateImpl implements GameState {
 	protected static String month;
 	protected CircusTrainGame game;
 	protected static Integer week=0;
+	protected static Integer humanWeek=1;
 	
 	public GameStateImpl(CircusTrainGame game){
 		this.game=game;
@@ -20,34 +21,40 @@ public abstract class GameStateImpl implements GameState {
 	public GameState incrementTime() {
 		GameState stateToReturn=this;
 		week++;
+		humanWeek++;
 		completeBoard();
 		if (week==4){
+			humanWeek=1;
 			game.finalMonth();
-			month="MAY";
+			month="MAYO";
 		}
 		if (week==9){
+			humanWeek=1;
 			game.finalMonth();
 			game.stealTalentSelector();
-			month="JUNE";
+			month="JUNIO";
 			game.getBoard().removeAllPerformances();
 			stateToReturn=new YellowState(game);
 		}
 		if (week==13){
+			humanWeek=1;
 			game.finalMonth();
-			month="JULY";
+			month="JULIO";
 			
 		}
 		if (week==18){
+			humanWeek=1;
 			game.finalMonth();
 			game.stealTalentSelector();
-			month="AUGUST";
+			month="AGOSTO";
 			game.getBoard().removeAllPerformances();
 			stateToReturn=new RedState(game);
 		}
 		if (week==22){
+			humanWeek=1;
 			game.finalMonth();
 			game.stealTalentSelector();
-			month="SEPTEMBER";
+			month="SETPTIEMBRE";
 		}
 		return stateToReturn;
 
@@ -78,5 +85,9 @@ public abstract class GameStateImpl implements GameState {
 	}
 	public Integer getWeek(){
 		return week;
+	}
+	
+	public Integer getHumanWeek(){
+		return humanWeek;
 	}
 }

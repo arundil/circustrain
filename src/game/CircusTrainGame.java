@@ -108,7 +108,7 @@ public abstract class CircusTrainGame{
 			
 			//Mostrar ciudades con eventos
 			showPerformanceSituation();
-			System.out.println("\n \n Esta es la semana " + gameState.getWeek() + " del mes " + gameState.getMonth());
+			System.out.println("\n \n Esta es la semana " + gameState.getHumanWeek() + " del mes " + gameState.getMonth());
 			
 			for(Player currentPlayer : playerList){
 				//Se muestra el estado del jugador
