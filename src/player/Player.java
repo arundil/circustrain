@@ -30,7 +30,6 @@ public interface Player {
 	public List<Performance> getPerfomancesUsed();
 	public List<ActionCard> getActionCards(); 
 	public List<ActionCard> getdiscartpile();
-	public boolean addActionCard(ActionCard ac);
 	public boolean addPerfomanceUsed(Performance p);
 	public void discardTalent(Talent t);
 	public void addActionCards(List<ActionCard> actioncards);
@@ -44,5 +43,7 @@ public interface Player {
 
 	public Integer getWeeksToPerformance();
 	public void setWeeksToPerformance(Integer weeks);
+	
+
 	
 }

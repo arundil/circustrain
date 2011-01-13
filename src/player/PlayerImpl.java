@@ -60,16 +60,6 @@ public class PlayerImpl implements Player {
 		action_cards = actioncards; 
 	}
 
-	@Override
-	public boolean addActionCard(ActionCard card) { //metodo para rescatar una carta de la pila.
-		boolean addedCard =false;
-		if(discart_pile.contains(card)){
-			discart_pile.remove(card);
-			action_cards.add(card);
-			addedCard =true;
-		}
-		return addedCard;
-	}
 
 	@Override
 	public boolean addMoney(Integer money) {
