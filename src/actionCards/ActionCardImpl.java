@@ -25,9 +25,9 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 		//cambio de player a getPlayer()
 		adjCities=getPlayer().getCity().maxMovement(move);
 		for (int i=0;i<adjCities.size();i++){
-			System.out.println("--> ["+i+"]"+ adjCities.get(i));
+			System.out.println("["+i+"] "+ adjCities.get(i));
 		}
-		answer= readDataFromKeyBoard.takeParametersToIntegerTopValue(mens+"\nOpcion:", adjCities.size());
+		answer= readDataFromKeyBoard.takeParametersToIntegerTopValue(mens+"\nOpcion:", adjCities.size()-1);
 		getPlayer().moveCity(adjCities.get(answer));
 	}
 	//borrado parametro player
