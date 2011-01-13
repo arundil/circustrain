@@ -8,9 +8,9 @@ import performance.Performance;
 
 public abstract class GameStateImpl implements GameState {
 	
-	protected String month;
+	protected static String month;
 	protected CircusTrainGame game;
-	protected Integer week=0;
+	protected static Integer week=0;
 	
 	public GameStateImpl(CircusTrainGame game){
 		this.game=game;
@@ -20,7 +20,6 @@ public abstract class GameStateImpl implements GameState {
 	public GameState incrementTime() {
 		GameState stateToReturn=this;
 		week++;
-		Integer week=game.getWeek();
 		completeBoard();
 		if (week==4){
 			game.finalMonth();
