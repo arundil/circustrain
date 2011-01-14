@@ -172,6 +172,10 @@ Día 9 de diciembre de 2010 a las 23:00, entrega iteración 4
 Día 23 de diciembre de 2010 a las 11:40, entrega iteración 5
 \end_layout
 
+\begin_layout Itemize
+Día 14 de enero de 2011 a las 14:10, entrega iteración 6
+\end_layout
+
 \begin_layout Chapter*
 Seguimiento
 \end_layout
@@ -354,7 +358,7 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -372,7 +376,7 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
+30
 \end_layout
 
 \end_inset
@@ -439,7 +443,7 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -457,7 +461,7 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
+30
 \end_layout
 
 \end_inset
@@ -524,7 +528,7 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -542,7 +546,7 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
+30
 \end_layout
 
 \end_inset
@@ -609,7 +613,7 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -627,7 +631,7 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
+30
 \end_layout
 
 \end_inset
@@ -694,7 +698,7 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -712,7 +716,7 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
+30
 \end_layout
 
 \end_inset
@@ -779,7 +783,7 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5
 \end_layout
 
 \end_inset
@@ -797,7 +801,7 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
-25
+30
 \end_layout
 
 \end_inset
@@ -865,7 +869,7 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+30
 \end_layout
 
 \end_inset
@@ -883,7 +887,7 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
-150
+180
 \end_layout
 
 \end_inset
@@ -1015,7 +1019,27 @@ Realizar las pruebas unitarias correspondientes.
 \end_layout
 
 \begin_layout Itemize
-Subsanar los fallos en el funcionamiento del juego.
+Subsanar los fallos en el funcionamiento del juego
+\end_layout
+
+\begin_layout Section*
+Añadidos en la iteración 6:
+\end_layout
+
+\begin_layout Itemize
+Implementados los modos de juego.
+\end_layout
+
+\begin_layout Itemize
+Solucionados bugs en el funcionamiento del juego.
+\end_layout
+
+\begin_layout Itemize
+Añadidos documentos de asignación de responsabilidades
+\end_layout
+
+\begin_layout Itemize
+Añadidos memorandos técnicos.
 \end_layout
 
 \begin_layout Chapter*
