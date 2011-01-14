@@ -1,11 +1,11 @@
-//package test;
+package test;
 //
 //import player.Player;
 //import player.PlayerImpl;
 //import board.Board;
 //import board.BoardImpl;
 //
-//public class TestPlayer extends Test {
+public class TestPlayer extends Test {
 //
 //	/**
 //	 * @param args
@@ -21,4 +21,4 @@
 //		p.getActionCards().get(0).execute();
 //	}
 //
-//}
+}

@@ -1,6 +1,7 @@
-//package test;
+package test;
 //
-//import game.TwoPlayersGame;
+import player.Player;
+import game.TwoPlayersGame;
 //
 //import java.util.Iterator;
 //import java.util.List;
@@ -16,7 +17,31 @@
 //
 //import commands.CommandPay;
 //
-//public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
+public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
+
+	@Override
+	public void finalMonth() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void executeCase(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void refreshToFire(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void selectCase(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
 //
 //	@Override
 //	protected void finalMonth() {
@@ -356,4 +381,4 @@
 //	}
 //	
 //
-//}
+}

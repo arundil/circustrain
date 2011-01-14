@@ -1,4 +1,4 @@
-//package test;
+package test;
 //
 //import java.util.List;
 //import java.util.Map;
@@ -23,7 +23,7 @@
 //import board.Board;
 //import board.BoardImpl;
 //
-//public class testCartasDeAccion extends Test {
+public class testCartasDeAccion extends Test {
 //
 //	/**
 //	 * @param args
@@ -95,4 +95,4 @@
 //		System.out.println("La ciudad actual de "+p.getName()+" es " + p.getCity());
 //		System.out.println("La ejecución ha terminado correctamente");
 //	}
-//}
+}

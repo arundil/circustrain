@@ -1,4 +1,4 @@
-//package test;
+package test;
 //
 //import game.factory.GameFactory;
 //
@@ -13,7 +13,7 @@
 //import utiles.factoria.CollectionsFactory;
 //import bag.PerformanceBag;
 //
-//public class TestAdvancedTwoPlayersGame {
+public class TestAdvancedTwoPlayersGame {
 //	
 //	Player player1;
 //	Player player2;
@@ -155,4 +155,4 @@
 //		assert player2.getVictoryPoints()==3:"Fallo en HigherReputation";
 //		
 //	}
-//}
+}
