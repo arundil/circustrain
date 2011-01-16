@@ -3,9 +3,24 @@ package game;
 import java.util.List;
 
 import actionCards.ActionCard;
+import actionCards.RestImpl;
 import player.Player;
 
 public class BasicTwoPlayersGame extends TwoPlayersGame{
+	
+	public BasicTwoPlayersGame(){
+		super();
+		for(Player player: playerList){
+			ActionCard rest = new RestImpl(this,player);
+			Integer index=0;
+			for(ActionCard actionCard: player.getActionCards()){
+				if(actionCard.equals(rest)){
+					player.getActionCards().remove(index);
+				}
+				index++;
+			}
+		}
+	}
 	
 	@Override
 	protected void selectCase(Player player){
