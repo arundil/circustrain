@@ -25,8 +25,8 @@ public class PlayerImpl implements Player {
 	private List<Integer> reputationList;
 	private Integer weeksToPerformance; //Semanas restantes para poder puntuar en una actuacion
 	
-	public PlayerImpl (String n){
-		name=n;
+	public PlayerImpl (String name){
+		this.name=name;
 		money = 0;
 		perfomance_max =0;
 		victoryPoints = 0;
@@ -92,7 +92,6 @@ public class PlayerImpl implements Player {
 
 	@Override
 	public void addTalent(List<Talent> talentsToAdd) {
-		
 		for (Talent talent :talentsToAdd){
 			if (talents.containsKey(talent)){
 				Integer numberOfTalents = talents.get(talent);
