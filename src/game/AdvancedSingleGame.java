@@ -50,4 +50,9 @@ public class AdvancedSingleGame extends OnePlayerGame {
 		}
 	}
 
+	public void addRestActionCard() {
+		ActionCard restCard=new RestImpl(this, this.getPlayerList().get(0));
+		this.getPlayerList().get(0).getActionCards().add(restCard);
+	}
+
 }
