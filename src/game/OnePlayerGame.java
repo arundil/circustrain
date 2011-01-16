@@ -13,6 +13,7 @@ import utiles.factoria.readDataFromKeyBoard;
 public abstract class OnePlayerGame extends CircusTrainGame{
 
 //	protected Integer numberOfPlayers=1;
+	public abstract void addRestActionCard();
 	
 	public OnePlayerGame(){
 		super();

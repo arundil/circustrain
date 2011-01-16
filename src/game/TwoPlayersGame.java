@@ -20,14 +20,13 @@ import utiles.factoria.readDataFromKeyBoard;
 public abstract class TwoPlayersGame extends CircusTrainGame{
 
 	protected Integer numberOfPlayers=2;
+	public abstract void finalMonth();
+	public abstract void addRestActionCard();
 	
 	public TwoPlayersGame(){
 		super();
 		setPlayersNames();
 	}
-	
-	@Override
-	public abstract void finalMonth();
 	
 	protected void comparePlayersAndAddVictoryPoints() {
 		compareTalentsCountAndAddVictoryPoints();

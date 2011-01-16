@@ -52,6 +52,7 @@ public abstract class CircusTrainGame{
 	
 	protected abstract void refreshToFire(Player player);
 	protected abstract void pointsConversor(Player player);
+	public abstract void addRestActionCard();
 	
 	
 	
@@ -237,5 +238,6 @@ public abstract class CircusTrainGame{
 		ac.add(new HoldImpl(player));
 		return ac;
 	}
+
 	
 }
