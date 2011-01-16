@@ -13,6 +13,14 @@ import player.Player;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import actionCards.ActionCard;
+import actionCards.BasicMoveImpl;
+import actionCards.FastMoveImpl;
+import actionCards.HoldImpl;
+import actionCards.OvernighterImpl;
+import actionCards.RestImpl;
+import actionCards.TravelImpl;
+import actionCards.WagesImpl;
 import bag.PerformanceBag;
 import bag.TalentBag;
 import board.Board;
@@ -217,6 +225,18 @@ public abstract class CircusTrainGame{
 			player.getActionCards().addAll(player.getdiscartpile());
 			player.getdiscartpile().clear();
 		}
+	}
+	
+	public static List<ActionCard> inicializateActionCards(CircusTrainGame ctg, Player player){
+		List<ActionCard> ac = CollectionsFactory.createListFactory().createList();
+		ac.add(new TravelImpl(player));
+		ac.add(new BasicMoveImpl(player));
+		ac.add(new BasicMoveImpl(player));
+		ac.add(new FastMoveImpl(player));
+		ac.add(new WagesImpl(ctg,player));
+		ac.add(new OvernighterImpl(player));
+		ac.add(new HoldImpl(player));
+		return ac;
 	}
 	
 }

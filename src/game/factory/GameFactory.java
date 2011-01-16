@@ -95,18 +95,7 @@ public class GameFactory {
 		return null;
 	}
 	
-	public static List<ActionCard> inicializateActionCards(CircusTrainGame ctg, Player player){
-		List<ActionCard> ac = CollectionsFactory.createListFactory().createList();
-		ac.add(new TravelImpl(player));
-		ac.add(new BasicMoveImpl(player));
-		ac.add(new BasicMoveImpl(player));
-		ac.add(new FastMoveImpl(player));
-		ac.add(new WagesImpl(ctg,player));
-		ac.add(new OvernighterImpl(player));
-		ac.add(new HoldImpl(player));
-		ac.add(new RestImpl(ctg,player));			
-		return ac;
-	}
+	
 	
 	public static CircusTrainGame createCircusTrainGame(){
 
