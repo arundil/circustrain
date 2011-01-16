@@ -71,7 +71,7 @@ public abstract class GameStateImpl implements GameState {
 		Performance performanceToReturn;
 		Integer random=(int)(Math.random()*bag.size()); 
 		performanceToReturn = bag.get(random);
-		bag.remove(random);
+		bag.remove(performanceToReturn);
 		return performanceToReturn;
 	}
 	

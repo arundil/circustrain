@@ -6,7 +6,6 @@ import performance.Performance;
 
 public interface PerformanceBag {
 
-	public Performance getPerformance(String color);//This method will be random, over a concrete color
 	public Performance removePerformance(Performance p);
 	public Performance addPerformance(Performance e);
 	

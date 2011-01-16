@@ -381,4 +381,7 @@ public class TestClassAdvancedTwoPlayersGame extends TwoPlayersGame{
 //	}
 //	
 //
+
+	public void addRestActionCard() {
+	}
 }

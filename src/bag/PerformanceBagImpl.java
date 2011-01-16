@@ -126,47 +126,22 @@ public class PerformanceBagImpl implements PerformanceBag {
 	@Override
 
 	public List<Performance> getGreenBag() {
-		// TODO Auto-generated method stub
 		return greenBag;
 	}
 
-	@Override
-	public Performance getPerformance(String color) {
-		color=color.toLowerCase();
-		Performance r=null;
-		if(color.equals("red")){
-			Collections.shuffle(redBag);
-			r = redBag.get(1);
-			redBag.remove(1);}
-		else if (color.equals("yellow")){
-			Collections.shuffle(yellowBag);
-			r = yellowBag.get(1);
-			yellowBag.remove(1);}
-		
-		else if (color.equals("green")){
-			Collections.shuffle(greenBag);
-			r = greenBag.get(1);
-			greenBag.get(1);
-			greenBag.remove(1);}
-
-		return r;
-	}
-
+	
 	@Override
 	public List<Performance> getRedBag() {
-		// TODO Auto-generated method stub
 		return redBag;
 	}
 
 	@Override
 	public List<Performance> getYellowBag() {
-		// TODO Auto-generated method stub
 		return yellowBag;
 	}
 
 	@Override
 	public Performance removePerformance(Performance p) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
