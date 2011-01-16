@@ -203,7 +203,7 @@
       <children xsi:type="editmodel:AttributeEditModel" name="player" id="card/CardImpl#player"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="99,90">
-      <children xsi:type="editmodel:MethodEditModel" name="CardImpl" id="card/CardImpl#CardImpl(Ljava.lang.String;Ljava.lang.String;Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="CardImpl" id="card/CardImpl#CardImpl(Ljava.lang.String;Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="card/CardImpl#getDescription()"/>
       <children xsi:type="editmodel:MethodEditModel" name="getName" id="card/CardImpl#getName()"/>
       <children xsi:type="editmodel:MethodEditModel" name="getPlayer" id="card/CardImpl#getPlayer()"/>
@@ -231,8 +231,8 @@
   <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.15/@sourceConnections.0 //@children.9/@sourceConnections.2" name="ActionCardImpl" location="391,502" size="140,117" id="actionCards/ActionCardImpl">
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="101,54">
-      <children xsi:type="editmodel:MethodEditModel" name="ActionCardImpl" id="actionCards/ActionCardImpl#ActionCardImpl(Ljava.lang.String;Ljava.lang.String;Lplayer.Player;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="movePlayer" id="actionCards/ActionCardImpl#movePlayer(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ActionCardImpl" id="actionCards/ActionCardImpl#ActionCardImpl(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="movePlayer" id="actionCards/ActionCardImpl#movePlayer(Ljava.lang.Integer;Lplayer.Player;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="performPlayer" id="actionCards/ActionCardImpl#performPlayer(LgameState.GameState;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>

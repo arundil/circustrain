@@ -5,10 +5,12 @@ import java.util.List;
 import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 import actionCards.ActionCard;
+import actionCards.RestImpl;
 
 //creado metodo selectCase();
 public class AdvancedSingleGame extends OnePlayerGame {
-		
+	
+
 	@Override
 	protected void selectCase (Player player){
 		String action1="[1] Jugar una carta de acción";

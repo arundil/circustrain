@@ -8,14 +8,6 @@ import player.Player;
 
 public class BasicTwoPlayersGame extends TwoPlayersGame{
 	
-	public BasicTwoPlayersGame(){
-		super();
-		for(Player player: playerList){
-			ActionCard rest = new RestImpl(this,player);
-			player.getActionCards().remove(rest);
-		}
-	}
-
 	@Override
 	protected void selectCase(Player player){
 		String action="1";

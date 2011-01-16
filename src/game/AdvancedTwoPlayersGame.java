@@ -7,8 +7,11 @@ import player.Player;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 import actionCards.ActionCard;
+import actionCards.RestImpl;
 
 public class AdvancedTwoPlayersGame extends TwoPlayersGame {
+	
+
 	
 	@Override
 	public void finalMonth(){

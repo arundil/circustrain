@@ -8,13 +8,7 @@ import player.Player;
 
 public class BasicSingleGame extends OnePlayerGame {
 	
-	public BasicSingleGame(){
-		super();
-		for(Player player: playerList){
-			ActionCard rest = new RestImpl(this,player);
-			player.getActionCards().remove(rest);
-		}
-	}
+	
 	@Override
 	protected void selectCase(Player p){
 		//Si la unica opción que puede usar es jugar una carta de acción, ¿para que preguntarle lo que quiere hacer, ir directamente a preguntarle que carta quiere jugar

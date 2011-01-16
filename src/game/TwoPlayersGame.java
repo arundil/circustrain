@@ -272,7 +272,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 			Player player=GameFactory.createPlayer(name);
 			player.addTalent(theClown);
 			talentBag.removeTalent(clown);
-			player.addActionCards(GameFactory.inicializateActionCards(this, player));
+			player.addActionCards(inicializateActionCards(this, player));
 			playerList.add(player);
 		}
 	}	
