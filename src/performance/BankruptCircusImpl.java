@@ -47,8 +47,10 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 				System.out.println("Al tirar el dado ha salido: "+dice);
 				Integer repMaxValue=player.getHigherDiceScore();
 				if((1<=dice) && (dice<=repMaxValue)){
+					System.out.println("\nHas contratado el talento "+t.toString()+"\n");
 					newtalents.add(t);
 				}else{
+					System.out.println("\nNo has conseguido contratar el talento "+t.toString()+"\n");
 					if(!((player.getMoney())<10)){	
 						String answers1="\n" + "[1] SI" + "\n" + "[2] NO";
 						String message1="Tu tirada no es suficiente para contratar gratis al talento,¿Quieres pagar?"+answers1;
