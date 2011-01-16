@@ -83,9 +83,9 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 				}				
 			}
 			gamestate.addMoney(player);
-			if(player.getWeeksToPerformance()==0){
-				player.setWeeksToPerformance(1);
-			}
+			
+			player.setWeeksToPerformance(1);
+			
 			player.addPerfomanceUsed(this);		
 			//Quita la performance que usa en una ciudad.
 			player.getCity().removePerformance();	
