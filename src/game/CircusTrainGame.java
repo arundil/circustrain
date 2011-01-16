@@ -61,7 +61,6 @@ public abstract class CircusTrainGame{
 		performanceBag= GameFactory.createPerformanceBag();
 		talentBag = GameFactory.createTalentBag();
 		theClown.add(clown);
-		week=0;
 		gameState=new GreenState(this);
 	}
 

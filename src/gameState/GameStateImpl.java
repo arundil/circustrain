@@ -90,4 +90,8 @@ public abstract class GameStateImpl implements GameState {
 	public Integer getHumanWeek(){
 		return humanWeek;
 	}
+	
+	public CircusTrainGame getGame(){
+		return game;
+	}
 }

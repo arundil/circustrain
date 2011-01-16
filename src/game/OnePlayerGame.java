@@ -152,14 +152,14 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 		Integer playerUselessVictorypoints=player.getVictoryPoints();
 		player.addMoney(playerUselessVictorypoints*5);
 		player.addVictoryPoints(-playerUselessVictorypoints);
-		
-		Integer playerUselessPerformacePoints=player.getPerformanceMax();
-		
-		if(playerUselessPerformacePoints !=0){
-			player.addMoney(playerUselessPerformacePoints);
-			player.addPerformance(-playerUselessPerformacePoints);
-			player.addMoney(-10);
-		}
+//		
+//		Integer playerUselessPerformacePoints=player.getPerformanceMax();
+//		
+//		if(playerUselessPerformacePoints !=0){
+//			player.addMoney(playerUselessPerformacePoints);
+//			player.addPerformance(-playerUselessPerformacePoints);
+//			player.addMoney(-10);
+//		}
 		
 	}
 }

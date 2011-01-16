@@ -28,11 +28,5 @@ public class Test {
 		return line;		
 	}	
 	
-	public static void main(String[] args) {
-//		String line2=takeParametersToStringRestricted("ohhhh, que bueno, negra: si,no", "si,no");
-		String line= takeParametersToStringRestricted1("le?: 1,2,3,4","1,2,3,4");
-		
-		
-	}  
 
 }

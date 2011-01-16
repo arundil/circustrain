@@ -77,8 +77,10 @@ public class PerformanceDemandImpl extends performanceImpl implements Performanc
 				newPerformancePoints+=perfordemand.getBasicPoints();
 			}
 			if(performancePoints<newPerformancePoints){
-				player.addMoney(10);
-				player.addPerformance(newPerformancePoints);
+				if(gamestate.getGame().getPlayerList().size()>1){
+					player.addMoney(10);
+					player.addPerformance(newPerformancePoints);
+				}				
 			}
 			gamestate.addMoney(player);
 			if(player.getWeeksToPerformance()==0){

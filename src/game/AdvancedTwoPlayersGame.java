@@ -24,7 +24,6 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	public void gameOver(){
 		super.gameOver();
 		higherReputation();
-		results();
 	}	
 	
 	private void higherReputation(){

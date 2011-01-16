@@ -68,7 +68,7 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 		this.getTalentCircus().removeAll(newtalents);
 		if (getTalentCircus().size()==0){
 			player.getCity().removePerformance();
-			}	
+		}	
 	}
 	
 	public void land(Player p){
