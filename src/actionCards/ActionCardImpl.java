@@ -39,4 +39,6 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 			p.execute(getPlayer(),gamestate);
 		}
 	}
+	
+	
 }
