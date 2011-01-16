@@ -23,6 +23,9 @@ public abstract class GameStateImpl implements GameState {
 		week++;
 		humanWeek++;
 		completeBoard();
+		if(week==1){
+			game.addRestActionCard();
+		}
 		if (week==4){
 			humanWeek=1;
 			game.finalMonth();
