@@ -40,5 +40,13 @@ public abstract class ActionCardImpl extends CardImpl implements ActionCard {
 		}
 	}
 	
+	public boolean equals(Object o){
+		boolean result=false;
+		if(this.getClass()==o.getClass()){
+			result=true;
+		}
+		return result;
+	}
+	
 	
 }
