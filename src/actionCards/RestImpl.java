@@ -16,7 +16,7 @@ import utiles.factoria.readDataFromKeyBoard;
 import board.City;
 import card.CardImpl;
 
-public class RestImpl extends CardImpl  implements ActionCard  {
+public class RestImpl extends ActionCardImpl implements ActionCard  {
 	CircusTrainGame ctg;
 	public RestImpl(CircusTrainGame ctg, Player player) {
 		super("DESCANSO","Si estas en Canada (Winnipeg, Montreal or Toronto), " +

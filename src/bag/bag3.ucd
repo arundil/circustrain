@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="bag3" size="1160,1360" id="bag" metadata="uml2-1.0" initialized="true" zoom="0.75" scrolledY="141" tag="1000" key="32303037303533312D3130303020636972637573747261696E2F6A656E6B696E3930">
+  <children xsi:type="editmodel:ClassEditModel" name="TalentBagImpl" location="290,1057" size="176,193" id="bag/TalentBagImpl">
+    <children xsi:type="editmodel:CompartmentEditModel" size="153,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="talents" id="bag/TalentBagImpl#talents"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,126">
+      <children xsi:type="editmodel:MethodEditModel" name="TalentBagImpl" id="bag/TalentBagImpl#TalentBagImpl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTalent" id="bag/TalentBagImpl#addTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumTalents" id="bag/TalentBagImpl#getNumTalents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumTypeTalent" id="bag/TalentBagImpl#getNumTypeTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTalentBag" id="bag/TalentBagImpl#getTalentBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTalent" id="bag/TalentBagImpl#removeTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="bag/TalentBagImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="bag/TalentBag&lt;-bag/TalentBagImpl" source="//@children.0" target="//@children.1" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="88,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="70,153"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0" name="TalentBag" location="308,854" size="140,153" id="bag/TalentBag">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,90">
+      <children xsi:type="editmodel:MethodEditModel" name="addTalent" id="bag/TalentBag#addTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumTalents" id="bag/TalentBag#getNumTalents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumTypeTalent" id="bag/TalentBag#getNumTypeTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTalentBag" id="bag/TalentBag#getTalentBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTalent" id="bag/TalentBag#removeTalent(Ltalent.Talent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@sourceConnections.0" name="PerformanceBag" location="69,854" size="151,171" id="bag/PerformanceBag">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,108">
+      <children xsi:type="editmodel:MethodEditModel" name="addPerformance" id="bag/PerformanceBag#addPerformance(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGreenBag" id="bag/PerformanceBag#getGreenBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="bag/PerformanceBag#getPerformance(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRedBag" id="bag/PerformanceBag#getRedBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getYellowBag" id="bag/PerformanceBag#getYellowBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removePerformance" id="bag/PerformanceBag#removePerformance(Lperformance.Performance;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PerformanceBagImpl" location="50,1075" size="190,265" id="bag/PerformanceBagImpl">
+    <children xsi:type="editmodel:CompartmentEditModel" size="167,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="greenBag" id="bag/PerformanceBagImpl#greenBag"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="redBag" id="bag/PerformanceBagImpl#redBag"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="yellowBag" id="bag/PerformanceBagImpl#yellowBag"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,162">
+      <children xsi:type="editmodel:MethodEditModel" name="PerformanceBagImpl" id="bag/PerformanceBagImpl#PerformanceBagImpl(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="PerformanceBagImpl" id="bag/PerformanceBagImpl#PerformanceBagImpl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPerformance" id="bag/PerformanceBagImpl#addPerformance(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGreenBag" id="bag/PerformanceBagImpl#getGreenBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="bag/PerformanceBagImpl#getPerformance(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRedBag" id="bag/PerformanceBagImpl#getRedBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getYellowBag" id="bag/PerformanceBagImpl#getYellowBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removePerformance" id="bag/PerformanceBagImpl#removePerformance(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="bag/PerformanceBagImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="bag/PerformanceBag&lt;-bag/PerformanceBagImpl" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="94,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,171"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="FastMoveImpl" location="50,687" size="130,99" id="actionCards/FastMoveImpl">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,36">
+      <children xsi:type="editmodel:MethodEditModel" name="FastMoveImpl" id="actionCards/FastMoveImpl#FastMoveImpl(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="actionCards/FastMoveImpl#execute(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCardImpl&lt;-actionCards/FastMoveImpl" source="//@children.4" target="//@children.15/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="65,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCard&lt;-actionCards/FastMoveImpl" source="//@children.4" target="//@children.16" targetEnd="//@children.4/@sourceConnections.1/@children.1" sourceEnd="//@children.4/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="100,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="22,95"/>
+      <bendpoints location="160,612" secondRelativeDimension="-216,354" firstRelativeDimension="31,-24"/>
+      <bendpoints location="526,612" secondRelativeDimension="106,354" firstRelativeDimension="396,-63"/>
+      <bendpoints location="526,427" secondRelativeDimension="94,169" firstRelativeDimension="396,-221"/>
+      <bendpoints location="492,427" secondRelativeDimension="68,169" firstRelativeDimension="362,-217"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TravelImpl" location="553,687" size="109,99" id="actionCards/TravelImpl">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="78,36">
+      <children xsi:type="editmodel:MethodEditModel" name="TravelImpl" id="actionCards/TravelImpl#TravelImpl(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="actionCards/TravelImpl#execute(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCardImpl&lt;-actionCards/TravelImpl" source="//@children.5" target="//@children.15/@sourceConnections.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="54,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCard&lt;-actionCards/TravelImpl" source="//@children.5" target="//@children.16" targetEnd="//@children.5/@sourceConnections.1/@children.1" sourceEnd="//@children.5/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="38,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="71,95"/>
+      <bendpoints location="642,612" secondRelativeDimension="208,354" firstRelativeDimension="30,-26"/>
+      <bendpoints location="706,612" secondRelativeDimension="265,354" firstRelativeDimension="94,-46"/>
+      <bendpoints location="706,427" secondRelativeDimension="244,176" firstRelativeDimension="120,-207"/>
+      <bendpoints location="492,427" secondRelativeDimension="68,169" firstRelativeDimension="-51,-206"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.13/@sourceConnections.0" name="EventCard" location="897,213" size="187,239" id="card/EventCard">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,162">
+      <children xsi:type="editmodel:MethodEditModel" name="createListEventSinglePlayer" id="card/EventCard#createListEventSinglePlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="card/EventCard#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumEventCard" id="card/EventCard#getNumEventCard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isCrashBag" id="card/EventCard#isCrashBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isDependOfActionCard" id="card/EventCard#isDependOfActionCard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isDependOfMoney" id="card/EventCard#isDependOfMoney()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isDependOfMonth" id="card/EventCard#isDependOfMonth()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isDependOfMoves" id="card/EventCard#isDependOfMoves()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isDependOfPoints" id="card/EventCard#isDependOfPoints()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.10/@sourceConnections.0 //@children.16/@sourceConnections.0" autoLocated="true" id="card/Card&lt;-card/EventCard" source="//@children.6" target="//@children.17" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="61,113" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="WagesImpl" location="821,687" size="146,117" id="actionCards/WagesImpl">
+    <children xsi:type="editmodel:CompartmentEditModel" size="123,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="ctg" id="actionCards/WagesImpl#ctg"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="82,36">
+      <children xsi:type="editmodel:MethodEditModel" name="WagesImpl" id="actionCards/WagesImpl#WagesImpl(Lgame.CircusTrainGame;Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="actionCards/WagesImpl#execute(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCardImpl&lt;-actionCards/WagesImpl" source="//@children.7" target="//@children.15/@sourceConnections.0" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCard&lt;-actionCards/WagesImpl" source="//@children.7" target="//@children.16" targetEnd="//@children.7/@sourceConnections.1/@children.1" sourceEnd="//@children.7/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="21,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="99,95"/>
+      <bendpoints location="826,612" secondRelativeDimension="370,354" firstRelativeDimension="-5,-24"/>
+      <bendpoints location="826,427" secondRelativeDimension="364,188" firstRelativeDimension="-13,-208"/>
+      <bendpoints location="492,427" secondRelativeDimension="68,169" firstRelativeDimension="-276,-210"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="HoldImpl" location="692,687" size="99,99" id="actionCards/HoldImpl">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,36">
+      <children xsi:type="editmodel:MethodEditModel" name="HoldImpl" id="actionCards/HoldImpl#HoldImpl(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="actionCards/HoldImpl#execute(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCardImpl&lt;-actionCards/HoldImpl" source="//@children.8" target="//@children.15/@sourceConnections.0" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="49,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,49"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCard&lt;-actionCards/HoldImpl" source="//@children.8" target="//@children.16" targetEnd="//@children.8/@sourceConnections.1/@children.1" sourceEnd="//@children.8/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="20,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="85,95"/>
+      <bendpoints location="766,612" secondRelativeDimension="317,354" firstRelativeDimension="25,-25"/>
+      <bendpoints location="766,427" secondRelativeDimension="304,183" firstRelativeDimension="61,-208"/>
+      <bendpoints location="492,427" secondRelativeDimension="68,169" firstRelativeDimension="-159,-207"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="RestImpl" location="215,502" size="146,117" id="actionCards/RestImpl" runTimeClassModel="RestImpl(Lgame.CircusTrainGame;Lplayer.Player;),ctg,execute(LgameState.GameState;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="123,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="ctg" id="actionCards/RestImpl#ctg"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="70,36">
+      <children xsi:type="editmodel:MethodEditModel" name="RestImpl" id="actionCards/RestImpl#RestImpl(Lgame.CircusTrainGame;Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="actionCards/RestImpl#execute(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCard&lt;-actionCards/RestImpl" source="//@children.9" target="//@children.12/@sourceConnections.0" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCardImpl&lt;-actionCards/RestImpl" source="//@children.9" target="//@children.11/@sourceConnections.0" targetEnd="//@children.9/@sourceConnections.1/@children.1" sourceEnd="//@children.9/@sourceConnections.1/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="73,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCardImpl&lt;-actionCards/RestImpl" source="//@children.9" target="//@children.12" targetEnd="//@children.9/@sourceConnections.2/@children.1" sourceEnd="//@children.9/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="146,58" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,58"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.11/@sourceConnections.0" name="CardImpl" location="224,213" size="129,207" id="card/CardImpl">
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="description" id="card/CardImpl#description"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="card/CardImpl#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="player" id="card/CardImpl#player"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,90">
+      <children xsi:type="editmodel:MethodEditModel" name="CardImpl" id="card/CardImpl#CardImpl(Ljava.lang.String;Ljava.lang.String;Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="card/CardImpl#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="card/CardImpl#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPlayer" id="card/CardImpl#getPlayer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="card/CardImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="card/Card&lt;-card/CardImpl" source="//@children.10" target="//@children.6/@sourceConnections.0" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="64,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="EventCardImpl" location="50,502" size="135,81" id="card/EventCardImpl" runTimeClassModel="EventCardImpl(Ljava.lang.String;Ljava.lang.String;Lplayer.Player;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,18">
+      <children xsi:type="editmodel:MethodEditModel" name="EventCardImpl" id="card/EventCardImpl#EventCardImpl(Ljava.lang.String;Ljava.lang.String;Lplayer.Player;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.12/@sourceConnections.1 //@children.9/@sourceConnections.1" autoLocated="true" id="card/CardImpl&lt;-card/EventCardImpl" source="//@children.11" target="//@children.10" targetEnd="//@children.11/@sourceConnections.0/@children.1" sourceEnd="//@children.11/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="67,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="64,207" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.15/@sourceConnections.0 //@children.9/@sourceConnections.2" name="ActionCardImpl" location="391,502" size="140,117" id="actionCards/ActionCardImpl">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,54">
+      <children xsi:type="editmodel:MethodEditModel" name="ActionCardImpl" id="actionCards/ActionCardImpl#ActionCardImpl(Ljava.lang.String;Ljava.lang.String;Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="movePlayer" id="actionCards/ActionCardImpl#movePlayer(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="performPlayer" id="actionCards/ActionCardImpl#performPlayer(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.9/@sourceConnections.0" autoLocated="true" id="actionCards/ActionCard&lt;-actionCards/ActionCardImpl" source="//@children.12" target="//@children.16" targetEnd="//@children.12/@sourceConnections.0/@children.1" sourceEnd="//@children.12/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="70,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="56,95" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="card/CardImpl&lt;-actionCards/ActionCardImpl" source="//@children.12" target="//@children.11/@sourceConnections.0" targetEnd="//@children.12/@sourceConnections.1/@children.1" sourceEnd="//@children.12/@sourceConnections.1/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="70,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" name="EventBag" location="921,502" size="139,135" id="bag/EventBag">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,72">
+      <children xsi:type="editmodel:MethodEditModel" name="addEventCard" id="bag/EventBag#addEventCard(Lcard.EventCard;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createEventBag" id="bag/EventBag#createEventBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEventCard" id="bag/EventBag#getEventCard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeEventCard" id="bag/EventBag#removeEventCard(Lcard.EventCard;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="card/EventCard&lt;-bag/EventBag" source="//@children.13" target="//@children.6" targetEnd="//@children.13/@sourceConnections.0/@children.1" sourceEnd="//@children.13/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="93,239"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="OvernighterImpl" location="210,687" size="145,99" id="actionCards/OvernighterImpl">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,36">
+      <children xsi:type="editmodel:MethodEditModel" name="OvernighterImpl" id="actionCards/OvernighterImpl#OvernighterImpl(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="actionCards/OvernighterImpl#execute(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCardImpl&lt;-actionCards/OvernighterImpl" source="//@children.14" target="//@children.15/@sourceConnections.0" targetEnd="//@children.14/@sourceConnections.0/@children.1" sourceEnd="//@children.14/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="72,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCard&lt;-actionCards/OvernighterImpl" source="//@children.14" target="//@children.16" targetEnd="//@children.14/@sourceConnections.1/@children.1" sourceEnd="//@children.14/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="38,95"/>
+      <bendpoints location="335,612" secondRelativeDimension="-62,354" firstRelativeDimension="33,-24"/>
+      <bendpoints location="586,612" secondRelativeDimension="159,354" firstRelativeDimension="281,-58"/>
+      <bendpoints location="586,427" secondRelativeDimension="141,169" firstRelativeDimension="285,-207"/>
+      <bendpoints location="492,427" secondRelativeDimension="68,169" firstRelativeDimension="209,-206"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="BasicMoveImpl" location="385,687" size="138,99" id="actionCards/BasicMoveImpl">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,36">
+      <children xsi:type="editmodel:MethodEditModel" name="BasicMoveImpl" id="actionCards/BasicMoveImpl#BasicMoveImpl(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="actionCards/BasicMoveImpl#execute(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.7/@sourceConnections.0 //@children.14/@sourceConnections.0 //@children.8/@sourceConnections.0 //@children.4/@sourceConnections.0 //@children.5/@sourceConnections.0" autoLocated="true" id="actionCards/ActionCardImpl&lt;-actionCards/BasicMoveImpl" source="//@children.15" target="//@children.12" targetEnd="//@children.15/@sourceConnections.0/@children.1" sourceEnd="//@children.15/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="70,117" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="actionCards/ActionCard&lt;-actionCards/BasicMoveImpl" source="//@children.15" target="//@children.16" targetEnd="//@children.15/@sourceConnections.1/@children.1" sourceEnd="//@children.15/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="56,95"/>
+      <bendpoints location="503,612" secondRelativeDimension="86,354" firstRelativeDimension="32,-24"/>
+      <bendpoints location="646,612" secondRelativeDimension="212,354" firstRelativeDimension="173,-52"/>
+      <bendpoints location="646,427" secondRelativeDimension="187,169" firstRelativeDimension="195,-207"/>
+      <bendpoints location="492,427" secondRelativeDimension="68,169" firstRelativeDimension="72,-206"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.7/@sourceConnections.1 //@children.14/@sourceConnections.1 //@children.8/@sourceConnections.1 //@children.5/@sourceConnections.1 //@children.4/@sourceConnections.1 //@children.12/@sourceConnections.0 //@children.15/@sourceConnections.1" name="ActionCard" location="400,213" size="112,95" id="actionCards/ActionCard">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="69,18">
+      <children xsi:type="editmodel:MethodEditModel" name="execute" id="actionCards/ActionCard#execute(LgameState.GameState;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="card/Card&lt;-actionCards/ActionCard" source="//@children.16" target="//@children.6/@sourceConnections.0" targetEnd="//@children.16/@sourceConnections.0/@children.1" sourceEnd="//@children.16/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="56,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.6/@sourceConnections.0" name="Card" location="517,50" size="122,113" id="card/Card">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="99,36">
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="card/Card#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="card/Card#getName()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
