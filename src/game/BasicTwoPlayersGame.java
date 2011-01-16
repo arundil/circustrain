@@ -12,16 +12,10 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 		super();
 		for(Player player: playerList){
 			ActionCard rest = new RestImpl(this,player);
-			Integer index=0;
-			for(ActionCard actionCard: player.getActionCards()){
-				if(actionCard.equals(rest)){
-					player.getActionCards().remove(index);
-				}
-				index++;
-			}
+			player.getActionCards().remove(rest);
 		}
 	}
-	
+
 	@Override
 	protected void selectCase(Player player){
 		String action="1";
