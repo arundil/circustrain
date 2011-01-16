@@ -45,4 +45,8 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 	protected void refreshToFire(Player player){
 		//No hace nada en modo básico
 	}
+
+	public void addRestActionCard() {
+		//No hace nada en modo básico
+	}
 }

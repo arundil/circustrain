@@ -131,4 +131,11 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 			}
 		}
 	}
+	public void addRestActionCard() {
+		for(Player player:this.getPlayerList()){
+			ActionCard restCard=new RestImpl(this, player);
+			player.getActionCards().add(restCard);
+		}
+	}
+
 }
