@@ -3,12 +3,24 @@ package game;
 import java.util.List;
 
 import actionCards.ActionCard;
+import actionCards.RestImpl;
 import player.Player;
 
-//Mandamos al padre el constructor
-//Creado el metodo selectCase();
 public class BasicSingleGame extends OnePlayerGame {
 	
+	public BasicSingleGame(){
+		super();
+		for(Player player: playerList){
+			ActionCard rest = new RestImpl(this,player);
+			Integer index=0;
+			for(ActionCard actionCard: player.getActionCards()){
+				if(actionCard.equals(rest)){
+					player.getActionCards().remove(index);
+				}
+				index++;
+			}
+		}
+	}
 	@Override
 	protected void selectCase(Player p){
 		//Si la unica opción que puede usar es jugar una carta de acción, ¿para que preguntarle lo que quiere hacer, ir directamente a preguntarle que carta quiere jugar
