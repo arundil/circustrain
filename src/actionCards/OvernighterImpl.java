@@ -11,7 +11,7 @@ import utiles.factoria.readDataFromKeyBoard;
 import board.City;
 import board.hasPerfomanceFilter;
 
-public class OvernighterImpl extends ActionCardImpl implements ActionCard {
+public class OvernighterImpl extends ActionCardImpl{
 
 	public OvernighterImpl(Player player) {
 		super("DE NOCHE", "Puedes moverte hasta 2 ciudades y/o actuar/contratar",player);

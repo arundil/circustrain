@@ -3,7 +3,7 @@ package actionCards;
 import gameState.GameState;
 import player.Player;
 
-public class HoldImpl extends ActionCardImpl implements ActionCard {
+public class HoldImpl extends ActionCardImpl{
 
 	public HoldImpl (Player player){
 		super("PERMANECER","Puedes Actuar/Contratar en la ciudad actual",player);

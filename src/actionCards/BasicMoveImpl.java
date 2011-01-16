@@ -5,7 +5,7 @@ import player.Player;
 import utiles.factoria.readDataFromKeyBoard;
 
 
-public class BasicMoveImpl extends ActionCardImpl implements ActionCard {
+public class BasicMoveImpl extends ActionCardImpl{
 
 //borrado atributo player
 	public BasicMoveImpl(Player player) {

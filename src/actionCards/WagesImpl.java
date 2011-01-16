@@ -5,7 +5,7 @@ import game.CircusTrainGame;
 import gameState.GameState;
 import player.Player;
 
-public class WagesImpl extends ActionCardImpl implements ActionCard {
+public class WagesImpl extends ActionCardImpl{
 	CircusTrainGame ctg;
 	//borrado player como atributo
 	public WagesImpl(CircusTrainGame ctg,Player player) {
