@@ -1,4 +1,4 @@
-#LyX 1.6.7 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -43,10 +43,14 @@
 \begin_body
 
 \begin_layout Title
+
+\family sans
 El tren del circo
 \end_layout
 
 \begin_layout Author
+
+\family sans
 Bayón Benegas, Marc 
 \begin_inset ERT
 status open
@@ -116,6 +120,8 @@ and
 \end_layout
 
 \begin_layout Chapter*
+
+\family sans
 \begin_inset Index
 status open
 
@@ -129,58 +135,92 @@ URL del video
 \end_layout
 
 \begin_layout Standard
+
+\family sans
 http://www.youtube.com/watch?v=Nyde3nEXl7s
 \end_layout
 
 \begin_layout Chapter*
+
+\family sans
 Planificación temporal
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 4 de octubre de 2010 a las 8:35, coordinación
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 5 de octubre de 2010 a las 8:35, coordinación
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 7 de octubre de 2010 a las 9:30, entrega iteración 1
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 7 de octubre de 2010 a las 11:45, coordinación
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 13 de octubre de 2010 a las 8:30, coordinación
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 18 de octubre de 2010 a las 9:00, entrega iteración 2
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 11 de noviembre de 2010 a las 21:00, entrega iteración 3
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 9 de diciembre de 2010 a las 23:00, entrega iteración 4
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 23 de diciembre de 2010 a las 11:40, entrega iteración 5
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Día 14 de enero de 2011 a las 14:10, entrega iteración 6
 \end_layout
 
+\begin_layout Itemize
+
+\family sans
+Día 16 de enero de 2011 a las 9:00, finiquitación previa entrega final.
+\end_layout
+
 \begin_layout Chapter*
+
+\family sans
 Seguimiento
 \end_layout
 
 \begin_layout Standard
+
+\family sans
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="9">
 <features>
@@ -199,6 +239,7 @@ Seguimiento
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 Miembros
 \backslash
@@ -212,6 +253,7 @@ Puntos por Iteración
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 1
 \end_layout
@@ -223,6 +265,7 @@ Puntos por Iteración
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 2
 \end_layout
@@ -234,6 +277,7 @@ Puntos por Iteración
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 3
 \end_layout
@@ -245,6 +289,7 @@ Puntos por Iteración
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 4
 \end_layout
@@ -256,6 +301,7 @@ Puntos por Iteración
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 5
 \end_layout
@@ -267,6 +313,7 @@ Puntos por Iteración
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 6
 \end_layout
@@ -278,6 +325,7 @@ Puntos por Iteración
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 7
 \end_layout
@@ -289,6 +337,7 @@ Puntos por Iteración
 
 \begin_layout Plain Layout
 
+\family sans
 \series bold
 \shape italic
 TOTAL
@@ -303,6 +352,7 @@ TOTAL
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 Bayón Benegas, Marc
 \end_layout
@@ -313,6 +363,8 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5 
 \end_layout
 
@@ -322,6 +374,8 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -331,6 +385,8 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -340,6 +396,8 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -349,6 +407,8 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -358,6 +418,8 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -376,6 +438,8 @@ Bayón Benegas, Marc
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -388,6 +452,7 @@ Bayón Benegas, Marc
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 Cuenca Gómez, Emilio
 \end_layout
@@ -398,6 +463,8 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5 
 \end_layout
 
@@ -407,6 +474,8 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -416,6 +485,8 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -425,6 +496,8 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -434,6 +507,8 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -443,6 +518,8 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -461,6 +538,8 @@ Cuenca Gómez, Emilio
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -473,6 +552,7 @@ Cuenca Gómez, Emilio
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 Daza Pastrana, Francisco José
 \end_layout
@@ -483,6 +563,8 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -492,6 +574,8 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -501,6 +585,8 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -510,6 +596,8 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -519,6 +607,8 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -528,6 +618,8 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -546,6 +638,8 @@ Daza Pastrana, Francisco José
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -558,6 +652,7 @@ Daza Pastrana, Francisco José
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 Espinaco Billalba, Francisco Javier
 \end_layout
@@ -568,6 +663,8 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -577,6 +674,8 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -586,6 +685,8 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -595,6 +696,8 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -604,6 +707,8 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -613,6 +718,8 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -631,6 +738,8 @@ Espinaco Billalba, Francisco Javier
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -643,6 +752,7 @@ Espinaco Billalba, Francisco Javier
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 Tristancho Reyes, Álvaro
 \end_layout
@@ -653,6 +763,8 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -662,6 +774,8 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -671,6 +785,8 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -680,6 +796,8 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -689,6 +807,8 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -698,6 +818,8 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -716,6 +838,8 @@ Tristancho Reyes, Álvaro
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -728,6 +852,7 @@ Tristancho Reyes, Álvaro
 
 \begin_layout Plain Layout
 
+\family sans
 \shape italic
 Viñas Sandiez, Antonio Jesús
 \end_layout
@@ -738,6 +863,8 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -747,6 +874,8 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -756,6 +885,8 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -765,6 +896,8 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -774,6 +907,8 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -783,6 +918,8 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 5
 \end_layout
 
@@ -801,6 +938,8 @@ Viñas Sandiez, Antonio Jesús
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -813,6 +952,7 @@ Viñas Sandiez, Antonio Jesús
 
 \begin_layout Plain Layout
 
+\family sans
 \series bold
 \shape italic
 TOTAL
@@ -824,6 +964,8 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -833,6 +975,8 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -842,6 +986,8 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -851,6 +997,8 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -860,6 +1008,8 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -869,6 +1019,8 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 30
 \end_layout
 
@@ -887,6 +1039,8 @@ TOTAL
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\family sans
 180
 \end_layout
 
@@ -901,173 +1055,286 @@ TOTAL
 \end_layout
 
 \begin_layout Chapter*
+
+\family sans
 Iteraciones
 \end_layout
 
 \begin_layout Section*
+
+\family sans
+Añadidos en la iteración 3:
+\end_layout
+
+\begin_layout Itemize
+
+\family sans
+Bocetos de implementación de métodos.
+\end_layout
+
+\begin_layout Subsubsection*
+
+\family sans
+Documentos de asignación de responsabilidades de metodos:
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\family sans
+Memorandos técnicos:
+\end_layout
+
+\begin_layout Section*
+
+\family sans
 Añadidos en la iteración 4:
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementación de cartas de acción.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementación de las distintas bolsas (PerformanceBag, TalentBag).
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementación de las clases relativas al tablero (Board, City).
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementación de los diferentes comandos necesarios.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementación de la clase que contiene la secuencia de juego (CircusTrainGame).
 \end_layout
 
 \begin_layout Itemize
 \align block
+
+\family sans
 Implementación de los distintos tipos de actuaciones (BankruptCircus,
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 \align block
+
+\family sans
 PerformanceDemand,VictoryPoints).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
+
+\family sans
 Implementación de la clase correspondiente al jugador (PlayerImpl).
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementación de los distintos talentos.
 \end_layout
 
-\begin_layout Itemize
-Documentos de asignación de responsabilidades de los métodos.
+\begin_layout Paragraph*
+
+\family sans
+Documentos de asignación de responsabilidades de métodos
 \end_layout
 
-\begin_layout Itemize
-Memorandos técnicos.
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\family sans
+Memorandos técnicos:
 \end_layout
 
 \begin_layout Section*
+
+\family sans
 Asuntos pendientes para iteración 5:
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Terminar pruebas unitarias.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Refactorizar.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementación de los modos de juego básico.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Documentos de asignación de responsabilidades.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Integración de las diferentes partes.
 \end_layout
 
 \begin_layout Section*
+
+\family sans
 Añadidos en la iteración 5:
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Añadidos documentos de asginación de responsabilidades.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Reestructuración de las clases del juego (refactorización) con los memorandos
  técnicos correspondientes.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Integración de los componentes del juego (ya se puede jugar con ciertos
  bugs).
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementación casi total de los modos de juego pendientes.
 \end_layout
 
 \begin_layout Section*
+
+\family sans
 Asuntos pendientes para iteración 6:
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Terminar de implementar los modos de juego.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Documentar las estructuras que faltan y las que surjan.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Realizar las pruebas unitarias correspondientes.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Subsanar los fallos en el funcionamiento del juego
 \end_layout
 
 \begin_layout Section*
+
+\family sans
 Añadidos en la iteración 6:
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Implementados los modos de juego.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Solucionados bugs en el funcionamiento del juego.
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Añadidos documentos de asignación de responsabilidades
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Añadidos memorandos técnicos.
 \end_layout
 
 \begin_layout Chapter*
+
+\family sans
 URL de implementación
 \end_layout
 
 \begin_layout Standard
+
+\family sans
 http://code.google.com/p/circustrain/
 \end_layout
 
 \begin_layout Chapter*
+
+\family sans
 Pruebas unitarias
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Pruebas para Board
 \end_layout
 
 \begin_layout Chapter*
+
+\family sans
 Extensiones
 \end_layout
 
 \begin_layout Itemize
+
+\family sans
 Posible interfaz gráfica
 \end_layout
 
 \begin_layout Standard
 
+\family sans
 \series bold
 \size huge
 Modelo de análisis
