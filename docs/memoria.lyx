@@ -1072,20 +1072,20 @@ Añadidos en la iteración 3:
 Bocetos de implementación de métodos.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Itemize
 
 \family sans
-Documentos de asignación de responsabilidades de metodos:
-\end_layout
-
-\begin_layout Standard
-
+Documentos de asignación de responsabilidades.
 \end_layout
 
 \begin_layout Paragraph*
 
 \family sans
-Memorandos técnicos:
+Documentos de asignación de responsabilidades de métodos:
+\end_layout
+
+\begin_layout Standard
+Responsabilidades IT3.rtf
 \end_layout
 
 \begin_layout Section*
@@ -1152,10 +1152,20 @@ Implementación de la clase correspondiente al jugador (PlayerImpl).
 Implementación de los distintos talentos.
 \end_layout
 
+\begin_layout Itemize
+
+\family sans
+Documentos de asignación de responsabilidades.
+\end_layout
+
 \begin_layout Paragraph*
 
 \family sans
-Documentos de asignación de responsabilidades de métodos
+Documentos de asignación de responsabilidades de métodos:
+\end_layout
+
+\begin_layout Standard
+Responsabilidades IT4.rtf
 \end_layout
 
 \begin_layout Standard
@@ -1166,6 +1176,10 @@ Documentos de asignación de responsabilidades de métodos
 
 \family sans
 Memorandos técnicos:
+\end_layout
+
+\begin_layout Standard
+Memorando Técnico IT4.rtf
 \end_layout
 
 \begin_layout Section*
@@ -1201,6 +1215,12 @@ Documentos de asignación de responsabilidades.
 \begin_layout Itemize
 
 \family sans
+Memorandos técnicos.
+\end_layout
+
+\begin_layout Itemize
+
+\family sans
 Integración de las diferentes partes.
 \end_layout
 
@@ -1214,6 +1234,12 @@ Añadidos en la iteración 5:
 
 \family sans
 Añadidos documentos de asginación de responsabilidades.
+\end_layout
+
+\begin_layout Itemize
+
+\family sans
+Añadidos memorandos técnicos.
 \end_layout
 
 \begin_layout Itemize
@@ -1234,6 +1260,30 @@ Integración de los componentes del juego (ya se puede jugar con ciertos
 
 \family sans
 Implementación casi total de los modos de juego pendientes.
+\end_layout
+
+\begin_layout Paragraph*
+
+\family sans
+Documentos de asignación de responsabilidades de métodos:
+\end_layout
+
+\begin_layout Standard
+Responsabilidades IT5.rtf
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\family sans
+Memorandos técnicos:
+\end_layout
+
+\begin_layout Standard
+Memorando Técnico IT5.rtf
 \end_layout
 
 \begin_layout Section*
@@ -1266,6 +1316,18 @@ Realizar las pruebas unitarias correspondientes.
 Subsanar los fallos en el funcionamiento del juego
 \end_layout
 
+\begin_layout Itemize
+
+\family sans
+Documentos de asignación de responsabilidades.
+\end_layout
+
+\begin_layout Itemize
+
+\family sans
+Memorandos técnicos.
+\end_layout
+
 \begin_layout Section*
 
 \family sans
@@ -1294,6 +1356,30 @@ Añadidos documentos de asignación de responsabilidades
 
 \family sans
 Añadidos memorandos técnicos.
+\end_layout
+
+\begin_layout Paragraph*
+
+\family sans
+Documentos de asignación de responsabilidades de métodos:
+\end_layout
+
+\begin_layout Standard
+Responsabilidades IT6.rtf
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph*
+
+\family sans
+Memorandos técnicos:
+\end_layout
+
+\begin_layout Standard
+Memorando Técnico IT6.rtf
 \end_layout
 
 \begin_layout Chapter*
