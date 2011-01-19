@@ -83,6 +83,8 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 				getTalentCircus().remove(t);
 			}
 		}
-		game.getBoard().addPerfomanceInRandomCity(this);
+		if(getTalentCircus().size()>0){
+			game.getBoard().addPerfomanceInRandomCity(this);
+		}
 	}
 }
