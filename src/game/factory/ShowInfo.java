@@ -52,30 +52,30 @@ public class ShowInfo {
 		System.out.println("Salario actual: \n" + p.getMoney());
 		System.out.println("======================================");
 
-		System.out.println("Actuación máxima: \n" + p.getPerformanceMax());
+		System.out.println("Actuacion maxima: \n" + p.getPerformanceMax());
 		System.out.println("======================================");
 
-		System.out.println("Reputación: \n" + p.getReputation());
+		System.out.println("Reputacion: \n" + p.getReputation());
 		System.out.println("======================================");
 
-		System.out.println("Puntuación más alta del dado: \n"
+		System.out.println("Puntuacion mas alta del dado: \n"
 				+ p.getHigherDiceScore());
 		System.out.println("======================================");
 
 		System.out.println("Puntos de Victoria: \n" + p.getVictoryPoints());
 		System.out.println("======================================");
 
-		System.out.println("Semanas restantes para actuación: \n"
+		System.out.println("Semanas restantes para actuacion: \n"
 				+ p.getWeeksToPerformance());
 		System.out.println("======================================");
 
 		System.out.println("Talentos: \n" + p.getTalents().toString());
 		System.out.println("======================================");
 
-		System.out.println("Cartas de acción: \n"
+		System.out.println("Cartas de accion: \n"
 				+ p.getActionCards().toString());
 		System.out.println("======================================");
-		System.out.println("Cartas de acción usadas: \n"
+		System.out.println("Cartas de accion usadas: \n"
 				+ p.getPerfomancesUsed().toString());
 		System.out.println("======================================");
 

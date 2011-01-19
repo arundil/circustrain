@@ -92,16 +92,16 @@ public class GameFactory {
 
 		CircusTrainGame game=null;
 
-		System.out.println("Â¡Bienvenido al Juego del Tren del Circo!");
+		System.out.println("¡¡Bienvenido al Juego del Tren del Circo!!");
 		
 		//Peticion de numero de jugadores
-		String askNumberOfPlayers="Â¿CuÃ¡ntos jugadores van a jugar? ";
+		String askNumberOfPlayers="¿Cuantos jugadores van a jugar? ";
 		String askNumberOfPlayersCondition="1,2";
 		Integer numberOfPlayers=readDataFromKeyBoard.takeParametersToIntegerRestricted(askNumberOfPlayers,askNumberOfPlayersCondition);
 
 		
 		//Seleccion de modo de juego
-		String selectGameMode="Seleccione el modo de juego:"+"\n"+"[1] Modo bÃ¡sico"+"\n"+"[2] Juego Avanzado";
+		String selectGameMode="Seleccione el modo de juego:"+"\n"+"[1] Modo basico"+"\n"+"[2] Juego Avanzado";
 		String selectGameModeCondition="1,2";
 		Integer gameMode=readDataFromKeyBoard.takeParametersToIntegerRestricted(selectGameMode,selectGameModeCondition);
 
