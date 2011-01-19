@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="game3" size="1206,821" id="game" metadata="uml2-1.0" initialized="true" scrolledX="250" scrolledY="384" tag="1000" key="32303037303533312D3130303020636972637573747261696E2F6A656E6B696E3930">
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.0" name="OnePlayerGame" location="462,491" size="153,175" id="game/OnePlayerGame">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="game3" size="1206,821" id="game" metadata="uml2-1.0" initialized="true" scrolledX="221" scrolledY="469" tag="1000" key="32303037303533312D3130303020636972637573747261696E2F6A656E6B696E3930">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.0" name="OnePlayerGame" location="462,491" size="153,193" id="game/OnePlayerGame" runTimeClassModel="OnePlayerGame(),addRestActionCard(),gameOver(),selectCard(Ljava.util.List;),noClownsNoAnimals(),finalMonth(),stealTalentSelector(),stealTalent(Lplayer.Player;)">
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel" size="130,126">
+    <children xsi:type="editmodel:CompartmentEditModel" size="130,144">
       <children xsi:type="editmodel:MethodEditModel" name="OnePlayerGame" id="game/OnePlayerGame#OnePlayerGame()"/>
       <children xsi:type="editmodel:MethodEditModel" name="finalMonth" id="game/OnePlayerGame#finalMonth()"/>
       <children xsi:type="editmodel:MethodEditModel" name="gameOver" id="game/OnePlayerGame#gameOver()"/>
@@ -10,29 +10,31 @@
       <children xsi:type="editmodel:MethodEditModel" name="selectCard" id="game/OnePlayerGame#selectCard(Ljava.util.List;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="stealTalent" id="game/OnePlayerGame#stealTalent(Lplayer.Player;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="stealTalentSelector" id="game/OnePlayerGame#stealTalentSelector()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addRestActionCard" id="game/OnePlayerGame#addRestActionCard()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.2/@sourceConnections.0" autoLocated="true" id="game/CircusTrainGame&lt;-game/OnePlayerGame" source="//@children.0" target="//@children.6" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
       <children xsi:type="editmodel:AssociationEndEditModel" location="76,0" anchorKind="FixedAtEdge" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="105,391" anchorKind="FixedAtEdge"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="105,427" anchorKind="FixedAtEdge"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="TestClassAdvancedTwoPlayersGame" location="449,716" size="274,81" id="test/TestClassAdvancedTwoPlayersGame" runTimeClassModel="finalMonth()">
+  <children xsi:type="editmodel:ClassEditModel" name="TestClassAdvancedTwoPlayersGame" location="449,716" size="274,99" id="test/TestClassAdvancedTwoPlayersGame" runTimeClassModel="addRestActionCard(),finalMonth()">
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-    <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,36">
       <children xsi:type="editmodel:MethodEditModel" name="finalMonth" id="test/TestClassAdvancedTwoPlayersGame#finalMonth()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addRestActionCard" id="test/TestClassAdvancedTwoPlayersGame#addRestActionCard()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
     <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.3/@sourceConnections.0" autoLocated="true" id="game/TwoPlayersGame&lt;-test/TestClassAdvancedTwoPlayersGame" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
       <children xsi:type="editmodel:AssociationEndEditModel" location="137,0" anchorKind="FixedAtEdge" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="76,175" anchorKind="FixedAtEdge"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="76,192" anchorKind="FixedAtEdge"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="TwoPlayersGame" location="760,491" size="153,175" id="game/TwoPlayersGame">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="TwoPlayersGame" location="760,491" size="153,193" id="game/TwoPlayersGame" runTimeClassModel="addRestActionCard(),gameOver(),selectCard(Ljava.util.List;),noClownsNoAnimals(),finalMonth(),stealTalentSelector(),TwoPlayersGame(),stealTalent(Lplayer.Player;)">
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel" size="130,126">
+    <children xsi:type="editmodel:CompartmentEditModel" size="130,144">
       <children xsi:type="editmodel:MethodEditModel" name="TwoPlayersGame" id="game/TwoPlayersGame#TwoPlayersGame()"/>
       <children xsi:type="editmodel:MethodEditModel" name="finalMonth" id="game/TwoPlayersGame#finalMonth()"/>
       <children xsi:type="editmodel:MethodEditModel" name="gameOver" id="game/TwoPlayersGame#gameOver()"/>
@@ -40,6 +42,7 @@
       <children xsi:type="editmodel:MethodEditModel" name="selectCard" id="game/TwoPlayersGame#selectCard(Ljava.util.List;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="stealTalent" id="game/TwoPlayersGame#stealTalent(Lplayer.Player;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="stealTalentSelector" id="game/TwoPlayersGame#stealTalentSelector()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addRestActionCard" id="game/TwoPlayersGame#addRestActionCard()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="game/CircusTrainGame&lt;-game/TwoPlayersGame" source="//@children.2" target="//@children.0/@sourceConnections.0" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
@@ -48,11 +51,12 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="AdvancedTwoPlayersGame" location="970,716" size="216,85" id="game/AdvancedTwoPlayersGame">
+  <children xsi:type="editmodel:ClassEditModel" name="AdvancedTwoPlayersGame" location="970,716" size="216,103" id="game/AdvancedTwoPlayersGame" runTimeClassModel="addRestActionCard(),gameOver(),finalMonth()">
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel" size="80,36">
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,54">
       <children xsi:type="editmodel:MethodEditModel" name="finalMonth" id="game/AdvancedTwoPlayersGame#finalMonth()"/>
       <children xsi:type="editmodel:MethodEditModel" name="gameOver" id="game/AdvancedTwoPlayersGame#gameOver()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addRestActionCard" id="game/AdvancedTwoPlayersGame#addRestActionCard()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="game/TwoPlayersGame&lt;-game/AdvancedTwoPlayersGame" source="//@children.3" target="//@children.1/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
@@ -61,11 +65,12 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="BasicTwoPlayersGame" location="753,716" size="187,85" id="game/BasicTwoPlayersGame">
+  <children xsi:type="editmodel:ClassEditModel" name="BasicTwoPlayersGame" location="753,716" size="187,103" id="game/BasicTwoPlayersGame" runTimeClassModel="addRestActionCard(),stealTalentsSelector(),finalMonth()">
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel" size="127,36">
+    <children xsi:type="editmodel:CompartmentEditModel" size="127,54">
       <children xsi:type="editmodel:MethodEditModel" name="finalMonth" id="game/BasicTwoPlayersGame#finalMonth()"/>
       <children xsi:type="editmodel:MethodEditModel" name="stealTalentsSelector" id="game/BasicTwoPlayersGame#stealTalentsSelector()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addRestActionCard" id="game/BasicTwoPlayersGame#addRestActionCard()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="game/TwoPlayersGame&lt;-game/BasicTwoPlayersGame" source="//@children.4" target="//@children.1/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
@@ -74,9 +79,11 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="BasicSingleGame" location="264,716" size="155,29" id="game/BasicSingleGame">
+  <children xsi:type="editmodel:ClassEditModel" name="BasicSingleGame" location="264,716" size="155,67" id="game/BasicSingleGame" runTimeClassModel="addRestActionCard()">
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,18">
+      <children xsi:type="editmodel:MethodEditModel" name="addRestActionCard" id="game/BasicSingleGame#addRestActionCard()"/>
+    </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="game/OnePlayerGame&lt;-game/BasicSingleGame" source="//@children.5" target="//@children.7/@sourceConnections.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
       <children xsi:type="editmodel:AssociationEndEditModel" location="77,0" anchorKind="FixedAtEdge" attachSource="true"/>
@@ -84,7 +91,7 @@
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="CircusTrainGame" location="583,50" size="210,391" id="game/CircusTrainGame">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="CircusTrainGame" location="583,50" size="210,427" id="game/CircusTrainGame" runTimeClassModel="performanceBag,addRestActionCard(),runGame(),getMonth(),setFollowingAction(Ljava.lang.String;),toPay(Lplayer.Player;Ljava.lang.Integer;),getFollowingAction(),talentBag,getPlayerList(),finalMonth(),board,getWeek(),playerList,CircusTrainGame(),getTalentBag(),getBoard(),getPerformanceBag(),inicializateActionCards(Lgame.CircusTrainGame;Lplayer.Player;),followingAction,completeBoardPerformances(Ljava.lang.Integer;),stealTalentSelector()">
     <children xsi:type="editmodel:CompartmentEditModel" size="187,90">
       <children xsi:type="editmodel:AttributeEditModel" name="board" id="game/CircusTrainGame#board"/>
       <children xsi:type="editmodel:AttributeEditModel" name="followingAction" id="game/CircusTrainGame#followingAction"/>
@@ -92,7 +99,7 @@
       <children xsi:type="editmodel:AttributeEditModel" name="playerList" id="game/CircusTrainGame#playerList"/>
       <children xsi:type="editmodel:AttributeEditModel" name="talentBag" id="game/CircusTrainGame#talentBag"/>
     </children>
-    <children xsi:type="editmodel:CompartmentEditModel" size="170,252">
+    <children xsi:type="editmodel:CompartmentEditModel" size="170,288">
       <children xsi:type="editmodel:MethodEditModel" name="CircusTrainGame" id="game/CircusTrainGame#CircusTrainGame()"/>
       <children xsi:type="editmodel:MethodEditModel" name="completeBoardPerformances" id="game/CircusTrainGame#completeBoardPerformances(Ljava.lang.Integer;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="finalMonth" id="game/CircusTrainGame#finalMonth()"/>
@@ -107,17 +114,21 @@
       <children xsi:type="editmodel:MethodEditModel" name="setFollowingAction" id="game/CircusTrainGame#setFollowingAction(Ljava.lang.String;)"/>
       <children xsi:type="editmodel:MethodEditModel" name="stealTalentSelector" id="game/CircusTrainGame#stealTalentSelector()"/>
       <children xsi:type="editmodel:MethodEditModel" name="toPay" id="game/CircusTrainGame#toPay(Lplayer.Player;Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addRestActionCard" id="game/CircusTrainGame#addRestActionCard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inicializateActionCards" id="game/CircusTrainGame#inicializateActionCards(Lgame.CircusTrainGame;Lplayer.Player;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="AdvancedSingleGame" location="50,716" size="184,29" id="game/AdvancedSingleGame">
+  <children xsi:type="editmodel:ClassEditModel" name="AdvancedSingleGame" location="50,716" size="184,67" id="game/AdvancedSingleGame" runTimeClassModel="addRestActionCard()">
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,18">
+      <children xsi:type="editmodel:MethodEditModel" name="addRestActionCard" id="game/AdvancedSingleGame#addRestActionCard()"/>
+    </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.5/@sourceConnections.0" autoLocated="true" id="game/OnePlayerGame&lt;-game/AdvancedSingleGame" source="//@children.7" target="//@children.0" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
       <children xsi:type="editmodel:AssociationEndEditModel" location="92,0" anchorKind="FixedAtEdge" attachSource="true"/>
-      <children xsi:type="editmodel:AssociationEndEditModel" location="76,175" anchorKind="FixedAtEdge"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="76,192" anchorKind="FixedAtEdge"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
   </children>
