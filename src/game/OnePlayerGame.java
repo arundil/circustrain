@@ -92,7 +92,7 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 
 	@Override
 	public void finalMonth() {
-		// TODO Auto-generated method stub		
+		//No hace en un jugador		
 	}
 
 
