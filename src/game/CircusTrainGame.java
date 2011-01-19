@@ -18,7 +18,6 @@ import actionCards.BasicMoveImpl;
 import actionCards.FastMoveImpl;
 import actionCards.HoldImpl;
 import actionCards.OvernighterImpl;
-import actionCards.RestImpl;
 import actionCards.TravelImpl;
 import actionCards.WagesImpl;
 import bag.PerformanceBag;

@@ -9,10 +9,7 @@ import gameState.YellowState;
 import org.junit.Before;
 import org.junit.Test;
 
-import performance.Performance;
-import performance.VictoryPointsImpl;
 import bag.PerformanceBag;
-import bag.PerformanceBagImpl;
 	
 
 public class TestStateJUnit {

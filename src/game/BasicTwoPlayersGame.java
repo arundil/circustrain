@@ -2,9 +2,8 @@ package game;
 
 import java.util.List;
 
-import actionCards.ActionCard;
-import actionCards.RestImpl;
 import player.Player;
+import actionCards.ActionCard;
 
 public class BasicTwoPlayersGame extends TwoPlayersGame{
 	

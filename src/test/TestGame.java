@@ -1,10 +1,5 @@
 package test;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import game.CircusTrainGame;
 import game.factory.GameFactory;
 

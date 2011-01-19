@@ -1,5 +1,9 @@
 package test;
 
+import game.AdvancedTwoPlayersGame;
+import gameState.GameState;
+import gameState.RedState;
+
 import java.util.List;
 
 import org.junit.Before;
@@ -7,27 +11,15 @@ import org.junit.Test;
 
 import performance.Performance;
 import player.Player;
-import talent.Acrobat;
 import talent.AcrobatImpl;
-import talent.BigCat;
 import talent.BigCatImpl;
-import talent.Clown;
 import talent.ClownImpl;
-import talent.Elephant;
 import talent.ElephantImpl;
-import talent.FreakShow;
 import talent.FreakShowImpl;
-import talent.Horse;
 import talent.HorseImpl;
-import talent.HumanCannonball;
 import talent.HumanCannonballImpl;
 import talent.Talent;
 import utiles.factoria.CollectionsFactory;
-
-import game.AdvancedTwoPlayersGame;
-import game.factory.GameFactory;
-import gameState.GameState;
-import gameState.RedState;
 
 public class TwoPlayersGameJUnit {
 	GameState redState;

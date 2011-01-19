@@ -1,7 +1,7 @@
 package test;
 //
-import player.Player;
 import game.TwoPlayersGame;
+import player.Player;
 //
 //import java.util.Iterator;
 //import java.util.List;

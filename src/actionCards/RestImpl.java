@@ -14,7 +14,6 @@ import talent.Talent;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 import board.City;
-import card.CardImpl;
 
 public class RestImpl extends ActionCardImpl{
 	CircusTrainGame ctg;

@@ -6,7 +6,6 @@ import game.BasicSingleGame;
 import game.BasicTwoPlayersGame;
 import game.CircusTrainGame;
 
-import java.util.List;
 import java.util.Random;
 
 import player.Player;
@@ -19,16 +18,8 @@ import talent.FreakShowImpl;
 import talent.HorseImpl;
 import talent.HumanCannonballImpl;
 import talent.Talent;
-import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
 import actionCards.ActionCard;
-import actionCards.BasicMoveImpl;
-import actionCards.FastMoveImpl;
-import actionCards.HoldImpl;
-import actionCards.OvernighterImpl;
-import actionCards.RestImpl;
-import actionCards.TravelImpl;
-import actionCards.WagesImpl;
 import bag.PerformanceBag;
 import bag.PerformanceBagImpl;
 import bag.TalentBag;

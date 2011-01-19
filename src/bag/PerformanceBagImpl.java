@@ -5,7 +5,6 @@ import game.factory.GameFactory;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
