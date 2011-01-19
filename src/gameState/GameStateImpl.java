@@ -69,10 +69,14 @@ public abstract class GameStateImpl implements GameState {
 	
 	public Performance getPerformanceInList(List<Performance> bag){
 		Performance performanceToReturn;
+		if(bag.size()==0){
+			return null;
+		}else{
 		Integer random=(int)(Math.random()*bag.size()); 
 		performanceToReturn = bag.get(random);
 		bag.remove(performanceToReturn);
 		return performanceToReturn;
+		}
 	}
 	
 	@Override
@@ -83,7 +87,11 @@ public abstract class GameStateImpl implements GameState {
 	public void completeBoardPerformances(Integer maxNumberOfPerformances){
 		while(game.getBoard().countCitiesWithPerfomance()<maxNumberOfPerformances){
 			Performance randomPerformance = getPerformance();
-			randomPerformance.put(game);
+			if(randomPerformance==null){
+				break;
+			}else{
+				randomPerformance.put(game);
+			}
 		}
 	}
 	public Integer getWeek(){

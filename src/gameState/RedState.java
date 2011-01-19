@@ -11,11 +11,12 @@ public class RedState extends GameStateImpl implements GameState {
 	
 	public RedState(CircusTrainGame game){
 		super(game);
+		game.getBoard().removeAllPerformances();
 		completeBoard();
 	}
 
 	public void completeBoard() {
-		completeBoardPerformances(10);
+		completeBoardPerformances(12);
 	}
 	
 	public Performance getPerformance(){

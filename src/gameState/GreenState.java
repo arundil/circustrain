@@ -11,7 +11,8 @@ public class GreenState extends GameStateImpl implements GameState {
 	
 	public GreenState(CircusTrainGame game){
 		super(game);
-		month="APRIL";
+		month="ABRIL";
+		game.getBoard().removeAllPerformances();
 		completeBoard();
 	}
 	

@@ -11,6 +11,7 @@ public class YellowState extends GameStateImpl implements GameState {
 
 	public YellowState(CircusTrainGame game){
 		super(game);
+		game.getBoard().removeAllPerformances();
 		completeBoard();
 	}
 	public void completeBoard() {

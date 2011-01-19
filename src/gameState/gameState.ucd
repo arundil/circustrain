@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="702,763" id="gameState" metadata="uml2-1.0" initialized="true" scrolledY="376" tag="1000" key="32303037303533312D3130303020636972637573747261696E2F6A656E6B696E3930">
+  <children xsi:type="editmodel:ClassEditModel" name="YellowState" location="240,604" size="160,139" id="gameState/YellowState" runTimeClassModel="discardPilePunishment(Lplayer.Player;),addMoney(Lplayer.Player;),completeBoard(),getPerformance(),YellowState(Lgame.CircusTrainGame;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,90">
+      <children xsi:type="editmodel:MethodEditModel" name="YellowState" id="gameState/YellowState#YellowState(Lgame.CircusTrainGame;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addMoney" id="gameState/YellowState#addMoney(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="completeBoard" id="gameState/YellowState#completeBoard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="discardPilePunishment" id="gameState/YellowState#discardPilePunishment(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="gameState/YellowState#getPerformance()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.1/@sourceConnections.0 //@children.3/@sourceConnections.0" autoLocated="true" id="gameState/GameStateImpl&lt;-gameState/YellowState" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,229" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="gameState/GameState&lt;-gameState/YellowState" source="//@children.0" target="//@children.4" targetEnd="//@children.0/@sourceConnections.1/@children.1" sourceEnd="//@children.0/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="87,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,225"/>
+      <bendpoints location="380,529" secondRelativeDimension="44,304" firstRelativeDimension="30,-26"/>
+      <bendpoints location="411,529" secondRelativeDimension="67,304" firstRelativeDimension="61,-40"/>
+      <bendpoints location="411,250" secondRelativeDimension="17,25" firstRelativeDimension="115,-301"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="RedState" location="430,604" size="160,139" id="gameState/RedState" runTimeClassModel="discardPilePunishment(Lplayer.Player;),addMoney(Lplayer.Player;),completeBoard(),getPerformance(),RedState(Lgame.CircusTrainGame;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,90">
+      <children xsi:type="editmodel:MethodEditModel" name="RedState" id="gameState/RedState#RedState(Lgame.CircusTrainGame;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addMoney" id="gameState/RedState#addMoney(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="completeBoard" id="gameState/RedState#completeBoard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="discardPilePunishment" id="gameState/RedState#discardPilePunishment(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="gameState/RedState#getPerformance()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="gameState/GameStateImpl&lt;-gameState/RedState" source="//@children.1" target="//@children.0/@sourceConnections.0" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="gameState/GameState&lt;-gameState/RedState" source="//@children.1" target="//@children.4" targetEnd="//@children.1/@sourceConnections.1/@children.1" sourceEnd="//@children.1/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="61,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="111,225"/>
+      <bendpoints location="471,529" secondRelativeDimension="110,304" firstRelativeDimension="3,-24"/>
+      <bendpoints location="471,250" secondRelativeDimension="71,65" firstRelativeDimension="10,-302"/>
+      <bendpoints location="430,250" secondRelativeDimension="30,37" firstRelativeDimension="-23,-301"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="GameStateImpl" location="223,325" size="193,229" id="gameState/GameStateImpl" runTimeClassModel="getPerformanceInList(Ljava.util.List;),GameStateImpl(Lgame.CircusTrainGame;),getGame(),getMonth(),incrementTime(),game,getHumanWeek(),completeBoardPerformances(Ljava.lang.Integer;),getWeek(),toString()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="134,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="game" id="gameState/GameStateImpl#game"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="170,162">
+      <children xsi:type="editmodel:MethodEditModel" name="GameStateImpl" id="gameState/GameStateImpl#GameStateImpl(Lgame.CircusTrainGame;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="completeBoardPerformances" id="gameState/GameStateImpl#completeBoardPerformances(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGame" id="gameState/GameStateImpl#getGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getHumanWeek" id="gameState/GameStateImpl#getHumanWeek()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMonth" id="gameState/GameStateImpl#getMonth()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformanceInList" id="gameState/GameStateImpl#getPerformanceInList(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWeek" id="gameState/GameStateImpl#getWeek()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="incrementTime" id="gameState/GameStateImpl#incrementTime()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="gameState/GameStateImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="gameState/GameState&lt;-gameState/GameStateImpl" source="//@children.2" target="//@children.4" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="129,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="62,225" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GreenState" location="50,604" size="160,139" id="gameState/GreenState" runTimeClassModel="discardPilePunishment(Lplayer.Player;),GreenState(Lgame.CircusTrainGame;),addMoney(Lplayer.Player;),completeBoard(),getPerformance()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,90">
+      <children xsi:type="editmodel:MethodEditModel" name="GreenState" id="gameState/GreenState#GreenState(Lgame.CircusTrainGame;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addMoney" id="gameState/GreenState#addMoney(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="completeBoard" id="gameState/GreenState#completeBoard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="discardPilePunishment" id="gameState/GreenState#discardPilePunishment(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="gameState/GreenState#getPerformance()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="gameState/GameStateImpl&lt;-gameState/GreenState" source="//@children.3" target="//@children.0/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="gameState/GameState&lt;-gameState/GreenState" source="//@children.3" target="//@children.4" targetEnd="//@children.3/@sourceConnections.1/@children.1" sourceEnd="//@children.3/@sourceConnections.1/@children.0" connectionRouterKind="Manual" anchorType="ChopBox">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="112,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="27,225"/>
+      <bendpoints location="128,529" secondRelativeDimension="-140,304" firstRelativeDimension="12,-24"/>
+      <bendpoints location="128,250" secondRelativeDimension="-110,80" firstRelativeDimension="40,-302"/>
+      <bendpoints location="240,250" secondRelativeDimension="-14,25" firstRelativeDimension="131,-301"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.1/@sourceConnections.1 //@children.3/@sourceConnections.1 //@children.0/@sourceConnections.1" name="GameState" location="290,50" size="160,225" id="gameState/GameState" runTimeClassModel="discardPilePunishment(Lplayer.Player;),getGame(),addMoney(Lplayer.Player;),getMonth(),incrementTime(),completeBoard(),getPerformance(),getHumanWeek(),getWeek()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,162">
+      <children xsi:type="editmodel:MethodEditModel" name="addMoney" id="gameState/GameState#addMoney(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="completeBoard" id="gameState/GameState#completeBoard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="discardPilePunishment" id="gameState/GameState#discardPilePunishment(Lplayer.Player;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGame" id="gameState/GameState#getGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getHumanWeek" id="gameState/GameState#getHumanWeek()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMonth" id="gameState/GameState#getMonth()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="gameState/GameState#getPerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWeek" id="gameState/GameState#getWeek()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="incrementTime" id="gameState/GameState#incrementTime()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
