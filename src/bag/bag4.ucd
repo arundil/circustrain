@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="bag4" size="702,637" id="bag" metadata="uml2-1.0" initialized="true" scrolledY="250" tag="1000" key="32303037303533312D3130303020636972637573747261696E2F6A656E6B696E3930">
+  <children xsi:type="editmodel:InterfaceEditModel" name="EventBag" location="516,50" size="139,135" id="bag/EventBag" runTimeClassModel="createEventBag(),getEventCard(),removeEventCard(Lcard.EventCard;),addEventCard(Lcard.EventCard;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,72">
+      <children xsi:type="editmodel:MethodEditModel" name="addEventCard" id="bag/EventBag#addEventCard(Lcard.EventCard;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createEventBag" id="bag/EventBag#createEventBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getEventCard" id="bag/EventBag#getEventCard()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeEventCard" id="bag/EventBag#removeEventCard(Lcard.EventCard;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Test" location="50,550" size="75,67" id="bag/Test" runTimeClassModel="main([Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="bag/Test#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TalentBagImpl" location="290,253" size="176,193" id="bag/TalentBagImpl" runTimeClassModel="removeTalent(Ltalent.Talent;),talents,TalentBagImpl(),getNumTalents(),getNumTypeTalent(Ltalent.Talent;),addTalent(Ltalent.Talent;),getTalentBag(),toString()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="153,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="talents" id="bag/TalentBagImpl#talents"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,126">
+      <children xsi:type="editmodel:MethodEditModel" name="TalentBagImpl" id="bag/TalentBagImpl#TalentBagImpl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTalent" id="bag/TalentBagImpl#addTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumTalents" id="bag/TalentBagImpl#getNumTalents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumTypeTalent" id="bag/TalentBagImpl#getNumTypeTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTalentBag" id="bag/TalentBagImpl#getTalentBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTalent" id="bag/TalentBagImpl#removeTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="bag/TalentBagImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="bag/TalentBag&lt;-bag/TalentBagImpl" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="88,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="70,153"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@sourceConnections.0" name="TalentBag" location="308,50" size="140,153" id="bag/TalentBag" runTimeClassModel="removeTalent(Ltalent.Talent;),getNumTalents(),getNumTypeTalent(Ltalent.Talent;),addTalent(Ltalent.Talent;),getTalentBag()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,90">
+      <children xsi:type="editmodel:MethodEditModel" name="addTalent" id="bag/TalentBag#addTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumTalents" id="bag/TalentBag#getNumTalents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumTypeTalent" id="bag/TalentBag#getNumTypeTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTalentBag" id="bag/TalentBag#getTalentBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeTalent" id="bag/TalentBag#removeTalent(Ltalent.Talent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PerformanceBagImpl" location="50,253" size="190,247" id="bag/PerformanceBagImpl" runTimeClassModel="addPerformance(Lperformance.Performance;),greenBag,getGreenBag(),yellowBag,getYellowBag(),removePerformance(Lperformance.Performance;),getRedBag(),PerformanceBagImpl(),PerformanceBagImpl(Ljava.lang.String;),toString(),redBag">
+    <children xsi:type="editmodel:CompartmentEditModel" size="167,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="greenBag" id="bag/PerformanceBagImpl#greenBag"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="redBag" id="bag/PerformanceBagImpl#redBag"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="yellowBag" id="bag/PerformanceBagImpl#yellowBag"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="129,144">
+      <children xsi:type="editmodel:MethodEditModel" name="PerformanceBagImpl" id="bag/PerformanceBagImpl#PerformanceBagImpl(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="PerformanceBagImpl" id="bag/PerformanceBagImpl#PerformanceBagImpl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPerformance" id="bag/PerformanceBagImpl#addPerformance(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGreenBag" id="bag/PerformanceBagImpl#getGreenBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRedBag" id="bag/PerformanceBagImpl#getRedBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getYellowBag" id="bag/PerformanceBagImpl#getYellowBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removePerformance" id="bag/PerformanceBagImpl#removePerformance(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="bag/PerformanceBagImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="bag/PerformanceBag&lt;-bag/PerformanceBagImpl" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="94,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,153"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.4/@sourceConnections.0" name="PerformanceBag" location="69,50" size="151,153" id="bag/PerformanceBag" runTimeClassModel="addPerformance(Lperformance.Performance;),getGreenBag(),getYellowBag(),removePerformance(Lperformance.Performance;),getRedBag()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,90">
+      <children xsi:type="editmodel:MethodEditModel" name="addPerformance" id="bag/PerformanceBag#addPerformance(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGreenBag" id="bag/PerformanceBag#getGreenBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRedBag" id="bag/PerformanceBag#getRedBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getYellowBag" id="bag/PerformanceBag#getYellowBag()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removePerformance" id="bag/PerformanceBag#removePerformance(Lperformance.Performance;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
