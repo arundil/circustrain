@@ -9,17 +9,17 @@ public class BasicMoveImpl extends ActionCardImpl{
 
 //borrado atributo player
 	public BasicMoveImpl(Player player) {
-		super("MOVIMIENTO BÁSICO", "Puedes moverte hacia una ciudad adyacente o Actuar/Contratar",player);
+		super("MOVIMIENTO BASICO", "Puedes moverte hacia una ciudad adyacente o Actuar/Contratar",player);
 	}
 
 
 	public void execute(GameState gamestate) {
 		Integer answer;
 //sustituido player por getPlayer()
-		System.out.println(getPlayer().getName()+" ha usado la carta ==> MOVIMIENTO BÁSICO <== \n");
+		System.out.println(getPlayer().getName()+" ha usado la carta ==> MOVIMIENTO BASICO <== \n");
 		
 		if (getPlayer().getCity().hasPerfomance()){
-			String mens="¿Que quieres hacer?\n"+ "Viajar[1]"+"\n[2] Actuar/Contratar";
+			String mens="Que quieres hacer?\n"+ "[1] Viajar"+"\n[2] Actuar/Contratar";
 			answer=readDataFromKeyBoard.takeParametersToIntegerRestricted(mens+"\nOption:","1,2");
 		}else{
 			System.out.println(getPlayer().getCity()+" no tiene Performance");

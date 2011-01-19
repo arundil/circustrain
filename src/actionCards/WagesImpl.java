@@ -9,7 +9,7 @@ public class WagesImpl extends ActionCardImpl{
 	CircusTrainGame ctg;
 	//borrado player como atributo
 	public WagesImpl(CircusTrainGame ctg,Player player) {
-		super("SALARIOS", "Puedes moverte hasta 2 ciudades. Después tendrás que " +
+		super("SALARIOS", "Puedes moverte hasta 2 ciudades. Despues tendras que " +
 				"pagar los salarios o eliminar talentos",player);
 		this.ctg = ctg;
 	}

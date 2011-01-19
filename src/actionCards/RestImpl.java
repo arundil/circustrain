@@ -19,7 +19,7 @@ public class RestImpl extends ActionCardImpl{
 	CircusTrainGame ctg;
 	public RestImpl(CircusTrainGame ctg, Player player) {
 		super("DESCANSO","Si estas en Canada (Winnipeg, Montreal or Toronto), " +
-				"puedes coger un payaso, un acrobata o incrementar tu reputación en un nivel",player);
+				"puedes coger un payaso, un acrobata o incrementar tu reputacion en un nivel",player);
 		this.ctg = ctg;
 	}
 
@@ -36,7 +36,7 @@ public class RestImpl extends ActionCardImpl{
 			Acrobat acrobat = new AcrobatImpl();
 			Integer answer;
 			
-			System.out.println(" ¡¡¡Estás en Canada!!! Puedes contratar \n " +
+			System.out.println("Puedes contratar \n " +
 					"[1] un payaso \n " +
 					"[2] un acrobata \n " +
 					"[3] incrementar un nivel tu reputación");
@@ -64,12 +64,12 @@ public class RestImpl extends ActionCardImpl{
 			}
 			if(answer == 3){
 				if(!getPlayer().addReputation(1)){
-					System.out.println("Ya tienes la mejor reputación. No es posible subirla más.");
+					System.out.println("Ya tienes la mejor reputacion. No es posible subirla mas.");
 					execute(gamestate);
 				}
 			}
 		}else{
-			System.out.println("No estás en Canada. Descansa.");
+			System.out.println("No estas en Canada. Descansa.");
 		}
 	}
 }
