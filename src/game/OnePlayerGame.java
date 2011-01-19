@@ -106,7 +106,7 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 	}
 	
 	@Override
-	protected void rotatePlayers(){
+	public void rotatePlayers(){
 		//Vacio porque no se hace nada
 	}
 	

@@ -49,19 +49,11 @@ public class TalentImpl implements Comparable<Talent>, Talent {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		TalentImpl other = (TalentImpl) obj;
-		if (wage == null) {
-			if (other.wage != null)
-				return false;
-		} else if (!wage.equals(other.wage))
-			return false;
-		return true;
+		boolean res=false;
+		if(this.getClass().equals(obj.getClass())){
+			res=true;
+		}
+		return res;
 	}
 
 	@Override

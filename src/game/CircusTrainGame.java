@@ -46,9 +46,10 @@ public abstract class CircusTrainGame{
 	protected abstract void stealTalent(Player player);
 	public abstract void stealTalentSelector();
 	protected abstract void selectCase(Player player);
-	protected abstract void rotatePlayers();
+	public abstract void rotatePlayers();
 	protected abstract void executeCase(Player player);
 	protected abstract void noClownsNoAnimals();
+
 	
 	protected abstract void refreshToFire(Player player);
 	protected abstract void pointsConversor(Player player);

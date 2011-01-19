@@ -32,7 +32,7 @@ public class PlayerImpl implements Player {
 		victoryPoints = 0;
 
 		discart_pile = CollectionsFactory.createListFactory().createList();
-		talents = CollectionsFactory.createMapFactory().createSortedMap();
+		talents = CollectionsFactory.createMapFactory().createMap();
 		perfomance_list = CollectionsFactory.createListFactory().createList();
 		reputationList=initializeReputation();
 		reputation = 1;

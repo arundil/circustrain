@@ -11,6 +11,7 @@ import actionCards.ActionCard;
 import actionCards.WagesImpl;
 
 import player.Player;
+import talent.AcrobatImpl;
 import talent.Clown;
 import talent.Talent;
 import tipos.Cadenas;
@@ -52,7 +53,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 	//====================================== X =====================================
 
 	@Override
-	protected void rotatePlayers(){
+	public void rotatePlayers(){
 		
 		List<Player> newPlayerList=CollectionsFactory.createListFactory().createList();
 		for(int i=1;i<playerList.size();i++){
@@ -60,38 +61,38 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 		newPlayerList.add(playerList.get(0));
 		playerList.clear();
-		playerList.addAll(newPlayerList);
-	
+		playerList.addAll(newPlayerList);	
 	}
+	
 	public void compareTalentsCountAndAddVictoryPoints(){
-		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
-		for(Player player:playerList){
-			playersTalentsList.add(player.getTalents());
-		}
-		//TODO List<Player>
-		Set<Talent> playerOneTalents= playersTalentsList.get(0).keySet();
-		Set<Talent> playerTwoTalents=playersTalentsList.get(1).keySet();
-		
-		Map<Talent,Integer> playerOneTalentsMap=playersTalentsList.get(0);
-		Map<Talent,Integer> playerTwoTalentsMap=playersTalentsList.get(1);
-
-		//Por cada talento del player1 mira todos los del player2
-		for(Talent playerOneTalent:playerOneTalents){
-			for(Talent playerTwoTalent:playerTwoTalents){
-				//Se comprueba si ambos jugadores tienen el mismo talento
-				if(playerTwoTalentsMap.containsKey(playerOneTalent)){
-					//Si existe se compara la cantidad de talentos
-					int comparation=playerOneTalentsMap.get(playerOneTalent).compareTo(playerTwoTalentsMap.get(playerTwoTalent));
-					//Si player1 tiene mas se le añaden tantos puntos de victoria como talentos tenga
-					if(comparation>0){
-						playerList.get(0).addVictoryPoints(playerOneTalentsMap.get(playerOneTalent));
-					}
-					//Si player2 tiene mas se le añaden tantos puntos de victoria como talentos tenga
-					if(comparation<0){
-						playerList.get(1).addVictoryPoints(playerTwoTalentsMap.get(playerTwoTalent));
-					}
-					break;
-				}
+		Player player1=playerList.get(0);
+		Player player2=playerList.get(1);
+		Integer player1talentNumber;
+		Integer player2talentNumber;
+		Talent AC=GameFactory.createTalent("ACROBAT");
+		Talent H=GameFactory.createTalent("HORSE");
+		Talent HC=GameFactory.createTalent("HUMAN CANNON BALL");
+		Talent BC=GameFactory.createTalent("BIG CAT");
+		Talent C=GameFactory.createTalent("CLOWN");
+		Talent E=GameFactory.createTalent("ELEPHANT");
+		Talent FS=GameFactory.createTalent("FREAK SHOW");
+		Set<Talent> allTalents=CollectionsFactory.createSetFactory().createSet();
+		allTalents.add(AC);allTalents.add(H);allTalents.add(HC);allTalents.add(BC);
+		allTalents.add(C);allTalents.add(E);allTalents.add(FS);
+		for(Talent talent:allTalents){
+			player1talentNumber=0;
+			player2talentNumber=0;
+			if(player2.getTalents().containsKey(talent)){
+				player2talentNumber=player2.getTalents().get(talent);				
+			}
+			if(player1.getTalents().containsKey(talent)){
+				player1talentNumber=player1.getTalents().get(talent);				
+			}			
+			if(player1talentNumber.compareTo(player2talentNumber)>0){
+				player1.addVictoryPoints(player1talentNumber);
+			}
+			if(player1talentNumber.compareTo(player2talentNumber)<0){
+				player2.addVictoryPoints(player2talentNumber);
 			}
 		}
 	}
