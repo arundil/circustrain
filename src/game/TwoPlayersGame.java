@@ -7,16 +7,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import actionCards.ActionCard;
-import actionCards.WagesImpl;
-
 import player.Player;
-import talent.AcrobatImpl;
-import talent.Clown;
 import talent.Talent;
 import tipos.Cadenas;
 import utiles.factoria.CollectionsFactory;
 import utiles.factoria.readDataFromKeyBoard;
+import actionCards.ActionCard;
+import actionCards.WagesImpl;
 
 public abstract class TwoPlayersGame extends CircusTrainGame{
 
