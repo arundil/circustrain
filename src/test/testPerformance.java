@@ -1,5 +1,7 @@
 package test;
 
+import game.CircusTrainGame;
+import gameState.*;
 import player.Player;
 import player.PlayerImpl;
 import utiles.factoria.readDataFromKeyBoard;
@@ -13,6 +15,11 @@ public class testPerformance extends Test{
 		Board b = new BoardImpl("/src/board/boardcfg.txt");
 		Player p = new PlayerImpl("Pepe");
 		PerformanceBag p1=new PerformanceBagImpl();
+		CircusTrainGame game = new CircusTrainGame();
+		GreenState gS= new GreenState(game);
+		YellowState yS = new YellowState(game);
+		RedState rS = new RedState(game);
+		
 		p.moveCity(b.getCityByName("Toronto"));
 		p.addMoney(100);
 		System.out.println(p);
@@ -23,13 +30,13 @@ public class testPerformance extends Test{
 		Integer elec = readDataFromKeyBoard.takeParametersToIntegerTopValue("Opcion:", 2);
 		
 		if (elec == 0){
-			System.out.println(p1.getPerformance("green").toString());
+			System.out.println(gS.getPerformance().toString());
 			}
 		if (elec == 1){
-			System.out.println(p1.getPerformance("yellow").toString());
+			System.out.println(yS.getPerformance().toString());
 		}
 		if (elec == 2){
-			System.out.println(p1.getPerformance("red").toString());
+			System.out.println(rS.getPerformance().toString());
 		}
 		
 		System.out.println("La ciudad actual de "+p.getName()+" es " + p.getCity());
