@@ -1,5 +1,11 @@
 package test;
 
+import game.AdvancedTwoPlayersGame;
+import gameState.GameState;
+import gameState.GreenState;
+import gameState.RedState;
+import gameState.YellowState;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,27 +17,34 @@ import bag.PerformanceBagImpl;
 
 public class TestPerformanceJUnit {
 	PerformanceBag p1;
+	AdvancedTwoPlayersGame game;
+	GameState redState;
+	GameState yellowState;
+	GameState greenState;
 	@Before
 	 public void setUp() throws Exception {
 		p1 = new PerformanceBagImpl("/data/performancecfg.txt");
+		game=new AdvancedTwoPlayersGame();
+		redState=new RedState(game);
+		yellowState=new YellowState(game);
+		greenState=new GreenState(game);
 	}
 	@Test
 	public void testAddPerformance(){
-		Performance e = null;
-		e = new VictoryPointsImpl("red", "", 3);
+		Performance e = new VictoryPointsImpl("red", "", 3);
 		p1.addPerformance(e);
-		assert p1.getRedBag().size() == 28 : "Numero de actuaciones incorrecto. Hay "+p1.getRedBag().size();
+		assert p1.getRedBag().size() == 22 : "Numero de actuaciones incorrecto. Hay "+p1.getRedBag().size();
 	}
 	@Test
 	public void testGetPerformanceRed(){
-		assert p1.getPerformance("red").getColor() == "red";
+		assert redState.getPerformance().getColor() == "red";
 	}
 	@Test
 	public void testGetPerformanceGreen(){
-		assert p1.getPerformance("green").getColor() == "green";
+		assert greenState.getPerformance().getColor() == "green";
 	}
 	@Test
 	public void testGetPerformanceYellow(){
-		assert p1.getPerformance("yellow").getColor() == "yellow";
+		assert yellowState.getPerformance().getColor() == "yellow";
 	}
 }
