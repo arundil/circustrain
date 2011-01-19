@@ -34,7 +34,6 @@ public class PerformanceBagImpl implements PerformanceBag {
 			//Soluciona el problema cuando movemos el trabajo de un ordenador a otro.
 			fileReader = ReadFile.readTextFile(System.getProperty("user.dir")+file);
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 

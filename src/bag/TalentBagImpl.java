@@ -69,7 +69,7 @@ public class TalentBagImpl implements TalentBag {
 
 		}
 		if (n == 0) {
-			System.out.println("No hay más talentos de este tipo");
+			System.out.println("No hay mas talentos de este tipo");
 		}
 		return aux;
 	}
