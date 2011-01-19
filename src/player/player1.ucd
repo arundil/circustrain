@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="player1" size="702,1258" id="player" metadata="uml2-1.0" initialized="true" zoom="0.75" tag="1000" key="32303037303533312D3130303020636972637573747261696E2F6A656E6B696E3930">
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.1/@sourceConnections.0" name="Player" location="56,50" size="174,495" id="player/Player" runTimeClassModel="getMoney(),collectMoney(),playerState(),addVictoryPoints(Ljava.lang.Integer;),addActionCards(Ljava.util.List;),getCity(),setWeeksToPerformance(Ljava.lang.Integer;),getPerformanceMax(),getWeeksToPerformance(),getName(),getVictoryPoints(),getPerfomancesUsed(),getReputation(),addMoney(Ljava.lang.Integer;),getdiscartpile(),discardTalent(Ltalent.Talent;),addPerformance(Ljava.lang.Integer;),getActionCards(),getTalents(),addReputation(Ljava.lang.Integer;),getHigherDiceScore(),addPerfomanceUsed(Lperformance.Performance;),addTalent(Ljava.util.List;),moveCity(Lboard.City;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="151,432">
+      <children xsi:type="editmodel:MethodEditModel" name="addActionCards" id="player/Player#addActionCards(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addMoney" id="player/Player#addMoney(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPerfomanceUsed" id="player/Player#addPerfomanceUsed(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPerformance" id="player/Player#addPerformance(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addReputation" id="player/Player#addReputation(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTalent" id="player/Player#addTalent(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addVictoryPoints" id="player/Player#addVictoryPoints(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="collectMoney" id="player/Player#collectMoney()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="discardTalent" id="player/Player#discardTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getActionCards" id="player/Player#getActionCards()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCity" id="player/Player#getCity()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getHigherDiceScore" id="player/Player#getHigherDiceScore()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMoney" id="player/Player#getMoney()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="player/Player#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerfomancesUsed" id="player/Player#getPerfomancesUsed()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformanceMax" id="player/Player#getPerformanceMax()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getReputation" id="player/Player#getReputation()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTalents" id="player/Player#getTalents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVictoryPoints" id="player/Player#getVictoryPoints()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWeeksToPerformance" id="player/Player#getWeeksToPerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdiscartpile" id="player/Player#getdiscartpile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveCity" id="player/Player#moveCity(Lboard.City;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="playerState" id="player/Player#playerState()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setWeeksToPerformance" id="player/Player#setWeeksToPerformance(Ljava.lang.Integer;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PlayerImpl" location="510,15" size="187,643" id="player/PlayerImpl" runTimeClassModel="PlayerImpl(Ljava.lang.String;),getMoney(),collectMoney(),addActionCards(Ljava.util.List;),toString(),city,setWeeksToPerformance(Ljava.lang.Integer;),getName(),getWeeksToPerformance(),name,reputation,money,getdiscartpile(),getTalents(),getActionCards(),getHigherDiceScore(),addReputation(Ljava.lang.Integer;),victoryPoints,addTalent(Ljava.util.List;),weeksToPerformance,talents,playerState(),addVictoryPoints(Ljava.lang.Integer;),getCity(),getPerformanceMax(),getVictoryPoints(),getPerfomancesUsed(),addMoney(Ljava.lang.Integer;),getReputation(),discardTalent(Ltalent.Talent;),addPerformance(Ljava.lang.Integer;),addPerfomanceUsed(Lperformance.Performance;),moveCity(Lboard.City;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="city" id="player/PlayerImpl#city"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="money" id="player/PlayerImpl#money"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="player/PlayerImpl#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="reputation" id="player/PlayerImpl#reputation"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="talents" id="player/PlayerImpl#talents"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="victoryPoints" id="player/PlayerImpl#victoryPoints"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="weeksToPerformance" id="player/PlayerImpl#weeksToPerformance"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="151,468">
+      <children xsi:type="editmodel:MethodEditModel" name="PlayerImpl" id="player/PlayerImpl#PlayerImpl(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addActionCards" id="player/PlayerImpl#addActionCards(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addMoney" id="player/PlayerImpl#addMoney(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPerfomanceUsed" id="player/PlayerImpl#addPerfomanceUsed(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPerformance" id="player/PlayerImpl#addPerformance(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addReputation" id="player/PlayerImpl#addReputation(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTalent" id="player/PlayerImpl#addTalent(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addVictoryPoints" id="player/PlayerImpl#addVictoryPoints(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="collectMoney" id="player/PlayerImpl#collectMoney()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="discardTalent" id="player/PlayerImpl#discardTalent(Ltalent.Talent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getActionCards" id="player/PlayerImpl#getActionCards()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCity" id="player/PlayerImpl#getCity()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getHigherDiceScore" id="player/PlayerImpl#getHigherDiceScore()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMoney" id="player/PlayerImpl#getMoney()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="player/PlayerImpl#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerfomancesUsed" id="player/PlayerImpl#getPerfomancesUsed()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformanceMax" id="player/PlayerImpl#getPerformanceMax()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getReputation" id="player/PlayerImpl#getReputation()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTalents" id="player/PlayerImpl#getTalents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getVictoryPoints" id="player/PlayerImpl#getVictoryPoints()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWeeksToPerformance" id="player/PlayerImpl#getWeeksToPerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getdiscartpile" id="player/PlayerImpl#getdiscartpile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="moveCity" id="player/PlayerImpl#moveCity(Lboard.City;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="playerState" id="player/PlayerImpl#playerState()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setWeeksToPerformance" id="player/PlayerImpl#setWeeksToPerformance(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="player/PlayerImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="player/Player&lt;-player/PlayerImpl" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,282" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="174,247"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="All" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
