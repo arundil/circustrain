@@ -38,7 +38,7 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 		List<Talent> newtalents=CollectionsFactory.createListFactory().createList();
 		for(Talent t:getTalentCircus()){
 			String answers="\n" + "[1] SI" + "\n" + "[2] NO";
-			String question="El talento  "+t.toString()+" está sin empleo. ¿Quieres contratarlo?"+answers;
+			String question="El talento  "+t.toString()+" esta sin empleo. Quieres contratarlo?"+answers;
 			String condition="1,2";
 			String election= readDataFromKeyBoard.takeParametersToStringRestricted(question, condition);
 
@@ -53,7 +53,7 @@ public class BankruptCircusImpl extends performanceImpl implements BankruptCircu
 					System.out.println("\nNo has conseguido contratar el talento "+t.toString()+"\n");
 					if(!((player.getMoney())<10)){	
 						String answers1="\n" + "[1] SI" + "\n" + "[2] NO";
-						String message1="Tu tirada no es suficiente para contratar gratis al talento,¿Quieres pagar?"+answers1;
+						String message1="Tu tirada no es suficiente para contratar gratis al talento,Quieres pagar?"+answers1;
 						String condition1="1,2";
 						String failure=readDataFromKeyBoard.takeParametersToStringRestricted(message1, condition1);
 						if(!failure.equals("2")){
