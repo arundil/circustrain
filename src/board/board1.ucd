@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="board1" size="745,853" id="board" metadata="uml2-1.0" initialized="true" scrolledY="483" tag="1000" key="32303037303533312D3130303020636972637573747261696E2F6A656E6B696E3930">
+  <children xsi:type="editmodel:ClassEditModel" name="hasPerfomanceFilter" location="519,50" size="174,67" id="board/hasPerfomanceFilter" runTimeClassModel="exp(Lboard.City;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="48,18">
+      <children xsi:type="editmodel:MethodEditModel" name="exp" id="board/hasPerfomanceFilter#exp(Lboard.City;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="isCanadianFilter" location="50,766" size="146,67" id="board/isCanadianFilter" runTimeClassModel="exp(Lboard.City;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="48,18">
+      <children xsi:type="editmodel:MethodEditModel" name="exp" id="board/isCanadianFilter#exp(Lboard.City;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.3/@sourceConnections.0" name="City" location="307,50" size="151,243" id="board/City" runTimeClassModel="exactMovement(Ljava.lang.Integer;),getName(),maxMovement(Ljava.lang.Integer;),setPerfomance(Lperformance.Performance;),isCanada(),hasPerfomance(),removePerformance(),getPerformance(),getCitiesAdjacents(),toString()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,180">
+      <children xsi:type="editmodel:MethodEditModel" name="exactMovement" id="board/City#exactMovement(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCitiesAdjacents" id="board/City#getCitiesAdjacents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="board/City#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="board/City#getPerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="hasPerfomance" id="board/City#hasPerfomance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isCanada" id="board/City#isCanada()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="maxMovement" id="board/City#maxMovement(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removePerformance" id="board/City#removePerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPerfomance" id="board/City#setPerfomance(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="board/City#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CityImpl" location="297,343" size="172,355" id="board/CityImpl" runTimeClassModel="exactMovement(Ljava.lang.Integer;),maxMovement(Ljava.lang.Integer;),CityImpl(Ljava.lang.String;Ljava.lang.String;),setPerfomance(Lperformance.Performance;),isCanada,getPerformance(),CityImpl(Ljava.lang.String;Ljava.lang.Boolean;),getCitiesAdjacents(),toString(),getName(),isCanada(),performance,name,hasPerfomance(),equals(Ljava.lang.Object;),hashCode(),removePerformance()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="149,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="isCanada" id="board/CityImpl#isCanada"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="board/CityImpl#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="performance" id="board/CityImpl#performance"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,252">
+      <children xsi:type="editmodel:MethodEditModel" name="CityImpl" id="board/CityImpl#CityImpl(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="CityImpl" id="board/CityImpl#CityImpl(Ljava.lang.String;Ljava.lang.Boolean;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="equals" id="board/CityImpl#equals(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="exactMovement" id="board/CityImpl#exactMovement(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCitiesAdjacents" id="board/CityImpl#getCitiesAdjacents()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="board/CityImpl#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerformance" id="board/CityImpl#getPerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="hasPerfomance" id="board/CityImpl#hasPerfomance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="hashCode" id="board/CityImpl#hashCode()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isCanada" id="board/CityImpl#isCanada()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="maxMovement" id="board/CityImpl#maxMovement(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removePerformance" id="board/CityImpl#removePerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPerfomance" id="board/CityImpl#setPerfomance(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="board/CityImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="board/City&lt;-board/CityImpl" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="85,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,243"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.5/@sourceConnections.0" name="Board" location="51,50" size="194,243" id="board/Board" runTimeClassModel="countCitiesWithPerfomance(),getCitiesWithPerfomance(),getCitiesWithoutPerformance(),addTrack(Lboard.City;Lboard.City;),getCities(),getCanadianCities(),removeAllPerformances(),getCityByName(Ljava.lang.String;),addCity(Lboard.City;),addPerfomanceInRandomCity(Lperformance.Performance;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="171,180">
+      <children xsi:type="editmodel:MethodEditModel" name="addCity" id="board/Board#addCity(Lboard.City;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPerfomanceInRandomCity" id="board/Board#addPerfomanceInRandomCity(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTrack" id="board/Board#addTrack(Lboard.City;Lboard.City;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="countCitiesWithPerfomance" id="board/Board#countCitiesWithPerfomance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCanadianCities" id="board/Board#getCanadianCities()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCities" id="board/Board#getCities()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCitiesWithPerfomance" id="board/Board#getCitiesWithPerfomance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCitiesWithoutPerformance" id="board/Board#getCitiesWithoutPerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCityByName" id="board/Board#getCityByName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllPerformances" id="board/Board#removeAllPerformances()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="BoardImpl" location="50,343" size="197,373" id="board/BoardImpl" runTimeClassModel="isCanadian,getCitiesWithPerfomance(),getCitiesWithoutPerformance(),BoardImpl(Ljava.lang.String;),game,getCities(),addPerfomanceInRandomCity(Lperformance.Performance;),toString(),countCitiesWithPerfomance(),hasPerformance,BoardImpl(),hasNotPerformance,addTrack(Lboard.City;Lboard.City;),isNotCanadian,getCanadianCities(),removeAllPerformances(),getCityByName(Ljava.lang.String;),addCity(Lboard.City;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="174,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="game" id="board/BoardImpl#game"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasNotPerformance" id="board/BoardImpl#hasNotPerformance"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="hasPerformance" id="board/BoardImpl#hasPerformance"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="isCanadian" id="board/BoardImpl#isCanadian"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="isNotCanadian" id="board/BoardImpl#isNotCanadian"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="171,234">
+      <children xsi:type="editmodel:MethodEditModel" name="BoardImpl" id="board/BoardImpl#BoardImpl(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="BoardImpl" id="board/BoardImpl#BoardImpl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addCity" id="board/BoardImpl#addCity(Lboard.City;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPerfomanceInRandomCity" id="board/BoardImpl#addPerfomanceInRandomCity(Lperformance.Performance;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addTrack" id="board/BoardImpl#addTrack(Lboard.City;Lboard.City;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="countCitiesWithPerfomance" id="board/BoardImpl#countCitiesWithPerfomance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCanadianCities" id="board/BoardImpl#getCanadianCities()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCities" id="board/BoardImpl#getCities()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCitiesWithPerfomance" id="board/BoardImpl#getCitiesWithPerfomance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCitiesWithoutPerformance" id="board/BoardImpl#getCitiesWithoutPerformance()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCityByName" id="board/BoardImpl#getCityByName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeAllPerformances" id="board/BoardImpl#removeAllPerformances()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="board/BoardImpl#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="board/Board&lt;-board/BoardImpl" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="98,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="97,243"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=3;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
