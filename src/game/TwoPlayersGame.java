@@ -112,38 +112,22 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 	}
 	
 	public void higherClownNumber(){
-		Integer playerClownNumber=0;
-		Integer maximumClownNumber=-1;
-		Integer sameClownNumberTimes=0;
-		Integer previousClownNumber=0;
-		List<Integer> clownNumber=CollectionsFactory.createListFactory().createList();
-		for(int i=0;i<playerList.size();i++){
-			Player thisPlayer=playerList.get(i);
-			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
-			if(thisPlayerTalents.containsKey(Clown.class)){
-				playerClownNumber=thisPlayer.getTalents().get(Clown.class);			
-			}else{
-				playerClownNumber=0;
-			}
-			clownNumber.add(playerClownNumber);
-			if(maximumClownNumber<playerClownNumber){
-				maximumClownNumber=playerClownNumber;
-			}
-			if(i>0){
-				Player previousPlayer=playerList.get(i-1);
-				if(previousPlayer.getTalents().containsKey(Clown.class)){
-					previousClownNumber=thisPlayer.getTalents().get(Clown.class);			
-				}else{
-					previousClownNumber=0;
-				}
-			}
-			if(maximumClownNumber==previousClownNumber){
-				sameClownNumberTimes++;
-			}
+		Integer clownPlayer1=0,clownPlayer2=0;
+		Talent clown=GameFactory.createTalent("CLOWN");
+		if(playerList.get(0).getTalents().containsKey(clown)){
+			clownPlayer1=playerList.get(0).getTalents().get(clown);
 		}
-		if(sameClownNumberTimes==0){
-			Integer playerIndex= clownNumber.indexOf(maximumClownNumber);
-			playerList.get(playerIndex).addVictoryPoints(3);
+		
+		
+		if(playerList.get(1).getTalents().containsKey(clown)){
+			clownPlayer2=playerList.get(1).getTalents().get(clown);
+		}
+		
+		if(clownPlayer1.compareTo(clownPlayer2)>0){
+			playerList.get(0).addVictoryPoints(3);
+		}
+		if(clownPlayer1.compareTo(clownPlayer2)<0){
+			playerList.get(1).addVictoryPoints(3);
 		}
 	}
 	
@@ -172,27 +156,22 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 	}
 	
 	public void higherPerformancesNumber(){
-		List<Integer> playersNumberOfPerformances=CollectionsFactory.createListFactory().createList();
-		Integer sameNumberOfPerformancesTimes=0;
-		Integer maximumNumberOfPerformances=-1;
-		Integer previousNumberOfPerformances=0;
-		for(int i=0;i<playerList.size();i++){
-			if(i>0){
-				previousNumberOfPerformances=playerList.get(i-1).getPerfomancesUsed().size();
-			}
-			Player thisPlayer=playerList.get(i);
-			playersNumberOfPerformances.add(thisPlayer.getPerfomancesUsed().size());
-			if(maximumNumberOfPerformances<thisPlayer.getPerfomancesUsed().size()){
-				maximumNumberOfPerformances=thisPlayer.getPerfomancesUsed().size();
-			}
-			if(previousNumberOfPerformances==thisPlayer.getPerfomancesUsed().size()){
-				sameNumberOfPerformancesTimes++;
-			}
+				
+		Player player1=playerList.get(0);
+		Player player2=playerList.get(1);
+		
+		Integer player1Usedperformances=player1.getPerfomancesUsed().size();
+		Integer player2Usedperformances=player2.getPerfomancesUsed().size();
+		
+		Integer comparation=player1Usedperformances-player2Usedperformances;
+		if(comparation>0){
+			player1.addVictoryPoints(3);
 		}
-		if(sameNumberOfPerformancesTimes==0){
-			Integer playerIndex=playersNumberOfPerformances.indexOf(maximumNumberOfPerformances);
-			playerList.get(playerIndex).addVictoryPoints(3);
+		if(comparation<0){
+			player2.addVictoryPoints(3);
 		}
+		
+		
 	}
 	
 
@@ -249,16 +228,25 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 	
 	@Override
 	public void noClownsNoAnimals(){
+		Talent clown=GameFactory.createTalent("CLOWN");
+		Talent elephant=GameFactory.createTalent("ELEPHANT");
+		Talent horse=GameFactory.createTalent("HORSE");
+		Talent bigCat=GameFactory.createTalent("BIG CAT");
 		for(Player thisPlayer:playerList){
 			Map<Talent,Integer> thisPlayerTalents = thisPlayer.getTalents();
-			if(!thisPlayerTalents.containsKey(talent.Clown.class)){
+			if(!thisPlayerTalents.containsKey(clown)){
 				thisPlayer.addVictoryPoints(-3);
 			}			
-			Boolean noAnimals=(!thisPlayerTalents.containsKey(talent.BigCat.class))&&
-			(!thisPlayerTalents.containsKey(talent.Elephant.class))&&
-			(!thisPlayerTalents.containsKey(talent.Horse.class));
-			if(noAnimals){
-				thisPlayer.addVictoryPoints(-3);
+			Boolean cats=thisPlayerTalents.containsKey(bigCat);
+			Boolean elephants=thisPlayerTalents.containsKey(elephant);
+			Boolean horses=thisPlayerTalents.containsKey(horse);
+			Boolean animals=cats && elephants && horses;
+			if(!animals){
+				if(thisPlayer.getVictoryPoints()<3){
+					thisPlayer.addVictoryPoints(-thisPlayer.getVictoryPoints());
+				}else{
+					thisPlayer.addVictoryPoints(-3);					
+				}
 			}			
 		}
 	}
@@ -293,9 +281,9 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		String options1="";
 		String conditions1="";
 		Iterator<Talent> talentSetIterator=otherPlayerTalentsSet1.iterator();
-		for(int i=0;i<otherPlayerTalentsSet1.size();i++){			
+		for(int i=0;i<otherPlayerTalentsSet1.size();i++){
 			Talent talent= talentSetIterator.next();
-			options1=options1+"["+ i+1 +"] "+talent.getName()+"\n";
+			options1=options1+"["+i+"] "+talent.getName()+"\n";
 			conditions1=conditions1+i+",";
 		}
 			

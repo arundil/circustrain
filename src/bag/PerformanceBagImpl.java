@@ -128,7 +128,6 @@ public class PerformanceBagImpl implements PerformanceBag {
 	public List<Performance> getGreenBag() {
 		return greenBag;
 	}
-
 	
 	@Override
 	public List<Performance> getRedBag() {

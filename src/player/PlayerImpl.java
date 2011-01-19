@@ -170,6 +170,7 @@ public class PlayerImpl implements Player {
 		}else{
 			talents.put(talentToDiscard, talents.get(talentToDiscard)-1);
 		}
+
 	}
 	@Override
 	
