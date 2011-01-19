@@ -20,6 +20,7 @@ public class BasicTwoPlayersGame extends TwoPlayersGame{
 		comparePlayersAndAddVictoryPoints();			
 		//Robar talentos
 		stealTalentsSelector();
+		rotatePlayers();
 	}
 	
 	public void stealTalentsSelector(){

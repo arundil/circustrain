@@ -16,7 +16,8 @@ public class AdvancedTwoPlayersGame extends TwoPlayersGame {
 	@Override
 	public void finalMonth(){
 		//Puntos de victoria segun el nº de talentos
-		comparePlayersAndAddVictoryPoints();			
+		comparePlayersAndAddVictoryPoints();
+		rotatePlayers();
 //		//Robar talentos
 //		stealTalentsSelector();
 	}
