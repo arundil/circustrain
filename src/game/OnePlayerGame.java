@@ -49,39 +49,39 @@ public abstract class OnePlayerGame extends CircusTrainGame{
 		System.out.println("Tu dinero al final de la temporada es: "+playerFinalMoney+ "$");
 		if(playerFinalMoney<100){
 			System.out.println("============= Derrota ============= \nTu circo no" +
-					"sobrevive al invierno y pronto será repartido\n" +
-					"entre otros trenes del circo más exitosos.\n" +
-					"Tú suplicarás ser contratado como trabajador en" +
+					"sobrevive al invierno y pronto sera repartido\n" +
+					"entre otros trenes del circo mas exitosos.\n" +
+					"Tu suplicaras ser contratado como trabajador en" +
 					"otro circo.");
 		}
 		if(playerFinalMoney>=100 && playerFinalMoney<=140){
 			System.out.println("============= Derrota menor ============= \nHas fracasado" +
-					"en crear un circo con éxito y dentro del año\n" +
+					"en crear un circo con exito y dentro del anno\n" +
 					"acabas en bancarrota. Tu odisea del tren del\n" +
-					"circo se ha terminado, pero quizás tendrás más \n" +
-					"éxito comenzando con otro circo o en" +
+					"circo se ha terminado, pero quizas tendras mas \n" +
+					"exito comenzando con otro circo o en" +
 					"otra aventura financiera.");
 		}
 		if(playerFinalMoney>140 && playerFinalMoney<=180){
 			System.out.println("============= Empate ============= \nha sido una lucha," +
 					"pero has conseguido sobrevivir a la temporada del\n" +
 					"circo donde muchos otros han" +
-					"fracasado. ¿Qué te deparará el futuro?\n" +
+					"fracasado. Que te deparara el futuro\n" +
 					"Puedes preguntar al mimo, pero no puede hablar.");
 		}
 		if(playerFinalMoney>180 && playerFinalMoney<=220){
-			System.out.println("============= ¡Victoria! ============= \nhas impulsado un" +
-					"negocio próspero con tu tren del circo." +
+			System.out.println("============= Victoria ============= \nhas impulsado un" +
+					"negocio prospero con tu tren del circo." +
 					"Con trabajo duro prolongado, tu circo se convierte\n" +
 					"en popular y es bienvenido por" +
-					"toda América, y los niños esperan con\n" +
-					"impaciencia el día que tu tren para en la ciudad.");
+					"toda America, y los ninos esperan con\n" +
+					"impaciencia el dia que tu tren para en la ciudad.");
 		}
 		if(playerFinalMoney>220){
-			System.out.println("============= ¡Gran Victoria! ============= \nhas creado el" +
-					"mayor espectáculo del mundo y pasarás a la\n" +
-					"Historia como uno de los más grandes entre\n" +
-					"los emprendedores y empresarios.¡Felicitaciones!.");
+			System.out.println("============= Gran Victoria ============= \nhas creado el" +
+					"mayor espectaculo del mundo y pasaras a la\n" +
+					"Historia como uno de los mas grandes entre\n" +
+					"los emprendedores y empresarios.Felicitaciones.");
 		}
 	}
 

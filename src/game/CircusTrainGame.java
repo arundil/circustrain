@@ -105,7 +105,7 @@ public abstract class CircusTrainGame{
 	}
 		
 	protected void showPerformanceSituation() {
-		System.out.println("\n \n Ciudades con actuación: "+ board.getCitiesWithPerfomance() +"\n \n");
+		System.out.println("\n \n Ciudades con actuacion: "+ board.getCitiesWithPerfomance() +"\n \n");
 	}
 	
 	public void runGame(){
@@ -178,7 +178,7 @@ public abstract class CircusTrainGame{
 		if(!player.getTalents().isEmpty()){
 			Map<Talent,Integer> talentMap = player.getTalents();
 			Integer totalMoneyToPay=0;
-			String payAllTalentsQuestion="Tienes dinero suficiente para pagar a todos los talentos de una sola vez. ¿Quieres pagarles?:\n[1] Si\n[2] No";
+			String payAllTalentsQuestion="Tienes dinero suficiente para pagar a todos los talentos de una sola vez. �Quieres pagarles?:\n[1] Si\n[2] No";
 			String payAllTalentsQuestionRestrictions="1,2";
 			for(Talent talent: talentMap.keySet()){
 				totalMoneyToPay=totalMoneyToPay+talent.getWage()*basicMoneyMultiplicator*multiplicator*talentMap.get(talent);
@@ -201,7 +201,7 @@ public abstract class CircusTrainGame{
 	protected void toFire(Player player){
 		Map<Talent,Integer> talentMap=player.getTalents();
 		List<Talent> talentList=CollectionsFactory.createListFactory().createList();
-		String question="¿A qué talento vas a despedir?\n";
+		String question="�A que talento vas a despedir?\n";
 		String conditions="";
 		Integer answerNumber=1;		
 		

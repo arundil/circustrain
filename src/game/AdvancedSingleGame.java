@@ -13,9 +13,9 @@ public class AdvancedSingleGame extends OnePlayerGame {
 
 	@Override
 	protected void selectCase (Player player){
-		String action1="[1] Jugar una carta de acción";
-		String action2="[2] Jugar una carta de acción ya descartada";		
-		String askBasicAction = "¿Qué vas a hacer?:" + "\n" + action1;
+		String action1="[1] Jugar una carta de accion";
+		String action2="[2] Jugar una carta de accion ya descartada";		
+		String askBasicAction = "�Que vas a hacer?:" + "\n" + action1;
 		String askActionsDiscardedNoMoney = askBasicAction + "\n" + action2;
 		String action;
 		//Si la pila de cartas descartadas no esta vacia y tiene una cantidad 

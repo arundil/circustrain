@@ -210,18 +210,18 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		
 		if(victoryPointsDrawGame==1){
 			if(performancePointsDrawGame==1){
-				winner="No hay ganador."+"\n"+"============= ¡EMPATE! =============";
+				winner="No hay ganador."+"\n"+"============= EMPATE =============";
 			}else{
 				Integer winnerIndex=playerPerformancePoints.indexOf(maxPerformancePoints);
 				Player winnerPlayer=playerList.get(winnerIndex);
-				winner="¡Tenemos un ganador!"+"\n"+"============= "+winnerPlayer.getName()+" =============";
+				winner="Tenemos un ganador"+"\n"+"============= "+winnerPlayer.getName()+" =============";
 			}
 		}else{
 			Integer winnerIndex=playerVictoryPoints.indexOf(maxVictoryPoints);
 			Player winnerPlayer=playerList.get(winnerIndex);
-			winner="¡Tenemos un ganador!"+"\n"+"============= "+winnerPlayer.getName()+" =============";
+			winner="Tenemos un ganador"+"\n"+"============= "+winnerPlayer.getName()+" =============";
 		}
-		System.out.println(winner+"\n"+"\n"+"---=== Gracias por jugar a Train Circus! ===---");
+		System.out.println(winner+"\n"+"\n"+"---=== Gracias por jugar a Circus Train ===---");
 	}
 	
 	@Override
@@ -286,7 +286,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 			
 		String askTalentToBeStolen=otherPlayer.getName()+" tiene los siguientes talentos: "+"\n"+otherPlayer.getTalents().toString()+
-									"¿Qué talentos vas a robarle?: "+"\n"+options1;
+									"Que talentos vas a robarle?: "+"\n"+options1;
 		String talentToBeStolen=readDataFromKeyBoard.takeParametersToStringRestricted(askTalentToBeStolen,conditions1);
 		List<String> talentToBeSteloneSelectionNumbers=Cadenas.separaElementos(conditions1,",");
 		
