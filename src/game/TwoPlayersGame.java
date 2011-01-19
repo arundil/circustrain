@@ -28,7 +28,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		setPlayersNames();
 	}
 	
-	protected void comparePlayersAndAddVictoryPoints() {
+	public void comparePlayersAndAddVictoryPoints() {
 		compareTalentsCountAndAddVictoryPoints();
 		//Puntos de victoria segun actuacion maxima
 		int comparatorPerformancePoints =playerList.get(0).getPerformanceMax().compareTo(playerList.get(1).getPerformanceMax());
@@ -63,7 +63,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		playerList.addAll(newPlayerList);
 	
 	}
-	private void compareTalentsCountAndAddVictoryPoints(){
+	public void compareTalentsCountAndAddVictoryPoints(){
 		List<Map<Talent,Integer>> playersTalentsList=CollectionsFactory.createListFactory().createList();
 		for(Player player:playerList){
 			playersTalentsList.add(player.getTalents());
@@ -111,7 +111,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}		
 	}
 	
-	protected void higherClownNumber(){
+	public void higherClownNumber(){
 		Integer playerClownNumber=0;
 		Integer maximumClownNumber=-1;
 		Integer sameClownNumberTimes=0;
@@ -147,7 +147,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 	}
 	
-	protected void higherMoneyAmount(){
+	public void higherMoneyAmount(){
 		List<Integer> playersMoney=CollectionsFactory.createListFactory().createList();
 		Integer sameMoneyTimes=0;
 		Integer maximumMoney=-1;
@@ -171,7 +171,7 @@ public abstract class TwoPlayersGame extends CircusTrainGame{
 		}
 	}
 	
-	protected void higherPerformancesNumber(){
+	public void higherPerformancesNumber(){
 		List<Integer> playersNumberOfPerformances=CollectionsFactory.createListFactory().createList();
 		Integer sameNumberOfPerformancesTimes=0;
 		Integer maximumNumberOfPerformances=-1;

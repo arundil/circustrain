@@ -238,6 +238,10 @@ public abstract class CircusTrainGame{
 		ac.add(new HoldImpl(player));
 		return ac;
 	}
+	
+	public void setPlayerList(List<Player> list){
+		playerList=list;
+	}
 
 	
 }
